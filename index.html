@@ -589,6 +589,15 @@
         .checkbox-group label { font-size: 13px; font-weight: 400; color: #4B5563; line-height: 1.5; text-transform: none; letter-spacing: 0; cursor: pointer; margin-bottom: 0; }
         .waitlist-submit { background-color: #A03FA3; color: #FFFFFF; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; padding: 18px 40px; border-radius: 50px; font-size: 15px; border: none; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; margin-top: 10px; width: 100%; box-shadow: 0 10px 20px rgba(160, 63, 163, 0.3);}
         .waitlist-submit:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(160, 63, 163, 0.4); }
+    
+        /* Scroll Reveal Effect */
+        .reveal-word {
+            color: #E5E7EB;
+            transition: color 0.1s ease-out;
+        }
+        .reveal-word.active {
+            color: #A03FA3;
+        }
     </style>
 </head>
 <body>
@@ -830,11 +839,8 @@
                 </span>
             </h2>
             
-            <div style="font-size: clamp(18px, 2.2vw, 24px); color: #6B7280; font-weight: 400; max-width: 1100px; margin: 0 auto 80px auto; text-align: center; line-height: 1.7; text-wrap: balance;">
-                <p style="font-size: clamp(20px, 2.5vw, 28px); margin-bottom: 40px; font-weight: 700; color: #111111; letter-spacing: -0.5px;">Join the movement helping women build wealth &mdash; and own a piece of the future you help create.</p>
-                <p style="margin-bottom: 30px;">Castle is building a new Web3-powered ecosystem where creators, leaders, brands, and communities can tokenize their expertise, audience, reach, credibility, and resources in exchange for Castle tokens and shared upside.</p>
-                <p style="margin-bottom: 30px;">Castle offers a model of co-creation, co-ownership, and long-term value creation.</p>
-                <p style="margin-bottom: 0;">Bring what makes you powerful—your voice, network, platform, or community—and grow with us as we scale a global movement for women and wealth.</p>
+            <div id="scroll-reveal-container" style="font-size: clamp(24px, 3vw, 42px); font-weight: 700; max-width: 1200px; margin: 0 auto 80px auto; text-align: center; line-height: 1.4; text-wrap: balance;">
+                <p id="scroll-reveal-text" style="margin: 0; color: #E5E7EB;">Join the movement helping women build wealth &mdash; and own a piece of the future you help create. Castle is building a new Web3-powered ecosystem where creators, leaders, brands, and communities can tokenize their expertise, audience, reach, credibility, and resources in exchange for Castle tokens and shared upside. Castle offers a model of co-creation, co-ownership, and long-term value creation. Bring what makes you powerful&mdash;your voice, network, platform, or community&mdash;and grow with us as we scale a global movement for women and wealth.</p>
             </div>
             
             <div style="margin-bottom: 50px;">
@@ -1098,6 +1104,63 @@
                 cards.forEach(card => observer.observe(card));
             });
         });
+    
+        // Word-by-Word Scroll Reveal
+        const revealText = document.getElementById("scroll-reveal-text");
+        if (revealText) {
+            const words = revealText.innerText.split(/(\s+|&mdash;)/); // split by space or em-dash
+            revealText.innerHTML = '';
+            words.forEach(word => {
+                if(word.trim() === '' && word !== '&mdash;') {
+                    revealText.appendChild(document.createTextNode(word));
+                } else if(word.length > 0) {
+                    const span = document.createElement('span');
+                    span.className = 'reveal-word';
+                    span.innerHTML = word;
+                    revealText.appendChild(span);
+                }
+            });
+
+            const wordSpans = revealText.querySelectorAll('.reveal-word');
+            
+            const handleScrollReveal = () => {
+                const rect = revealText.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                const start = windowHeight * 0.90; // Start revealing slightly above bottom
+                const end = windowHeight * 0.10;   // Finish near top
+                
+                const elementTop = rect.top;
+                const elementHeight = rect.height;
+                
+                let progress = (start - elementTop) / (start - end + elementHeight);
+                progress = Math.max(0, Math.min(1, progress));
+                
+                const activeCount = Math.floor(progress * wordSpans.length);
+                
+                wordSpans.forEach((span, index) => {
+                    if(index < activeCount) {
+                        span.classList.add('active');
+                    } else {
+                        span.classList.remove('active');
+                    }
+                });
+            };
+
+            // Hook onto scroll and scroll-snap container if exists
+            const snapSections = document.querySelectorAll('.snap-section');
+            if(window.innerWidth >= 1024) {
+               // The body handles the scroll since flex/snap architecture
+               document.body.addEventListener('scroll', handleScrollReveal);
+            }
+            window.addEventListener('scroll', handleScrollReveal);
+            document.documentElement.addEventListener('scroll', handleScrollReveal);
+            
+            // Re-check frequently just in case of weird scroll-snap behavior
+            setInterval(handleScrollReveal, 100);
+            
+            handleScrollReveal();
+        }
     </script>
 
     <!-- Waitlist Modal -->
