@@ -552,6 +552,28 @@
         }
         @media(min-width: 1024px){ .pillar-card { aspect-ratio: 2/4.4; } }
     
+    
+        /* --- DESKTOP SLIDE SNAP SCROLL --- */
+        @media (min-width: 1024px) {
+            html {
+                scroll-snap-type: y mandatory;
+                scroll-behavior: smooth;
+            }
+            .snap-section {
+                scroll-snap-align: start;
+                scroll-snap-stop: always;
+                height: 100vh;
+                overflow-y: auto;
+                scrollbar-width: none; /* Firefox */
+                -ms-overflow-style: none;  /* IE and Edge */
+            }
+            .snap-section::-webkit-scrollbar { 
+                display: none; 
+            }
+            .site-footer {
+                scroll-snap-align: end;
+            }
+        }
     </style>
 </head>
 <body>
@@ -591,7 +613,7 @@
         </div>
     </header>
 
-    <section class="hero">
+    <section class="hero snap-section">
         <div class="hero-gradient"></div>
         
         <div class="hero-container">
@@ -609,7 +631,7 @@
     
     
     <!-- Centered Statement Section -->
-    <section style="background-color: #FFFFFF; padding: clamp(80px, 10vw, 150px) 20px; text-align: center; border-bottom: 1px solid #F3F4F6;">
+    <section style="background-color: #FFFFFF; padding: clamp(80px, 10vw, 150px) 20px; text-align: center; border-bottom: 1px solid #F3F4F6;" class="snap-section">
         <div class="container color-reveal" style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center;">
             <h2 style="font-size: clamp(36px, 5vw, 64px); font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -2px; font-family: 'Inter', sans-serif; color: #111111; text-wrap: balance;">
                 Women were Taught to Save,<br>not to Build Wealth.
@@ -627,7 +649,7 @@
     </section>
 
             <!-- #3 Manifesto -->
-    <section id="reality" style="position: relative; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 0; min-height: 100vh; width: 100%; background-image: url('./public/images/common/manifesto-bg.jpg'); background-size: cover; background-position: center top; background-attachment: fixed; background-repeat: no-repeat;">
+    <section id="reality" style="position: relative; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 0; min-height: 100vh; width: 100%; background-image: url('./public/images/common/manifesto-bg.jpg'); background-size: cover; background-position: center top; background-attachment: fixed; background-repeat: no-repeat;" class="snap-section">
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(17,17,17,0.7); z-index: 1;"></div>
         
         <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 5vw; position: relative; z-index: 2;">
@@ -652,7 +674,7 @@
 
 
     <!-- #4 What Makes Us Different -->
-    <section style="padding: clamp(60px, 8vw, 120px) 0; background-color: #FFFFFF;">
+    <section style="padding: clamp(60px, 8vw, 120px) 0; background-color: #FFFFFF;" class="snap-section">
         <div class="container color-reveal" style="max-width: 1500px; margin: 0 auto; padding: 0 5vw; display: flex; flex-wrap: wrap; align-items: center; gap: clamp(40px, 6vw, 80px);">
             
             <!-- Left Side Image -->
@@ -693,7 +715,7 @@
     </section>
 
     <!-- #5 Core Platform Pillars -->
-    <section style="padding: 100px 0; background-color: #f9f9f9; text-align: center;">
+    <section style="padding: 100px 0; background-color: #f9f9f9; text-align: center;" class="snap-section">
         <div class="container" style="max-width: 1500px; margin: 0 auto; padding: 0 5vw;">
             <h2 class="color-reveal section-heading">
                 Built To Transform Every Dimension Of Your Wealth.
@@ -768,7 +790,7 @@
     </section>
 
 <!-- Challenge Teaser -->
-    <section style="position: relative; display: flex; align-items: center; justify-content: center; padding: 120px 0; min-height: 100vh; width: 100%; background-image: url('./public/images/common/bg-violet.png'); background-size: cover; background-position: center top; background-attachment: fixed; background-repeat: no-repeat;">
+    <section style="position: relative; display: flex; align-items: center; justify-content: center; padding: 120px 0; min-height: 100vh; width: 100%; background-image: url('./public/images/common/bg-violet.png'); background-size: cover; background-position: center top; background-attachment: fixed; background-repeat: no-repeat;" class="snap-section">
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(17,17,17,0.5); z-index: 1;"></div>
         
         <div class="container" style="position: relative; z-index: 2; max-width: 1500px; margin: 0 auto; padding: 0 5vw; text-align: center;">
@@ -785,7 +807,7 @@
     </section>
 
 <!-- Partners Section Restored -->
-    <section id="partnerships" class="partners-section" style="background-color: #F9F9F9; padding: 100px 0; border-top: 1px solid #E5E7EB; font-family: 'Inter', sans-serif;">
+    <section id="partnerships" class="partners-section snap-section" style="background-color: #F9F9F9; padding: 100px 0; border-top: 1px solid #E5E7EB; font-family: 'Inter', sans-serif;">
         <div class="container" style="margin: 0 auto; text-align: center; padding: 0 5vw;">
             <h2 class="color-reveal section-heading" style="margin-bottom: 30px;">Turn Your Influence Into Ownership</h2>
             
@@ -868,7 +890,7 @@
         </div>
     </section>
 
-    <section id="blog" class="blog-section" style="padding-bottom: 40px; border-bottom: none;">
+    <section id="blog" class="blog-section snap-section" style="padding-bottom: 40px; border-bottom: none;">
         <div class="container" style="max-width: 1500px; padding: 0 4vw; text-align: center;">
             <h2 class="color-reveal section-heading" style="margin-bottom: 20px;">Press</h2>
             <p class="color-reveal section-subtitle" style="font-size: clamp(18px, 2vw, 22px); color: #4B5563; font-weight: 400; max-width: 800px; margin: 0 auto 60px auto; line-height: 1.6; text-wrap: balance;">
@@ -923,7 +945,7 @@
     </section>
 
     <!-- Final CTA / Newsletter -->
-    <section style="position: relative; background-image: url('./public/images/common/cta-final.jpg'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat; padding: 120px 0; text-align: center; min-height: 100vh; display: flex; align-items: center; justify-content: center; width: 100%;">
+    <section style="position: relative; background-image: url('./public/images/common/cta-final.jpg'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat; padding: 120px 0; text-align: center; min-height: 100vh; display: flex; align-items: center; justify-content: center; width: 100%;" class="snap-section">
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(17,17,17,0.6); z-index: 1;"></div>
         <div class="container" style="position: relative; z-index: 2; max-width: 800px; margin: 0 auto; padding: 0 5vw; text-align: center;">
             <h3 style="font-size: clamp(40px, 5vw, 72px); font-weight: 900; color: #FFFFFF; margin-bottom: 20px; letter-spacing: -2px; line-height: 1.1; font-family: 'Inter', sans-serif; text-shadow: 0 4px 20px rgba(0,0,0,0.4);">Subscribe to our Newsletter</h3>
