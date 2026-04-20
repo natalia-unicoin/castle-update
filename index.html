@@ -834,13 +834,14 @@
     <section id="partnerships" class="partners-section snap-section" style="background-color: #FFFFFF; padding: clamp(100px, 12vw, 160px) 0; border-top: 1px solid #E5E7EB; font-family: 'Inter', sans-serif;">
         <div class="container" style="max-width: 1500px; margin: 0 auto; text-align: center; padding: 0 5vw;">
             <h2 class="color-reveal section-heading" style="font-size: clamp(40px, 6vw, 84px); font-weight: 900; color: #111111; letter-spacing: -2px; line-height: 1.1; margin-bottom: 40px; text-wrap: balance;">
-                Turn Your Influence Into <span style="color: #A03FA3; position: relative;">Ownership
-                    <svg style="position: absolute; bottom: -20px; left: 0; width: 100%;" viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0 10 Q 50 20 100 10" stroke="#A03FA3" stroke-width="4" fill="none"/></svg>
-                </span>
+                Turn Your Influence Into <span style="color: #A03FA3;">Ownership</span>
             </h2>
             
-            <div id="scroll-reveal-container" style="font-size: clamp(24px, 3vw, 42px); font-weight: 700; max-width: 1200px; margin: 0 auto 80px auto; text-align: center; line-height: 1.4; text-wrap: balance;">
-                <p id="scroll-reveal-text" style="margin: 0; color: #E5E7EB;">Join the movement helping women build wealth &mdash; and own a piece of the future you help create. Castle is building a new Web3-powered ecosystem where creators, leaders, brands, and communities can tokenize their expertise, audience, reach, credibility, and resources in exchange for Castle tokens and shared upside. Castle offers a model of co-creation, co-ownership, and long-term value creation. Bring what makes you powerful&mdash;your voice, network, platform, or community&mdash;and grow with us as we scale a global movement for women and wealth.</p>
+            <div id="scroll-reveal-container" style="font-size: clamp(22px, 3vw, 36px); font-weight: 700; max-width: 1200px; margin: 0 auto 80px auto; text-align: center; line-height: 1.5; text-wrap: balance;">
+                <p class="scroll-reveal-paragraph" style="margin: 0 0 40px 0; color: #E5E7EB;">Join the movement helping women build wealth &mdash; and own a piece of the future you help create.</p>
+                <p class="scroll-reveal-paragraph" style="margin: 0 0 40px 0; color: #E5E7EB;">Castle is building a new Web3-powered ecosystem where creators, leaders, brands, and communities can tokenize their expertise, audience, reach, credibility, and resources in exchange for Castle tokens and shared upside.</p>
+                <p class="scroll-reveal-paragraph" style="margin: 0 0 40px 0; color: #E5E7EB;">Castle offers a model of co-creation, co-ownership, and long-term value creation.</p>
+                <p class="scroll-reveal-paragraph" style="margin: 0; color: #E5E7EB;">Bring what makes you powerful&mdash;your voice, network, platform, or community&mdash;and grow with us as we scale a global movement for women and wealth.</p>
             </div>
             
             <div style="margin-bottom: 50px;">
@@ -1106,25 +1107,30 @@
         });
     
         // Word-by-Word Scroll Reveal
-        const revealText = document.getElementById("scroll-reveal-text");
-        if (revealText) {
-            const words = revealText.innerText.split(/(\s+|&mdash;)/); // split by space or em-dash
-            revealText.innerHTML = '';
-            words.forEach(word => {
-                if(word.trim() === '' && word !== '&mdash;') {
-                    revealText.appendChild(document.createTextNode(word));
-                } else if(word.length > 0) {
-                    const span = document.createElement('span');
-                    span.className = 'reveal-word';
-                    span.innerHTML = word;
-                    revealText.appendChild(span);
-                }
+        const revealParagraphs = document.querySelectorAll(".scroll-reveal-paragraph");
+        let allSpans = [];
+        if (revealParagraphs.length > 0) {
+            revealParagraphs.forEach(revealText => {
+                const words = revealText.innerText.split(/(\s+|&mdash;)/); // split by space or em-dash
+                revealText.innerHTML = '';
+                words.forEach(word => {
+                    if(word.trim() === '' && word !== '&mdash;') {
+                        revealText.appendChild(document.createTextNode(word));
+                    } else if(word.length > 0) {
+                        const span = document.createElement('span');
+                        span.className = 'reveal-word';
+                        span.innerHTML = word;
+                        revealText.appendChild(span);
+                        allSpans.push(span);
+                    }
+                });
             });
 
-            const wordSpans = revealText.querySelectorAll('.reveal-word');
+            const wordSpans = allSpans;
+            const scrollContainer = document.getElementById("scroll-reveal-container");
             
             const handleScrollReveal = () => {
-                const rect = revealText.getBoundingClientRect();
+                const rect = scrollContainer.getBoundingClientRect();
                 const windowHeight = window.innerHeight;
                 
                 const start = windowHeight * 0.90; // Start revealing slightly above bottom
