@@ -580,8 +580,9 @@
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         @media(max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
         .form-group { display: flex; flex-direction: column; }
-        .form-group label { font-size: 13px; font-weight: 700; color: #111111; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
-        .form-group input, .form-group select { padding: 14px 16px; border: 1px solid #D1D5DB; border-radius: 4px; font-size: 15px; font-family: 'Inter', sans-serif; background: #F9FAFB; transition: border-color 0.2s, box-shadow 0.2s; color:#111111; }
+        .form-group label { font-size: 14px; font-weight: 600; color: #111111; margin-bottom: 8px; }
+        .form-group input, .form-group select { padding: 14px 16px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 15px; font-family: 'Inter', sans-serif; background: #F9FAFB; transition: border-color 0.2s, box-shadow 0.2s; color:#111111; }
+        .form-group select { appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23111111" viewBox="0 0 16 16"><path d="M4.293 5.293a1 1 0 0 1 1.414 0L8 8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-3 3a1 1 0 0 1-1.414 0l-3-3a1 1 0 0 1 0-1.414z"/></svg>'); background-repeat: no-repeat; background-position: right 16px center; background-size: 16px; padding-right: 40px; }
         .form-group input:focus, .form-group select:focus { border-color: #A03FA3; box-shadow: 0 0 0 3px rgba(160,63,163,0.1); outline: none; background: #FFFFFF; }
         .checkbox-group { display: flex; align-items: flex-start; gap: 12px; margin-top: 10px; }
         .checkbox-group input { margin-top: 4px; cursor: pointer; width: 18px; height: 18px; }
@@ -719,7 +720,7 @@
                 </div>
 
                 <div class="diff-btn-wrapper">
-                    <a href="javascript:void(0);" onclick="document.getElementById(\'waitlistModal\').style.display=\'flex\';" class="btn" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; padding: clamp(16px, 1.5vw, 22px) clamp(30px, 3vw, 50px); border-radius: 50px; font-size: clamp(13px, 1.2vw, 15px); text-decoration: none; display: inline-block; box-shadow: 0 10px 30px rgba(160, 63, 163, 0.3);">
+                    <a href="javascript:void(0);" onclick="document.getElementById('waitlistModal').style.display='flex';" class="btn" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; padding: clamp(16px, 1.5vw, 22px) clamp(30px, 3vw, 50px); border-radius: 50px; font-size: clamp(13px, 1.2vw, 15px); text-decoration: none; display: inline-block; box-shadow: 0 10px 30px rgba(160, 63, 163, 0.3);">
                         JOIN THE WAITLIST
                     </a>
                 </div>
@@ -814,7 +815,7 @@
             <p class="color-reveal" style="font-size: clamp(20px, 2.5vw, 24px); color: rgba(255,255,255,0.9) !important; line-height: 1.7; font-weight: 400; margin-bottom: 50px;">
                 A focused sprint designed to rewire your financial habits and help you build your first intelligent portfolio alongside thousands of other driven women.
             </p>
-            <a href="javascript:void(0);" onclick="document.getElementById(\'waitlistModal\').style.display=\'flex\';" class="btn" style="text-transform: uppercase;">
+            <a href="javascript:void(0);" onclick="document.getElementById('waitlistModal').style.display='flex';" class="btn" style="text-transform: uppercase;">
                 JOIN THE WAITLIST
             </a>
         </div>
