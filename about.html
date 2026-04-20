@@ -523,12 +523,12 @@
         .partner-card-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(160,63,163,0.85) 0%, rgba(160,63,163,0) 50%); transition: background 0.4s ease; z-index: 2; }
         .partner-card:hover img { transform: scale(1.05); }
         .partner-card:hover .partner-card-overlay { background: rgba(160,63,163,0.9); }
-        .partner-card-content { position: absolute; bottom: 0; left: 0; width: 100%; padding: 28px 24px; display: flex; flex-direction: column; justify-content: flex-end; z-index: 3; }
-        .partner-card-title { font-size: 22px; font-weight: 800; color: #FFFFFF; margin: 0; line-height: 1.2; font-family: 'Inter', sans-serif; transform: translateY(0); transition: transform 0.4s ease; text-align: left; }
-        .partner-card-text-container { opacity: 0; visibility: hidden; transform: translateY(20px); transition: opacity 0.4s ease, transform 0.4s ease; margin-top: 12px; text-align: left; display: flex; flex-direction: column; gap: 12px; margin-bottom: -15px; }
-        .partner-card:hover .partner-card-title { transform: translateY(-10px); }
-        .partner-card:hover .partner-card-text-container { opacity: 1; visibility: visible; transform: translateY(-10px); }
-        .partner-card-text { font-size: 14px; color: rgba(255,255,255,0.9); font-weight: 700; line-height: 1.5; margin: 0; }
+        .partner-card-content { position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px 24px; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; z-index: 3; }
+        .partner-card-title { font-size: 22px; font-weight: 800; color: #FFFFFF; margin: 0; line-height: 1.2; font-family: 'Inter', sans-serif; transform: translateY(0); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); text-align: center; }
+        .partner-card-text-container { position: absolute; left: 0; width: 100%; padding: 0 24px; bottom: -80px; opacity: 0; visibility: hidden; transition: opacity 0.4s ease, bottom 0.4s cubic-bezier(0.16, 1, 0.3, 1); text-align: center; display: flex; flex-direction: column; gap: 12px; }
+        .partner-card:hover .partner-card-title { transform: translateY(-120px); }
+        .partner-card:hover .partner-card-text-container { opacity: 1; visibility: visible; bottom: 30px; }
+        .partner-card-text { font-size: 14px; color: rgba(255,255,255,0.9); font-weight: 700; line-height: 1.5; margin: 0; text-align: center; }
         .partner-card-cta { font-size: 11px; font-weight: 800; color: #A03FA3; text-transform: uppercase; letter-spacing: 1.5px; text-decoration: none; }
 
 
@@ -561,7 +561,7 @@
             <img src="./public/images/common/logo-color.png?v=2" alt="CASTLE" class="logo-dark">
         </a>
         <nav class="nav-links" id="main-nav">
-            <a href="#reality" style="text-transform: none;">We are Castle</a>
+            <a href="about.html" style="text-transform: none;">About</a>
             <div class="dropdown">
                 <a href="#" style="text-transform: none;">Programs ▾</a>
                 <div class="dropdown-content">
@@ -591,147 +591,192 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section" style="position: relative; display: flex; align-items: center; justify-content: flex-start; padding: 15vh clamp(30px, 5vw, 100px) 100px; min-height: 80vh; background-image: url('./public/images/common/hero-bg.jpg'); background-size: cover; background-position: center; background-attachment: fixed; background-color: #111111;">
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, rgba(17,17,17,0.95) 0%, rgba(17,17,17,0.7) 50%, rgba(17,17,17,0.3) 100%); z-index: 1;"></div>
-        <div class="container" style="position: relative; z-index: 2; max-width: 1500px; margin: 0; display: flex; flex-direction: column;">
-            <h1 class="hero-title" style="font-size: clamp(48px, 8vw, 100px); color: #FFFFFF; line-height: 1; letter-spacing: -3px; margin-bottom: 20px; font-family: 'Inter', sans-serif;">
-                Castle: Own your Wealth.<br>
-                <span style="color: #A03FA3;">Own your Future.</span>
-            </h1>
-            <p style="font-size: clamp(20px, 2.5vw, 24px); color: rgba(255,255,255,0.9); font-weight: 500; font-family: 'Inter', sans-serif; max-width: 700px; line-height: 1.5; margin-bottom: 0;">
-                Castle is where your relationship with money changes—for real.
+    <!-- ABOUT HERO SECTION -->
+    <section style="padding: 180px 20px 80px 20px; background-color: #F8F8FA; text-align: center; border-bottom: 1px solid #E5E7EB;">
+        <div class="container" style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <p style="font-family: 'Caveat', cursive; font-size: clamp(32px, 5vw, 48px); color: #A03FA3; margin-bottom: 15px; font-weight: 700; line-height: 1;">
+                What is Castle:
             </p>
-        </div>
-    </section>
-
-    <!-- The Problem Box -->
-    <section style="background-color: #FFFFFF; padding: clamp(80px, 10vw, 120px) 20px; text-align: center; border-bottom: 1px solid #F3F4F6;">
-        <div class="container" style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
-            <h2 style="font-size: clamp(28px, 4vw, 42px); font-weight: 800; line-height: 1.3; color: #111111; font-family: 'Inter', sans-serif; letter-spacing: -1px; text-wrap: balance;">
-                Not another personal finance course. Not another app telling you to budget better. Not another place where finance feels complicated, intimidating, or not made for you.
-            </h2>
-        </div>
-    </section>
-
-    <!-- Core Concept Section -->
-    <section style="background-color: #F9F9F9; padding: 100px 0; border-bottom: 1px solid #E5E7EB;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; display: grid; gap: 60px; grid-template-columns: 1fr;">
-            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <p style="font-size: clamp(20px, 2.5vw, 26px); color: #111111; font-weight: 700; line-height: 1.5; margin-bottom: 40px; font-family: 'Inter', sans-serif;">
-                    Castle is an AI-first, Web3-powered ecosystem designed to help you think differently, act differently, and build real wealth.
-                </p>
-                <div style="font-size: 18px; color: #4B5563; line-height: 1.7; font-family: 'Inter', sans-serif; text-align: left;">
-                    <p style="margin-bottom: 24px;">Because here’s the truth: most women don’t have a money problem—they have an identity problem. You were taught to play it safe, to save, to wait, to second-guess yourself. Meanwhile, wealth is built by those who move, invest, and decide.</p>
-                    <p style="font-family: 'Caveat', cursive; font-size: 48px; color: #A03FA3; font-weight: 700; margin-bottom: 30px; text-align: center; line-height: 1.2;">Castle changes that.</p>
-                    <p style="margin-bottom: 24px;">Through an AI Financial Coach, guided challenges, and a powerful global community, you don’t just learn about money—you rewire how you think about it. You build confidence. You take action. You start seeing opportunities where you once saw risk.</p>
-                    <p style="margin-bottom: 24px;">And everything lives in one place—your financial command center. A dashboard that gives you clarity on where you stand, where you’re going, and how to get there, plus access to curated investment opportunities designed to actually move the needle.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Web3 Ecosystem -->
-    <section style="padding: 100px 0; background-color: #111111; color: #FFFFFF;">
-        <div class="container" style="max-width: 1000px; margin: 0 auto; text-align: center; padding: 0 5vw;">
-            <h2 style="font-size: clamp(32px, 4vw, 48px); font-weight: 800; margin-bottom: 40px; letter-spacing: -1px; color: #FFFFFF; line-height: 1.2;">But this isn’t just about tools.<br>It’s about how you show up.</h2>
-            <div style="font-size: 18px; color: rgba(255,255,255,0.9); line-height: 1.7; font-family: 'Inter', sans-serif; margin-bottom: 50px; text-align: left;">
-                <p style="margin-bottom: 24px;">Castle is where you stop being “careful with money” and start being intentional with wealth. Where you go from saving, to building, from watching to investing, from doing it alone to doing it with women who are playing bigger.</p>
-                <p style="margin-bottom: 24px;">Because wealth doesn’t grow in isolation. It grows in circles, cohorts, and networks. And here’s where it gets interesting:</p>
-                <p style="margin-bottom: 24px;">Castle runs on a new model. A Web3 ecosystem where your network, your knowledge, your energy—they all have value. You don’t just join, you participate. You don’t just participate, you own. You can invest with capital, yes—but also with your talent, your voice, your connections. You can become a founding partner in something you help build.</p>
-                
-                <h3 style="font-family: 'Caveat', cursive; font-size: clamp(40px, 5vw, 56px); color: #A03FA3; margin-top: 50px; margin-bottom: 20px; line-height: 1.1; text-align: center; font-weight: 700;">
-                    Not asking for access.<br>Not waiting for permission.<br>Building your own table.
-                </h3>
-            </div>
+            <h1 style="font-size: clamp(40px, 6vw, 76px); font-weight: 900; line-height: 1.1; margin-bottom: 40px; letter-spacing: -2px; font-family: 'Inter', sans-serif; color: #111111; text-wrap: balance;">
+                Castle: Own your Wealth.<br>Own your Future.
+            </h1>
             
-            <div style="background: rgba(160, 63, 163, 0.1); padding: 50px 30px; border-radius: 5px; border: 1px solid rgba(160, 63, 163, 0.3); display: inline-block;">
-                <p style="font-size: 20px; font-weight: 500; font-family: 'Inter', sans-serif; margin-bottom: 20px; color: rgba(255,255,255,0.9);">Because the shift is already happening. Women are about to control more wealth than ever before in history.</p>
-                <h3 style="font-size: clamp(28px, 4vw, 40px); font-weight: 900; color: #A03FA3; margin: 0; font-family: 'Inter', sans-serif; letter-spacing: -1px;">The only question is: Will you Own it?</h3>
+            <div style="font-size: clamp(18px, 2.2vw, 24px); color: #4B5563; font-weight: 400; line-height: 1.6; text-align: left; margin: 0 auto;">
+                <p style="margin-bottom: 24px; font-weight: 600; color: #111111;">
+                    Castle is where your relationship with money changes—for real.
+                </p>
+                <p style="margin-bottom: 24px;">
+                    <b style="color: #A03FA3;">Not another personal finance course.</b> Not another app telling you to budget better. Not another place where finance feels complicated, intimidating, or not made for you.
+                </p>
+                <p style="margin-bottom: 32px;">
+                    Castle is an <b style="color: #111111;">AI-first, Web3-powered ecosystem</b> designed to help you think differently, act differently, and build real wealth.
+                </p>
+                <p style="margin-bottom: 24px;">
+                    Because here's the truth: most women don't have a money problem—they have an <b style="color: #A03FA3;">identity problem</b>. You were taught to play it safe, to save, to wait, to second-guess yourself. Meanwhile, wealth is built by those who move, invest, and decide.
+                </p>
+                <p style="font-family: 'Caveat', cursive; font-size: clamp(40px, 6vw, 65px); color: #A03FA3; margin: 40px 0; font-weight: 700; line-height: 1; text-align: center;">
+                    Castle changes that.
+                </p>
+                <p style="margin-bottom: 24px;">
+                    Through an AI Financial Coach, guided challenges, and a powerful global community, you don't just learn about money—you rewire how you think about it. You build confidence. You take action. You start seeing opportunities where you once saw risk.
+                </p>
+                <p style="margin-bottom: 24px;">
+                    And everything lives in one place—your financial command center. A dashboard that gives you clarity on where you stand, where you're going, and how to get there, plus access to curated investment opportunities designed to actually move the needle.
+                </p>
+                <p style="margin-bottom: 24px; font-weight: 600; color: #111111;">
+                    But this isn't just about tools. It's about how you show up.
+                </p>
+                <p style="margin-bottom: 24px;">
+                    Castle is where you stop being "careful with money" and start being intentional with wealth. Where you go from saving to building, from watching to investing, from doing it alone to doing it with women who are playing bigger.
+                </p>
+                <p style="margin-bottom: 24px;">
+                    Because wealth doesn't grow in isolation. It grows in circles, cohorts, and networks. And here's where it gets interesting:
+                </p>
+                <p style="margin-bottom: 32px; padding: 24px; background: rgba(160, 63, 163, 0.05); border-radius: 12px; border-left: 4px solid #A03FA3;">
+                    <b style="color: #111111;">Castle runs on a new model.</b> A Web3 ecosystem where your network, your knowledge, your energy—they all have value. <b style="color: #A03FA3;">You don't just join, you participate. You don't just participate, you own.</b> You can invest with capital, yes—but also with your talent, your voice, your connections. You can become a founding partner in something you help build.
+                </p>
+                <p style="margin-bottom: 40px; font-weight: 600; text-align: center;">
+                    Not asking for access. Not waiting for permission. Building your own table.
+                </p>
+                <p style="margin-bottom: 32px;">
+                    Because the shift is already happening. Women are about to control more wealth than ever before in history.
+                </p>
+                <p style="font-size: clamp(28px, 4vw, 42px); font-weight: 800; color: #111111; text-align: center; margin-bottom: 40px; letter-spacing: -1px;">
+                    The only question is: Will you <span style="color: #A03FA3;">Own</span> it?
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section id="team" style="padding: 100px 0; background-color: #FFFFFF;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 5vw; text-align: center;">
-            <h2 class="section-heading" style="margin-bottom: 60px;">Meet the Team</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px;">
-                
-                <!-- Team Member 1 Placeholder -->
-                <div style="text-align: left;">
-                    <div class="image-placeholder" style="aspect-ratio: 3/4; margin-bottom: 24px;">
-                        <span>Photo Placeholder</span>
+    <!-- TEAM SECTION -->
+    <section style="padding: 100px 20px; background-color: #FFFFFF; text-align: center;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+            <span class="section-eyebrow" style="color: #A03FA3; font-weight: 700; font-size: 14px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 16px; display: block;">OUR TEAM</span>
+            <h2 class="section-heading" style="font-size: clamp(36px, 5vw, 64px); font-weight: 900; line-height: 1.1; margin-bottom: 60px; letter-spacing: -2px; font-family: 'Inter', sans-serif; color: #111111;">
+                Meet the Builders
+            </h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+                <!-- Team Member 1 -->
+                <div style="text-align: center; background: #F8F8FA; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
+                    <div style="width: 100%; aspect-ratio: 1/1; background-color: #E5E7EB;"></div>
+                    <div style="padding: 24px;">
+                        <h3 style="font-size: 20px; font-weight: 800; color: #111111; margin-bottom: 5px;">Jane Doe</h3>
+                        <p style="font-size: 14px; color: #A03FA3; font-weight: 600; margin-bottom: 15px;">Chief Executive Officer</p>
+                        <div style="display: flex; gap: 12px; justify-content: center;">
+                            <a href="#" style="color: #4B5563; text-decoration: none;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                            <a href="mailto:fake1@buildyourcastle.ai" style="color: #4B5563; text-decoration: none;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+                        </div>
                     </div>
-                    <h3 style="font-size: 24px; font-weight: 800; color: #111111; margin-bottom: 5px; font-family: 'Inter', sans-serif;">Full Name</h3>
-                    <p style="font-size: 13px; color: #A03FA3; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; font-family: 'Inter', sans-serif;">Position / Title</p>
-                    <p style="font-size: 15px; color: #4B5563; line-height: 1.6; font-family: 'Inter', sans-serif;">Short description or bio for the team member. Insert text summarizing their role, background, and contribution.</p>
                 </div>
-                
-                <!-- Team Member 2 Placeholder -->
-                <div style="text-align: left;">
-                    <div class="image-placeholder" style="aspect-ratio: 3/4; margin-bottom: 24px;">
-                        <span>Photo Placeholder</span>
+                <!-- Team Member 2 -->
+                <div style="text-align: center; background: #F8F8FA; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
+                    <div style="width: 100%; aspect-ratio: 1/1; background-color: #E5E7EB;"></div>
+                    <div style="padding: 24px;">
+                        <h3 style="font-size: 20px; font-weight: 800; color: #111111; margin-bottom: 5px;">Sarah Smith</h3>
+                        <p style="font-size: 14px; color: #A03FA3; font-weight: 600; margin-bottom: 15px;">Head of Product</p>
+                        <div style="display: flex; gap: 12px; justify-content: center;">
+                            <a href="#" style="color: #4B5563; text-decoration: none;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                            <a href="mailto:fake2@buildyourcastle.ai" style="color: #4B5563; text-decoration: none;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+                        </div>
                     </div>
-                    <h3 style="font-size: 24px; font-weight: 800; color: #111111; margin-bottom: 5px; font-family: 'Inter', sans-serif;">Full Name</h3>
-                    <p style="font-size: 13px; color: #A03FA3; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; font-family: 'Inter', sans-serif;">Position / Title</p>
-                    <p style="font-size: 15px; color: #4B5563; line-height: 1.6; font-family: 'Inter', sans-serif;">Short description or bio for the team member. Insert text summarizing their role, background, and contribution.</p>
                 </div>
-
-                <!-- Team Member 3 Placeholder -->
-                <div style="text-align: left;">
-                    <div class="image-placeholder" style="aspect-ratio: 3/4; margin-bottom: 24px;">
-                        <span>Photo Placeholder</span>
+                <!-- Team Member 3 -->
+                <div style="text-align: center; background: #F8F8FA; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
+                    <div style="width: 100%; aspect-ratio: 1/1; background-color: #E5E7EB;"></div>
+                    <div style="padding: 24px;">
+                        <h3 style="font-size: 20px; font-weight: 800; color: #111111; margin-bottom: 5px;">Emma Johnson</h3>
+                        <p style="font-size: 14px; color: #A03FA3; font-weight: 600; margin-bottom: 15px;">Lead Designer</p>
+                        <div style="display: flex; gap: 12px; justify-content: center;">
+                            <a href="#" style="color: #4B5563; text-decoration: none;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                            <a href="mailto:fake3@buildyourcastle.ai" style="color: #4B5563; text-decoration: none;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+                        </div>
                     </div>
-                    <h3 style="font-size: 24px; font-weight: 800; color: #111111; margin-bottom: 5px; font-family: 'Inter', sans-serif;">Full Name</h3>
-                    <p style="font-size: 13px; color: #A03FA3; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; font-family: 'Inter', sans-serif;">Position / Title</p>
-                    <p style="font-size: 15px; color: #4B5563; line-height: 1.6; font-family: 'Inter', sans-serif;">Short description or bio for the team member. Insert text summarizing their role, background, and contribution.</p>
                 </div>
-
+                <!-- Team Member 4 -->
+                <div style="text-align: center; background: #F8F8FA; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
+                    <div style="width: 100%; aspect-ratio: 1/1; background-color: #E5E7EB;"></div>
+                    <div style="padding: 24px;">
+                        <h3 style="font-size: 20px; font-weight: 800; color: #111111; margin-bottom: 5px;">Laura Davis</h3>
+                        <p style="font-size: 14px; color: #A03FA3; font-weight: 600; margin-bottom: 15px;">Community Director</p>
+                        <div style="display: flex; gap: 12px; justify-content: center;">
+                            <a href="#" style="color: #4B5563; text-decoration: none;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                            <a href="mailto:fake4@buildyourcastle.ai" style="color: #4B5563; text-decoration: none;"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Media Kit -->
-    <section id="media-kit" style="padding: 100px 0; background-color: #F8F3EC; text-align: center;">
-        <div class="container" style="max-width: 800px; margin: 0 auto; padding: 0 5vw;">
-            <h2 class="section-heading" style="margin-bottom: 20px;">Media Kit</h2>
-            <p style="font-size: 18px; color: #4B5563; margin-bottom: 50px; font-family: 'Inter', sans-serif; line-height: 1.5;">Download our official logos, brand manual, and assets to properly represent Castle everywhere.</p>
-            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                <a href="#" class="btn-secondary" style="border: 2px solid #111111; display: inline-flex; justify-content: center; min-width: 200px;">DOWNLOAD LOGOS</a>
-                <a href="#" class="btn-secondary" style="background-color: transparent; color: #111111; border: 2px solid #111111; display: inline-flex; justify-content: center; min-width: 200px;">BRAND MANUAL</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Subscribe -->
-    <section id="about-contact" style="padding: 120px 0; background-color: #FFFFFF; border-top: 1px solid #E5E7EB; border-bottom: 1px solid #E5E7EB; text-align: center;">
-        <div class="container" style="max-width: 900px; margin: 0 auto; padding: 0 5vw;">
-            <div class="subscribe-box" style="margin-top: 0; box-shadow: 0 20px 50px rgba(0,0,0,0.05); border-color: #F3F4F6;">
-                <h3 style="font-size: clamp(36px, 5vw, 48px); font-weight: 900; margin-bottom: 20px;">How to contact us</h3>
-                <p style="font-size: 18px; color: #4B5563; margin-bottom: 30px; font-family: 'Inter', sans-serif; line-height: 1.6;">Have questions, want to partner, or just want to say hi? Send us an email or connect with us on our social networks.</p>
-                <a href="mailto:castle@buildyourcastle.ai" style="display: inline-block; font-size: clamp(24px, 3.5vw, 36px); font-weight: 800; color: #A03FA3; margin-bottom: 50px; text-decoration: none; font-family: 'Inter', sans-serif; letter-spacing: -1px;">castle@buildyourcastle.ai</a>
+    <!-- MEDIA KIT & CONTACT SECTION -->
+    <section style="padding: 100px 20px; background-color: #F8F8FA; text-align: center;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 60px;">
+            <style>
+                @media(min-width: 768px) {
+                    .media-contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; text-align: left; }
+                }
+            </style>
+            <div class="media-contact-grid">
                 
-                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 20px; color: #111111;">Join our global community</h4>
-                <div class="subscribe-form" style="margin-bottom: 30px; max-width: 550px;">
-                    <input type="email" placeholder="Enter your email address" class="subscribe-input">
-                    <button class="subscribe-btn" style="padding: 16px 40px;">SUBSCRIBE</button>
+                <!-- Media Kit -->
+                <div style="background: #FFFFFF; padding: 50px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
+                    <span class="section-eyebrow" style="color: #A03FA3; font-weight: 700; font-size: 14px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 16px; display: block;">PRESS RESOURCES</span>
+                    <h2 style="font-size: 32px; font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; font-family: 'Inter', sans-serif;">Media Kit</h2>
+                    <p style="color: #4B5563; line-height: 1.6; margin-bottom: 30px;">Download our official Brand Manual and high-resolution logos for press and partner usage.</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <a href="#" class="btn" style="text-transform: uppercase; padding: 12px 24px; font-size: 13px;">Download Logos</a>
+                        <a href="#" class="btn" style="background-color: transparent; color: #111111; border: 1px solid #111111; text-transform: uppercase; padding: 12px 24px; font-size: 13px;">Brand Manual</a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div style="background: #111111; color: #FFFFFF; padding: 50px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
+                    <span class="section-eyebrow" style="color: #A03FA3; font-weight: 700; font-size: 14px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 16px; display: block;">REACH OUT</span>
+                    <h2 style="font-size: 32px; font-weight: 900; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; font-family: 'Inter', sans-serif; color: #FFFFFF;">How to contact us</h2>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 30px;">Have questions, partnership inquiries, or want to say hello? Drop us a line.</p>
+                    
+                    <a href="mailto:castle@buildyourcastle.ai" style="display: flex; align-items: center; gap: 15px; color: #FFFFFF; text-decoration: none; font-size: 18px; font-weight: 600; margin-bottom: 30px; transition: color 0.3s;">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#A03FA3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        castle@buildyourcastle.ai
+                    </a>
+
+                    <div style="display: flex; gap: 20px;">
+                        <a href="https://www.instagram.com/buildyourcastle_ai/" target="_blank" style="color: #FFFFFF; transition: color 0.3s;" onmouseover="this.style.color='#A03FA3'" onmouseout="this.style.color='#FFFFFF'"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                        <a href="https://www.linkedin.com/company/buildyourcastle/about/" target="_blank" style="color: #FFFFFF; transition: color 0.3s;" onmouseover="this.style.color='#A03FA3'" onmouseout="this.style.color='#FFFFFF'"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                        <a href="https://x.com/BuildYourCastle" target="_blank" style="color: #FFFFFF; transition: color 0.3s;" onmouseover="this.style.color='#A03FA3'" onmouseout="this.style.color='#FFFFFF'"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Final CTA / Newsletter -->
+    <section style="position: relative; background-image: url('./public/images/common/cta-final.jpg'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat; padding: 120px 0; text-align: center; min-height: 100vh; display: flex; align-items: center; justify-content: center; width: 100%;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(17,17,17,0.6); z-index: 1;"></div>
+        <div class="container" style="position: relative; z-index: 2; max-width: 800px; margin: 0 auto; padding: 0 5vw; text-align: center;">
+            <h3 style="font-size: clamp(40px, 5vw, 72px); font-weight: 900; color: #FFFFFF; margin-bottom: 20px; letter-spacing: -2px; line-height: 1.1; font-family: 'Inter', sans-serif; text-shadow: 0 4px 20px rgba(0,0,0,0.4);">Subscribe to our Newsletter</h3>
+            <p style="font-size: clamp(20px, 2.5vw, 28px); color: rgba(255,255,255,0.95); line-height: 1.6; max-width: 700px; margin: 0 auto 50px auto; font-family: 'Inter', sans-serif; text-shadow: 0 2px 15px rgba(0,0,0,0.4);">Join the movement. Get the latest insights on wealth building and investments sent straight to your inbox.</p>
+            <form class="subscribe-form" onsubmit="event.preventDefault(); alert('Subscribed to Newsletter!');" style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+                <input type="email" class="subscribe-input" placeholder="Enter your email" required style="padding: 16px 24px; border-radius: 50px; border: none; font-size: 16px; min-width: 300px; flex-grow: 1; outline: none; font-family: 'Inter', sans-serif;">
+                <button type="submit" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; padding: 16px 40px; border-radius: 50px; border: none; font-size: 14px; cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(160,63,163,0.3); font-family: 'Inter', sans-serif;">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-top">
                 <div class="footer-col brand-col">
                     <img src="./public/images/common/logo-color.png?v=1" alt="Castle" class="footer-brand" style="height: 48px; object-fit: contain;">
-                    <p style="margin-bottom: 5px;">Castle Is The OS* Of Women's Wealth.</p>
-                    <p style="font-size: 11px; opacity: 0.6; margin-bottom: 20px;">*Operating System</p>
+                    <p style="margin-bottom: 20px;">Castle Is The OS Of Women's Wealth.</p>
                     <div class="social-links">
-                        <a href="#"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
-                        <a href="#"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                        <a href="https://www.instagram.com/buildyourcastle_ai/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                        <a href="https://www.linkedin.com/company/buildyourcastle/about/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
                         <a href="#"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.86-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z M9.799,15.276V8.724l5.632,3.276L9.799,15.276z"/></svg></a>
-                        <a href="#"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        <a href="https://x.com/BuildYourCastle" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -742,6 +787,7 @@
                 </div>
                 <div class="footer-col">
                     <h4>About</h4>
+                    <a href="about.html">We Are Castle</a>
                     <a href="#blog">Blog</a>
                 </div>
                 <div class="footer-col">
