@@ -88,11 +88,10 @@
         
 
         .hero {
-            min-height: 100vh;
-
+            min-height: 90vh; /* Made taller as requested */
             position: relative;  display: flex; align-items: stretch; justify-content: flex-start;
-            background-color: #F8F8FA; overflow: hidden; padding: 0 clamp(30px, 5vw, 100px);
-            background-image: url('./public/images/common/hero-silvina.jpg');
+            background-color: #A03FA3; overflow: hidden; padding: 0 clamp(30px, 5vw, 100px);
+            /* Photo removed temporarily until replacement is found */
             background-size: cover;
             background-position: right center;
             background-attachment: fixed;
@@ -100,7 +99,7 @@
         }
         @media (max-width: 768px) {
             .hero {
-                background-image: url('./public/images/common/hero-bg-mobile.jpg');
+                /* Removed mobile photo backup to retain solid purple */
                 background-position: center;
                 background-attachment: scroll;
             }
@@ -592,7 +591,7 @@
     </header>
 
     <!-- ABOUT HERO SECTION -->
-    <section class="hero" id="home" style="min-height: 60vh; max-height: 600px; display: flex; align-items: center; justify-content: center;">
+    <section class="hero" id="home" style="min-height: 90vh; display: flex; align-items: center; justify-content: center;">
         <div class="hero-gradient" style="background: linear-gradient(180deg, rgba(8,8,8,0.3) 0%, rgba(8,8,8,0.85) 100%);"></div>
         <div class="hero-container" style="margin-left: 0; padding: 0; align-items: center; z-index: 3; margin-top: 50px;">
             <div class="hero-content" style="align-items: center; text-align: center; justify-content: center; gap: 15px;">
@@ -607,12 +606,12 @@
     </section>
 
     <!-- CONTENT SECTION -->
-    <section style="padding: 100px 20px; background-color: #F8F8FA; text-align: center; border-bottom: 1px solid #E5E7EB;">
-        <div class="container" style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-            <div style="font-size: clamp(18px, 2.2vw, 24px); color: #2A2A2A; font-weight: 400; line-height: 1.6; text-align: left; margin: 0 auto;">
-                <p style="margin-bottom: 24px; font-weight: 600; color: #1A1A1A;">
+    <section style="padding: 100px 20px; background-color: #FFFFFF; text-align: center; border-bottom: 1px solid #F3F4F6;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div style="font-size: clamp(18px, 2vw, 24px); color: #2A2A2A; font-weight: 400; line-height: 1.6; text-align: center; margin: 0 auto; text-wrap: balance;">
+                <h2 style="font-size: clamp(36px, 5vw, 64px); font-weight: 900; line-height: 1.1; margin-bottom: 40px; letter-spacing: -2px; font-family: 'Inter', sans-serif; color: #1A1A1A; text-wrap: balance;">
                     Castle is where your relationship with money changes—for real.
-                </p>
+                </h2>
                 <p style="margin-bottom: 24px;">
                     <b style="color: #A03FA3;">Not another personal finance course.</b> Not another app telling you to budget better. Not another place where finance feels complicated, intimidating, or not made for you.
                 </p>
