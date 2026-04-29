@@ -47,7 +47,7 @@
         
         header.scrolled .nav-links a { color: #1A1A1A; }
         header.scrolled .nav-links a:hover { color: #A03FA3; }
-        header.scrolled .lang-select { color: #1A1A1A; }
+        header.scrolled .lang-select { color: #1A1A1A; border-color: #E5E7EB; }
         header.scrolled .btn-nav { background: rgba(17,17,17,0.05); color: #1A1A1A; border: 1px solid rgba(17,17,17,0.1); }
         header.scrolled .btn-nav:hover { background: #1A1A1A; color: #FFFFFF; border-color: #1A1A1A; }
 
@@ -68,8 +68,8 @@
         
         .header-actions { display: flex; align-items: center; gap: 24px; }
         .lang-select { 
-            background: transparent; border: none; font-family: 'Inter', sans-serif;
-            font-weight: 600; font-size: 14px; color: #FFFFFF; cursor: pointer; outline: none; padding-right: 4px;
+            background: transparent; border: 1px solid rgba(255,255,255,0.5); font-family: 'Inter', sans-serif;
+            font-weight: 700; font-size: 14px; color: #FFFFFF; cursor: pointer; outline: none; padding: 4px 8px; border-radius: 4px;
         }
         .lang-select option { color: #1A1A1A; }
         .btn-nav {
@@ -625,7 +625,7 @@
             ☰
         </button>
         <div class="header-actions">
-            <select class="lang-select" onchange="if(this.value) window.location.href=this.value" style="color: #1A1A1A; border: 1px solid #E5E7EB; padding: 4px 8px; border-radius: 4px;">
+            <select class="lang-select" onchange="if(this.value) window.location.href=this.value">
                 <option value="index.html">ENG</option>
                 <option value="index_es.html" selected>ESP</option>
             </select>
