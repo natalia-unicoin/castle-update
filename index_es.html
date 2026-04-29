@@ -47,7 +47,7 @@
         
         header.scrolled .nav-links a { color: #1A1A1A; }
         header.scrolled .nav-links a:hover { color: #A03FA3; }
-        header.scrolled .lang-select { color: #1A1A1A; border-color: #E5E7EB; }
+        header.scrolled .lang-select { color: #1A1A1A !important; border-color: #E5E7EB; background-image: url('data:image/svg+xml;utf8,<svg fill="%231A1A1A" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>'); }
         header.scrolled .btn-nav { background: rgba(17,17,17,0.05); color: #1A1A1A; border: 1px solid rgba(17,17,17,0.1); }
         header.scrolled .btn-nav:hover { background: #1A1A1A; color: #FFFFFF; border-color: #1A1A1A; }
 
@@ -68,8 +68,11 @@
         
         .header-actions { display: flex; align-items: center; gap: 24px; }
         .lang-select { 
-            background: transparent; border: 1px solid rgba(255,255,255,0.5); font-family: 'Inter', sans-serif;
-            font-weight: 700; font-size: 14px; color: #FFFFFF; cursor: pointer; outline: none; padding: 4px 8px; border-radius: 4px;
+            background-color: transparent; border: 1px solid rgba(255,255,255,0.5); font-family: 'Inter', sans-serif;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%23FFFFFF" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+            background-repeat: no-repeat; background-position: right 4px center; background-size: 16px;
+            -webkit-appearance: none; appearance: none;
+            font-weight: 700; font-size: 14px; color: #FFFFFF !important; cursor: pointer; outline: none; padding: 4px 24px 4px 8px; border-radius: 4px;
         }
         .lang-select option { color: #1A1A1A; }
         .btn-nav {
