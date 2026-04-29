@@ -611,11 +611,31 @@
             color: #A03FA3;
         }
     </style>
+
+    <!-- Language Auto-Detection -->
+    <script>
+        if (!localStorage.getItem('lang_selected')) {
+            var lang = navigator.language || navigator.userLanguage;
+            var isSpanish = lang.startsWith('es');
+            var currentPath = window.location.pathname;
+            var isCurrentSpanish = currentPath.indexOf('_es.html') !== -1;
+            
+            if (isSpanish && !isCurrentSpanish) {
+                var newPage = currentPath.split('/').pop();
+                if (!newPage || newPage === '/') newPage = 'index.html';
+                window.location.replace(newPage.replace('.html', '_es.html'));
+            } else if (!isSpanish && isCurrentSpanish) {
+                var newPage = currentPath.split('/').pop();
+                if (!newPage || newPage === '/') newPage = 'index_es.html';
+                window.location.replace(newPage.replace('_es.html', '.html'));
+            }
+        }
+    </script>
 </head>
 
     <body>
     <header id="main-header">
-        <a href="/" class="header-logo">
+        <a href="index.html" class="header-logo">
             <img src="./public/images/common/logo-color.png?v=2" alt="CASTLE" class="logo-light">
             <img src="./public/images/common/logo-color.png?v=2" alt="CASTLE" class="logo-dark">
         </a>
@@ -629,7 +649,7 @@
             ☰
         </button>
         <div class="header-actions">
-            <select class="lang-select" onchange="if(this.value) window.location.href=this.value">
+            <select class="lang-select" onchange="if(this.value) { localStorage.setItem('lang_selected', 'true'); window.location.href=this.value; }">
                 <option value="contact.html" >ENG</option>
                 <option value="contact_es.html">ESP</option>
             </select>
