@@ -625,7 +625,10 @@
             ☰
         </button>
         <div class="header-actions">
-            <!-- Blank for clean look -->
+            <select class="lang-select" onchange="if(this.value) window.location.href=this.value" style="color: #1A1A1A; border: 1px solid #E5E7EB; padding: 4px 8px; border-radius: 4px;">
+                <option value="index.html" selected>ENG</option>
+                <option value="index_es.html">ESP</option>
+            </select>
         </div>
     </header>
 
