@@ -631,15 +631,15 @@
         <div class="header-actions">
             <select class="lang-select" onchange="if(this.value) window.location.href=this.value">
                 <option value="about.html">ENG</option>
-                <option value="about_es.html" selected>ESP</option>
+                <option value="about_es.html" >ESP</option>
             </select>
         </div>
     </header>
 
     <!-- Hero Placeholder -->
-    <section class="hero snap-section" style="background-color: #1A1A1A; display: flex; align-items: center; justify-content: center; text-align: center; height: 60vh; border-bottom: 1px solid #333;">
+    <section class="hero snap-section" style="background-color: #1A1A1A; display: flex; align-items: center; justify-content: center; text-align: center; height: 100vh; border-bottom: 1px solid #333; background-image: none;">
         <div class="container" style="max-width: 1400px; padding: 0 4vw;">
-            <h1 class="hero-title color-reveal" style="color: #FFFFFF;">Somos Castle</h1>
+            <h1 class="hero-title color-reveal" style="color: #FFFFFF; font-size: clamp(60px, 8vw, 100px); letter-spacing: -2px;">Somos Castle</h1>
         </div>
     </section>
 
@@ -679,5 +679,211 @@
             </div>
         </div>
     </footer>
-    </body></html>
+    
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+
+
+    </div>
+
+    <!-- Mobile Horizontal Scroll Intersection Observer -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const indicatorContainers = document.querySelectorAll('.mobile-scroll-indicators');
+            
+            indicatorContainers.forEach(container => {
+                const targetId = container.getAttribute('data-target');
+                const scrollRow = document.getElementById(targetId);
+                if (!scrollRow) return;
+                
+                const cards = Array.from(scrollRow.children);
+                if (cards.length === 0) return;
+                
+                // Create dots
+                cards.forEach((_, index) => {
+                    const dot = document.createElement('div');
+                    dot.className = 'scroll-dot' + (index === 0 ? ' active' : '');
+                    container.appendChild(dot);
+                });
+                
+                const dots = container.querySelectorAll('.scroll-dot');
+                
+                // Observer to update dots when scrolling
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const index = cards.indexOf(entry.target);
+                            dots.forEach(d => d.classList.remove('active'));
+                            if(dots[index]) dots[index].classList.add('active');
+                        }
+                    });
+                }, {
+                    root: scrollRow,
+                    threshold: 0.6 // Card is active when 60% visible
+                });
+                
+                cards.forEach(card => observer.observe(card));
+            });
+        });
+    
+        // Word-by-Word Scroll Reveal
+        const revealParagraphs = document.querySelectorAll(".scroll-reveal-paragraph");
+        let allSpans = [];
+        if (revealParagraphs.length > 0) {
+            revealParagraphs.forEach(revealText => {
+                const words = revealText.innerText.split(/(\s+|&mdash;)/); // split by space or em-dash
+                revealText.innerHTML = '';
+                words.forEach(word => {
+                    if(word.trim() === '' && word !== '&mdash;') {
+                        revealText.appendChild(document.createTextNode(word));
+                    } else if(word.length > 0) {
+                        const span = document.createElement('span');
+                        span.className = 'reveal-word';
+                        span.innerHTML = word;
+                        revealText.appendChild(span);
+                        allSpans.push(span);
+                    }
+                });
+            });
+
+            const wordSpans = allSpans;
+            const scrollContainer = document.getElementById("scroll-reveal-container");
+            
+            const handleScrollReveal = () => {
+                const rect = scrollContainer.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                const start = windowHeight * 0.90; // Start revealing slightly above bottom
+                const end = windowHeight * 0.10;   // Finish near top
+                
+                const elementTop = rect.top;
+                const elementHeight = rect.height;
+                
+                let progress = (start - elementTop) / (start - end + elementHeight);
+                progress = Math.max(0, Math.min(1, progress));
+                
+                const activeCount = Math.floor(progress * wordSpans.length);
+                
+                wordSpans.forEach((span, index) => {
+                    if(index < activeCount) {
+                        span.classList.add('active');
+                    } else {
+                        span.classList.remove('active');
+                    }
+                });
+            };
+
+            // Hook onto scroll and scroll-snap container if exists
+            const snapSections = document.querySelectorAll('.snap-section');
+            if(window.innerWidth >= 1024) {
+               // The body handles the scroll since flex/snap architecture
+               document.body.addEventListener('scroll', handleScrollReveal);
+            }
+            window.addEventListener('scroll', handleScrollReveal);
+            document.documentElement.addEventListener('scroll', handleScrollReveal);
+            
+            // Re-check frequently just in case of weird scroll-snap behavior
+            setInterval(handleScrollReveal, 100);
+            
+            handleScrollReveal();
+        }
+    </script>
+
+    <!-- Waitlist Modal -->
+    <div id="waitlistModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 99999; background: rgba(17,17,17,0.85); align-items: center; justify-content: center; backdrop-filter: blur(8px);">
+        <div style="background: #FFFFFF; padding: 40px 40px; border-radius: 8px; max-width: 650px; width: 90%; position: relative; max-height: 90vh; overflow-y: auto; text-align: left; box-shadow: 0 40px 100px rgba(0,0,0,0.4);">
+            <button onclick="document.getElementById('waitlistModal').style.display='none';" style="position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 30px; cursor: pointer; color: #2A2A2A; line-height: 1; padding: 0;">&times;</button>
+            
+            <h2 class="section-heading color-reveal" style="margin-top: 10px; margin-bottom: 10px; text-align: center;">Únete a la Lista de Espera</h2>
+            <p style="text-align: center; color: #2A2A2A; font-family: 'Inter', sans-serif; margin-bottom: 30px; line-height: 1.5;">Toma el control de tu futuro financiero. Únete a la revolución de Riqueza liderada por Mujeres.</p>
+            
+            <form action="YOUR_MAILCHIMP_URL_HERE" method="POST" id="waitlistForm" class="waitlist-form">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fname">Nombre Completo *</label>
+                        <input type="text" id="fname" name="FNAME" required placeholder="Jane Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico *</label>
+                        <input type="email" id="email" name="EMAIL" required placeholder="jane@example.com">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Número de Teléfono</label>
+                        <input type="tel" id="phone" name="PHONE" placeholder="+1 234 567 8900">
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Edad</label>
+                        <input type="number" id="age" name="AGE" placeholder="30">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="country">País</label>
+                        <select id="country" name="COUNTRY">
+                            <option value="" disabled selected>Selecciona tu país</option>
+                            <option value="United States">Estados Unidos</option>
+                            <option value="United Kingdom">Reino Unido</option>
+                            <option value="Canada">Canadá</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Argentina">Argentina</option>
+                            <option value="Brazil">Brasil</option>
+                            <option value="Chile">Chile</option>
+                            <option value="Colombia">Colombia</option>
+                            <option value="Mexico">México</option>
+                            <option value="Peru">Perú</option>
+                            <option value="Spain">España</option>
+                            <option value="Other">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="linkedin">URL de LinkedIn</label>
+                        <input type="url" id="linkedin" name="LINKEDIN" placeholder="https://linkedin.com/in/janedoe">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="company">Empresa / Organización</label>
+                        <input type="text" id="company" name="COMPANY" placeholder="Acme Corp">
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Tu Rol / Cargo</label>
+                        <input type="text" id="role" name="ROLE" placeholder="Founder">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="instagram">Usuario de Instagram</label>
+                    <input type="text" id="instagram" name="INSTAGRAM" placeholder="@janedoe">
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="consent" name="CONSENT" required>
+                    <label for="consent">Doy mi consentimiento para que Castle me contacte para compartir actualizaciones sobre la plataforma, información de lanzamiento y eventos de la Comunidad.</label>
+                </div>
+
+                <button type="submit" class="waitlist-submit">Aplicar a la Lista de Espera</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+
+</html>
+
     
