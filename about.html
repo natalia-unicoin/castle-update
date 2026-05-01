@@ -473,6 +473,20 @@
         /* Footer */
         .site-footer { background-color: #FFFFFF; padding: 80px 0 40px; border-top: 1px solid #E5E7EB; font-family: 'Inter', sans-serif; }
         .footer-top { display: grid; grid-template-columns: 1fr; gap: 40px; margin-bottom: 80px; }
+        .footer-bottom { border-top: 1px solid rgba(0,0,0,0.1); padding-top: 30px; display: flex; flex-direction: column; gap: 20px; align-items: center; text-align: center; font-size: 14px; color: #4B5563; }
+        @media(min-width: 768px){ .footer-bottom { flex-direction: row; justify-content: space-between; text-align: left; } }
+        .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+        .footer-links a { color: #4B5563; }
+        .footer-links a:hover { color: #A03FA3; }
+
+        /* Buttons */
+        .btn, .btn-secondary { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; padding: 22px 60px; border-radius: 50px; font-size: 14px; cursor: pointer; text-align: center; border: none; }
+        .btn { background-color: #A03FA3; color: #FFFFFF; box-shadow: 0 20px 40px -10px rgba(160,63,163,0.6); }
+        .btn:hover { background-color: #B85AB8; transform: translateY(-3px); box-shadow: 0 25px 50px -10px rgba(184,90,184,0.8); color: #FFFFFF; }
+        .btn-secondary { background-color: #1A1A1A; color: #FFFFFF; }
+        .btn-secondary:hover { background-color: #333333; transform: translateY(-3px); color: #FFFFFF; }
+        @media (max-width: 768px) { .btn, .btn-secondary { width: 100%; padding: 20px 20px; box-sizing: border-box; } }
+
         @media(min-width: 768px){ .footer-top { grid-template-columns: 2fr 1fr 1fr 1fr; } }
         .brand-col { max-width: 350px; }
         .footer-brand { height: 28px; margin-bottom: 24px; }
@@ -789,7 +803,7 @@
                 <div class="color-reveal" style="background: #F8F8FA; border-radius: 20px; padding: 60px; text-align: center; border: 1px solid #E5E7EB;">
                     <h2 class="section-title" style="margin-bottom: 16px; font-size: 32px;">Media Kit</h2>
                     <p style="color: #4B5563; font-size: 18px; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto;">Download our official logos, brand manual, and press assets.</p>
-                    <a href="#" class="btn-primary" style="display: inline-block;">Download Assets</a>
+                    <a href="#" class="btn-secondary">Download Assets</a>
                 </div>
                 
                 <!-- Contact Us -->
@@ -797,8 +811,8 @@
                     <h2 class="section-title" style="margin-bottom: 16px; font-size: 32px;">How to Contact Us</h2>
                     <p style="color: #4B5563; font-size: 18px; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto;">Reach out for inquiries, partnerships, or to stay updated on our journey.</p>
                     <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px;">
-                        <a href="mailto:castle@buildyourcastle.ai" class="btn-primary" style="display: inline-block;">castle@buildyourcastle.ai</a>
-                        <a href="#subscribe" class="btn-primary" style="display: inline-block; background-color: #A03FA3; border-color: #A03FA3;">Subscribe</a>
+                        <a href="mailto:castle@buildyourcastle.ai" class="btn-secondary" style="text-transform: none; letter-spacing: 0;">castle@buildyourcastle.ai</a>
+                        <a href="#subscribe" class="btn">Subscribe</a>
                     </div>
                     <div class="team-social" style="justify-content: center; gap: 24px;">
                         <a href="https://www.instagram.com/buildyourcastle_ai/" target="_blank" title="Instagram"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
