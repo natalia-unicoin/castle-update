@@ -714,7 +714,7 @@
     </section>
 
     <!-- Manifesto Block 2 (Hero Style) -->
-    <section class="manifesto-block-2 snap-section" style="background-color: #F8F8FA; display: flex; align-items: center; justify-content: center; text-align: center; border-bottom: 1px solid #E5E7EB; background-image: none; padding: 80px 4vw;">
+    <section class="manifesto-block-2 snap-section" style="background-color: #F8F8FA; display: flex; align-items: center; justify-content: center; text-align: center; border-bottom: 1px solid #E5E7EB; background-image: none; padding: 20px 4vw;">
         <div class="color-reveal" style="max-width: 1000px; margin: 0 auto; color: #1A1A1A;">
             
             <p style="font-size: clamp(18px, 3vw, 24px); font-weight: 500; color: #4B5563; line-height: 1.5; margin-bottom: 10px; max-width: 800px; margin-left: auto; margin-right: auto;">
@@ -844,31 +844,17 @@
         </div>
     </section>
 
-    <!-- Resources & Contact Section -->
-    <section class="section snap-section" style="background-color: #FFFFFF; padding: 100px 4vw;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto;">
-            <div style="display: grid; grid-template-columns: 1fr; gap: 40px;">
-                <!-- Media Kit -->
-                <div class="color-reveal" style="background: #F8F8FA; border-radius: 20px; padding: 60px; text-align: center; border: 1px solid #E5E7EB;">
-                    <h2 class="section-title" style="margin-bottom: 16px; font-size: 32px;">Media Kit</h2>
-                    <p style="color: #4B5563; font-size: 18px; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto;">Download our official logos, brand manual, and press assets.</p>
-                    <a href="#" class="btn-secondary">Download Assets</a>
-                </div>
-                
-                <!-- Contact Us -->
-                <div class="color-reveal" style="background: #F8F8FA; border-radius: 20px; padding: 60px; text-align: center; border: 1px solid #E5E7EB;">
-                    <h2 class="section-title" style="margin-bottom: 16px; font-size: 32px;">How to Contact Us</h2>
-                    <p style="color: #4B5563; font-size: 18px; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto;">Reach out for inquiries, partnerships, or to stay updated on our journey.</p>
-                    <form class="subscribe-form" onsubmit="event.preventDefault(); alert('Subscribed to Newsletter!');" style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto;">
-                        <input type="email" class="subscribe-input" placeholder="Enter your email" required style="padding: 16px 24px; border-radius: 50px; border: 1px solid rgba(17,17,17,0.1); font-size: 16px; min-width: 300px; flex-grow: 1; outline: none; font-family: 'Inter', sans-serif;">
-                        <button type="submit" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 1.5px; padding: 16px 40px; border-radius: 50px; border: none; font-size: 14px; cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(160,63,163,0.3); font-family: 'Inter Tight', sans-serif; text-transform: uppercase;">SUBSCRIBE</button>
-                    </form>
-                    <div class="team-social" style="justify-content: center; gap: 24px;">
-                        <a href="https://www.instagram.com/buildyourcastle_ai/" target="_blank" title="Instagram"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
-                        <a href="https://www.linkedin.com/company/buildyourcastle/about/" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-                        <a href="https://x.com/BuildYourCastle" target="_blank" title="X (Twitter)"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-                    </div>
-                </div>
+    <!-- Final CTA / Newsletter -->
+    <section style="position: relative; background-image: url('./public/images/common/cta-final.jpg'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat; padding: 80px 0; text-align: center; min-height: 100vh; display: flex; align-items: center; justify-content: center; width: 100%;" class="snap-section">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(17,17,17,0.6); z-index: 1;"></div>
+        <div class="container" style="position: relative; z-index: 2; max-width: 1500px; margin: 0 auto; padding: 0 5vw; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div style="max-width: 800px; width: 100%; text-align: center;">
+                <h3 style="font-size: clamp(40px, 5vw, 72px); font-weight: 700; color: #FFFFFF; margin-bottom: 20px; letter-spacing: -1px; line-height: 1.1; font-family: 'Inter', sans-serif; text-shadow: 0 4px 20px rgba(0,0,0,0.4);">Subscribe to our Newsletter</h3>
+                <p style="font-size: clamp(20px, 2.5vw, 28px); color: rgba(255,255,255,0.95); line-height: 1.6; max-width: 700px; margin: 0 auto 50px auto; font-family: 'Inter', sans-serif; text-shadow: 0 2px 15px rgba(0,0,0,0.4);">Join the movement. Get the latest insights on Wealth building and investments sent straight to your inbox.</p>
+                <form class="subscribe-form" onsubmit="event.preventDefault(); alert('Subscribed to Newsletter!');" style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+                <input type="email" class="subscribe-input" placeholder="Enter your email" required style="padding: 16px 24px; border-radius: 50px; border: none; font-size: 16px; min-width: 300px; flex-grow: 1; outline: none; font-family: 'Inter', sans-serif;">
+                <button type="submit" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 1.5px; padding: 16px 40px; border-radius: 50px; border: none; font-size: 14px; cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(160,63,163,0.3); font-family: 'Inter Tight', sans-serif; text-transform: uppercase;">SUBSCRIBE</button>
+            </form>
             </div>
         </div>
     </section>
