@@ -859,10 +859,10 @@
                 <div class="color-reveal" style="background: #F8F8FA; border-radius: 20px; padding: 60px; text-align: center; border: 1px solid #E5E7EB;">
                     <h2 class="section-title" style="margin-bottom: 16px; font-size: 32px;">How to Contact Us</h2>
                     <p style="color: #4B5563; font-size: 18px; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto;">Reach out for inquiries, partnerships, or to stay updated on our journey.</p>
-                    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px;">
-                        <a href="mailto:castle@buildyourcastle.ai" class="btn-secondary" style="text-transform: none; letter-spacing: 0;">castle@buildyourcastle.ai</a>
-                        <a href="#subscribe" class="btn">Subscribe</a>
-                    </div>
+                    <form class="subscribe-form" onsubmit="event.preventDefault(); alert('Subscribed to Newsletter!');" style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                        <input type="email" class="subscribe-input" placeholder="Enter your email" required style="padding: 16px 24px; border-radius: 50px; border: 1px solid rgba(17,17,17,0.1); font-size: 16px; min-width: 300px; flex-grow: 1; outline: none; font-family: 'Inter', sans-serif;">
+                        <button type="submit" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 1.5px; padding: 16px 40px; border-radius: 50px; border: none; font-size: 14px; cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(160,63,163,0.3); font-family: 'Inter Tight', sans-serif; text-transform: uppercase;">SUBSCRIBE</button>
+                    </form>
                     <div class="team-social" style="justify-content: center; gap: 24px;">
                         <a href="https://www.instagram.com/buildyourcastle_ai/" target="_blank" title="Instagram"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
                         <a href="https://www.linkedin.com/company/buildyourcastle/about/" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
