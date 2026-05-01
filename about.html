@@ -548,6 +548,23 @@
         .partner-card-cta { font-size: 11px; font-weight: 800; color: #A03FA3; letter-spacing: 1.5px; text-decoration: none; }
 
 
+        /* 13. Team Section */
+        .team-section { background-color: #FFFFFF; padding: 80px 0; border-bottom: 1px solid #F3F4F6; }
+        .team-grid { display: grid; gap: 24px; grid-template-columns: 1fr; margin-top: 60px; }
+        @media(min-width: 768px){ .team-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media(min-width: 1024px){ .team-grid { grid-template-columns: repeat(4, 1fr); } }
+        .team-card { position: relative; aspect-ratio: 4/5; border-radius: 5px; overflow: hidden; background-color: #F8F8FA; cursor: default; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .team-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .team-card img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); z-index: 1; }
+        .team-card:hover img { transform: scale(1.05); }
+        .team-overlay { position: absolute; bottom: 0; left: 0; width: 100%; height: 60%; background: linear-gradient(to top, rgba(17,17,17,0.95) 0%, rgba(17,17,17,0) 100%); z-index: 2; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; padding: 30px 20px; text-align: center; }
+        .team-name { color: #FFFFFF; font-size: 20px; font-weight: 700; margin: 0 0 4px 0; font-family: 'Inter', sans-serif; line-height: 1.2; letter-spacing: 0px; position: relative; z-index: 3; }
+        .team-role { color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500; font-family: 'Inter', sans-serif; line-height: 1.4; margin: 0; position: relative; z-index: 3; letter-spacing: 0.5px; }
+        .team-social { margin-top: 12px; display: flex; gap: 12px; position: relative; z-index: 3; }
+        .team-social a { color: #FFFFFF; opacity: 0.6; transition: opacity 0.2s, transform 0.2s, color 0.2s; display: flex; align-items: center; justify-content: center; }
+        .team-social a:hover { opacity: 1; transform: translateY(-2px); color: #A03FA3; }
+
+
         /* Standardized Titles */
         .section-heading {
             font-family: 'Inter', sans-serif !important;
@@ -660,6 +677,88 @@
     <section class="hero snap-section" style="background-color: #1A1A1A; display: flex; align-items: center; justify-content: center; text-align: center; height: 100vh; border-bottom: 1px solid #333; background-image: none;">
         <div class="container" style="max-width: 1400px; padding: 0 4vw;">
             <h1 class="hero-title color-reveal" style="color: #FFFFFF; font-size: clamp(60px, 8vw, 100px); letter-spacing: -2px;">We Are Castle</h1>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section snap-section">
+        <div class="container">
+            <h2 class="section-heading color-reveal" style="text-align: center;">Meet the Builders</h2>
+            
+            <div class="team-grid mobile-scroll-row" id="team-scroll">
+                
+                <!-- Silvina -->
+                <div class="team-card color-reveal">
+                    <img src="https://ui-avatars.com/api/?name=Silvina+Moschini&background=A03FA3&color=fff&size=500" alt="Silvina Moschini">
+                    <div class="team-overlay">
+                        <p class="team-name">Silvina Moschini</p>
+                        <p class="team-role">Founder &amp; CEO</p>
+                        <div class="team-social">
+                            <a href="https://www.linkedin.com/in/smoschini/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mireia -->
+                <div class="team-card color-reveal">
+                    <img src="https://ui-avatars.com/api/?name=Mireia+Carrillo&background=E5E7EB&color=1A1A1A&size=500" alt="Mireia Carrillo">
+                    <div class="team-overlay">
+                        <p class="team-name">Mireia Carrillo</p>
+                        <p class="team-role">VP, Growth and Strategic Partnerships</p>
+                        <div class="team-social">
+                            <a href="https://www.linkedin.com/in/mireiacarrillo/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gisela -->
+                <div class="team-card color-reveal">
+                    <img src="https://ui-avatars.com/api/?name=Gisela+Moreli&background=E5E7EB&color=1A1A1A&size=500" alt="Gisela Moreli">
+                    <div class="team-overlay">
+                        <p class="team-name">Gisela Moreli</p>
+                        <p class="team-role">Sr. Director of Operations</p>
+                    </div>
+                </div>
+
+                <!-- Natalia -->
+                <div class="team-card color-reveal">
+                    <img src="https://ui-avatars.com/api/?name=Natalia+Duarte&background=E5E7EB&color=1A1A1A&size=500" alt="Natalia Duarte">
+                    <div class="team-overlay">
+                        <p class="team-name">Natalia Duarte</p>
+                        <p class="team-role">Art Director</p>
+                    </div>
+                </div>
+
+                <!-- Maricruz -->
+                <div class="team-card color-reveal">
+                    <img src="https://ui-avatars.com/api/?name=Maricruz+Tabbia&background=E5E7EB&color=1A1A1A&size=500" alt="Maricruz Tabbia">
+                    <div class="team-overlay">
+                        <p class="team-name">Maricruz Tabbia</p>
+                        <p class="team-role">SVP, Investor Relations Growth and Experience</p>
+                    </div>
+                </div>
+
+                <!-- Cynthia -->
+                <div class="team-card color-reveal">
+                    <img src="https://ui-avatars.com/api/?name=Cynthia+Acosta&background=E5E7EB&color=1A1A1A&size=500" alt="Cynthia Acosta">
+                    <div class="team-overlay">
+                        <p class="team-name">Cynthia Acosta</p>
+                        <p class="team-role">Sr. Director of Revenue</p>
+                    </div>
+                </div>
+
+                <!-- Leticia -->
+                <div class="team-card color-reveal">
+                    <img src="https://ui-avatars.com/api/?name=Leticia+Gomez+Torres&background=E5E7EB&color=1A1A1A&size=500" alt="Leticia Gomez Torres">
+                    <div class="team-overlay">
+                        <p class="team-name">Leticia Gomez Torres</p>
+                        <p class="team-role">Director of Communications</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mobile-scroll-indicators" data-target="team-scroll"></div>
         </div>
     </section>
 
