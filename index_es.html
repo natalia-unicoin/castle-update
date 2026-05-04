@@ -776,7 +776,7 @@
                 <p style="margin-bottom: 0;">No es otro curso de finanzas personales.<br>No es otra app que te dice que hagas mejor presupuesto.<br>No es otro lugar donde las finanzas se sienten complicadas, intimidantes o no hechas para ti.</p>
             </div>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin-bottom: 0;">
+            <div id="diff-scroll" class="mobile-scroll-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin-bottom: 0;">
                 <!-- Cajita 1 -->
                 <div style="aspect-ratio: 3/4; position: relative; border-radius: 5px; overflow: hidden; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%), url('./public/images/common/Different1.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 20px; transition: transform 0.3s;">
                     <div style="position: relative; z-index: 2; text-align: center;">
@@ -809,8 +809,7 @@
                     </div>
                 </div>
             </div>
-
-
+            <div class="mobile-scroll-indicators" data-target="diff-scroll"></div>
         </div>
     </section>
 
