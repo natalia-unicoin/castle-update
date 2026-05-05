@@ -28,9 +28,8 @@
             background-color: #FFFFFF; /* Ghost White */
             color: #1A1A1A; /* Soft Black */
             overflow-x: hidden;
-            text-wrap: pretty;
         }
-        h1, h2, h3, h4, h5, h6 { font-family: 'Inter', sans-serif; text-wrap: balance; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Inter', sans-serif; }
         .accent-text {  font-size: 1.0rem; color: #A03FA3; display: inline-block; }
         /* Header */
         header {
@@ -127,12 +126,12 @@
             letter-spacing: 4px; margin-bottom: -10px;
         }
         .hero-title {
-            font-size: clamp(45px, 6.5vw, 130px); font-weight: 700; line-height: 0.95; 
+            font-size: clamp(64px, 10vw, 130px); font-weight: 700; line-height: 0.95; 
             letter-spacing: -4px; margin-bottom: 0px; color: #FFFFFF; font-family: 'Inter', sans-serif;
         }
         .hero-title .highlight { color: #A03FA3; }
         .hero-description {
-            color: rgba(255,255,255,0.9); font-size: clamp(18px, 1.8vw, 28px); line-height: 1.25;
+            color: rgba(255,255,255,0.9); font-size: clamp(20px, 2.5vw, 28px); line-height: 1.25;
             max-width: 650px; margin: 8px 0 16px 0; font-weight: 400; font-family: 'Inter', sans-serif;
         }
         .hero-cta-group { margin-top: 0px; display: inline-flex; flex-direction: column; align-items: center; }
@@ -433,7 +432,7 @@
         .horizon-section { background-color: #FFFFFF; padding: var(--section-pad-y) 0; border-bottom: 1px solid #EAE0D5; }
         .horizon-container { max-width: 1100px; margin: 0 auto; text-align: left; }
         .horizon-bold { font-size: clamp(20px, 2.5vw, 32px); font-weight: 700; color: #1A1A1A; margin-bottom: var(--spacer-30); font-family: 'Inter', sans-serif; letter-spacing: 0px;; }
-        .horizon-text { font-size: clamp(18px, 1.8vw, 28px); color: #1A1A1A; line-height: 1.6; margin-bottom: var(--spacer-30); font-family: 'Inter', sans-serif; }
+        .horizon-text { font-size: clamp(20px, 2.5vw, 28px); color: #1A1A1A; line-height: 1.6; margin-bottom: var(--spacer-30); font-family: 'Inter', sans-serif; }
         .horizon-badge { display: inline-block; padding: 8px 24px; border-radius: 5px; border: 1px solid rgba(160,63,163,0.3); color: #A03FA3; font-size: 13px; font-weight: 700; letter-spacing: 1px; font-family: 'Inter', sans-serif; margin-top: 20px; }
 
         /* 11. Blog & Subscribe */
@@ -637,7 +636,8 @@
         }
     </script>
 </head>
-<body>
+
+    <body>
     <header id="main-header">
         <a href="index_es.html" class="header-logo">
             <img src="./public/images/common/logo-color.png?v=2" alt="CASTLE" class="logo-light">
@@ -655,446 +655,59 @@
         <div class="header-actions">
             <select class="lang-select" onchange="if(this.value) { localStorage.setItem('lang_selected', 'true'); window.location.href=this.value; }">
                 <option value="index.html">ENG</option>
-                <option value="index_es.html" selected>ESP</option>
+                <option value="contact_es.html" >ESP</option>
             </select>
         </div>
     </header>
 
-    <section class="hero snap-section">
-        <div class="hero-gradient"></div>
+    <!-- 1. Hero Section -->
+    <style>
+        /* Force white header on this page */
+        #main-header { background: rgba(255, 255, 255, 0.98) !important; backdrop-filter: blur(12px) !important; border-bottom: 1px solid #E5E7EB !important; padding: 16px clamp(30px, 5vw, 100px) !important; }
+        #main-header .logo-light { display: none !important; }
+        #main-header .logo-dark { display: block !important; }
+        #main-header .nav-links a { color: #1A1A1A !important; }
+        #main-header .nav-links a:hover { color: #A03FA3 !important; }
+        #main-header .lang-select { color: #1A1A1A !important; border-color: #E5E7EB !important; background-image: url('data:image/svg+xml;utf8,<svg fill="%231A1A1A" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>') !important; }
+        .mobile-menu-toggle { color: #1A1A1A !important; }
+    </style>
+    <section class="hero snap-section" style="background-color: #E5E7EB; display: flex; align-items: flex-end; padding: 150px 4vw 80px 4vw; min-height: 100vh; position: relative;">
+        <!-- Placeholder Text -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: clamp(30px, 5vw, 60px); font-weight: 800; letter-spacing: 4px; text-transform: uppercase; z-index: 0; font-family: 'Inter', sans-serif; text-align: center;">Image Placeholder</div>
+        <!-- Black Gradient Overlay -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%); z-index: 1;"></div>
         
-        <div class="hero-container">
-            <div class="hero-content" style="max-width: 900px; width: 100%;">
-                <h1 class="hero-title" style="font-size: clamp(38px, 6vw, 100px); line-height: 0.95; letter-spacing: -2px; color: #FFFFFF; ">Own Your <span style="color: #A03FA3;">Wealth.</span><br>Own Your <span style="color: #A03FA3;">Future.</span></h1>
-                <p class="hero-description" style="color: rgba(255,255,255,0.9); font-weight: 500; margin-top: 0px; margin-bottom: 0px; width: 100%;">Castle es un ecosistema impulsado por IA y Web3, diseñado para ayudarte a pensar diferente, actuar diferente y construir riqueza real.</p>
-                <div class="hero-cta-group">
-                    <a href="javascript:void(0);" onclick="document.getElementById('waitlistModal').style.display='flex';" class="btn btn-large" style="">ÚNETE A LA LISTA DE ESPERA</a>
-                </div>
+        <div class="container" style="max-width: 1000px; margin: 0 auto; display: flex; justify-content: center; align-items: center; position: relative; z-index: 2;">
+            <div style="text-align: center; width: 100%;">
+                <h1 class="hero-title color-reveal" style="color: #FFFFFF; font-size: clamp(50px, 7vw, 90px); letter-spacing: -2px; margin-bottom: 24px; text-shadow: 0 4px 12px rgba(0,0,0,0.5);">Contáctanos</h1>
+                <p class="hero-subtitle color-reveal" style="color: rgba(255,255,255,0.95); font-size: clamp(18px, 2vw, 24px); line-height: 1.5; max-width: 700px; margin: 0 auto;">¿Tienes alguna pregunta, idea para asociarnos o simplemente quieres saludar? Déjanos un mensaje abajo y nuestro equipo te responderá.</p>
+                
             </div>
         </div>
     </section>
 
+<!-- Contact Form Section (Waitlist Style) -->
     
-    
-    
-    <!-- Bento Grid Section 2 -->
-    <section class="bento-section" style="padding: var(--section-pad-y) 4vw 0 4vw; background-color: #FFFFFF;">
-        <div class="bento-container color-reveal" style="max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 4px;">
-            <style>
-                @media (min-width: 1024px) {
-                    .bento-container {
-                        grid-template-columns: 1fr 1fr !important;
-                    }
-                }
-            </style>
-            
-            <!-- Left Large Card -->
-            <div style="background-color: #A03FA3; padding: clamp(40px, 6vw, 80px) clamp(30px, 5vw, 60px); color: #FFFFFF; display: flex; flex-direction: column; justify-content: center; min-height: 60vh; border-radius: 5px;">
-                <h2 class="section-heading" style="color: #FFFFFF !important; margin-bottom: 0; font-size: clamp(60px, 10vw, 120px); line-height: 1; letter-spacing: -2px; font-weight: 500 !important;">
-                    A las mujeres<br>se les enseñó<br>a ahorrar,<br>
-                    <span style="font-weight: 800 !important;">no a<br>construir<br>riqueza.</span>
-                </h2>
+    <section class="snap-section" style="background-color: #F8F8FA; padding: var(--section-pad-large) 4vw; display: flex; justify-content: center; align-items: center; min-height: 50vh;">
+        <div class="container" style="max-width: 700px; width: 100%; text-align: center; padding: 40px; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+            <div style="width: 80px; height: 80px; background-color: #E8F5E9; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px;">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
             </div>
-            
-            <!-- Right Column -->
-            <div style="display: flex; flex-direction: column; gap: 4px;">
-                <!-- Top Right Card -->
-                <div style="position: relative; flex: 1; min-height: 35vh; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; padding: clamp(30px, 4vw, 50px); background: url('./public/images/common/coaching_new.jpg') center/cover no-repeat; background-color: #1A1A1A; overflow: hidden; border-radius: 5px;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 60%); z-index: 1; pointer-events: none;"></div>
-                    <div style="position: relative; z-index: 3;">
-                        <div style="font-size: clamp(16px, 1.8vw, 24px); color: #FFFFFF; font-weight: 500; margin-bottom: 0px; font-family: 'Inter', sans-serif;">No se trata de</div>
-                        <div style="font-size: clamp(28px, 3.5vw, 48px); color: #FFFFFF; font-weight: 800; line-height: 1.1; font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 8px;">
-                            Gestionar dinero <img src="./public/images/common/diamond-dot.png" style="height: 0.5em; vertical-align: baseline; margin-left: 2px;" alt="">
-                        </div>
-                    </div>
-                </div>
-                <!-- Bottom Right Card -->
-                <div style="position: relative; flex: 1; min-height: 35vh; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; padding: clamp(30px, 4vw, 50px); background: url('./public/images/common/future.png') center/cover no-repeat; background-color: #1A1A1A; overflow: hidden; border-radius: 5px;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 60%); z-index: 1; pointer-events: none;"></div>
-                    <div style="position: relative; z-index: 3;">
-                        <div style="font-size: clamp(16px, 1.8vw, 24px); color: #FFFFFF; font-weight: 500; margin-bottom: 0px; font-family: 'Inter', sans-serif;">Se trata de ser</div>
-                        <div style="font-size: clamp(28px, 3.5vw, 48px); color: #FFFFFF; font-weight: 800; line-height: 1.1; font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 8px;">
-                            Dueña de tu Futuro <img src="./public/images/common/diamond-dot.png" style="height: 0.5em; vertical-align: baseline; margin-left: 2px;" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- #2.5 Ecosystem Stack -->
-    <section class="snap-section" style="position: relative; display: flex; align-items: flex-end; justify-content: center; padding: 0 4vw 8vh 4vw; min-height: 100vh; background-image: url('./public/images/common/castle-changes.png'); background-size: cover; background-position: center; background-attachment: scroll; background-repeat: no-repeat; margin-top: var(--spacer-40); overflow: hidden;">
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,0.85) 100%); z-index: 1;"></div>
-        
-        <div style="width: 100%; max-width: 1400px; margin: 0 auto; position: relative; z-index: 2;">
-            <h2 class="section-heading color-reveal" style="color: #FFFFFF !important; margin-bottom: var(--spacer-30); text-align: center; font-size: clamp(70px, 10vw, 150px); line-height: 1.1; letter-spacing: -2px;">
-                Castle <span style="font-family: 'Caveat', cursive; font-weight: 700; font-size: 1.4em; line-height: 0.8; display: inline-block; color: #A03FA3; margin: 0 15px;">Cambia</span> eso
-            </h2>
-
-            <div class="color-reveal" style="color: #FFFFFF; width: 100%; max-width: 1200px; margin: 0 auto; line-height: 1.4; text-align: center; font-family: 'Inter', sans-serif;">
-                <p style="margin-bottom: 0; font-size: clamp(24px, 3vw, 36px); font-weight: 600;">Castle es un ecosistema impulsado por IA y Web3, diseñado para ayudarte a pensar diferente, actuar diferente y construir riqueza real.</p>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- MasterClass Section -->
-    <section class="snap-section" style="background-color: #F8F8FA; padding: var(--section-pad-large) 4vw;">
-        <div class="container" style="max-width: 1200px; margin: 0 auto; text-align: center;">
-            
-            <h2 class="section-heading color-reveal" style="color: #1A1A1A !important; font-size: clamp(40px, 5vw, 64px) !important; letter-spacing: -2px !important; line-height: 1.1 !important; margin-bottom: var(--spacer-60);">
-                Tu futuro financiero<br>
-                <span style="font-family: 'Caveat', cursive; color: #A03FA3; font-weight: 700; font-size: 1.4em; display: inline-block; margin-right: 15px; margin-top: -10px;">Comienza</span> con una decisión.
-            </h2>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; text-align: left; align-items: center; max-width: 1000px; margin: 0 auto;">
-                
-                <div style="position: relative; border-radius: 5px; overflow: hidden; aspect-ratio: 4/3; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
-                    <img src="./public/images/common/challenge.png" style="width: 100%; height: 100%; object-fit: cover;" alt="MasterClass">
-                </div>
-
-                <div style="padding: 20px 0;">
-                    <h3 class="color-reveal" style="font-size: clamp(24px, 3vw, 32px); font-weight: 800; color: #1A1A1A; margin-bottom: 20px; font-family: 'Inter', sans-serif;">Reset Your Money Brain:</h3>
-                    <p class="color-reveal" style="font-size: clamp(18px, 2vw, 24px); color: #1A1A1A; font-weight: 600; line-height: 1.4; margin-bottom: 15px; font-family: 'Inter', sans-serif;">Una MasterClass que reprograma tu identidad financiera.</p>
-                    <p class="color-reveal" style="font-size: clamp(18px, 2vw, 22px); color: #2A2A2A; line-height: 1.5; margin-bottom: var(--spacer-40); font-family: 'Inter', sans-serif;">Porque el problema nunca fue el dinero, fue lo que te enseñaron a creer sobre él.</p>
-                    
-                    <a href="javascript:void(0);" onclick="document.getElementById('waitlistModal').style.display='flex';" class="btn" style="background-color: #A03FA3; border: none; color: #FFFFFF; font-weight: 700; padding: 18px 45px; border-radius: 30px; display: inline-block;">
-                        ACCEDE A LA MASTERCLASS
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- #4 What Makes Us Different -->
-    <section style="padding: var(--section-pad-y) 4vw 0 4vw; background-color: #FFFFFF;" class="snap-section">
-        <div class="color-reveal" style="width: 100%; max-width: 1400px; margin: 0 auto; text-align: center;">
-            
-            <h2 class="section-heading color-reveal" style="margin-bottom: 25px;">
-                Así es Castle
-            </h2>
-            
-            <div style="font-size: clamp(18px, 1.8vw, 28px); color: #2A2A2A; line-height: 1.25; font-family: 'Inter', sans-serif; font-weight: 400; margin: 0 auto var(--spacer-50) auto; width: 100%; max-width: none;">
-                <p style="margin-bottom: 10px; font-weight: 700;">Castle es donde tu relación con el dinero cambia — de verdad.</p>
-                <p style="margin-bottom: 0;">No es otro curso de finanzas personales.<br>No es otra app que te dice que hagas mejor presupuesto.<br>No es otro lugar donde las finanzas se sienten complicadas, intimidantes o no hechas para ti.</p>
-            </div>
-            
-            <div id="diff-scroll" class="mobile-scroll-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin-bottom: 0;">
-                <!-- Cajita 1 -->
-                <div style="aspect-ratio: 3/4; position: relative; border-radius: 5px; overflow: hidden; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%), url('./public/images/common/Different1.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 20px; transition: transform 0.3s;">
-                    <div style="position: relative; z-index: 2; text-align: center;">
-                        <span style="display: block; font-family: 'Caveat', cursive; font-size: clamp(36px, 4vw, 42px); color: #FFFFFF; font-weight: 700; line-height: 1; margin-bottom: 8px;">Reprogramación</span>
-                        <span style="display: block; font-family: 'Inter', sans-serif; font-size: clamp(15px, 1.8vw, 18px); color: #FFFFFF; font-weight: 400; line-height: 1.3;">para romper creencias limitantes</span>
-                    </div>
-                </div>
-                
-                <!-- Cajita 2 -->
-                <div style="aspect-ratio: 3/4; position: relative; border-radius: 5px; overflow: hidden; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%), url('./public/images/common/Different2.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 20px; transition: transform 0.3s;">
-                    <div style="position: relative; z-index: 2; text-align: center;">
-                        <span style="display: block; font-family: 'Caveat', cursive; font-size: clamp(36px, 4vw, 42px); color: #FFFFFF; font-weight: 700; line-height: 1; margin-bottom: 8px;">Coaching</span>
-                        <span style="display: block; font-family: 'Inter', sans-serif; font-size: clamp(15px, 1.8vw, 18px); color: #FFFFFF; font-weight: 400; line-height: 1.3;">para acompañar tus decisiones</span>
-                    </div>
-                </div>
-                
-                <!-- Cajita 3 -->
-                <div style="aspect-ratio: 3/4; position: relative; border-radius: 5px; overflow: hidden; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%), url('./public/images/common/Different3.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 20px; transition: transform 0.3s;">
-                    <div style="position: relative; z-index: 2; text-align: center;">
-                        <span style="display: block; font-family: 'Caveat', cursive; font-size: clamp(36px, 4vw, 42px); color: #FFFFFF; font-weight: 700; line-height: 1; margin-bottom: 8px;">Herramientas inteligentes</span>
-                        <span style="display: block; font-family: 'Inter', sans-serif; font-size: clamp(15px, 1.8vw, 18px); color: #FFFFFF; font-weight: 400; line-height: 1.3;">para crecer con confianza</span>
-                    </div>
-                </div>
-                
-                <!-- Cajita 4 -->
-                <div style="aspect-ratio: 3/4; position: relative; border-radius: 5px; overflow: hidden; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%), url('./public/images/common/Different4.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 20px; transition: transform 0.3s;">
-                    <div style="position: relative; z-index: 2; text-align: center;">
-                        <span style="display: block; font-family: 'Caveat', cursive; font-size: clamp(36px, 4vw, 42px); color: #FFFFFF; font-weight: 700; line-height: 1; margin-bottom: 8px;">Una Comunidad Poderosa</span>
-                        <span style="display: block; font-family: 'Inter', sans-serif; font-size: clamp(15px, 1.8vw, 18px); color: #FFFFFF; font-weight: 400; line-height: 1.3;">de mujeres creciendo juntas</span>
-                    </div>
-                </div>
-            </div>
-            <div class="mobile-scroll-indicators" data-target="diff-scroll"></div>
-        </div>
-    </section>
-
-    <!-- #5 Core Platform Pillars -->
-    <section style="padding: 40px 4vw var(--section-pad-y) 4vw; background-color: #FFFFFF; text-align: center;" class="snap-section">
-        <div style="width: 100%; max-width: 1400px; margin: 0 auto;">
-            <h2 class="color-reveal section-heading">
-                Diseñado para transformar la dimensión<br>de tu <span style="color: #A03FA3;">riqueza.</span>
-            </h2>
-            <p class="color-reveal" style="font-size: clamp(18px, 1.8vw, 28px); color: #2A2A2A; font-weight: 400; width: 100%; max-width: none; margin: 0 auto 20px auto; line-height: 1.25;">
-                Creado con cinco pilares clave, que te dan la estructura para construir una verdadera independencia&nbsp;financiera.
+            <h2 style="font-size: 2rem; font-weight: 800; color: #1A1A1A; margin-bottom: 16px;">¡Mensaje Enviado!</h2>
+            <p style="font-size: 1.1rem; color: #666; margin-bottom: 32px; line-height: 1.6;">
+                Tu aplicación ha sido enviada exitosamente al ecosistema Castle. 
+                <br>Mientras esperas respuesta, te invitamos a ser parte de nuestra comunidad.
             </p>
-            <p class="color-reveal" style="font-size: clamp(18px, 2vw, 22px); color: #4B5563; font-weight: 400; width: 100%; max-width: none; margin: 0 auto var(--spacer-60) auto; line-height: 1.4;">
-                Con un AI Financial Coach, te guía con los desafíos con una comunidad poderosa, no solo aprendes sobre dinero &mdash; transformas tu mentalidad, construyes confianza y empiezas a ver oportunidades donde antes veías riesgo.
-            </p>
-
-            <!-- 5 Pillars Grid -->
-            <div class="color-reveal mobile-scroll-row mobile-text-center" id="pillars-scroll" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; text-align: left;">
-
-                <!-- 01 Cohort Learning -->
-                <div class="pillar-card">
-                    <img src="./public/images/common/step1.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 40%); z-index: 2;"></div>
-                    <div style="position: relative; z-index: 3;">
-                        <p style="font-size: 18px; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.7); margin-bottom: 6px; letter-spacing: 0.5px;">01</p>
-                        <h3 style="font-size: 22px; font-weight: 800; color: #FFFFFF; margin: 0; line-height: 1.2;">Aprendizaje<br>en cohortes</h3>
-                    </div>
-                </div>
-
-                <!-- 02 Account Aggregation -->
-                <div class="pillar-card">
-                    <img src="./public/images/common/step2.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 40%); z-index: 2;"></div>
-                    <div style="position: relative; z-index: 3;">
-                        <p style="font-size: 18px; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.7); margin-bottom: 6px; letter-spacing: 0.5px;">02</p>
-                        <h3 style="font-size: 22px; font-weight: 800; color: #FFFFFF; margin: 0; line-height: 1.2;">Integración<br>de cuentas</h3>
-                    </div>
-                </div>
-
-                <!-- 03 AI Money & Wealth Coach -->
-                <div class="pillar-card">
-                    <img src="./public/images/common/step3.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 40%); z-index: 2;"></div>
-                    <div style="position: relative; z-index: 3;">
-                        <p style="font-size: 18px; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.7); margin-bottom: 6px; letter-spacing: 0.5px;">03</p>
-                        <h3 style="font-size: 22px; font-weight: 800; color: #FFFFFF; margin: 0; line-height: 1.2;">AI Coach de<br>dinero y riqueza</h3>
-                    </div>
-                </div>
-
-                <!-- 04 Investment Marketplace -->
-                <div class="pillar-card">
-                    <img src="./public/images/common/step4.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 1;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 40%); z-index: 2;"></div>
-                    <div style="position: relative; z-index: 3;">
-                        <p style="font-size: 18px; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.7); margin-bottom: 6px; letter-spacing: 0.5px;">04</p>
-                        <h3 style="font-size: 22px; font-weight: 800; color: #FFFFFF; margin: 0; line-height: 1.2;">Marketplace<br>de inversiones</h3>
-                    </div>
-                </div>
-
-                <!-- 05 Social Wealth Building -->
-                <div class="pillar-card">
-                    <img src="./public/images/common/step5.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 40%); z-index: 2;"></div>
-                    <div style="position: relative; z-index: 3;">
-                        <p style="font-size: 18px; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.7); margin-bottom: 6px; letter-spacing: 0.5px;">05</p>
-                        <h3 style="font-size: 22px; font-weight: 800; color: #FFFFFF; margin: 0; line-height: 1.2;">Construcción de<br>riqueza social</h3>
-                    </div>
-                </div>
-
-            </div>
-            <div class="mobile-scroll-indicators" data-target="pillars-scroll"></div>
-
-            <!-- CTA in Block 5 -->
-            <div style="margin-top: var(--spacer-60); text-align: center;">
-                <a href="javascript:void(0);" onclick="document.getElementById('waitlistModal').style.display='flex';" class="btn" style="background-color: #A03FA3; border: none; color: #FFFFFF; font-weight: 700; padding: 18px 45px; border-radius: 30px;">
-                ÚNETE A LA LISTA DE ESPERA
-            </a>
+            <a href="https://www.instagram.com/buildyourcastle_ai/" target="_blank" class="waitlist-submit" style="display: inline-block; text-decoration: none; width: auto; padding: 16px 32px; font-weight: 700; background: #A03FA3;">SÍGUENOS EN INSTAGRAM</a>
+            <div style="margin-top: 24px;">
+                <a href="index_es.html" style="color: #666; text-decoration: underline; font-weight: 500;">Volver al inicio</a>
             </div>
         </div>
     </section>
 
 
-<!-- Partners Section -->
-    <section id="partnerships" class="partners-section snap-section" style="background-color: #FFFFFF; padding: var(--section-pad-y) 4vw; border-top: 1px solid #E5E7EB; font-family: 'Inter', sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-    
-        <div style="width: 100%; max-width: 1400px; margin: 0 auto; text-align: center; margin-bottom: var(--spacer-60);">
-            <h2 class="section-heading color-reveal" style="color: #1A1A1A; margin-bottom: 20px;">
-                Convierte tu influencia en propiedad
-            </h2>
-            <div class="color-reveal" style="font-size: clamp(18px, 1.8vw, 28px); font-weight: 400; color: #2A2A2A; line-height: 1.25; width: 100%; max-width: none; margin: 0 auto;">
-                <p style="margin-bottom: 0; font-weight: 500;">Únete al movimiento que ayuda a las mujeres a construir riqueza &mdash;<br>y a ser dueñas del futuro que están creando.</p>
-            </div>
-        </div>
-
-    <div id="influence-grid" class="color-reveal" style="max-width: 1400px; width: 100%; margin: 0 auto; display: grid; grid-template-columns: 1fr; border-radius: 5px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.08); background-color: #A03FA3; position: relative;">
-        <style>
-            .inf-img-container {
-                position: relative;
-                min-height: 350px;
-            }
-            .inf-img-container img {
-                position: absolute;
-                top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: right center; z-index: 1;
-            }
-            @media (min-width: 1024px) {
-                #influence-grid {
-                    grid-template-columns: 1fr 1fr !important;
-                }
-                .inf-img-container {
-                    min-height: auto;
-                }
-            }
-        </style>
-        
-        
-        <!-- Left Content -->
-        <div style="padding: 60px clamp(30px, 6vw, 60px); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; text-align: left; position: relative; z-index: 2;">
-            <div style="color: #FFFFFF; line-height: 1.4;">
-                <p style="margin-bottom: var(--spacer-30); font-size: clamp(18px, 2vw, 26px); font-weight: 600; line-height: 1.35;">Castle está construyendo un nuevo ecosistema impulsado por Web3, donde creadoras, líderes, marcas y comunidades pueden convertir en valor su experiencia, audiencia, alcance, credibilidad y recursos, a cambio de tokens de Castle y crecimiento compartido.</p>
-                <p style="margin-bottom: 25px; font-size: clamp(16px, 1.8vw, 20px); font-weight: 400;">Castle ofrece un modelo de co-creación, co-propiedad y creación de valor a largo plazo.</p>
-                <p style="margin-bottom: 0; font-size: clamp(16px, 1.8vw, 20px); font-weight: 400;">Trae lo que te hace poderosa &mdash; tu voz, tu red, tu plataforma o tu comunidad &mdash; y crece con nosotros mientras escalamos un movimiento global para mujeres y riqueza.</p>
-            </div>
-        </div>
-        
-        <!-- Right Image -->
-        <div class="inf-img-container">
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, #A03FA3 0%, rgba(160,63,163,0) 25%); z-index: 2;"></div>
-            <img src="./public/images/common/inf-section.png" alt="Influence">
-        </div>
-    </div>
-
-    <!-- Partners Grid Section Merged -->
-        <div style="width: 100%; max-width: 1400px; margin: 40px auto 0 auto; text-align: center;">
-            <div style="margin-bottom: var(--spacer-40);">
-                <h2 class="section-heading color-reveal" style="margin-bottom: 20px;">¿Cómo puedes ser parte?</h2>
-                <p class="color-reveal" style="font-size: clamp(18px, 1.8vw, 28px); color: #2A2A2A; font-weight: 400; width: 100%; max-width: none; margin: 0 auto; line-height: 1.25; font-family: 'Inter', sans-serif;">
-                    Si eres celebridad, influencer, creadora de contenido, marca, organización de mujeres o experta &mdash;<br>puedes unirte para transformar la forma en que las mujeres viven la riqueza<br>y ser parte de la revolución de la riqueza femenina.
-                </p>
-            </div>
-            
-            <div class="color-reveal partner-grid mobile-scroll-row mobile-text-center" id="partner-scroll" style="text-align: left;">
-                <!-- Card 1 -->
-                <div class="partner-card">
-                    <img src="./public/images/common/partner1.jpg" alt="Influencers & Celebrities" style="object-position: center 90%;">
-                    <div class="partner-card-overlay"></div>
-                    <div class="partner-card-content">
-                        <h3 class="partner-card-title">Influencers<br>& Celebridades</h3>
-                        <div class="partner-card-text-container" style="flex-grow: 1; display: flex; flex-direction: column;">
-                            <p class="partner-card-text">Usa tu voz y audiencia para inspirar a Mujeres de todo el mundo mientras ganas tokens, participación en los ingresos e impacto en la construcción de un legado.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="partner-card">
-                    <img src="./public/images/common/partner2.jpg" alt="Content Creators" style="object-position: center 5%;">
-                    <div class="partner-card-overlay"></div>
-                    <div class="partner-card-content">
-                        <h3 class="partner-card-title">Creadoras<br>de Contenido</h3>
-                        <div class="partner-card-text-container" style="flex-grow: 1; display: flex; flex-direction: column;">
-                            <p class="partner-card-text">Convierte tus conocimientos en cursos, contenido, masterclasses y experiencias—monetizados mediante tokens y crecimiento compartido.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="partner-card">
-                    <img src="./public/images/common/partner3.jpg" alt="Brands & Companies" style="object-position: 25% center;">
-                    <div class="partner-card-overlay"></div>
-                    <div class="partner-card-content">
-                        <h3 class="partner-card-title">Marcas<br>& Compañías</h3>
-                        <div class="partner-card-text-container" style="flex-grow: 1; display: flex; flex-direction: column;">
-                            <p class="partner-card-text">Aporta alcance, recursos, medios, productos o patrocinios y participa en un ecosistema con un propósito claro e impacto medible.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 4 -->
-                <div class="partner-card">
-                    <img src="./public/images/common/partner4.jpg" alt="Organizations" style="object-position: center 20%;">
-                    <div class="partner-card-overlay"></div>
-                    <div class="partner-card-content">
-                        <h3 class="partner-card-title">Organizaciones<br>de Mujeres</h3>
-                        <div class="partner-card-text-container" style="flex-grow: 1; display: flex; flex-direction: column;">
-                            <p class="partner-card-text">Activa a tus miembros con herramientas para la creación de Riqueza mientras recibes tokens, incentivos y beneficios para la Comunidad.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 5 -->
-                <div class="partner-card">
-                    <img src="./public/images/common/leaders.jpg" alt="Experts & Coaches">
-                    <div class="partner-card-overlay"></div>
-                    <div class="partner-card-content">
-                        <h3 class="partner-card-title">Expertas<br>& Coaches</h3>
-                        <div class="partner-card-text-container" style="flex-grow: 1; display: flex; flex-direction: column;">
-                            <p class="partner-card-text">Tokeniza tu experiencia, programas, mentoría y credibilidad como parte de una plataforma global que empodera financieramente a las Mujeres.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mobile-scroll-indicators" data-target="partner-scroll"></div>
-            
-            <div style="margin-top: var(--spacer-80); text-align: center;">
-                <p style="font-size: clamp(24px, 3vw, 36px); font-weight: 700; color: #1A1A1A; letter-spacing: 0px;; margin-bottom: var(--spacer-40);">
-                    Construye impacto. Sé dueña. Crece con Castle.
-                </p>
-                <a href="#partner-form" class="btn" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 2px; padding: 22px 50px; border-radius: 50px; font-size: 15px; text-decoration: none; display: inline-block; box-shadow: 0 10px 30px rgba(160, 63, 163, 0.4); transition: transform 0.2s ease;">ÚNETE AL MOVIMIENTO</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="blog" class="blog-section snap-section" style="padding-bottom: 80px; border-bottom: none;">
-        <div class="container" style="max-width: 1500px; padding: 0 4vw; text-align: center;">
-            <h2 class="color-reveal section-heading" style="margin-bottom: 20px;">Castle en los medios</h2>
-            <p class="color-reveal section-subtitle" style="font-size: clamp(18px, 1.8vw, 28px); color: #2A2A2A; font-weight: 400; width: 100%; max-width: none; margin: 0 auto var(--spacer-60) auto; line-height: 1.25; ">
-                Explora los insights, anuncios y perspectivas que están dando forma al futuro de la riqueza femenina. En todo el mundo, la historia de Castle está tomando forma &mdash; redefiniendo la propiedad financiera para las mujeres y construyendo un nuevo modelo de creación de riqueza.
-            </p>
-            
-            <div class="blog-grid mobile-scroll-row" id="blog-scroll">
-                <!-- Post 1 -->
-                <a href="https://unicoin.com/news/build-your-own-castle-silvina-moschini-on-women-and-money" target="_blank" class="blog-card">
-                    <div class="blog-img-wrapper">
-                        <img src="./public/images/common/buildcastle.jpg" class="blog-img" alt="Women Transforming Investment" style="object-position: 80% center;">
-                    </div>
-                    <div class="blog-content">
-                        <span class="blog-tag">Liderazgo Global</span>
-                        <span class="blog-date">12.04.2026</span>
-                        <h3 class="blog-title">Construye tu Propio Castillo: Silvina Moschini sobre las Mujeres y el Dinero</h3>
-                        <p class="blog-desc">Explora cómo las Mujeres están liderando la creación de Riqueza y remodelando el ecosistema financiero en la región del Golfo.</p>
-                    </div>
-                </a>
-                <!-- Post 2 -->
-                <a href="https://unicoin.com/news/crypto-is-not-the-gap-the-gap-is-education" target="_blank" class="blog-card">
-                    <div class="blog-img-wrapper">
-                        <img src="./public/images/common/blog_cover2.jpg" class="blog-img" alt="Crypto is Not the Gap, the Gap is Education">
-                    </div>
-                    <div class="blog-content">
-                        <span class="blog-tag">Prensa</span>
-                        <span class="blog-date">05.04.2026</span>
-                        <h3 class="blog-title">Las Criptomonedas No Son la Brecha, la Brecha es la Educación</h3>
-                        <p class="blog-desc">Comprendiendo el panorama cambiante de las criptomonedas y cómo la educación es clave para navegar por el futuro.</p>
-                    </div>
-                </a>
-                <!-- Post 3 -->
-                <a href="https://unicoin.com/news/from-entrepreneurs-to-investors-the-technological-leap-that-is-creating-the-new-female-fortunes-in-latin-america" target="_blank" class="blog-card">
-                    <div class="blog-img-wrapper">
-                        <img src="./public/images/common/blog2.jpg" class="blog-img" alt="De Emprendedoras a Inversoras">
-                    </div>
-                    <div class="blog-content">
-                        <span class="blog-tag">Innovación</span>
-                        <span class="blog-date">28.03.2026</span>
-                        <h3 class="blog-title">De Emprendedoras a Inversoras</h3>
-                        <p class="blog-desc">Una mirada profunda al salto tecnológico que está creando nuevas fortunas femeninas en América Latina.</p>
-                    </div>
-                </a>
-            </div>
-            <div class="mobile-scroll-indicators" data-target="blog-scroll"></div>
-
-            <!-- Blog CTA moved up & made smaller -->
-            <div style="margin-top: var(--spacer-40); text-align: center;">
-                <a href="/blog" class="btn btn-outline-purple" style="padding: 18px 45px; letter-spacing: 1.5px; display: inline-block;">VER MÁS</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA / Newsletter -->
-    <section style="position: relative; background-image: url('./public/images/common/cta-final.jpg'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat; padding: var(--section-pad-y) 0; text-align: center; min-height: 100vh; display: flex; align-items: center; justify-content: center; width: 100%;" class="snap-section">
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(17,17,17,0.6); z-index: 1;"></div>
-        <div class="container" style="position: relative; z-index: 2; max-width: 1500px; margin: 0 auto; padding: 0 5vw; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-            <div style="max-width: 800px; width: 100%; text-align: center;">
-                <h3 style="font-size: clamp(40px, 5vw, 72px); font-weight: 700; color: #FFFFFF; margin-bottom: 20px; letter-spacing: -1px; line-height: 1.1; font-family: 'Inter', sans-serif; text-shadow: 0 4px 20px rgba(0,0,0,0.4);">Suscríbete a nuestro newsletter</h3>
-                <p style="font-size: clamp(18px, 1.8vw, 28px); color: rgba(255,255,255,0.95); line-height: 1.6; max-width: 700px; margin: 0 auto var(--spacer-50) auto; font-family: 'Inter', sans-serif; text-shadow: 0 2px 15px rgba(0,0,0,0.4);">Únete al movimiento. Recibe los últimos insights sobre construcción de riqueza e inversiones directamente en tu correo.</p>
-                <form action="https://buildyourcastle.us10.list-manage.com/subscribe/post?u=4766d7bd8debcf610dadddfb6&amp;id=53677e9563" method="POST" target="_blank" class="subscribe-form" style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
-                <input type="hidden" name="SOURCE" value="Newsletter">
-                <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_4766d7bd8debcf610dadddfb6_53677e9563" tabindex="-1" value=""></div>
-                <input type="email" name="EMAIL" class="subscribe-input" placeholder="Ingresa tu email" required style="padding: 16px 24px; border-radius: 50px; border: none; font-size: 16px; min-width: 300px; flex-grow: 1; outline: none; font-family: 'Inter', sans-serif;">
-                <button type="submit" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 1.5px; padding: 16px 40px; border-radius: 50px; border: none; font-size: 14px; cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(160,63,163,0.3); font-family: \'Inter Tight\', sans-serif; text-transform: uppercase;">SUSCRIBIRME</button>
-            </form>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-top">
@@ -1131,6 +744,7 @@
             </div>
         </div>
     </footer>
+    
 
     <script>
         window.addEventListener('scroll', () => {
@@ -1341,7 +955,7 @@
                     <label for="consent">Doy mi consentimiento para que Castle me contacte para compartir actualizaciones sobre la plataforma, información de lanzamiento y eventos de la Comunidad.</label>
                 </div>
 
-                <button type="submit" class="waitlist-submit">Aplicar a la Lista de Espera</button>
+                <button type="submit" class="waitlist-submit" style="text-transform: uppercase; letter-spacing: 2px;">APLICAR A LA LISTA DE ESPERA</button>
             </form>
         </div>
     </div>
@@ -1350,3 +964,5 @@
 
 
 </html>
+
+    
