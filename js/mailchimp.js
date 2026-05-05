@@ -77,9 +77,14 @@ function handleSuccess(form, type) {
     if (type === 'newsletter') {
         // Inline success for footer/hero
         form.innerHTML = `
-            <div style="background: #F5E8F6; color: #A03FA3; padding: 12px 24px; border-radius: 6px; font-weight: 500; display: flex; align-items: center; gap: 8px; width: 100%; justify-content: center;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                ${isSpanish ? '¡Gracias por suscribirte!' : 'Thanks for subscribing!'}
+            <div style="background: #F5E8F6; color: #A03FA3; padding: 16px 24px; border-radius: 6px; font-weight: 500; display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100%; justify-content: center;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>${isSpanish ? '¡Gracias por suscribirte!' : 'Thanks for subscribing!'}</span>
+                </div>
+                <a href="${isSpanish ? 'masterclass_es.html' : 'masterclass.html'}" style="background-color: #A03FA3; color: white; padding: 8px 24px; border-radius: 50px; text-decoration: none; font-size: 13px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; transition: opacity 0.2s;">
+                    ${isSpanish ? 'Únete a nuestra Masterclass' : 'Join our Masterclass'}
+                </a>
             </div>
         `;
     } else if (type === 'waitlist') {
