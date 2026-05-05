@@ -91,8 +91,9 @@ function handleSuccess(form, type) {
                         <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
                 </div>
-                <h3 style="font-size: 1.5rem; color: #1A1A1A; margin-bottom: 12px;">${isSpanish ? '¡Estás en la lista!' : 'You are on the list!'}</h3>
-                <p style="color: #666; margin-bottom: 24px;">${isSpanish ? 'Revisa tu bandeja de entrada en los próximos minutos.' : 'Check your inbox in the next few minutes.'}</p>
+                <h3 style="font-size: 1.8rem; font-weight: 800; color: #1A1A1A; margin-bottom: 16px;">${isSpanish ? 'Ya estás dentro.' : "You're in."}</h3>
+                <p style="font-size: 1.1rem; color: #1A1A1A; font-weight: 600; margin-bottom: 12px; line-height: 1.4;">${isSpanish ? 'El sistema operativo de tu riqueza está en construcción.' : 'The operating system for your wealth is being built.'}</p>
+                <p style="font-size: 1rem; color: #666; margin-bottom: 24px; line-height: 1.5;">${isSpanish ? 'Pronto recibirás todo lo que necesitas para empezar a construir tu castillo, directo a tu correo.' : "You'll soon receive everything you need to start building your castle, straight to your inbox."}</p>
             </div>
         `;
     }
