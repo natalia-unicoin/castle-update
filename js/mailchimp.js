@@ -84,10 +84,10 @@ function handleSuccess(form, type) {
         `;
     } else if (type === 'waitlist') {
         // Modal success
-        const modalContent = form.closest('.modal-content');
-        if (modalContent) {
-            const title = modalContent.querySelector('h2');
-            const desc = modalContent.querySelector('p');
+        const modalContainer = form.parentElement;
+        if (modalContainer) {
+            const title = modalContainer.querySelector('h2');
+            const desc = modalContainer.querySelector('p');
             if (title) title.style.display = 'none';
             if (desc) desc.style.display = 'none';
         }
