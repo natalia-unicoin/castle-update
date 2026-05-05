@@ -84,6 +84,14 @@ function handleSuccess(form, type) {
         `;
     } else if (type === 'waitlist') {
         // Modal success
+        const modalContent = form.closest('.modal-content');
+        if (modalContent) {
+            const title = modalContent.querySelector('h2');
+            const desc = modalContent.querySelector('p');
+            if (title) title.style.display = 'none';
+            if (desc) desc.style.display = 'none';
+        }
+
         form.innerHTML = `
             <div style="text-align: center; padding: 20px 0;">
                 <div style="width: 80px; height: 80px; background-color: #F5E8F6; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px;">
