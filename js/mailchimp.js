@@ -77,7 +77,7 @@ function handleSuccess(form, type) {
     if (type === 'newsletter') {
         // Inline success for footer/hero
         form.innerHTML = `
-            <div style="background: #E8F5E9; color: #2E7D32; padding: 12px 24px; border-radius: 6px; font-weight: 500; display: flex; align-items: center; gap: 8px; width: 100%; justify-content: center;">
+            <div style="background: #F5E8F6; color: #A03FA3; padding: 12px 24px; border-radius: 6px; font-weight: 500; display: flex; align-items: center; gap: 8px; width: 100%; justify-content: center;">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 ${isSpanish ? '¡Gracias por suscribirte!' : 'Thanks for subscribing!'}
             </div>
@@ -86,8 +86,8 @@ function handleSuccess(form, type) {
         // Modal success
         form.innerHTML = `
             <div style="text-align: center; padding: 20px 0;">
-                <div style="width: 80px; height: 80px; background-color: #E8F5E9; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px;">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <div style="width: 80px; height: 80px; background-color: #F5E8F6; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px;">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#A03FA3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
                 </div>
