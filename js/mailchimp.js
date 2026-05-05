@@ -83,13 +83,18 @@ function handleSuccess(form, type) {
             </div>
         `;
     } else if (type === 'waitlist') {
-        // Modal success
+        // Modal success: Replace the top title and description texts directly
         const modalContainer = form.parentElement;
         if (modalContainer) {
             const title = modalContainer.querySelector('h2');
             const desc = modalContainer.querySelector('p');
-            if (title) title.style.display = 'none';
-            if (desc) desc.style.display = 'none';
+            
+            if (title) {
+                title.innerText = isSpanish ? 'Ya estás dentro.' : "You're in.";
+            }
+            if (desc) {
+                desc.innerText = isSpanish ? 'El sistema operativo de tu riqueza está en construcción.' : 'The operating system for your wealth is being built.';
+            }
         }
 
         form.innerHTML = `
@@ -99,9 +104,7 @@ function handleSuccess(form, type) {
                         <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
                 </div>
-                <h3 style="font-size: 1.8rem; font-weight: 800; color: #1A1A1A; margin-bottom: 16px;">${isSpanish ? 'Ya estás dentro.' : "You're in."}</h3>
-                <p style="font-size: 1.1rem; color: #1A1A1A; font-weight: 600; margin-bottom: 12px; line-height: 1.4;">${isSpanish ? 'El sistema operativo de tu riqueza está en construcción.' : 'The operating system for your wealth is being built.'}</p>
-                <p style="font-size: 1rem; color: #666; margin-bottom: 24px; line-height: 1.5;">${isSpanish ? 'Pronto recibirás todo lo que necesitas para empezar a construir tu castillo, directo a tu correo.' : "You'll soon receive everything you need to start building your castle, straight to your inbox."}</p>
+                <p style="font-size: 1.1rem; color: #666; margin-bottom: 24px; line-height: 1.5;">${isSpanish ? 'Pronto recibirás todo lo que necesitas para empezar a construir tu castillo, directo a tu correo.' : "You'll soon receive everything you need to start building your castle, straight to your inbox."}</p>
             </div>
         `;
     }
