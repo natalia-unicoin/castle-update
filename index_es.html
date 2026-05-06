@@ -598,9 +598,9 @@
         @media(max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
         .form-group { display: flex; flex-direction: column; }
         .form-group label { font-size: 14px; font-weight: 600; color: #1A1A1A; margin-bottom: 8px; text-align: left !important; margin-left: 0 !important; padding-left: 0 !important; align-self: flex-start; }
-        .form-group input, .form-group select { padding: 14px 16px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 15px; font-family: 'Inter', sans-serif; background: #F9FAFB; transition: border-color 0.2s, box-shadow 0.2s; color:#1A1A1A; }
+        .form-group input, .form-group select, .form-group textarea { padding: 14px 16px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 15px; font-family: 'Inter', sans-serif; background: #F9FAFB; transition: border-color 0.2s, box-shadow 0.2s; color:#1A1A1A; width: 100%; box-sizing: border-box; }
         .form-group select { appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23111111" viewBox="0 0 16 16"><path d="M4.293 5.293a1 1 0 0 1 1.414 0L8 8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-3 3a1 1 0 0 1-1.414 0l-3-3a1 1 0 0 1 0-1.414z"/></svg>'); background-repeat: no-repeat; background-position: right 16px center; background-size: 16px; padding-right: 40px; }
-        .form-group input:focus, .form-group select:focus { border-color: #A03FA3; box-shadow: 0 0 0 3px rgba(160,63,163,0.1); outline: none; background: #FFFFFF; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #A03FA3; box-shadow: 0 0 0 3px rgba(160,63,163,0.1); outline: none; background: #FFFFFF; }
         .checkbox-group { display: flex; align-items: flex-start; gap: 12px; margin-top: 10px; }
         .checkbox-group input { margin-top: 4px; cursor: pointer; width: 18px; height: 18px; }
         .checkbox-group label { font-size: 13px; font-weight: 400; color: #2A2A2A; line-height: 1.5; text-transform: none; letter-spacing: 0; cursor: pointer; margin-bottom: 0; }
@@ -1340,8 +1340,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="instagram">Usuario de Instagram</label>
-                    <input type="text" id="instagram" name="INSTAGRAM" placeholder="@janedoe">
+                    <label for="comentarios">Comentarios</label>
+                    <textarea id="comentarios" name="COMENTARIOS" rows="3" placeholder="Escribe tus comentarios aquí..." style="resize: vertical;"></textarea>
                 </div>
 
                 <div class="checkbox-group" style="margin-top: 15px;">
