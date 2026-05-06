@@ -668,7 +668,7 @@
                 <h1 class="hero-title" style="font-size: clamp(38px, 5vw, 85px); line-height: 0.95; letter-spacing: -2px; color: #FFFFFF; ">Own Your <span style="color: #A03FA3;">Wealth.</span><br>Own Your <span style="color: #A03FA3;">Future.</span></h1>
                 <p class="hero-description" style="color: rgba(255,255,255,0.9); font-weight: 500; margin-top: 0px; margin-bottom: 0px; width: 100%;">Castle es un ecosistema impulsado por IA y Web3, diseñado para ayudarte a pensar diferente, actuar diferente y construir riqueza.</p>
                 <div class="hero-cta-group">
-                    <a href="javascript:void(0);" onclick="document.getElementById('waitlistModal').style.display='flex';" class="btn btn-large" style="">ÚNETE A LA LISTA DE ESPERA</a>
+                    <a href="javascript:void(0);" onclick="openUnifiedModal('waitlist');" class="btn btn-large" style="">ÚNETE A LA LISTA DE ESPERA</a>
                 </div>
             </div>
         </div>
@@ -759,7 +759,7 @@
                 </p>
                 
                 <div style="margin-top: 30px;">
-                    <a href="javascript:void(0);" onclick="document.getElementById('waitlistModal').style.display='flex';" class="btn" style="background-color: #A03FA3; border: none; color: #FFFFFF; font-weight: 700; padding: 18px 45px; border-radius: 50px; display: inline-block; text-transform: uppercase;">
+                    <a href="javascript:void(0);" onclick="openUnifiedModal('waitlist');" class="btn" style="background-color: #A03FA3; border: none; color: #FFFFFF; font-weight: 700; padding: 18px 45px; border-radius: 50px; display: inline-block; text-transform: uppercase;">
                         RESERVA TU LUGAR
                     </a>
                 </div>
@@ -888,7 +888,7 @@
                     Porque cuando cambias tu mentalidad, cambias tus decisiones.<br>
                     Y cuando cambias tus decisiones, cambias tu futuro.
                 </p>
-                <a href="javascript:void(0);" onclick="document.getElementById('waitlistModal').style.display='flex';" class="btn" style="background-color: #A03FA3; border: none; color: #FFFFFF; font-weight: 700; padding: 18px 45px; border-radius: 30px;">
+                <a href="javascript:void(0);" onclick="openUnifiedModal('waitlist');" class="btn" style="background-color: #A03FA3; border: none; color: #FFFFFF; font-weight: 700; padding: 18px 45px; border-radius: 30px;">
                 APLICA
             </a>
             </div>
@@ -1017,7 +1017,7 @@
                 <p style="font-size: clamp(24px, 3vw, 36px); font-weight: 700; color: #1A1A1A; letter-spacing: 0px;; margin-bottom: var(--spacer-40);">
                     Construye impacto. Sé dueña. Crece con Castle.
                 </p>
-                <a href="#partner-form" class="btn" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 2px; padding: 22px 50px; border-radius: 50px; font-size: 15px; text-decoration: none; display: inline-block; box-shadow: 0 10px 30px rgba(160, 63, 163, 0.4); transition: transform 0.2s ease;">ÚNETE AL MOVIMIENTO</a>
+                <a href="javascript:void(0);" onclick="openUnifiedModal('partner')" class="btn" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 2px; padding: 22px 50px; border-radius: 50px; font-size: 15px; text-decoration: none; display: inline-block; box-shadow: 0 10px 30px rgba(160, 63, 163, 0.4); transition: transform 0.2s ease;">ÚNETE AL MOVIMIENTO</a>
             </div>
         </div>
     </section>
@@ -1083,12 +1083,7 @@
             <div style="max-width: 800px; width: 100%; text-align: center;">
                 <h3 style="font-size: clamp(40px, 5vw, 72px); font-weight: 700; color: #FFFFFF; margin-bottom: 20px; letter-spacing: -1px; line-height: 1.1; font-family: 'Inter', sans-serif; text-shadow: 0 4px 20px rgba(0,0,0,0.4);">Suscríbete a nuestro newsletter</h3>
                 <p style="font-size: clamp(18px, 1.8vw, 28px); color: rgba(255,255,255,0.95); line-height: 1.6; max-width: 700px; margin: 0 auto var(--spacer-50) auto; font-family: 'Inter', sans-serif; text-shadow: 0 2px 15px rgba(0,0,0,0.4);">Únete al movimiento. Recibe los últimos insights sobre construcción de riqueza e inversiones directamente en tu correo.</p>
-                <form action="https://buildyourcastle.us10.list-manage.com/subscribe/post?u=4766d7bd8debcf610dadddfb6&amp;id=53677e9563" method="POST" target="_blank" class="subscribe-form" style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
-                <input type="hidden" name="SOURCE" value="Newsletter">
-                <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_4766d7bd8debcf610dadddfb6_53677e9563" tabindex="-1" value=""></div>
-                <input type="email" name="EMAIL" class="subscribe-input" placeholder="Ingresa tu email" required style="padding: 16px 24px; border-radius: 50px; border: none; font-size: 16px; min-width: 300px; flex-grow: 1; outline: none; font-family: 'Inter', sans-serif;">
-                <button type="submit" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 1.5px; padding: 16px 40px; border-radius: 50px; border: none; font-size: 14px; cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(160,63,163,0.3); font-family: \'Inter Tight\', sans-serif; text-transform: uppercase;">SUSCRIBIRME</button>
-            </form>
+                <button onclick="openUnifiedModal('newsletter')" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 1.5px; padding: 16px 40px; border-radius: 50px; border: none; font-size: 14px; cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(160,63,163,0.3); font-family: 'Inter Tight', sans-serif; text-transform: uppercase;">SUSCRIBIRSE</button>
             </div>
         </div>
     </section>
@@ -1253,18 +1248,29 @@
         }
     </script>
 
-    <!-- Waitlist Modal -->
+    <!-- Unified CTA Modal -->
     <div id="waitlistModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 99999; background: rgba(17,17,17,0.85); align-items: center; justify-content: center; backdrop-filter: blur(8px);">
         <div style="background: #FFFFFF; padding: 40px 40px; border-radius: 8px; max-width: 650px; width: 90%; position: relative; max-height: 90vh; overflow-y: auto; text-align: left; box-shadow: 0 40px 100px rgba(0,0,0,0.4);">
             <button onclick="document.getElementById('waitlistModal').style.display='none';" style="position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 30px; cursor: pointer; color: #2A2A2A; line-height: 1; padding: 0;">&times;</button>
             
-            <h2 class="section-heading color-reveal" style="margin-top: 10px; margin-bottom: 10px; text-align: center;">Únete a la Lista de Espera</h2>
-            <p style="text-align: center; color: #2A2A2A; font-family: 'Inter', sans-serif; margin-bottom: var(--spacer-30); line-height: 1.5;">Toma el control de tu futuro financiero. Únete a la revolución de Riqueza liderada por Mujeres.</p>
+            <h2 class="section-heading color-reveal" id="modalTitle" style="margin-top: 10px; margin-bottom: 10px; text-align: center; font-size: clamp(32px, 4vw, 42px);">Únete al Movimiento Castle</h2>
+            <p style="text-align: center; color: #2A2A2A; font-family: 'Inter', sans-serif; margin-bottom: var(--spacer-30); line-height: 1.5;">Toma el control de tu futuro financiero. Únete a la revolución de riqueza liderada por Mujeres.</p>
             
-            <form action="https://buildyourcastle.us10.list-manage.com/subscribe/post?u=4766d7bd8debcf610dadddfb6&amp;id=53677e9563" target="_blank" method="POST" id="waitlistForm" class="waitlist-form">
-                <input type="hidden" name="SOURCE" value="Waitlist">
+            <form action="https://buildyourcastle.us10.list-manage.com/subscribe/post?u=4766d7bd8debcf610dadddfb6&amp;id=53677e9563" target="_blank" method="POST" id="unifiedForm" class="waitlist-form" onsubmit="prepareUnifiedFormSubmit(event)">
+                <input type="hidden" name="SOURCE" id="unifiedSource" value="Waitlist">
                 <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_4766d7bd8debcf610dadddfb6_53677e9563" tabindex="-1" value=""></div>
                 
+                <!-- Interests Checkboxes -->
+                <div class="form-group" style="margin-bottom: 20px; background: #F9FAFB; padding: 20px; border-radius: 6px; border: 1px solid #D1D5DB;">
+                    <label style="font-size: 15px; font-weight: 700; color: #1A1A1A; margin-bottom: 15px; display: block;">Estoy interesada en (selecciona todas las opciones que correspondan):</label>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_waitlist" value="Waitlist" style="width:18px; height:18px; margin:0;"> Unirme a la lista de espera (Masterclass/App)</label>
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_partner" value="Partner" style="width:18px; height:18px; margin:0;"> Asociarme con Castle</label>
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_contact" value="Contact" style="width:18px; height:18px; margin:0;"> Contacto General</label>
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_newsletter" value="Newsletter" checked style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Suscribirme al Newsletter</label>
+                    </div>
+                </div>
+
                 <div class="form-row">
                     <div class="form-group">
                         <label for="fname">Nombre Completo *</label>
@@ -1284,7 +1290,7 @@
                     <div class="form-group">
                         <label for="age">Edad</label>
                         <select id="age" name="AGE">
-                            <option value="" disabled selected>Select age range</option>
+                            <option value="" disabled selected>Selecciona rango de edad</option>
                             <option value="18-24">18-24</option>
                             <option value="25-29">25-29</option>
                             <option value="30-34">30-34</option>
@@ -1303,18 +1309,18 @@
                         <label for="country">País</label>
                         <select id="country" name="COUNTRY">
                             <option value="" disabled selected>Selecciona tu país</option>
-                            <option value="United States">Estados Unidos</option>
-                            <option value="United Kingdom">Reino Unido</option>
-                            <option value="Canada">Canadá</option>
+                            <option value="United States">United States</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="Canada">Canada</option>
                             <option value="Australia">Australia</option>
                             <option value="Argentina">Argentina</option>
-                            <option value="Brazil">Brasil</option>
+                            <option value="Brazil">Brazil</option>
                             <option value="Chile">Chile</option>
                             <option value="Colombia">Colombia</option>
-                            <option value="Mexico">México</option>
-                            <option value="Peru">Perú</option>
-                            <option value="Spain">España</option>
-                            <option value="Other">Otro</option>
+                            <option value="Mexico">Mexico</option>
+                            <option value="Peru">Peru</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Other">Other</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -1330,7 +1336,7 @@
                     </div>
                     <div class="form-group">
                         <label for="role">Tu Rol / Cargo</label>
-                        <input type="text" id="role" name="ROLE" placeholder="Founder">
+                        <input type="text" id="role" name="ROLE" placeholder="Founder / CEO">
                     </div>
                 </div>
 
@@ -1339,16 +1345,62 @@
                     <input type="text" id="instagram" name="INSTAGRAM" placeholder="@janedoe">
                 </div>
 
-                <div class="checkbox-group">
-                    <input type="checkbox" id="consent" name="CONSENT" required>
-                    <label for="consent">Doy mi consentimiento para que Castle me contacte para compartir actualizaciones sobre la plataforma, información de lanzamiento y eventos de la Comunidad.</label>
+                <div class="checkbox-group" style="margin-top: 15px;">
+                    <input type="checkbox" id="consent" name="CONSENT" required style="width: 18px; height: 18px;">
+                    <label for="consent" style="margin-left: 8px;">Doy mi consentimiento para que Castle me contacte con actualizaciones de la plataforma e invitaciones.</label>
                 </div>
 
-                <button type="submit" class="waitlist-submit">Aplicar a la Lista de Espera</button>
+                <!-- Anti-spam Honeypot -->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_name" tabindex="-1" value=""></div>
+
+                <button type="submit" class="waitlist-submit" style="margin-top: 20px;">Enviar Solicitud</button>
             </form>
         </div>
     </div>
     <script src="./js/mailchimp.js"></script>
+
+    <script>
+        function openUnifiedModal(sourceType) {
+            // Uncheck all main interests first
+            if(document.getElementById('chk_waitlist')) document.getElementById('chk_waitlist').checked = false;
+            if(document.getElementById('chk_partner')) document.getElementById('chk_partner').checked = false;
+            if(document.getElementById('chk_contact')) document.getElementById('chk_contact').checked = false;
+            
+            // Always keep newsletter checked by default
+            if(document.getElementById('chk_newsletter')) document.getElementById('chk_newsletter').checked = true;
+
+            // Check based on source
+            if (sourceType === 'waitlist') {
+                if(document.getElementById('chk_waitlist')) document.getElementById('chk_waitlist').checked = true;
+            } else if (sourceType === 'partner') {
+                if(document.getElementById('chk_partner')) document.getElementById('chk_partner').checked = true;
+            } else if (sourceType === 'contact') {
+                if(document.getElementById('chk_contact')) document.getElementById('chk_contact').checked = true;
+            } else if (sourceType === 'newsletter') {
+                // If they specifically clicked newsletter, we just ensure it's checked
+                if(document.getElementById('chk_newsletter')) document.getElementById('chk_newsletter').checked = true;
+            }
+
+            // Show modal
+            if(document.getElementById('waitlistModal')) document.getElementById('waitlistModal').style.display = 'flex';
+        }
+
+        function prepareUnifiedFormSubmit(e) {
+            // Intercept submit to populate SOURCE with all checked interests
+            let interests = [];
+            if (document.getElementById('chk_waitlist') && document.getElementById('chk_waitlist').checked) interests.push("Waitlist");
+            if (document.getElementById('chk_partner') && document.getElementById('chk_partner').checked) interests.push("Partner");
+            if (document.getElementById('chk_contact') && document.getElementById('chk_contact').checked) interests.push("Contact");
+            if (document.getElementById('chk_newsletter') && document.getElementById('chk_newsletter').checked) interests.push("Newsletter");
+            
+            if (interests.length === 0) {
+                interests.push("No specific interest");
+            }
+
+            if(document.getElementById('unifiedSource')) document.getElementById('unifiedSource').value = interests.join(", ");
+        }
+    </script>
+    
 </body>
 
 

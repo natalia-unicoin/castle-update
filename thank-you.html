@@ -870,18 +870,29 @@
         }
     </script>
 
-    <!-- Waitlist Modal -->
+    <!-- Unified CTA Modal -->
     <div id="waitlistModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 99999; background: rgba(17,17,17,0.85); align-items: center; justify-content: center; backdrop-filter: blur(8px);">
         <div style="background: #FFFFFF; padding: 40px 40px; border-radius: 8px; max-width: 650px; width: 90%; position: relative; max-height: 90vh; overflow-y: auto; text-align: left; box-shadow: 0 40px 100px rgba(0,0,0,0.4);">
             <button onclick="document.getElementById('waitlistModal').style.display='none';" style="position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 30px; cursor: pointer; color: #2A2A2A; line-height: 1; padding: 0;">&times;</button>
             
-            <h2 class="section-heading color-reveal" style="margin-top: 10px; margin-bottom: 10px; text-align: center;">Join the Waitlist</h2>
-            <p style="text-align: center; color: #2A2A2A; font-family: 'Inter', sans-serif; margin-bottom: var(--spacer-30); line-height: 1.5;">Have a question, partnership idea, or just want to say hello? Drop us a message below and our team will get back to you.</p>
+            <h2 class="section-heading color-reveal" id="modalTitle" style="margin-top: 10px; margin-bottom: 10px; text-align: center; font-size: clamp(32px, 4vw, 42px);">Join the Castle Movement</h2>
+            <p style="text-align: center; color: #2A2A2A; font-family: 'Inter', sans-serif; margin-bottom: var(--spacer-30); line-height: 1.5;">Take control of your financial future. Join the Women-led Wealth revolution.</p>
             
-            <form action="https://buildyourcastle.us10.list-manage.com/subscribe/post?u=4766d7bd8debcf610dadddfb6&amp;id=53677e9563" target="_blank" method="POST" id="waitlistForm" class="waitlist-form">
-                <input type="hidden" name="SOURCE" value="Waitlist">
+            <form action="https://buildyourcastle.us10.list-manage.com/subscribe/post?u=4766d7bd8debcf610dadddfb6&amp;id=53677e9563" target="_blank" method="POST" id="unifiedForm" class="waitlist-form" onsubmit="prepareUnifiedFormSubmit(event)">
+                <input type="hidden" name="SOURCE" id="unifiedSource" value="Waitlist">
                 <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_4766d7bd8debcf610dadddfb6_53677e9563" tabindex="-1" value=""></div>
                 
+                <!-- Interests Checkboxes -->
+                <div class="form-group" style="margin-bottom: 20px; background: #F9FAFB; padding: 20px; border-radius: 6px; border: 1px solid #D1D5DB;">
+                    <label style="font-size: 15px; font-weight: 700; color: #1A1A1A; margin-bottom: 15px; display: block;">I am interested in (select all that apply):</label>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_waitlist" value="Waitlist" style="width:18px; height:18px; margin:0;"> Join the Waitlist (Masterclass/App)</label>
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_partner" value="Partner" style="width:18px; height:18px; margin:0;"> Partnering with Castle</label>
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_contact" value="Contact" style="width:18px; height:18px; margin:0;"> General Contact</label>
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_newsletter" value="Newsletter" checked style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Subscribe to Newsletter</label>
+                    </div>
+                </div>
+
                 <div class="form-row">
                     <div class="form-group">
                         <label for="fname">Full Name *</label>
@@ -947,7 +958,7 @@
                     </div>
                     <div class="form-group">
                         <label for="role">Your Role / Title</label>
-                        <input type="text" id="role" name="ROLE" placeholder="Founder">
+                        <input type="text" id="role" name="ROLE" placeholder="Founder / CEO">
                     </div>
                 </div>
 
@@ -956,16 +967,62 @@
                     <input type="text" id="instagram" name="INSTAGRAM" placeholder="@janedoe">
                 </div>
 
-                <div class="checkbox-group">
-                    <input type="checkbox" id="consent" name="CONSENT" required>
-                    <label for="consent">I consent to Castle contacting me to share updates about the platform, launch information, and Community events.</label>
+                <div class="checkbox-group" style="margin-top: 15px;">
+                    <input type="checkbox" id="consent" name="CONSENT" required style="width: 18px; height: 18px;">
+                    <label for="consent" style="margin-left: 8px;">I consent to Castle contacting me to share updates about the platform, launch information, and Community events.</label>
                 </div>
 
-                <button type="submit" class="waitlist-submit">Apply for Waitlist</button>
+                <!-- Anti-spam Honeypot -->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_name" tabindex="-1" value=""></div>
+
+                <button type="submit" class="waitlist-submit" style="margin-top: 20px;">Submit Application</button>
             </form>
         </div>
     </div>
     <script src="./js/mailchimp.js"></script>
+
+    <script>
+        function openUnifiedModal(sourceType) {
+            // Uncheck all main interests first
+            if(document.getElementById('chk_waitlist')) document.getElementById('chk_waitlist').checked = false;
+            if(document.getElementById('chk_partner')) document.getElementById('chk_partner').checked = false;
+            if(document.getElementById('chk_contact')) document.getElementById('chk_contact').checked = false;
+            
+            // Always keep newsletter checked by default
+            if(document.getElementById('chk_newsletter')) document.getElementById('chk_newsletter').checked = true;
+
+            // Check based on source
+            if (sourceType === 'waitlist') {
+                if(document.getElementById('chk_waitlist')) document.getElementById('chk_waitlist').checked = true;
+            } else if (sourceType === 'partner') {
+                if(document.getElementById('chk_partner')) document.getElementById('chk_partner').checked = true;
+            } else if (sourceType === 'contact') {
+                if(document.getElementById('chk_contact')) document.getElementById('chk_contact').checked = true;
+            } else if (sourceType === 'newsletter') {
+                // If they specifically clicked newsletter, we just ensure it's checked
+                if(document.getElementById('chk_newsletter')) document.getElementById('chk_newsletter').checked = true;
+            }
+
+            // Show modal
+            if(document.getElementById('waitlistModal')) document.getElementById('waitlistModal').style.display = 'flex';
+        }
+
+        function prepareUnifiedFormSubmit(e) {
+            // Intercept submit to populate SOURCE with all checked interests
+            let interests = [];
+            if (document.getElementById('chk_waitlist') && document.getElementById('chk_waitlist').checked) interests.push("Waitlist");
+            if (document.getElementById('chk_partner') && document.getElementById('chk_partner').checked) interests.push("Partner");
+            if (document.getElementById('chk_contact') && document.getElementById('chk_contact').checked) interests.push("Contact");
+            if (document.getElementById('chk_newsletter') && document.getElementById('chk_newsletter').checked) interests.push("Newsletter");
+            
+            if (interests.length === 0) {
+                interests.push("No specific interest");
+            }
+
+            if(document.getElementById('unifiedSource')) document.getElementById('unifiedSource').value = interests.join(", ");
+        }
+    </script>
+    
 </body>
 
 
