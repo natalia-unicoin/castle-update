@@ -1260,10 +1260,12 @@
                         .interests-grid { display: grid; gap: 12px; grid-template-columns: 1fr; }
                     </style>
                     <div class="interests-grid">
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_waitlist" value="Waitlist" style="width:18px; height:18px; margin:0;"> Quiero participar en la Masterclass</label>
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_partner" value="Partner" style="width:18px; height:18px; margin:0;"> Quiero colaborar con Castle</label>
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_contact" value="Contact" style="width:18px; height:18px; margin:0;"> Quiero hablar con el equipo</label>
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_newsletter" value="Newsletter" checked style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Quiero recibir novedades</label>
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_programs" value="Educacion" style="width:18px; height:18px; margin:0;"> Participar de los programas de educación</label>
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_platform" value="Plataforma" style="width:18px; height:18px; margin:0;"> Sumarme a la plataforma</label>
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_partner" value="Partner" style="width:18px; height:18px; margin:0;"> Convertirme en partner</label>
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_interview" value="Entrevista" style="width:18px; height:18px; margin:0;"> Entrevistar al equipo</label>
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_jointeam" value="Equipo" style="width:18px; height:18px; margin:0;"> Sumarme al equipo</label>
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_other" value="Otro" style="width:18px; height:18px; margin:0;"> Otro</label>
                     </div>
                 </div>
 
@@ -1337,8 +1339,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="comentarios">Comentarios</label>
-                    <textarea id="comentarios" name="COMENTARIOS" rows="3" placeholder="Escribe tus comentarios aquí..." style="resize: vertical;"></textarea>
+                    <label for="comentarios">Cuéntanos en más detalle</label>
+                    <textarea id="comentarios" name="COMENTARIOS" rows="3" placeholder="Escribe aquí los detalles sobre qué te gustaría hacer en Castle..." style="resize: vertical;"></textarea>
                 </div>
 
                 <div class="checkbox-group" style="margin-top: 15px;">
@@ -1358,23 +1360,18 @@
     <script>
         function openUnifiedModal(sourceType) {
             // Uncheck all main interests first
-            if(document.getElementById('chk_waitlist')) document.getElementById('chk_waitlist').checked = false;
+            if(document.getElementById('chk_programs')) document.getElementById('chk_programs').checked = false;
+            if(document.getElementById('chk_platform')) document.getElementById('chk_platform').checked = false;
             if(document.getElementById('chk_partner')) document.getElementById('chk_partner').checked = false;
-            if(document.getElementById('chk_contact')) document.getElementById('chk_contact').checked = false;
-            
-            // Always keep newsletter checked by default
-            if(document.getElementById('chk_newsletter')) document.getElementById('chk_newsletter').checked = true;
+            if(document.getElementById('chk_interview')) document.getElementById('chk_interview').checked = false;
+            if(document.getElementById('chk_jointeam')) document.getElementById('chk_jointeam').checked = false;
+            if(document.getElementById('chk_other')) document.getElementById('chk_other').checked = false;
 
             // Check based on source
             if (sourceType === 'waitlist') {
-                if(document.getElementById('chk_waitlist')) document.getElementById('chk_waitlist').checked = true;
+                if(document.getElementById('chk_platform')) document.getElementById('chk_platform').checked = true;
             } else if (sourceType === 'partner') {
                 if(document.getElementById('chk_partner')) document.getElementById('chk_partner').checked = true;
-            } else if (sourceType === 'contact') {
-                if(document.getElementById('chk_contact')) document.getElementById('chk_contact').checked = true;
-            } else if (sourceType === 'newsletter') {
-                // If they specifically clicked newsletter, we just ensure it's checked
-                if(document.getElementById('chk_newsletter')) document.getElementById('chk_newsletter').checked = true;
             }
 
             // Show modal
@@ -1384,10 +1381,12 @@
         function prepareUnifiedFormSubmit(e) {
             // Intercept submit to populate SOURCE with all checked interests
             let interests = [];
-            if (document.getElementById('chk_waitlist') && document.getElementById('chk_waitlist').checked) interests.push("Waitlist");
+            if (document.getElementById('chk_programs') && document.getElementById('chk_programs').checked) interests.push("Educación");
+            if (document.getElementById('chk_platform') && document.getElementById('chk_platform').checked) interests.push("Plataforma");
             if (document.getElementById('chk_partner') && document.getElementById('chk_partner').checked) interests.push("Partner");
-            if (document.getElementById('chk_contact') && document.getElementById('chk_contact').checked) interests.push("Contact");
-            if (document.getElementById('chk_newsletter') && document.getElementById('chk_newsletter').checked) interests.push("Newsletter");
+            if (document.getElementById('chk_interview') && document.getElementById('chk_interview').checked) interests.push("Entrevista");
+            if (document.getElementById('chk_jointeam') && document.getElementById('chk_jointeam').checked) interests.push("Equipo");
+            if (document.getElementById('chk_other') && document.getElementById('chk_other').checked) interests.push("Otro");
             
             if (interests.length === 0) {
                 interests.push("No specific interest");
