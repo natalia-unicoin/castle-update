@@ -1267,7 +1267,6 @@
                         <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_partner" value="Partner" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Convertirme en partner</label>
                         <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_interview" value="Entrevista" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Entrevistar al equipo</label>
                         <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_jointeam" value="Equipo" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Sumarme al equipo</label>
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_newsletter" value="Newsletter" checked style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Suscribirme al newsletter</label>
                         <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_other" value="Otro" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Otro</label>
                     </div>
                 </div>
@@ -1346,9 +1345,15 @@
                     <textarea id="comentarios" name="COMENTARIOS" rows="3" placeholder="Escribe aquí los detalles sobre qué te gustaría hacer en Castle..." style="resize: vertical;"></textarea>
                 </div>
 
-                <div class="checkbox-group" style="margin-top: 15px;">
-                    <input type="checkbox" id="consent" name="CONSENT" required checked style="width: 18px; height: 18px; margin: 0; padding: 0; accent-color: #A03FA3;">
-                    <label for="consent" style="margin-left: 0;">Doy mi consentimiento para que Castle me contacte con actualizaciones de la plataforma e invitaciones.</label>
+                <div class="checkbox-group" style="margin-top: 25px; display: flex; flex-direction: column; gap: 15px;">
+                    <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; margin: 0;">
+                        <input type="checkbox" id="chk_newsletter" value="Newsletter" checked style="width: 18px; height: 18px; margin: 0; padding: 0; accent-color: #A03FA3; flex-shrink: 0; margin-top: 2px;">
+                        <span style="font-size: 14px; font-weight: 500; line-height: 1.4; color: #4B5563;">Suscribirme al newsletter</span>
+                    </label>
+                    <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; margin: 0;">
+                        <input type="checkbox" id="consent" name="CONSENT" required checked style="width: 18px; height: 18px; margin: 0; padding: 0; accent-color: #A03FA3; flex-shrink: 0; margin-top: 2px;">
+                        <span style="font-size: 14px; font-weight: 500; line-height: 1.4; color: #4B5563;">Doy mi consentimiento para que Castle me contacte con actualizaciones de la plataforma e invitaciones.</span>
+                    </label>
                 </div>
 
                 <!-- Anti-spam Honeypot -->
