@@ -1257,17 +1257,30 @@
                 
                 <!-- Interests Checkboxes -->
                 <div class="form-group" style="margin-bottom: 20px;">
-                    <label style="font-size: 20px; font-weight: 800; color: #A03FA3; margin-bottom: 15px; display: block;">¿Qué te gustaría hacer en Castle? <span style="font-size: 14px; font-weight: 500; color: #6B7280; margin-top: 4px; margin-left: 0; display: block;">(puedes seleccionar más de una opción)</span></label>
+                    <label style="font-size: 20px; font-weight: 800; color: #A03FA3; margin-bottom: 12px; display: block;">¿Qué te gustaría hacer en Castle?</label>
                     <style>
-                        .interests-grid { display: grid; gap: 12px; grid-template-columns: 1fr; }
+                        .custom-multiselect { position: relative; width: 100%; margin-bottom: 10px; }
+                        .multiselect-dropdown { width: 100%; padding: 14px 15px; border: 1px solid #D1D5DB; border-radius: 8px; background-color: #FFFFFF; font-size: 15px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: #4B5563; font-weight: 500; font-family: 'Inter', sans-serif; transition: border-color 0.2s; }
+                        .multiselect-dropdown:hover { border-color: #A03FA3; }
+                        .multiselect-options { position: absolute; top: 100%; left: 0; right: 0; background: #FFFFFF; border: 1px solid #D1D5DB; border-radius: 8px; margin-top: 4px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); z-index: 1000; max-height: 250px; overflow-y: auto; display: none; padding: 8px 0; }
+                        .multiselect-options.open { display: block; }
+                        .multiselect-options label { display: flex; align-items: center; gap: 12px; padding: 12px 15px; margin: 0; cursor: pointer; font-weight: 500; font-size: 15px; color: #1A1A1A; transition: background 0.2s; }
+                        .multiselect-options label:hover { background: #F9FAFB; }
+                        .multiselect-options input[type="checkbox"] { width: 18px; height: 18px; accent-color: #A03FA3; margin: 0; cursor: pointer; }
                     </style>
-                    <div class="interests-grid">
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_programs" value="Educacion" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Participar de los programas de educación</label>
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_platform" value="Plataforma" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Sumarme a la plataforma</label>
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_partner" value="Partner" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Convertirme en partner</label>
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_interview" value="Entrevista" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Entrevistar al equipo</label>
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_jointeam" value="Equipo" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Sumarme al equipo</label>
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_other" value="Otro" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Otro</label>
+                    <div class="custom-multiselect" id="ms-container">
+                        <div class="multiselect-dropdown" id="ms-dropdown" onclick="toggleMultiselect(event)">
+                            <span id="ms-placeholder" style="color: #9CA3AF;">Seleccionar opciones...</span>
+                            <span id="ms-arrow" style="font-size: 12px; transition: transform 0.3s; color: #9CA3AF;">▼</span>
+                        </div>
+                        <div class="multiselect-options" id="ms-options" onclick="event.stopPropagation();">
+                            <label><input type="checkbox" id="chk_programs" value="Educacion" onchange="updateMsLabel()"> Participar de los programas de educación</label>
+                            <label><input type="checkbox" id="chk_platform" value="Plataforma" onchange="updateMsLabel()"> Sumarme a la plataforma</label>
+                            <label><input type="checkbox" id="chk_partner" value="Partner" onchange="updateMsLabel()"> Convertirme en partner</label>
+                            <label><input type="checkbox" id="chk_interview" value="Entrevista" onchange="updateMsLabel()"> Entrevistar al equipo</label>
+                            <label><input type="checkbox" id="chk_jointeam" value="Equipo" onchange="updateMsLabel()"> Sumarme al equipo</label>
+                            <label><input type="checkbox" id="chk_other" value="Otro" onchange="updateMsLabel()"> Otro</label>
+                        </div>
                     </div>
                 </div>
 
@@ -1387,7 +1400,58 @@
 
             // Show modal
             if(document.getElementById('waitlistModal')) document.getElementById('waitlistModal').style.display = 'flex';
+
+            // Sync dropdown label
+            if(typeof updateMsLabel === 'function') updateMsLabel();
         }
+
+        function toggleMultiselect(e) {
+            e.stopPropagation();
+            const options = document.getElementById('ms-options');
+            const arrow = document.getElementById('ms-arrow');
+            options.classList.toggle('open');
+            if (options.classList.contains('open')) {
+                arrow.style.transform = 'rotate(180deg)';
+                document.getElementById('ms-dropdown').style.borderColor = '#A03FA3';
+            } else {
+                arrow.style.transform = 'rotate(0deg)';
+                document.getElementById('ms-dropdown').style.borderColor = '#D1D5DB';
+            }
+        }
+
+        function updateMsLabel() {
+            const container = document.getElementById('ms-options');
+            if(!container) return;
+            const checkboxes = container.querySelectorAll('input[type="checkbox"]');
+            let checkedCount = 0;
+            checkboxes.forEach(cb => { if(cb.checked) checkedCount++; });
+            
+            const placeholder = document.getElementById('ms-placeholder');
+            if (checkedCount === 0) {
+                placeholder.textContent = 'Seleccionar opciones...';
+                placeholder.style.color = '#9CA3AF';
+            } else if (checkedCount === 1) {
+                placeholder.textContent = '1 opción seleccionada';
+                placeholder.style.color = '#1A1A1A';
+            } else {
+                placeholder.textContent = checkedCount + ' opciones seleccionadas';
+                placeholder.style.color = '#1A1A1A';
+            }
+        }
+
+        // Close multiselect when clicking outside
+        window.addEventListener('click', function(e) {
+            const options = document.getElementById('ms-options');
+            const dropdown = document.getElementById('ms-dropdown');
+            const arrow = document.getElementById('ms-arrow');
+            if (options && options.classList.contains('open')) {
+                if (!dropdown.contains(e.target) && !options.contains(e.target)) {
+                    options.classList.remove('open');
+                    arrow.style.transform = 'rotate(0deg)';
+                    dropdown.style.borderColor = '#D1D5DB';
+                }
+            }
+        });
 
         function prepareUnifiedFormSubmit(e) {
             // Intercept submit to populate SOURCE with all checked interests
