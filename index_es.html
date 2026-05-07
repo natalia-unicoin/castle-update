@@ -1284,6 +1284,7 @@
                             <span id="ms-arrow" style="font-size: 12px; transition: transform 0.3s; color: #9CA3AF;">▼</span>
                         </div>
                         <div class="multiselect-options" id="ms-options" onclick="event.stopPropagation();">
+                            <label><input type="checkbox" id="chk_masterclass" value="Masterclass" onchange="updateMsLabel()"> Asistir a la Masterclass</label>
                             <label><input type="checkbox" id="chk_programs" value="Educacion" onchange="updateMsLabel()"> Participar de los programas de educación</label>
                             <label><input type="checkbox" id="chk_platform" value="Plataforma" onchange="updateMsLabel()"> Sumarme a la plataforma</label>
                             <label><input type="checkbox" id="chk_partner" value="Partner" onchange="updateMsLabel()"> Convertirme en partner</label>
@@ -1371,7 +1372,7 @@
                 <div class="checkbox-group" style="margin-top: 25px; display: flex; flex-direction: column; gap: 15px;">
                     <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; margin: 0;">
                         <input type="checkbox" id="chk_newsletter" value="Newsletter" checked style="width: 18px; height: 18px; margin: 0; padding: 0; accent-color: #A03FA3; flex-shrink: 0; margin-top: 2px;">
-                        <span style="font-size: 14px; font-weight: 500; line-height: 1.4; color: #4B5563;">Suscribirme al newsletter</span>
+                        <span style="font-size: 14px; font-weight: 500; line-height: 1.4; color: #4B5563;">Newsletter</span>
                     </label>
                     <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; margin: 0;">
                         <input type="checkbox" id="consent" name="CONSENT" required checked style="width: 18px; height: 18px; margin: 0; padding: 0; accent-color: #A03FA3; flex-shrink: 0; margin-top: 2px;">
