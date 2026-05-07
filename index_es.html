@@ -1255,10 +1255,10 @@
 
     <!-- Unified CTA Modal -->
     <div id="waitlistModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 99999; background: rgba(17,17,17,0.85); align-items: center; justify-content: center; backdrop-filter: blur(8px);">
-        <div style="background: #FFFFFF; padding: 40px 40px; border-radius: 8px; max-width: 750px; width: 90%; position: relative; max-height: 90vh; overflow-y: auto; text-align: left; box-shadow: 0 40px 100px rgba(0,0,0,0.4);">
+        <div style="background: #FFFFFF; padding: clamp(30px, 5vw, 40px) clamp(20px, 5vw, 40px); border-radius: 8px; max-width: 750px; width: 95%; position: relative; max-height: 95vh; overflow-y: auto; text-align: left; box-shadow: 0 40px 100px rgba(0,0,0,0.4);">
             <button onclick="document.getElementById('waitlistModal').style.display='none';" style="position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 30px; cursor: pointer; color: #2A2A2A; line-height: 1; padding: 0;">&times;</button>
             
-            <h2 class="section-heading color-reveal" id="modalTitle" style="margin-top: 10px; margin-bottom: 10px; text-align: center; font-size: clamp(22px, 6vw, 42px); white-space: nowrap;">Bienvenida a Castle</h2>
+            <h2 class="section-heading color-reveal" id="modalTitle" style="margin-top: 0; margin-bottom: 15px; text-align: center; font-size: clamp(24px, 7vw, 42px); white-space: normal; line-height: 1.1;">Bienvenida a Castle</h2>
             
             
             <form action="https://buildyourcastle.us10.list-manage.com/subscribe/post?u=4766d7bd8debcf610dadddfb6&amp;id=53677e9563" target="_blank" method="POST" id="unifiedForm" class="waitlist-form" onsubmit="prepareUnifiedFormSubmit(event)">
@@ -1267,7 +1267,7 @@
                 
                 <!-- Interests Checkboxes -->
                 <div class="form-group" style="margin-bottom: 20px;">
-                    <label style="font-size: 20px; font-weight: 800; color: #A03FA3; margin-bottom: 12px; display: block;">¿Qué te gustaría hacer en Castle?</label>
+                    <label style="font-size: 20px; font-weight: 800; color: #A03FA3; margin-bottom: 12px; display: block; text-align: center;">¿Qué te gustaría hacer en Castle?</label>
                     <style>
                         .custom-multiselect { position: relative; width: 100%; margin-bottom: 10px; }
                         .multiselect-dropdown { width: 100%; padding: 14px 15px; border: 1px solid #D1D5DB; border-radius: 8px; background-color: #FFFFFF; font-size: 15px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: #4B5563; font-weight: 500; font-family: 'Inter', sans-serif; transition: border-color 0.2s; }
@@ -1280,7 +1280,7 @@
                     </style>
                     <div class="custom-multiselect" id="ms-container">
                         <div class="multiselect-dropdown" id="ms-dropdown" onclick="toggleMultiselect(event)">
-                            <span id="ms-placeholder" style="color: #9CA3AF;">Seleccionar opciones...</span>
+                            <span id="ms-placeholder" style="color: #9CA3AF; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding-right: 15px; max-width: 90%;">Seleccionar opciones...</span>
                             <span id="ms-arrow" style="font-size: 12px; transition: transform 0.3s; color: #9CA3AF;">▼</span>
                         </div>
                         <div class="multiselect-options" id="ms-options" onclick="event.stopPropagation();">
@@ -1433,18 +1433,17 @@
             const container = document.getElementById('ms-options');
             if(!container) return;
             const checkboxes = container.querySelectorAll('input[type="checkbox"]');
-            let checkedCount = 0;
-            checkboxes.forEach(cb => { if(cb.checked) checkedCount++; });
+            let selectedValues = [];
+            checkboxes.forEach(cb => { 
+                if(cb.checked) selectedValues.push(cb.value); 
+            });
             
             const placeholder = document.getElementById('ms-placeholder');
-            if (checkedCount === 0) {
+            if (selectedValues.length === 0) {
                 placeholder.textContent = 'Seleccionar opciones...';
                 placeholder.style.color = '#9CA3AF';
-            } else if (checkedCount === 1) {
-                placeholder.textContent = '1 opción seleccionada';
-                placeholder.style.color = '#1A1A1A';
             } else {
-                placeholder.textContent = checkedCount + ' opciones seleccionadas';
+                placeholder.textContent = selectedValues.join(', ');
                 placeholder.style.color = '#1A1A1A';
             }
         }
