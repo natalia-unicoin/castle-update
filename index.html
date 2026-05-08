@@ -95,7 +95,7 @@
             min-height: 100vh;
 
             position: relative;  display: flex; align-items: stretch; justify-content: flex-start;
-            background-color: #F8F8FA; overflow: hidden; padding: 0 clamp(30px, 5vw, 100px);
+            background-color: #F8F8FA; overflow: hidden; padding: 0 4vw;
             background-image: url('./public/images/common/hero-silvina.jpg');
             background-size: cover;
             background-position: right center;
@@ -111,7 +111,7 @@
         }
         .hero-container {
             position: relative; z-index: 3; display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
-            width: 100%; max-width: 1500px; margin-left: clamp(52px, 6vw, 96px); padding: 15vh 0 40px 0;
+            width: 100%; max-width: 1400px; margin: 0 auto; padding: 25vh 0 40px 0;
         }
 
         .hero-gradient {
@@ -164,7 +164,7 @@
         }
 
         
-        :root { --section-pad-y: 80px; --section-pad-large: 100px; --spacer-80: 80px; --spacer-60: 60px; --spacer-50: 50px; --spacer-40: 40px; --spacer-30: 30px; }
+        :root { --section-pad-y: 40px; --section-pad-large: 60px; --spacer-80: 80px; --spacer-60: 60px; --spacer-50: 50px; --spacer-40: 40px; --spacer-30: 30px; }
         @media (max-width: 768px) { :root { --section-pad-y: 30px; --section-pad-large: 30px; --spacer-80: 40px; --spacer-60: 30px; --spacer-50: 25px; --spacer-40: 20px; --spacer-30: 15px; } }
         
         /* Full Site Layout Styles */
@@ -310,7 +310,9 @@
         /* Global typography helpers */
         .section-eyebrow { color: #A03FA3; font-weight: 700; font-size: 14px; letter-spacing: 4px; margin-bottom: 16px; text-align: center; display: block; }
         .section-title { font-size: clamp(36px, 5vw, 64px); font-weight: 700; letter-spacing: -2px; margin-bottom: 20px; color: #1A1A1A; text-align: center; }
-        .section-subtitle { font-size: clamp(20px, 2.5vw, 32px); font-weight: 400; color: #1A1A1A; max-width:  1400px; margin: 0 auto var(--spacer-60) auto; line-height: 1.6; text-align: center; font-family: 'Inter', sans-serif; }
+        .section-subtitle { font-size: clamp(18px, 1.8vw, 26px); font-weight: 400; color: #2A2A2A; max-width: 1200px; width: 100%; margin: 0 auto var(--spacer-50) auto; line-height: 1.4; text-align: center; font-family: 'Inter', sans-serif; }
+        .section-subtitle-1 { font-size: clamp(18px, 1.8vw, 26px); font-weight: 700; color: #1A1A1A; margin-bottom: 12px; line-height: 1.3; }
+        .section-subtitle-2 { font-size: clamp(16px, 1.4vw, 20px); font-weight: 400; color: #2A2A2A; margin-bottom: 0; line-height: 1.45; }
 
         /* 4. Program (Genesis Challenge) */
         .program-section { background-color: #FFFFFF; padding: var(--section-pad-y) 0; border-bottom: 1px solid #F3F4F6; text-align: center; }
@@ -545,10 +547,10 @@
         .partner-card:hover img { transform: scale(1.05); }
         .partner-card:hover .partner-card-overlay { background: rgba(160,63,163,0.9); }
         .partner-card-content { position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px 24px; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; z-index: 3; }
-        .partner-card-title { font-size: 22px; font-weight: 800; color: #FFFFFF; margin: 0; line-height: 1.2; font-family: 'Inter', sans-serif; transform: translateY(0); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); text-align: center; }
-        .partner-card-text-container { position: absolute; left: 0; width: 100%; padding: 0 24px; bottom: -80px; opacity: 0; visibility: hidden; transition: opacity 0.4s ease, bottom 0.4s cubic-bezier(0.16, 1, 0.3, 1); text-align: center; display: flex; flex-direction: column; gap: 12px; }
-        .partner-card:hover .partner-card-title { transform: translateY(-150px); }
-        .partner-card:hover .partner-card-text-container { opacity: 1; visibility: visible; bottom: 30px; }
+        .partner-card-title { font-size: 22px; font-weight: 800; color: #FFFFFF; margin: 0; line-height: 1.2; font-family: 'Inter', sans-serif; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); text-align: center; }
+        .partner-card-text-container { opacity: 0; visibility: hidden; max-height: 0; margin-top: 0; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); text-align: center; display: flex; flex-direction: column; gap: 12px; overflow: hidden; width: 100%; }
+        .partner-card:hover .partner-card-title { transform: translateY(-5px); }
+        .partner-card:hover .partner-card-text-container { opacity: 1; visibility: visible; max-height: 250px; margin-top: 15px; }
         .partner-card-text { font-size: 14px; color: rgba(255,255,255,0.9); font-weight: 700; line-height: 1.5; margin: 0; text-align: center; }
         .partner-card-cta { font-size: 11px; font-weight: 800; color: #A03FA3; letter-spacing: 1.5px; text-decoration: none; }
 
@@ -598,9 +600,9 @@
         @media(max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
         .form-group { display: flex; flex-direction: column; }
         .form-group label { font-size: 14px; font-weight: 600; color: #1A1A1A; margin-bottom: 8px; text-align: left !important; margin-left: 0 !important; padding-left: 0 !important; align-self: flex-start; }
-        .form-group input, .form-group select { padding: 14px 16px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 15px; font-family: 'Inter', sans-serif; background: #F9FAFB; transition: border-color 0.2s, box-shadow 0.2s; color:#1A1A1A; }
+        .form-group input, .form-group select, .form-group textarea { padding: 14px 16px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 15px; font-family: 'Inter', sans-serif; background: #F9FAFB; transition: border-color 0.2s, box-shadow 0.2s; color:#1A1A1A; width: 100%; box-sizing: border-box; }
         .form-group select { appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23111111" viewBox="0 0 16 16"><path d="M4.293 5.293a1 1 0 0 1 1.414 0L8 8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-3 3a1 1 0 0 1-1.414 0l-3-3a1 1 0 0 1 0-1.414z"/></svg>'); background-repeat: no-repeat; background-position: right 16px center; background-size: 16px; padding-right: 40px; }
-        .form-group input:focus, .form-group select:focus { border-color: #A03FA3; box-shadow: 0 0 0 3px rgba(160,63,163,0.1); outline: none; background: #FFFFFF; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #A03FA3; box-shadow: 0 0 0 3px rgba(160,63,163,0.1); outline: none; background: #FFFFFF; }
         .checkbox-group { display: flex; align-items: flex-start; gap: 12px; margin-top: 10px; }
         .checkbox-group input { margin-top: 4px; cursor: pointer; width: 18px; height: 18px; }
         .checkbox-group label { font-size: 13px; font-weight: 400; color: #2A2A2A; line-height: 1.5; text-transform: none; letter-spacing: 0; cursor: pointer; margin-bottom: 0; }
@@ -664,10 +666,12 @@
         <div class="hero-gradient"></div>
         
         <div class="hero-container">
-            <div class="hero-content" style="max-width: 900px; width: 100%;">
-                <h1 class="hero-title" style="font-size: clamp(38px, 6vw, 100px); line-height: 0.95; letter-spacing: -2px; color: #FFFFFF; ">Own Your <span style="color: #A03FA3;">Wealth.</span><br>Own Your <span style="color: #A03FA3;">Future.</span></h1>
-                <p class="hero-description" style="color: rgba(255,255,255,0.9); font-weight: 500; margin-top: 0px; margin-bottom: 0px; width: 100%;">Castle gives you the Training, AI Tools, Intelligence and Community to take Control of your Money and start building Real Wealth.</p>
-                <div class="hero-cta-group">
+            <div class="hero-content" style="max-width: 900px; width: 100%; padding-top: clamp(20px, 6vh, 80px);">
+                <h1 class="hero-title" style="font-size: clamp(40px, 6.2vw, 95px); line-height: 0.95; letter-spacing: -2px; color: #FFFFFF; text-shadow: 0 4px 15px rgba(0,0,0,0.4); margin-bottom: 0;">Own Your <span style="color: #A03FA3;">Wealth.</span><br>Own Your <span style="color: #A03FA3;">Future.</span></h1>
+                <p style="color: rgba(255,255,255,0.95); font-size: clamp(16px, 1.8vw, 22px); line-height: 1.5; margin-top: 5px; margin-bottom: 0; font-weight: 500; max-width: 650px; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
+                    Castle is an AI-first Web3-powered financial ecosystem designed to help women move from saving to building wealth. Training and Community
+                </p>
+                <div class="hero-cta-group" style="margin-top: 10px;">
                     <a href="javascript:void(0);" onclick="openUnifiedModal('waitlist');" class="btn btn-large" style="">JOIN THE WAITLIST</a>
                 </div>
             </div>
@@ -739,18 +743,22 @@
 
 
 
-    <!-- Challenge Teaser -->
-    <section style="position: relative; display: flex; align-items: flex-end; justify-content: center; padding: 0 0 8vh 0; min-height: 100vh; width: 100%; background-image: url('./public/images/common/challenge.png'); background-size: cover; background-position: center; background-attachment: scroll; background-repeat: no-repeat;" class="snap-section">
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.85) 100%); z-index: 1;"></div>
+    <!-- Challenge Teaser (Styled as Masterclass) -->
+    <section class="snap-section" style="position: relative; display: flex; align-items: flex-end; justify-content: center; padding: 0 4vw 8vh 4vw; min-height: 100vh; background-image: url('./public/images/common/mc-bg2.jpg'); background-size: cover; background-position: center top; background-attachment: fixed; background-repeat: no-repeat; margin-top: 0; overflow: hidden;">
+        <!-- Gradient Overlay -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,0.5) 75%, rgba(0,0,0,0.95) 100%); z-index: 1;"></div>
         
-        <div class="container" style="position: relative; z-index: 2; max-width: 1500px; margin: 0 auto; padding: 0 5vw; text-align: center;">
-            <h2 class="color-reveal section-heading" style="color: #FFFFFF !important; margin-bottom: var(--spacer-30);">
-                The Castle Wealth Reset<br>&amp; Rewire Challenge™
+        <div style="width: 100%; max-width: 1400px; margin: 0 auto; position: relative; z-index: 2; text-align: center; padding-top: 40vh;">
+            <h2 class="section-heading color-reveal" style="font-size: clamp(32px, 5vw, 64px) !important; letter-spacing: -2px !important; line-height: 0.9 !important; margin-bottom: 5px; color: #FFFFFF !important; text-shadow: 0 4px 30px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.6);">
+                <span style="display: inline-block; font-family: 'Inter', sans-serif; color: #FFFFFF;">The Castle Wealth Reset</span><br>
+                <span style="display: inline-block; color: #FFFFFF;">& Rewire <span style="font-family: 'Caveat', cursive; color: #FFFFFF; font-weight: 700; font-size: 1.4em; display: inline-block; margin-right: 15px; margin-top: -10px;">Challenge™</span></span>
             </h2>
-            <p class="color-reveal" style="font-size: clamp(18px, 1.8vw, 28px); color: #FFFFFF !important; line-height: 1.25; font-weight: 500; margin: 0 auto var(--spacer-50) auto; width: 100%; max-width: none; ">
+            
+            <p style="color: rgba(255,255,255,0.95); font-size: clamp(16px, 2.5vw, 22px); line-height: 1.6; margin-bottom: var(--spacer-40); font-weight: 500; max-width: 800px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
                 A focused 21 days sprint designed to rewire your financial habits and help you build your first intelligent portfolio alongside thousands of other driven Women.
             </p>
-            <a href="javascript:void(0);" onclick="openUnifiedModal('waitlist');" class="btn" style="background-color: #A03FA3; border: none; color: #FFFFFF; font-weight: 700; padding: 18px 45px; border-radius: 30px;">
+            
+            <a href="javascript:void(0);" onclick="openUnifiedModal('waitlist');" class="btn" style="background-color: #FFFFFF !important; color: #1A1A1A !important; font-weight: 800; padding: 18px 45px; border-radius: 30px; display: inline-block; border: none;">
                 ACCESS THE MASTERCLASS
             </a>
         </div>
