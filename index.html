@@ -1075,9 +1075,12 @@
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(17,17,17,0.6); z-index: 1;"></div>
         <div class="container" style="position: relative; z-index: 2; max-width: 1500px; margin: 0 auto; padding: 0 5vw; display: flex; flex-direction: column; align-items: center; justify-content: center;">
             <div style="max-width: 800px; width: 100%; text-align: center;">
-                <h3 style="font-size: clamp(40px, 5vw, 72px); font-weight: 700; color: #FFFFFF; margin-bottom: 20px; letter-spacing: -1px; line-height: 1.1; font-family: 'Inter', sans-serif; text-shadow: 0 4px 20px rgba(0,0,0,0.4);">Subscribe to our Newsletter</h3>
-                <p style="font-size: clamp(18px, 1.8vw, 28px); color: rgba(255,255,255,0.95); line-height: 1.6; max-width: 700px; margin: 0 auto var(--spacer-50) auto; font-family: 'Inter', sans-serif; text-shadow: 0 2px 15px rgba(0,0,0,0.4);">Join the movement. Get the latest insights on Wealth building and investments sent straight to your inbox.</p>
-                <button onclick="openUnifiedModal('newsletter')" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 1.5px; padding: 16px 40px; border-radius: 50px; border: none; font-size: 14px; cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(160,63,163,0.3); font-family: 'Inter Tight', sans-serif; text-transform: uppercase;">SUBSCRIBE</button>
+                <h3 style="font-size: clamp(40px, 5vw, 72px); font-weight: 700; color: #FFFFFF; margin-bottom: 20px; letter-spacing: -1px; line-height: 1.1; font-family: 'Inter', sans-serif; text-shadow: 0 4px 20px rgba(0,0,0,0.4);">Multiply your wealth. Build your Castle.</h3>
+                <p style="font-size: clamp(18px, 1.8vw, 28px); color: rgba(255,255,255,0.95); line-height: 1.6; max-width: 700px; margin: 0 auto var(--spacer-50) auto; font-family: 'Inter', sans-serif; text-shadow: 0 2px 15px rgba(0,0,0,0.4);">Build wealth with intention. Start by receiving the conversations that actually matter.</p>
+                <div style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto; width: 100%; flex-wrap: wrap; justify-content: center;">
+                    <input type="email" id="inline_newsletter_email" placeholder="Your email address" style="flex: 1; padding: 16px 20px; border-radius: 50px; border: none; font-size: 16px; outline: none; min-width: 250px; color: #1A1A1A;">
+                    <button onclick="submitInlineNewsletter()" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 1.5px; padding: 16px 40px; border-radius: 50px; border: none; font-size: 14px; cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(160,63,163,0.3); font-family: 'Inter Tight', sans-serif; text-transform: uppercase;">JOIN</button>
+                </div>
             </div>
         </div>
     </section>
