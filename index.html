@@ -744,23 +744,35 @@
 
 
     <!-- Challenge Teaser (Styled as Masterclass) -->
-    <section class="snap-section" style="position: relative; display: flex; align-items: flex-end; justify-content: center; padding: 0 4vw 8vh 4vw; min-height: 100vh; background-image: url('./public/images/common/mc-bg2.jpg'); background-size: cover; background-position: center top; background-attachment: fixed; background-repeat: no-repeat; margin-top: 0; overflow: hidden;">
+    <section class="snap-section" style="position: relative; display: flex; align-items: flex-end; justify-content: center; padding: 0 4vw 8vh 4vw; min-height: 100vh; background-image: url('./public/images/common/masterclass-bg.png'); background-size: cover; background-position: center top; background-attachment: fixed; background-repeat: no-repeat; margin-top: 0; overflow: hidden;">
         <!-- Gradient Overlay -->
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,0.5) 75%, rgba(0,0,0,0.95) 100%); z-index: 1;"></div>
         
-        <div style="width: 100%; max-width: 1400px; margin: 0 auto; position: relative; z-index: 2; text-align: center; padding-top: 40vh;">
-            <h2 class="section-heading color-reveal" style="font-size: clamp(32px, 5vw, 64px) !important; letter-spacing: -2px !important; line-height: 0.9 !important; margin-bottom: 5px; color: #FFFFFF !important; text-shadow: 0 4px 30px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.6);">
-                <span style="display: inline-block; font-family: 'Inter', sans-serif; color: #FFFFFF;">The Castle Wealth Reset</span><br>
-                <span style="display: inline-block; color: #FFFFFF;">& Rewire <span style="font-family: 'Caveat', cursive; color: #FFFFFF; font-weight: 700; font-size: 1.4em; display: inline-block; margin-right: 15px; margin-top: -10px;">Challenge™</span></span>
+        <div style="width: 100%; max-width: 1400px; margin: 0 auto; position: relative; z-index: 2; text-align: center; padding-top: 40vh; display: flex; flex-direction: column; align-items: center;">
+            <div style="background-color: rgba(255,255,255,0.2); padding: 8px 24px; border-radius: 5px; display: inline-block; margin-bottom: 20px;">
+                <span style="color: #FFFFFF; font-weight: 800; font-size: 16px; font-family: 'Inter', sans-serif;">4 Live MasterClasses</span>
+            </div>
+            
+            <h2 class="section-heading color-reveal" style="font-size: clamp(32px, 5vw, 64px) !important; letter-spacing: -2px !important; line-height: 0.9 !important; margin-bottom: 15px; color: #FFFFFF !important; text-shadow: 0 4px 30px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.6);">
+                <span style="display: inline-block; font-family: 'Inter', sans-serif; color: #FFFFFF;">Your financial future</span><br>
+                <span style="display: inline-block; color: #FFFFFF;"><span style="font-family: 'Caveat', cursive; color: #FFFFFF; font-weight: 700; font-size: 1.4em; display: inline-block; margin-right: 15px; margin-top: -10px;">Begins</span> with a decision.</span>
             </h2>
-            
-            <p style="color: rgba(255,255,255,0.95); font-size: clamp(16px, 2.5vw, 22px); line-height: 1.6; margin-bottom: var(--spacer-40); font-weight: 500; max-width: 800px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
-                A focused 21 days sprint designed to rewire your financial habits and help you build your first intelligent portfolio alongside thousands of other driven Women.
-            </p>
-            
-            <a href="javascript:void(0);" onclick="openUnifiedModal('waitlist');" class="btn" style="background-color: #FFFFFF !important; color: #1A1A1A !important; font-weight: 800; padding: 18px 45px; border-radius: 30px; display: inline-block; border: none;">
-                ACCESS THE MASTERCLASS
-            </a>
+
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0;">
+                <div class="color-reveal section-subtitle" style="margin-bottom: 0px; max-width: 1000px; width: 100%;">
+                    <p class="section-subtitle-1" style="color: rgba(255,255,255,0.95); margin-bottom: 5px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.4; text-shadow: 0 4px 20px rgba(0,0,0,0.8); font-weight: 400;">
+                        Transform your relationship with money and start building real wealth.
+                    </p>
+                    <p style="color: #FFFFFF; margin-top: 10px; font-size: 14px; font-weight: 800; font-family: 'Inter', sans-serif; letter-spacing: 0.5px;">Powered By UnicoinFoundation</p>
+                </div>
+                
+                <div style="margin-top: 25px; display: flex; flex-direction: column; align-items: center; gap: 15px;">
+                    <a href="javascript:void(0);" onclick="openUnifiedModal('waitlist');" class="btn" style="background-color: #A03FA3; border: none; color: #FFFFFF; font-weight: 800; padding: 18px 45px; border-radius: 50px; display: inline-block; text-transform: uppercase;">
+                        LEARN MORE
+                    </a>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 400; text-align: center; line-height: 1.4; margin: 0;">Limited spots. Secure your place before registration closes.</p>
+                </div>
+            </div>
         </div>
     </section>
 
