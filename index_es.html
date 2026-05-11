@@ -1315,7 +1315,25 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="phone">Número de Teléfono</label>
-                        <input type="tel" id="phone" name="PHONE" placeholder="+1 234 567 8900">
+                        <div style="display: flex; gap: 10px;">
+                            <select id="phone_code" style="width: 35%; padding: 14px 15px; border: 1px solid #D1D5DB; border-radius: 8px; background-color: #FFFFFF; font-family: 'Inter', sans-serif; font-size: 15px; color: #4B5563;">
+                                <option value="" disabled selected>Cód.</option>
+                                <option value="+54">🇦🇷 +54</option>
+                                <option value="+1">🇺🇸 +1</option>
+                                <option value="+34">🇪🇸 +34</option>
+                                <option value="+51">🇵🇪 +51</option>
+                                <option value="+52">🇲🇽 +52</option>
+                                <option value="+55">🇧🇷 +55</option>
+                                <option value="+56">🇨🇱 +56</option>
+                                <option value="+57">🇨🇴 +57</option>
+                                <option value="+58">🇻🇪 +58</option>
+                                <option value="+591">🇧🇴 +591</option>
+                                <option value="+593">🇪🇨 +593</option>
+                                <option value="+595">🇵🇾 +595</option>
+                                <option value="+598">🇺🇾 +598</option>
+                            </select>
+                            <input type="tel" id="phone" name="PHONE" placeholder="234 567 8900" style="width: 65%;">
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="age">Edad</label>
@@ -1377,11 +1395,11 @@
 
                 <div class="checkbox-group" style="margin-top: 25px; display: flex; flex-direction: column; gap: 15px;">
                     <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; margin: 0;">
-                        <input type="checkbox" id="chk_newsletter" value="Newsletter" checked style="width: 18px; height: 18px; margin: 0; padding: 0; accent-color: #A03FA3; flex-shrink: 0; margin-top: 2px;">
+                        <input type="checkbox" id="chk_newsletter" value="Newsletter" style="width: 18px; height: 18px; margin: 0; padding: 0; accent-color: #A03FA3; flex-shrink: 0; margin-top: 2px;">
                         <span style="font-size: 14px; font-weight: 500; line-height: 1.4; color: #4B5563;">Newsletter</span>
                     </label>
                     <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; margin: 0;">
-                        <input type="checkbox" id="consent" name="CONSENT" required checked style="width: 18px; height: 18px; margin: 0; padding: 0; accent-color: #A03FA3; flex-shrink: 0; margin-top: 2px;">
+                        <input type="checkbox" id="consent" name="CONSENT" required style="width: 18px; height: 18px; margin: 0; padding: 0; accent-color: #A03FA3; flex-shrink: 0; margin-top: 2px;">
                         <span style="font-size: 14px; font-weight: 500; line-height: 1.4; color: #4B5563;">Doy mi consentimiento para que Castle me contacte con actualizaciones de la plataforma e invitaciones.</span>
                     </label>
                 </div>
@@ -1397,23 +1415,11 @@
 
     <script>
         function openUnifiedModal(sourceType) {
-            // Uncheck all main interests first
-            if(document.getElementById('chk_programs')) document.getElementById('chk_programs').checked = false;
-            if(document.getElementById('chk_platform')) document.getElementById('chk_platform').checked = false;
-            if(document.getElementById('chk_partner')) document.getElementById('chk_partner').checked = false;
-            if(document.getElementById('chk_interview')) document.getElementById('chk_interview').checked = false;
-            if(document.getElementById('chk_jointeam')) document.getElementById('chk_jointeam').checked = false;
-            if(document.getElementById('chk_other')) document.getElementById('chk_other').checked = false;
-
-            // Always keep newsletter checked by default
-            if(document.getElementById('chk_newsletter')) document.getElementById('chk_newsletter').checked = true;
-
-            // Check based on source
-            if (sourceType === 'waitlist') {
-                if(document.getElementById('chk_platform')) document.getElementById('chk_platform').checked = true;
-            } else if (sourceType === 'partner') {
-                if(document.getElementById('chk_partner')) document.getElementById('chk_partner').checked = true;
-            }
+            // Uncheck ALL fields whenever opening form naturally
+            const checkboxes = ['chk_masterclass', 'chk_programs', 'chk_platform', 'chk_partner', 'chk_interview', 'chk_jointeam', 'chk_other', 'chk_newsletter', 'consent'];
+            checkboxes.forEach(id => {
+                if(document.getElementById(id)) document.getElementById(id).checked = false;
+            });
 
             // Show modal
             if(document.getElementById('waitlistModal')) document.getElementById('waitlistModal').style.display = 'flex';
@@ -1494,6 +1500,14 @@
             }
 
             if(document.getElementById('unifiedSource')) document.getElementById('unifiedSource').value = interests.join(", ");
+
+            const phoneInput = document.getElementById('phone');
+            const phoneCode = document.getElementById('phone_code');
+            if(phoneInput && phoneCode && phoneCode.value && phoneInput.value) {
+                if(!phoneInput.value.startsWith(phoneCode.value)) {
+                    phoneInput.value = phoneCode.value + ' ' + phoneInput.value;
+                }
+            }
         }
     </script>
     
