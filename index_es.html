@@ -933,9 +933,21 @@
             @media (min-width: 1024px) {
                 #influence-grid {
                     grid-template-columns: 1fr 1fr !important;
+                    overflow: visible !important;
                 }
                 .inf-img-container {
                     min-height: auto;
+                }
+                .inf-img-container img {
+                    top: -25px;
+                    height: calc(100% + 25px);
+                    border-radius: 0 5px 5px 0;
+                    object-position: right 20%;
+                }
+                .inf-gradient {
+                    top: -25px !important;
+                    height: calc(100% + 25px) !important;
+                    border-radius: 0 5px 5px 0;
                 }
             }
         </style>
@@ -944,14 +956,17 @@
         <!-- Left Content -->
         <div style="padding: 60px clamp(30px, 6vw, 60px); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; text-align: left; position: relative; z-index: 2;">
             <div style="color: #FFFFFF; line-height: 1.4;">
-                <p class="section-subtitle-1" style="color: #FFFFFF; margin-bottom: 20px;">Castle está construyendo un nuevo ecosistema impulsado por Web3, donde creadoras, líderes, marcas y comunidades pueden convertir en valor su experiencia, audiencia, alcance, credibilidad y recursos, a cambio de tokens de Castle y crecimiento compartido.</p>
-                <p class="section-subtitle-1" style="color: rgba(255,255,255,0.95); margin-bottom: 0;">Trae lo que te hace poderosa &mdash; tu voz, tu red, tu plataforma o tu comunidad &mdash; y crece con nosotros mientras escalamos un movimiento global para mujeres y riqueza.</p>
+                <p class="section-subtitle-1" style="color: rgba(255,255,255,0.9); margin-bottom: 25px; font-weight: 500;">Castle está construyendo un <strong style="font-weight: 800; color: #FFFFFF;">nuevo ecosistema impulsado por Web3</strong>, donde creadoras, líderes, marcas y comunidades pueden <strong style="font-weight: 800; color: #FFFFFF;">convertir en valor</strong> su <strong style="font-weight: 800; color: #FFFFFF;">experiencia, audiencia, alcance, credibilidad y recursos</strong>, a cambio de <strong style="font-weight: 800; color: #FFFFFF;">tokens de Castle</strong> y <strong style="font-weight: 800; color: #FFFFFF;">crecimiento compartido</strong>.</p>
+                <p class="section-subtitle-1" style="color: rgba(255,255,255,0.95); margin-bottom: 0;">
+                    <span style="font-family: 'Caveat', cursive; font-size: clamp(26px, 3.5vw, 40px); font-weight: 600; line-height: 1.2; display: block; margin-bottom: 5px; color: #FFFFFF;">Trae lo que te hace poderosa</span>
+                    &mdash; tu voz, tu red, tu plataforma o tu comunidad &mdash; y crece con nosotros mientras escalamos un movimiento global para mujeres y riqueza.
+                </p>
             </div>
         </div>
         
         <!-- Right Image -->
         <div class="inf-img-container">
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, #A03FA3 0%, rgba(160,63,163,0) 25%); z-index: 2;"></div>
+            <div class="inf-gradient" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, #A03FA3 0%, rgba(160,63,163,0) 25%); z-index: 2;"></div>
             <img src="./public/images/common/inf-section.png" alt="Influence">
         </div>
     </div>
