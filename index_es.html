@@ -163,6 +163,13 @@
             .hero-footer { text-align: center; width: 100%; padding-top: 20px; }
         }
 
+        /* --- LAPTOP 14 INCH OPTIMIZATION (1440px & below) --- */
+        @media (max-width: 1440px) and (min-width: 769px) {
+            .hero-content { max-width: 60% !important; }
+            .container, .hero-container, section.snap-section, .bento-section { padding-left: 6vw !important; padding-right: 6vw !important; }
+            #influence-grid-left { padding: 50px 40px 50px 50px !important; }
+            #influence-grid-right img { right: -10px !important; width: calc(100% + 20px) !important; height: calc(100% + 20px) !important; }
+        }
         
         :root { --section-pad-y: 40px; --section-pad-large: 60px; --spacer-80: 80px; --spacer-60: 60px; --spacer-50: 50px; --spacer-40: 40px; --spacer-30: 30px; }
         @media (max-width: 768px) { :root { --section-pad-y: 30px; --section-pad-large: 30px; --spacer-80: 40px; --spacer-60: 30px; --spacer-50: 25px; --spacer-40: 20px; --spacer-30: 15px; } }
