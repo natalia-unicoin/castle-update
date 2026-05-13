@@ -1516,6 +1516,30 @@
         }
     </script>
     
+    <!-- Cookie Banner -->
+    <style>
+        .cookie-content { flex-direction: column; text-align: center; }
+        @media(min-width: 768px) {
+            .cookie-content { flex-direction: row; text-align: left; }
+        }
+    </style>
+    <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #FFFFFF; border-top: 1px solid #E5E7EB; box-shadow: 0 -4px 20px rgba(0,0,0,0.05); padding: 20px 4vw; z-index: 9999; display: none; font-family: 'Inter', sans-serif; box-sizing: border-box;">
+        <div class="cookie-content" style="max-width: 1400px; width: 100%; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px;">
+            <p style="margin: 0; font-size: 14px; color: #2A2A2A; line-height: 1.5;">
+                Nos gustaría utilizar cookies para entender tu uso de nuestro sitio web. Para saber más sobre las cookies y cómo cambiar tus opciones, por favor consulta nuestra <a href="#" style="color: #A03FA3; font-weight: 600; text-decoration: none;">Política de Cookies</a>.
+            </p>
+            <button onclick="document.getElementById('cookie-banner').style.display='none'; localStorage.setItem('cookies_accepted', 'true');" style="background-color: #1A1A1A; color: #FFFFFF; border: none; padding: 12px 30px; border-radius: 5px; font-weight: 700; font-size: 13px; letter-spacing: 1px; cursor: pointer; text-transform: uppercase; white-space: nowrap; transition: background-color 0.3s;">
+                ACEPTAR
+            </button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (!localStorage.getItem('cookies_accepted')) {
+                document.getElementById('cookie-banner').style.display = 'block';
+            }
+        });
+    </script>
 </body>
 
 
