@@ -749,42 +749,54 @@
 </section>
 
 <!-- Quick Resources -->
-<section style="background-color: #FFFFFF; padding: var(--section-pad-y) 4vw;">
+<section style="background-color: #1A1A1A; padding: var(--section-pad-y) 4vw;">
     <div class="container" style="max-width: 1400px; margin: 0 auto;">
         <div style="text-align: center; margin-bottom: 60px;">
-            <h2 class="section-title" style="margin-bottom: 10px; padding: 0;">Explore Castle</h2>
-            <p class="section-subtitle" style="padding: 0; max-width: 600px; margin: 0 auto;">Discover everything our ecosystem has to offer.</p>
+            <h2 class="section-title" style="margin-bottom: 10px; padding: 0; color: #FFFFFF;">Explore Castle</h2>
+            <p class="section-subtitle" style="padding: 0; max-width: 600px; margin: 0 auto; color: rgba(255,255,255,0.8);">Discover everything our ecosystem has to offer.</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
             <!-- Card 1 -->
-            <a href="masterclass.html" style="text-decoration: none; display: flex; flex-direction: column; background: #F9F9F9; border-radius: 12px; padding: 40px; border: 1px solid #E5E7EB; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.05)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-                <div style="width: 48px; height: 48px; border-radius: 8px; background: rgba(160,63,163,0.1); color: #A03FA3; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
-                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <a href="masterclass.html" class="pillar-card" style="text-decoration: none; display: block; position: relative; overflow: hidden; border-radius: 8px; transition: transform 0.3s; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
+                <img src="./public/images/common/hero-silvina.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.2) 60%); z-index: 2;"></div>
+                <div style="position: relative; z-index: 3; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px;">
+                    <div style="width: 48px; height: 48px; border-radius: 8px; background: rgba(160,63,163,0.3); color: #FFFFFF; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; backdrop-filter: blur(5px);">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 style="font-size: 24px; font-weight: 800; color: #FFFFFF; margin-bottom: 12px; line-height: 1.2;">MasterClass</h3>
+                    <p style="font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.5; margin-bottom: 24px;">Learn the fundamentals to take control of your wealth and build your portfolio.</p>
+                    <span style="font-size: 14px; font-weight: 700; color: #FFFFFF; text-transform: uppercase; letter-spacing: 1px;">WATCH NOW →</span>
                 </div>
-                <h3 style="font-size: 22px; font-weight: 700; color: #1A1A1A; margin-bottom: 12px;">MasterClass</h3>
-                <p style="font-size: 15px; color: #4B5563; line-height: 1.5; margin-bottom: 24px; flex-grow: 1;">Learn the fundamentals to take control of your wealth and build your portfolio.</p>
-                <span style="font-size: 14px; font-weight: 700; color: #A03FA3; text-transform: uppercase; letter-spacing: 1px;">Watch Now &rarr;</span>
             </a>
 
             <!-- Card 2 -->
-            <a href="partners.html" style="text-decoration: none; display: flex; flex-direction: column; background: #F9F9F9; border-radius: 12px; padding: 40px; border: 1px solid #E5E7EB; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.05)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-                <div style="width: 48px; height: 48px; border-radius: 8px; background: rgba(160,63,163,0.1); color: #A03FA3; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
-                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path></svg>
+            <a href="partners.html" class="pillar-card" style="text-decoration: none; display: block; position: relative; overflow: hidden; border-radius: 8px; transition: transform 0.3s; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
+                <img src="./public/images/common/partners.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.2) 60%); z-index: 2;"></div>
+                <div style="position: relative; z-index: 3; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px;">
+                    <div style="width: 48px; height: 48px; border-radius: 8px; background: rgba(160,63,163,0.3); color: #FFFFFF; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; backdrop-filter: blur(5px);">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path></svg>
+                    </div>
+                    <h3 style="font-size: 24px; font-weight: 800; color: #FFFFFF; margin-bottom: 12px; line-height: 1.2;">Partnerships</h3>
+                    <p style="font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.5; margin-bottom: 24px;">Join as a creator, influencer, or brand to co-create value in Web3.</p>
+                    <span style="font-size: 14px; font-weight: 700; color: #FFFFFF; text-transform: uppercase; letter-spacing: 1px;">BECOME PARTNER →</span>
                 </div>
-                <h3 style="font-size: 22px; font-weight: 700; color: #1A1A1A; margin-bottom: 12px;">Partnerships</h3>
-                <p style="font-size: 15px; color: #4B5563; line-height: 1.5; margin-bottom: 24px; flex-grow: 1;">Join as a creator, influencer, or brand to co-create value in Web3.</p>
-                <span style="font-size: 14px; font-weight: 700; color: #A03FA3; text-transform: uppercase; letter-spacing: 1px;">Become a Partner &rarr;</span>
             </a>
 
             <!-- Card 3 -->
-            <a href="about.html" style="text-decoration: none; display: flex; flex-direction: column; background: #F9F9F9; border-radius: 12px; padding: 40px; border: 1px solid #E5E7EB; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.05)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-                <div style="width: 48px; height: 48px; border-radius: 8px; background: rgba(160,63,163,0.1); color: #A03FA3; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
-                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <a href="about.html" class="pillar-card" style="text-decoration: none; display: block; position: relative; overflow: hidden; border-radius: 8px; transition: transform 0.3s; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
+                <img src="./public/images/common/mc-bg2.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.2) 60%); z-index: 2;"></div>
+                <div style="position: relative; z-index: 3; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px;">
+                    <div style="width: 48px; height: 48px; border-radius: 8px; background: rgba(160,63,163,0.3); color: #FFFFFF; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; backdrop-filter: blur(5px);">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 style="font-size: 24px; font-weight: 800; color: #FFFFFF; margin-bottom: 12px; line-height: 1.2;">Our Story</h3>
+                    <p style="font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.5; margin-bottom: 24px;">Learn about Castle's vision and why we are building the future of wealth.</p>
+                    <span style="font-size: 14px; font-weight: 700; color: #FFFFFF; text-transform: uppercase; letter-spacing: 1px;">READ MORE →</span>
                 </div>
-                <h3 style="font-size: 22px; font-weight: 700; color: #1A1A1A; margin-bottom: 12px;">Our Story</h3>
-                <p style="font-size: 15px; color: #4B5563; line-height: 1.5; margin-bottom: 24px; flex-grow: 1;">Learn about Castle's vision and why we are building the future of wealth.</p>
-                <span style="font-size: 14px; font-weight: 700; color: #A03FA3; text-transform: uppercase; letter-spacing: 1px;">Read More &rarr;</span>
             </a>
         </div>
     </div>
