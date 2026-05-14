@@ -98,14 +98,14 @@
             background-image: url('./public/images/common/hero-contact.jpg');
             background-size: cover;
             background-position: right center;
-            background-attachment: fixed;
+            
             background-repeat: no-repeat;
         }
         @media (max-width: 768px) {
             .hero {
                 background-image: url('./public/images/common/hero-bg-mobile.jpg');
                 background-position: center;
-                background-attachment: scroll;
+                
             }
         }
         .hero-container {
@@ -672,7 +672,8 @@
         .mobile-menu-toggle { color: #1A1A1A !important; }
     </style>
     <!-- 1. Hero Section -->
-    <section class="hero snap-section" style="background-image: url('./public/images/common/hero-contact.jpg'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat; display: flex; align-items: flex-end; padding: 150px 4vw 80px 4vw; min-height: 100vh; position: relative;">
+    <section class="hero snap-section" style="background-image: url('./public/images/common/hero-contact.jpg'); background-size: cover; background-position: center;  background-repeat: no-repeat; display: flex; align-items: flex-end; padding: 150px 4vw 80px 4vw; min-height: 100vh; position: relative;">
+    <div class="shared-hero-gradient" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 60%; background: linear-gradient(to top, rgba(17,17,17,0.7) 0%, rgba(17,17,17,0) 100%); z-index: 1; pointer-events: none;"></div>
         <!-- Black Gradient Overlay -->
         
         
@@ -732,7 +733,7 @@
     </section>
 
 <!-- Social Proof / Ecosystem -->
-<section style="background-image: url('./public/images/common/ecosystem-bg.jpg?v=1'); background-size: cover; background-position: center; background-attachment: fixed; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: var(--section-pad-y) 0; overflow: hidden; text-align: center; position: relative;">
+<section style="background-image: url('./public/images/common/ecosystem-bg.jpg?v=1'); background-size: cover; background-position: center;  min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: var(--section-pad-y) 0; overflow: hidden; text-align: center; position: relative;">
     <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 60%; background: linear-gradient(to top, rgba(17,17,17,0.6) 0%, rgba(17,17,17,0) 60%); z-index: 1;"></div>
     <div style="position: relative; z-index: 2;">
     <h2 class="section-title" style="color: #FFFFFF; padding: 0 20px; margin-bottom: 40px; line-height: 1.1;">Join the Ecosystem<br>transforming<br><span style="font-family: 'Caveat', cursive; font-size: 1.6em; color: #A03FA3; font-weight: 700; display: inline-block; margin-top: -10px;">Female Wealth</span></h2>
@@ -794,7 +795,7 @@
 </section>
 
     <!-- Final CTA / Newsletter -->
-    <section style="position: relative; background-image: url('./public/images/common/cta-final.jpg'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat; padding: var(--section-pad-y) 0; text-align: center; min-height: 100vh; display: flex; align-items: center; justify-content: center; width: 100%;" class="snap-section">
+    <section style="position: relative; background-image: url('./public/images/common/cta-final.jpg'); background-size: cover; background-position: center;  background-repeat: no-repeat; padding: var(--section-pad-y) 0; text-align: center; min-height: 100vh; display: flex; align-items: center; justify-content: center; width: 100%;" class="snap-section">
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(17,17,17,0.6); z-index: 1;"></div>
         <div class="container" style="position: relative; z-index: 2; max-width: 1500px; margin: 0 auto; padding: 0 5vw; display: flex; flex-direction: column; align-items: center; justify-content: center;">
             <div style="max-width: 800px; width: 100%; text-align: center;">
