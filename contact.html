@@ -671,65 +671,64 @@
         #main-header .lang-select { color: #1A1A1A !important; border-color: #E5E7EB !important; background-image: url('data:image/svg+xml;utf8,<svg fill="%231A1A1A" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>') !important; }
         .mobile-menu-toggle { color: #1A1A1A !important; }
     </style>
-    <section class="hero snap-section" style="background-image: url('./public/images/common/hero-contact.jpg'); background-size: cover; background-position: right center; background-attachment: fixed; background-repeat: no-repeat; display: flex; align-items: stretch; justify-content: flex-start; padding: 0 clamp(30px, 5vw, 100px); min-height: 100vh; position: relative;">
-        <!-- Black Gradient Overlay (Left to Right) -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, rgba(8,8,8,0.95) 0%, rgba(8,8,8,0.7) 40%, rgba(8,8,8,0.2) 65%, rgba(8,8,8,0) 100%); z-index: 1;"></div>
+    <!-- 1. Hero Section -->
+    <section class="hero snap-section" style="background-image: url('./public/images/common/hero-contact.jpg'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat; display: flex; align-items: flex-end; padding: 150px 4vw 80px 4vw; min-height: 100vh; position: relative;">
+        <!-- Black Gradient Overlay -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%); z-index: 1;"></div>
         
-        <div class="container" style="position: relative; z-index: 2; width: 100%; max-width: 1500px; margin-left: clamp(20px, 6vw, 96px); padding: 15vh 0 40px 0; display: flex; flex-direction: column; justify-content: center;">
-            <style>
-                @media (min-width: 900px) {
-                    .contact-hero-grid { grid-template-columns: 1.2fr 0.8fr !important; }
-                }
-            </style>
-            <div class="contact-hero-grid" style="display: grid; grid-template-columns: 1fr; gap: 60px; width: 100%; align-items: center;">
-                <!-- Left Side: Text -->
-                <div style="text-align: left;">
-                    <div class="hero-eyebrow" style="color: #A03FA3; font-weight: 700; font-size: 14px; letter-spacing: 4px; margin-bottom: 20px; text-transform: uppercase;">Contact</div>
-                    <h1 class="hero-title color-reveal" style="color: #FFFFFF; font-size: clamp(64px, 10vw, 130px); font-weight: 700; line-height: 0.95; letter-spacing: -4px; margin-bottom: 24px; font-family: 'Inter', sans-serif;">Let's build<br>together.</h1>
-                    <p style="color: rgba(255,255,255,0.9); font-size: clamp(20px, 2.5vw, 28px); line-height: 1.25; max-width: 650px; font-weight: 400; font-family: 'Inter', sans-serif; margin-bottom: 40px;">Whether you have a question, a partnership idea, or want to join the mission, we are here to listen.</p>
+        <div class="container" style="max-width: 1000px; margin: 0 auto; display: flex; justify-content: center; align-items: center; position: relative; z-index: 2;">
+            <div style="text-align: center; width: 100%;">
+                <h1 class="hero-title color-reveal" style="color: #FFFFFF; font-size: clamp(50px, 7vw, 90px); letter-spacing: -2px; margin-bottom: 24px; text-shadow: 0 4px 12px rgba(0,0,0,0.5); font-family: 'Inter', sans-serif; font-weight: 700;">Contact Us</h1>
+                <p class="hero-subtitle color-reveal" style="color: rgba(255,255,255,0.95); font-size: clamp(18px, 2vw, 24px); line-height: 1.5; max-width: 700px; margin: 0 auto; font-family: 'Inter', sans-serif;">Have a question, partnership idea, or just want to say hi? We are here to listen.</p>
+                <div style="margin-top: 40px;">
+                    <a href="#contact-form-section" class="btn" style="padding: 18px 45px; letter-spacing: 1.5px; font-size: 15px;">FILL OUT FORM</a>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Right Side: Form in a clean white Bento Card -->
-                <div style="background: #FFFFFF; border-radius: 12px; padding: 40px; box-shadow: 0 30px 60px rgba(0,0,0,0.5); border: none; width: 100%; max-width: 550px; justify-self: center;">
-                    <form action="https://buildyourcastle.us10.list-manage.com/subscribe/post?u=4766d7bd8debcf610dadddfb6&amp;id=53677e9563" method="POST" target="_blank" class="contact-page-form" style="display: flex; flex-direction: column; gap: 20px;">
-                        <input type="hidden" name="SOURCE" value="ContactPage">
-                        
-                        <div class="form-row" style="display: grid; grid-template-columns: 1fr; gap: 20px;">
-                            <style>@media (min-width: 600px) { .contact-page-form .form-row { grid-template-columns: 1fr 1fr !important; } }</style>
-                            <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-                                <label style="font-size: 14px; font-weight: 600; color: #1A1A1A;">Full Name *</label>
-                                <input type="text" name="FNAME" required placeholder="Your name" style="padding: 14px 16px; border: 1px solid #D1D5DB; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 15px; outline: none; color: #1A1A1A;">
-                            </div>
-                            <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-                                <label style="font-size: 14px; font-weight: 600; color: #1A1A1A;">Email Address *</label>
-                                <input type="email" name="EMAIL" required placeholder="you@email.com" style="padding: 14px 16px; border: 1px solid #D1D5DB; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 15px; outline: none; color: #1A1A1A;">
-                            </div>
-                        </div>
-
+    <!-- 2. Form Section -->
+    <section id="contact-form-section" class="snap-section" style="background-color: #F8F8FA; padding: var(--section-pad-large) 4vw; display: flex; justify-content: center; align-items: center;">
+        <div class="container" style="max-width: 700px; width: 100%; text-align: left; padding: 0;">
+            <div style="background: #FFFFFF; border-radius: 12px; padding: 50px 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); border: 1px solid #E5E7EB; width: 100%;">
+                <form action="https://buildyourcastle.us10.list-manage.com/subscribe/post?u=4766d7bd8debcf610dadddfb6&amp;id=53677e9563" method="POST" target="_blank" class="contact-page-form" style="display: flex; flex-direction: column; gap: 20px;">
+                    <input type="hidden" name="SOURCE" value="ContactPage">
+                    
+                    <div class="form-row" style="display: grid; grid-template-columns: 1fr; gap: 20px;">
+                        <style>@media (min-width: 600px) { .contact-page-form .form-row { grid-template-columns: 1fr 1fr !important; } }</style>
                         <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-                            <label style="font-size: 14px; font-weight: 600; color: #1A1A1A;">Topic of Interest *</label>
-                            <select name="TOPIC" required style="padding: 14px 16px; border: 1px solid #D1D5DB; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 15px; outline: none; appearance: none; color: #1A1A1A; background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"%23111111\" viewBox=\"0 0 16 16\"><path d=\"M4.293 5.293a1 1 0 0 1 1.414 0L8 8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-3 3a1 1 0 0 1-1.414 0l-3-3a1 1 0 0 1 0-1.414z\"/></svg>') no-repeat right 16px center; background-color: #F9FAFB;">
-                                <option value="" disabled selected>Select a topic</option>
-                                <option value="General Support">General Support</option>
-                                <option value="Press & Media">Press & Media</option>
-                                <option value="Investors">Investors</option>
-                                <option value="Partnerships">Partnerships</option>
-                            </select>
+                            <label style="font-size: 14px; font-weight: 600; color: #1A1A1A; font-family: 'Inter', sans-serif;">Full Name *</label>
+                            <input type="text" name="FNAME" required placeholder="Your name" style="padding: 14px 16px; border: 1px solid #D1D5DB; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 15px; outline: none; color: #1A1A1A;">
                         </div>
-
                         <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-                            <label style="font-size: 14px; font-weight: 600; color: #1A1A1A;">Message *</label>
-                            <textarea name="MESSAGE" rows="3" required placeholder="How can we help you?" style="padding: 14px 16px; border: 1px solid #D1D5DB; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 15px; outline: none; resize: vertical; color: #1A1A1A;"></textarea>
+                            <label style="font-size: 14px; font-weight: 600; color: #1A1A1A; font-family: 'Inter', sans-serif;">Email Address *</label>
+                            <input type="email" name="EMAIL" required placeholder="you@email.com" style="padding: 14px 16px; border: 1px solid #D1D5DB; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 15px; outline: none; color: #1A1A1A;">
                         </div>
+                    </div>
 
-                        <div style="display: flex; align-items: flex-start; gap: 12px; margin-top: 5px;">
-                            <input type="checkbox" id="privacy" required style="margin-top: 4px; width: 18px; height: 18px; accent-color: #A03FA3;">
-                            <label for="privacy" style="font-size: 13px; color: #4B5563; line-height: 1.5; cursor: pointer;">I accept the <a href="#" style="color: #A03FA3;">Privacy Policy</a> and consent to data processing.</label>
-                        </div>
+                    <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                        <label style="font-size: 14px; font-weight: 600; color: #1A1A1A; font-family: 'Inter', sans-serif;">Topic of Interest *</label>
+                        <select name="TOPIC" required style="padding: 14px 16px; border: 1px solid #D1D5DB; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 15px; outline: none; appearance: none; color: #1A1A1A; background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"%23111111\" viewBox=\"0 0 16 16\"><path d=\"M4.293 5.293a1 1 0 0 1 1.414 0L8 8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-3 3a1 1 0 0 1-1.414 0l-3-3a1 1 0 0 1 0-1.414z\"/></svg>') no-repeat right 16px center; background-color: #F9FAFB;">
+                            <option value="" disabled selected>Select a topic</option>
+                            <option value="General Support">General Support</option>
+                            <option value="Press & Media">Press & Media</option>
+                            <option value="Investors">Investors</option>
+                            <option value="Partnerships">Partnerships</option>
+                        </select>
+                    </div>
 
-                        <button type="submit" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 2px; padding: 16px 40px; border-radius: 50px; font-size: 14px; border: none; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; margin-top: 5px; width: 100%; box-shadow: 0 10px 20px rgba(160, 63, 163, 0.3); text-transform: uppercase;">SEND MESSAGE</button>
-                    </form>
-                </div>
+                    <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                        <label style="font-size: 14px; font-weight: 600; color: #1A1A1A; font-family: 'Inter', sans-serif;">Message *</label>
+                        <textarea name="MESSAGE" rows="5" required placeholder="How can we help you?" style="padding: 14px 16px; border: 1px solid #D1D5DB; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 15px; outline: none; resize: vertical; color: #1A1A1A;"></textarea>
+                    </div>
+
+                    <div style="display: flex; align-items: flex-start; gap: 12px; margin-top: 10px;">
+                        <input type="checkbox" id="privacy" required style="margin-top: 4px; width: 18px; height: 18px; accent-color: #A03FA3;">
+                        <label for="privacy" style="font-size: 13px; color: #4B5563; line-height: 1.5; cursor: pointer; font-family: 'Inter', sans-serif;">I accept the <a href="#" style="color: #A03FA3;">Privacy Policy</a> and consent to data processing.</label>
+                    </div>
+
+                    <button type="submit" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 2px; padding: 18px 40px; border-radius: 50px; font-size: 15px; border: none; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; margin-top: 15px; width: 100%; box-shadow: 0 10px 20px rgba(160, 63, 163, 0.3); text-transform: uppercase;">SEND MESSAGE</button>
+                </form>
             </div>
         </div>
     </section>
