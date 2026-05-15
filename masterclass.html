@@ -730,15 +730,15 @@
                 @media (min-width: 800px) { .mc-lessons-grid { grid-template-columns: repeat(3, 1fr); } }
                 @media (min-width: 1100px) { .mc-lessons-grid { grid-template-columns: repeat(6, 1fr); } }
                 .mc-lesson-card {
-                    position: relative; border-radius: 5px; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 20px; transition: transform 0.3s; border: 1px solid rgba(255,255,255,0.1); aspect-ratio: 9/16; min-height: 380px;
+                    position: relative; border-radius: 5px; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 20px; transition: transform 0.3s; border: 1px solid rgba(255,255,255,0.1); height: 500px;
                 }
                 .mc-lesson-card:hover { transform: translateY(-10px); }
                 .mc-lesson-card .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%); z-index: 1; transition: background 0.3s; }
                 .mc-lesson-card:hover .overlay { background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.95) 100%); }
                 .mc-lesson-card .content { position: relative; z-index: 2; }
                 .mc-lesson-card .number { font-family: 'Caveat', cursive; font-size: clamp(40px, 4vw, 56px); color: #FFFFFF; margin-bottom: 10px; line-height: 1; }
-                .mc-lesson-card .text { color: #FFFFFF; font-size: 16px; font-weight: 500; line-height: 1.4; margin-bottom: 0; }
-                @media (min-width: 1200px) { .mc-lesson-card .text { font-size: 17px; } }
+                .mc-lesson-card .text { color: #FFFFFF; font-size: 16px; font-weight: 500; line-height: 1.4; margin-bottom: 0; min-height: 110px; display: flex; align-items: flex-start; }
+                @media (min-width: 1200px) { .mc-lesson-card .text { font-size: 17px; min-height: 120px; } }
             </style>
             
             <div class="mc-lessons-grid">
