@@ -719,67 +719,83 @@
         </div>
     </section>
 
-    <!-- What You Will Experience (Ecosystem Style) -->
-    <section class="snap-section content-section" style="background-color: #F8F8FA; text-align: left; padding: 80px 4vw; overflow: hidden;">
+        <!-- What You Will Experience (Grid Style) -->
+    <section class="snap-section content-section" style="background-color: #F8F8FA; text-align: left; padding: 100px 4vw; overflow: hidden;">
         <div class="container" style="max-width: 1400px; margin: 0 auto;">
             <h2 class="section-heading" style="margin-bottom: 20px; text-align: center;">Across four live sessions, you will learn how to:</h2>
             
-            <div id="masterclass-scroll" class="mobile-scroll-row" style="display: flex; gap: 20px; margin-top: var(--spacer-50); padding-bottom: 20px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;">
+            <style>
+                .mc-lessons-grid { display: grid; gap: 16px; margin-top: 50px; grid-template-columns: 1fr; }
+                @media (min-width: 500px) { .mc-lessons-grid { grid-template-columns: repeat(2, 1fr); } }
+                @media (min-width: 800px) { .mc-lessons-grid { grid-template-columns: repeat(3, 1fr); } }
+                @media (min-width: 1100px) { .mc-lessons-grid { grid-template-columns: repeat(6, 1fr); } }
+                .mc-lesson-card {
+                    position: relative; border-radius: 5px; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 20px; transition: transform 0.3s; border: 1px solid rgba(255,255,255,0.1); aspect-ratio: 9/16; min-height: 380px;
+                }
+                .mc-lesson-card:hover { transform: translateY(-10px); }
+                .mc-lesson-card .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%); z-index: 1; transition: background 0.3s; }
+                .mc-lesson-card:hover .overlay { background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.95) 100%); }
+                .mc-lesson-card .content { position: relative; z-index: 2; }
+                .mc-lesson-card .number { font-family: 'Caveat', cursive; font-size: clamp(40px, 4vw, 56px); color: #FFFFFF; margin-bottom: 10px; line-height: 1; }
+                .mc-lesson-card .text { color: #FFFFFF; font-size: 16px; font-weight: 500; line-height: 1.4; margin-bottom: 0; }
+                @media (min-width: 1200px) { .mc-lesson-card .text { font-size: 17px; } }
+            </style>
+            
+            <div class="mc-lessons-grid">
                 
-                <div style="flex: 0 0 85%; max-width: 400px; scroll-snap-align: center; aspect-ratio: 4/5; position: relative; border-radius: 5px; overflow: hidden; background: url('./public/images/common/pillars-1.jpg?v=3') center/cover no-repeat; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 24px; transition: transform 0.3s; border: 1px solid rgba(255,255,255,0.1);">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%); z-index: 1;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div style="font-family: 'Caveat', cursive; font-size: clamp(48px, 5vw, 56px); color: #FFFFFF; margin-bottom: 10px; line-height: 1;">01</div>
-                        <p style="color: #FFFFFF; font-size: 20px; font-weight: 500; line-height: 1.4; margin-bottom: 0;">Break limiting beliefs around money and success</p>
+                <div class="mc-lesson-card" style="background: url('./public/images/common/pillars-1.jpg?v=3') center/cover no-repeat;">
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <div class="number">01</div>
+                        <p class="text">Break limiting beliefs around money and success</p>
                     </div>
                 </div>
 
-                <div style="flex: 0 0 85%; max-width: 400px; scroll-snap-align: center; aspect-ratio: 4/5; position: relative; border-radius: 5px; overflow: hidden; background: url('./public/images/common/pillars-2.jpg?v=3') center/cover no-repeat; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 24px; transition: transform 0.3s; border: 1px solid rgba(255,255,255,0.1);">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%); z-index: 1;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div style="font-family: 'Caveat', cursive; font-size: clamp(48px, 5vw, 56px); color: #FFFFFF; margin-bottom: 10px; line-height: 1;">02</div>
-                        <p style="color: #FFFFFF; font-size: 20px; font-weight: 500; line-height: 1.4; margin-bottom: 0;">Understand the future of wealth creation and digital ownership</p>
+                <div class="mc-lesson-card" style="background: url('./public/images/common/pillars-2.jpg?v=3') center/cover no-repeat;">
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <div class="number">02</div>
+                        <p class="text">Understand the future of wealth creation and digital ownership</p>
                     </div>
                 </div>
 
-                <div style="flex: 0 0 85%; max-width: 400px; scroll-snap-align: center; aspect-ratio: 4/5; position: relative; border-radius: 5px; overflow: hidden; background: url('./public/images/common/pillars-3.jpg?v=3') center/cover no-repeat; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 24px; transition: transform 0.3s; border: 1px solid rgba(255,255,255,0.1);">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%); z-index: 1;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div style="font-family: 'Caveat', cursive; font-size: clamp(48px, 5vw, 56px); color: #FFFFFF; margin-bottom: 10px; line-height: 1;">03</div>
-                        <p style="color: #FFFFFF; font-size: 20px; font-weight: 500; line-height: 1.4; margin-bottom: 0;">Use AI and new technologies to make smarter financial decisions</p>
+                <div class="mc-lesson-card" style="background: url('./public/images/common/pillars-3.jpg?v=3') center/cover no-repeat;">
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <div class="number">03</div>
+                        <p class="text">Use AI and new technologies to make smarter financial decisions</p>
                     </div>
                 </div>
 
-                <div style="flex: 0 0 85%; max-width: 400px; scroll-snap-align: center; aspect-ratio: 4/5; position: relative; border-radius: 5px; overflow: hidden; background: url('./public/images/common/pillars-4.jpg?v=3') center/cover no-repeat; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 24px; transition: transform 0.3s; border: 1px solid rgba(255,255,255,0.1);">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%); z-index: 1;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div style="font-family: 'Caveat', cursive; font-size: clamp(48px, 5vw, 56px); color: #FFFFFF; margin-bottom: 10px; line-height: 1;">04</div>
-                        <p style="color: #FFFFFF; font-size: 20px; font-weight: 500; line-height: 1.4; margin-bottom: 0;">Think like an investor, not just a saver</p>
+                <div class="mc-lesson-card" style="background: url('./public/images/common/pillars-4.jpg?v=3') center/cover no-repeat;">
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <div class="number">04</div>
+                        <p class="text">Think like an investor, not just a saver</p>
                     </div>
                 </div>
 
-                <div style="flex: 0 0 85%; max-width: 400px; scroll-snap-align: center; aspect-ratio: 4/5; position: relative; border-radius: 5px; overflow: hidden; background: url('./public/images/common/mc-bg.jpg?v=3') center/cover no-repeat; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 24px; transition: transform 0.3s; border: 1px solid rgba(255,255,255,0.1);">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%); z-index: 1;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div style="font-family: 'Caveat', cursive; font-size: clamp(48px, 5vw, 56px); color: #FFFFFF; margin-bottom: 10px; line-height: 1;">05</div>
-                        <p style="color: #FFFFFF; font-size: 20px; font-weight: 500; line-height: 1.4; margin-bottom: 0;">Build a long-term vision for your financial future</p>
+                <div class="mc-lesson-card" style="background: url('./public/images/common/mc-bg.jpg?v=3') center/cover no-repeat;">
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <div class="number">05</div>
+                        <p class="text">Build a long-term vision for your financial future</p>
                     </div>
                 </div>
 
-                <div style="flex: 0 0 85%; max-width: 400px; scroll-snap-align: center; aspect-ratio: 4/5; position: relative; border-radius: 5px; overflow: hidden; background: url('./public/images/common/hero-silvina.jpg?v=3') center/cover no-repeat; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 24px; transition: transform 0.3s; border: 1px solid rgba(255,255,255,0.1);">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%); z-index: 1;"></div>
-                    <div style="position: relative; z-index: 2;">
-                        <div style="font-family: 'Caveat', cursive; font-size: clamp(48px, 5vw, 56px); color: #FFFFFF; margin-bottom: 10px; line-height: 1;">06</div>
-                        <p style="color: #FFFFFF; font-size: 20px; font-weight: 500; line-height: 1.4; margin-bottom: 0;">Connect with a powerful community of women building wealth together</p>
+                <div class="mc-lesson-card" style="background: url('./public/images/common/hero-silvina.jpg?v=3') center/cover no-repeat;">
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <div class="number">06</div>
+                        <p class="text">Connect with a powerful community of women building wealth together</p>
                     </div>
                 </div>
 
             </div>
-            <div class="mobile-scroll-indicators" data-target="masterclass-scroll"></div>
         </div>
     </section>
 
-    <!-- Who Is This For (Split Screen) -->
+<!-- Who Is This For (Split Screen) -->
     <section class="snap-section content-section" style="background-color: #FFFFFF; padding: 80px 4vw;">
         <div class="container" style="max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; align-items: center;">
             <div style="text-align: left;">
