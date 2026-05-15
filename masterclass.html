@@ -795,32 +795,77 @@
         </div>
     </section>
 
-<!-- Who Is This For (Split Screen) -->
-    <section class="snap-section content-section" style="background-color: #FFFFFF; padding: 80px 4vw;">
-        <div class="container" style="max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; align-items: center;">
-            <div style="text-align: left;">
-                <h2 class="section-heading" style="margin-bottom: 30px;">Who Is This For?</h2>
-                
-                <p style="font-size: clamp(20px, 2.5vw, 24px); color: #1A1A1A; line-height: 1.6; font-weight: 500; margin-bottom: var(--spacer-50);">
+    <!-- Who Is This For (Grid Section) -->
+    <section id="who-is-this-for" class="partners-section snap-section" style="background-color: #FFFFFF; padding: 100px 4vw; font-family: 'Inter', sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <div class="container" style="max-width: 1400px; width: 100%;">
+            
+            <div style="text-align: center; max-width: 1000px; margin: 0 auto; margin-bottom: 50px;">
+                <h2 class="section-heading" style="color: #1A1A1A; margin-bottom: 24px;">Who Is This For?</h2>
+                <p style="font-size: clamp(20px, 2.5vw, 28px); color: rgba(26, 26, 26, 0.85); line-height: 1.6; font-weight: 400; font-family: 'Inter', sans-serif;">
                     Women entrepreneurs, professionals, creators, leaders, and visionaries who are ready to step into a new financial identity and participate in the future they are helping create.
                 </p>
-
-                <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: var(--spacer-40);">
-                    <span style="font-size: 16px; font-weight: 800; color: #1A1A1A; background: #F3F4F6; padding: 12px 24px; border-radius: 30px; font-family: 'Inter', sans-serif;">Entrepreneurs</span>
-                    <span style="font-size: 16px; font-weight: 800; color: #1A1A1A; background: #F3F4F6; padding: 12px 24px; border-radius: 30px; font-family: 'Inter', sans-serif;">Professionals</span>
-                    <span style="font-size: 16px; font-weight: 800; color: #1A1A1A; background: #F3F4F6; padding: 12px 24px; border-radius: 30px; font-family: 'Inter', sans-serif;">Creators</span>
-                    <span style="font-size: 16px; font-weight: 800; color: #1A1A1A; background: #F3F4F6; padding: 12px 24px; border-radius: 30px; font-family: 'Inter', sans-serif;">Leaders</span>
-                    <span style="font-size: 16px; font-weight: 800; color: #1A1A1A; background: #F3F4F6; padding: 12px 24px; border-radius: 30px; font-family: 'Inter', sans-serif;">Visionaries</span>
-                </div>
             </div>
             
-            <div style="width: 100%; border-radius: 5px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
-                <img src="./public/images/common/who-is-this-for.jpg?v=1" alt="Diverse professional women" style="width: 100%; height: auto; display: block; object-fit: cover;">
+            <div class="partnerships-grid" style="display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <!-- Card 1 -->
+                <div class="partner-card group" style="position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 1/2; cursor: pointer;">
+                    <img src="./public/images/common/partner1.jpg?v=3" alt="Influencers & Celebrities" style="width: 100%; height: 100%; object-fit: cover; object-position: center 90%; transition: transform 0.7s ease;">
+                    <div class="partner-card-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 60%; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%); transition: background 0.3s ease;"></div>
+                    <div class="partner-card-content" style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px 20px; text-align: center; display: flex; flex-direction: column; justify-content: flex-end; height: 100%;">
+                        <h3 class="partner-card-title" style="color: #FFFFFF; font-size: clamp(16px, 1.5vw, 20px); font-weight: 700; line-height: 1.2; margin: 0; font-family: 'Inter', sans-serif;">Influencers<br>& Celebrities</h3>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="partner-card group" style="position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 1/2; cursor: pointer;">
+                    <img src="./public/images/common/partner2.jpg?v=3" alt="Content Creators" style="width: 100%; height: 100%; object-fit: cover; object-position: center 10%; transition: transform 0.7s ease;">
+                    <div class="partner-card-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 60%; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%); transition: background 0.3s ease;"></div>
+                    <div class="partner-card-content" style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px 20px; text-align: center; display: flex; flex-direction: column; justify-content: flex-end; height: 100%;">
+                        <h3 class="partner-card-title" style="color: #FFFFFF; font-size: clamp(16px, 1.5vw, 20px); font-weight: 700; line-height: 1.2; margin: 0; font-family: 'Inter', sans-serif;">Content<br>Creators</h3>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="partner-card group" style="position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 1/2; cursor: pointer;">
+                    <img src="./public/images/common/partner3.jpg?v=3" alt="Brands & Companies" style="width: 100%; height: 100%; object-fit: cover; object-position: center center; transition: transform 0.7s ease;">
+                    <div class="partner-card-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 60%; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%); transition: background 0.3s ease;"></div>
+                    <div class="partner-card-content" style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px 20px; text-align: center; display: flex; flex-direction: column; justify-content: flex-end; height: 100%;">
+                        <h3 class="partner-card-title" style="color: #FFFFFF; font-size: clamp(16px, 1.5vw, 20px); font-weight: 700; line-height: 1.2; margin: 0; font-family: 'Inter', sans-serif;">Brands<br>& Companies</h3>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="partner-card group" style="position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 1/2; cursor: pointer;">
+                    <img src="./public/images/common/partner4.jpg?v=3" alt="Women's Organizations" style="width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.7s ease;">
+                    <div class="partner-card-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 60%; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%); transition: background 0.3s ease;"></div>
+                    <div class="partner-card-content" style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px 20px; text-align: center; display: flex; flex-direction: column; justify-content: flex-end; height: 100%;">
+                        <h3 class="partner-card-title" style="color: #FFFFFF; font-size: clamp(16px, 1.5vw, 20px); font-weight: 700; line-height: 1.2; margin: 0; font-family: 'Inter', sans-serif;">Women's<br>Organizations</h3>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="partner-card group" style="position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 1/2; cursor: pointer;">
+                    <img src="./public/images/common/partner5.jpg?v=3" alt="Experts & Coaches" style="width: 100%; height: 100%; object-fit: cover; object-position: 80% 20%; transition: transform 0.7s ease;">
+                    <div class="partner-card-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 60%; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%); transition: background 0.3s ease;"></div>
+                    <div class="partner-card-content" style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px 20px; text-align: center; display: flex; flex-direction: column; justify-content: flex-end; height: 100%;">
+                        <h3 class="partner-card-title" style="color: #FFFFFF; font-size: clamp(16px, 1.5vw, 20px); font-weight: 700; line-height: 1.2; margin: 0; font-family: 'Inter', sans-serif;">Experts<br>& Coaches</h3>
+                    </div>
+                </div>
             </div>
+
+            <style>
+                .partnerships-grid { display: grid; gap: 24px; grid-template-columns: 1fr; margin-top: 50px; }
+                @media(min-width: 600px){ .partnerships-grid { grid-template-columns: repeat(2, 1fr); } }
+                @media(min-width: 900px){ .partnerships-grid { grid-template-columns: repeat(3, 1fr); } }
+                @media(min-width: 1200px){ .partnerships-grid { grid-template-columns: repeat(5, 1fr); } }
+                .partner-card:hover img { transform: scale(1.05); }
+                .partner-card:hover .partner-card-overlay { background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.2) 100%); }
+            </style>
+
         </div>
     </section>
 
-    <!-- Final CTA -->
+<!-- Final CTA -->
     <section class="snap-section" style="position: relative; display: flex; align-items: flex-end; justify-content: center; padding: 55vh 4vw 50px 4vw; min-height: 125vh; background-image: url('./public/images/common/masterclass-cta.jpg?v=3'); background-size: cover; background-position: center top; background-repeat: no-repeat; margin-top: 0; overflow: hidden;">
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,0.5) 75%, rgba(0,0,0,0.95) 100%); z-index: 1;"></div>
         
