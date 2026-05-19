@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CASTLE &middot; Own Your Wealth. Own Your Future.</title>
+    <title>CASTLE &middot; Sé dueña de tu Dinero. Sé dueña de tu Futuro.</title>
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://natalia-unicoin.github.io/castle/">
-    <meta property="og:title" content="CASTLE &middot; Own Your Wealth. Own Your Future.">
-    <meta property="og:description" content="The AI-powered platform helping Women build Wealth, invest with confidence, and earn rewards for financial progress.">
+    <meta property="og:title" content="CASTLE &middot; Sé dueña de tu Dinero. Sé dueña de tu Futuro.">
+    <meta property="og:description" content="La plataforma impulsada por IA que ayuda a las Mujeres a construir Wealth, invertir con confianza y ganar recompensas por el progreso financiero.">
     <meta property="og:image" content="https://natalia-unicoin.github.io/castle/public/images/common/hero-bg.png?v=5">
     
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://natalia-unicoin.github.io/castle/">
-    <meta name="twitter:title" content="CASTLE &middot; Own Your Wealth. Own Your Future.">
-    <meta name="twitter:description" content="The AI-powered platform helping Women build Wealth, invest with confidence, and earn rewards for financial progress.">
+    <meta name="twitter:title" content="CASTLE &middot; Sé dueña de tu Dinero. Sé dueña de tu Futuro.">
+    <meta name="twitter:description" content="La plataforma impulsada por IA que ayuda a las Mujeres a construir Wealth, invertir con confianza y ganar recompensas por el progreso financiero.">
     <meta name="twitter:image" content="https://natalia-unicoin.github.io/castle/public/images/common/hero-bg.png?v=5">
 
     <link rel="icon" href="./public/images/common/favicon.png?v=10" type="image/png">
@@ -98,14 +98,14 @@
             background-image: url('./public/images/common/hero-silvina.jpg');
             background-size: cover;
             background-position: right center;
-            background-attachment: fixed;
+            
             background-repeat: no-repeat;
         }
         @media (max-width: 768px) {
             .hero {
                 background-image: url('./public/images/common/hero-bg-mobile.jpg');
                 background-position: center;
-                background-attachment: scroll;
+                
             }
         }
         .hero-container {
@@ -310,6 +310,8 @@
         .section-eyebrow { color: #A03FA3; font-weight: 700; font-size: 14px; letter-spacing: 4px; margin-bottom: 16px; text-align: center; display: block; }
         .section-title { font-size: clamp(36px, 5vw, 64px); font-weight: 700; letter-spacing: -2px; margin-bottom: 20px; color: #1A1A1A; text-align: center; }
         .section-subtitle { font-size: clamp(20px, 2.5vw, 32px); font-weight: 400; color: #1A1A1A; max-width:  1400px; margin: 0 auto var(--spacer-60) auto; line-height: 1.6; text-align: center; font-family: 'Inter', sans-serif; }
+        .section-subtitle-1 { font-size: clamp(17px, 1.8vw, 26px); font-weight: 500; color: #1A1A1A; margin-bottom: 12px; line-height: 1.4; letter-spacing: -0.02em; }
+        .section-subtitle-2 { font-size: clamp(16px, 1.4vw, 20px); font-weight: 400; color: #2A2A2A; margin-bottom: 0; line-height: 1.45; }
 
         /* 4. Program (Genesis Challenge) */
         .program-section { background-color: #FFFFFF; padding: var(--section-pad-y) 0; border-bottom: 1px solid #F3F4F6; text-align: center; }
@@ -647,14 +649,14 @@
             <a href="about.html" style="text-transform: none;">We are Castle</a>
             <a href="masterclass.html" style="text-transform: none;">MasterClass Series</a>
             <a href="partners.html" style="text-transform: none;">Partners</a>
-            <a href="contact.html" style="text-transform: none;">Contact Us</a>
+            <a href="contact_es.html" style="text-transform: none;">Contáctanos</a>
         </nav>
         <button class="mobile-menu-toggle" onclick="document.getElementById('main-nav').classList.toggle('active')">
             ☰
         </button>
         <div class="header-actions">
             <select class="lang-select" onchange="if(this.value) { localStorage.setItem('lang_selected', 'true'); window.location.href=this.value; }">
-                <option value="partners.html" >ENG</option>
+                <option value="partners.html" selected>ENG</option>
                 <option value="partners_es.html">ESP</option>
             </select>
         </div>
@@ -671,26 +673,176 @@
         #main-header .lang-select { color: #1A1A1A !important; border-color: #E5E7EB !important; background-image: url('data:image/svg+xml;utf8,<svg fill="%231A1A1A" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>') !important; }
         .mobile-menu-toggle { color: #1A1A1A !important; }
     </style>
-    <section class="hero snap-section" style="background-color: #E5E7EB; display: flex; align-items: flex-end; padding: 150px 4vw 80px 4vw; min-height: 100vh; position: relative;">
-        <!-- Placeholder Text -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: clamp(30px, 5vw, 60px); font-weight: 800; letter-spacing: 4px; text-transform: uppercase; z-index: 0; font-family: 'Inter', sans-serif; text-align: center;">Image Placeholder</div>
-        <!-- Black Gradient Overlay -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%); z-index: 1;"></div>
+
+    <section class="hero snap-section" style="background-color: #E5E7EB; display: flex; align-items: flex-end; padding: 150px 4vw 50px 4vw; min-height: 115vh; position: relative; border-bottom: 1px solid #E5E7EB;">
+    <div class="shared-hero-gradient" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 60%; background: linear-gradient(to top, rgba(17,17,17,0.7) 0%, rgba(17,17,17,0) 100%); z-index: 1; pointer-events: none;"></div>
+        <img src="./public/images/common/partners-hero.jpg?v=2" alt="Partners" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; z-index: 0;">
+        <!-- Minimal Gradient Overlay from bottom -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 50%); z-index: 1;"></div>
         
-        <div class="container" style="max-width: 1000px; margin: 0 auto; display: flex; justify-content: center; align-items: center; position: relative; z-index: 2;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: center; position: relative; z-index: 2;">
             <div style="text-align: center; width: 100%;">
-                <h1 class="hero-title color-reveal" style="color: #FFFFFF; font-size: clamp(50px, 7vw, 90px); letter-spacing: -2px; margin-bottom: 24px; text-shadow: 0 4px 12px rgba(0,0,0,0.5);">Partners</h1>
-                
+                <h1 class="hero-title color-reveal" style="color: #FFFFFF; font-size: clamp(40px, 5vw, 75px); letter-spacing: -2px; margin-bottom: 24px; text-shadow: 0 4px 12px rgba(0,0,0,0.5);">Turn Your Passion and Influence into Investment.</h1>
+                <p style="color: rgba(255,255,255,0.9); font-size: clamp(18px, 2vw, 24px); line-height: 1.5; max-width: 800px; margin: 0 auto;">Join the <strong style="color: #FFFFFF; font-weight: 700;">Movement</strong> helping Women build <strong style="color: #FFFFFF; font-weight: 700;">Wealth</strong> and participate in the Future they are creating.</p>
             </div>
         </div>
     </section>
+
+    <!-- Partners Section -->
+
+    <section id="partnerships" class="partners-section snap-section" style="background-color: #F9F9F9; padding: 80px 4vw 50px 4vw; font-family: 'Inter', sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    
+
+
+    <div id="influence-grid" class="color-reveal" style="max-width: 1400px; width: 100%; margin: 0 auto; display: grid; grid-template-columns: 1fr; border-radius: 5px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.08); background-color: #A03FA3; position: relative;">
+        <style>
+            .inf-img-container {
+                position: relative;
+                min-height: 350px;
+            }
+            .inf-img-container img {
+                position: absolute;
+                top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: right center; z-index: 1;
+            }
+            @media (min-width: 1024px) {
+                #influence-grid {
+                    grid-template-columns: 1fr 1fr !important;
+                    overflow: visible !important;
+                }
+                .inf-img-container {
+                    min-height: auto;
+                }
+                .inf-img-container img {
+                    top: -25px;
+                    height: calc(100% + 25px);
+                    border-radius: 0 5px 5px 0;
+                    object-position: right 20%;
+                }
+
+            }
+        </style>
+        
+        
+        <!-- Left Content -->
+        <div style="padding: 70px clamp(30px, 6vw, 60px); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; text-align: left; position: relative; z-index: 2;">
+            <div style="color: #FFFFFF; line-height: 1.4;">
+                <p class="section-subtitle-1" style="color: rgba(255,255,255,0.9); margin-bottom: 25px; font-weight: 500;">Castle is building a <strong style="font-weight: 800; color: #FFFFFF;">new Web3-powered ecosystem</strong>, where creators, leaders, brands, and communities can <strong style="font-weight: 800; color: #FFFFFF;">turn into value</strong> their <strong style="font-weight: 800; color: #FFFFFF;">expertise, audience, reach, credibility, and resources</strong>, in exchange for <strong style="font-weight: 800; color: #FFFFFF;">Castle tokens</strong> and <strong style="font-weight: 800; color: #FFFFFF;">shared growth</strong>.</p>
+                <p class="section-subtitle-1" style="color: rgba(255,255,255,0.95); margin-bottom: 0;">
+                    <span style="font-family: 'Caveat', cursive; font-size: clamp(34px, 5vw, 56px); font-weight: 600; line-height: 1.2; display: block; margin-bottom: 5px; color: #FFFFFF;">Bring what makes you powerful</span>
+                    &mdash; your voice, your network, your platform, or your community &mdash; and grow with us as we scale a global movement for women and wealth.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Right Image -->
+        <div class="inf-img-container">
+
+            <img src="./public/images/common/inf-section.png" alt="Influence">
+        </div>
+    </div>
+
+    <!-- Partners Grid Section Merged -->
+        <div style="width: 100%; max-width: 1400px; margin: 50px auto 0 auto; text-align: center;">
+            <div style="margin-bottom: var(--spacer-40);">
+                <h2 class="section-heading color-reveal" style="margin-bottom: var(--spacer-30);">How Can You Partner?</h2>
+                <div class="color-reveal section-subtitle" style="margin-bottom: 0;">
+                    <p class="section-subtitle-1">With Castle, we are building a new Web3-driven economy where creators, leaders, brands, and communities can co-create, invest, and grow together through a model based on collaboration, ownership, and long-term value.</p>
+                    <p class="section-subtitle-2">Whether you are a celebrity, influencer, content creator, brand, women's organization, or expert, you can join to transform how women experience wealth and be part of the female wealth revolution.</p>
+                </div>
+            </div>
+            
+            <div class="color-reveal partner-grid mobile-scroll-row mobile-text-center" id="partner-scroll" style="text-align: left;">
+                <!-- Card 1 -->
+                <div class="partner-card">
+                    <img src="./public/images/common/partner1.jpg" alt="Influencers & Celebrities" style="object-position: center 90%;">
+                    <div class="partner-card-overlay"></div>
+                    <div class="partner-card-content">
+                        <h3 class="partner-card-title">Influencers<br>& Celebridades</h3>
+                        <div class="partner-card-text-container" style="flex-grow: 1; display: flex; flex-direction: column;">
+                            <p class="partner-card-text">Usa tu voz y audiencia para inspirar a Mujeres de todo el mundo mientras ganas tokens, participación en los ingresos e impacto en la construcción de un legado.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="partner-card">
+                    <img src="./public/images/common/partner2.jpg" alt="Content Creators" style="object-position: center 5%;">
+                    <div class="partner-card-overlay"></div>
+                    <div class="partner-card-content">
+                        <h3 class="partner-card-title">Creadoras<br>de Contenido</h3>
+                        <div class="partner-card-text-container" style="flex-grow: 1; display: flex; flex-direction: column;">
+                            <p class="partner-card-text">Convierte tus conocimientos en cursos, contenido, masterclasses y experiencias—monetizados mediante tokens y crecimiento compartido.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="partner-card">
+                    <img src="./public/images/common/partner3.jpg" alt="Brands & Companies" style="object-position: 25% center;">
+                    <div class="partner-card-overlay"></div>
+                    <div class="partner-card-content">
+                        <h3 class="partner-card-title">Marcas<br>& Companys</h3>
+                        <div class="partner-card-text-container" style="flex-grow: 1; display: flex; flex-direction: column;">
+                            <p class="partner-card-text">Aporta alcance, recursos, medios, productos o patrocinios y participa en un ecosistema con un propósito claro e impacto medible.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="partner-card">
+                    <img src="./public/images/common/partner4.jpg" alt="Organizations" style="object-position: center 20%;">
+                    <div class="partner-card-overlay"></div>
+                    <div class="partner-card-content">
+                        <h3 class="partner-card-title">Organizaciones<br>de Mujeres</h3>
+                        <div class="partner-card-text-container" style="flex-grow: 1; display: flex; flex-direction: column;">
+                            <p class="partner-card-text">Activa a tus miembros con herramientas para la creación de Wealth mientras recibes tokens, incentivos y beneficios para la Comunidad.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="partner-card">
+                    <img src="./public/images/common/leaders.jpg" alt="Experts & Coaches">
+                    <div class="partner-card-overlay"></div>
+                    <div class="partner-card-content">
+                        <h3 class="partner-card-title">Expertas<br>& Coaches</h3>
+                        <div class="partner-card-text-container" style="flex-grow: 1; display: flex; flex-direction: column;">
+                            <p class="partner-card-text">Tokeniza tu experiencia, programas, mentoría y credibilidad como parte de una plataforma global que empodera financieramente a las Mujeres.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-scroll-indicators" data-target="partner-scroll"></div>
+            
+            <div style="margin-top: 30px; text-align: center; margin-bottom: 0;">
+                <p style="font-size: clamp(24px, 3vw, 36px); font-weight: 700; color: #1A1A1A; letter-spacing: 0px; margin-bottom: 30px;">
+                    Multiply your wealth. Build your Castle.
+                </p>
+                <a href="javascript:void(0);" onclick="openUnifiedModal('partner')" class="btn" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 2px; padding: 22px 50px; border-radius: 50px; font-size: 15px; text-decoration: none; display: inline-block; box-shadow: 0 10px 30px rgba(160, 63, 163, 0.4); transition: transform 0.2s ease;">JOIN US</a>
+            </div>
+        </div>
+    </section>
+
+
+        <!-- Final CTA / Newsletter -->
+    <section style="position: relative; background-image: url('./public/images/common/cta-final.jpg'); background-size: cover; background-position: center;  background-repeat: no-repeat; padding: var(--section-pad-y) 0; text-align: center; min-height: 100vh; display: flex; align-items: center; justify-content: center; width: 100%;" class="snap-section">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(17,17,17,0.6); z-index: 1;"></div>
+        <div class="container" style="position: relative; z-index: 2; max-width: 1500px; margin: 0 auto; padding: 0 5vw; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div style="max-width: 800px; width: 100%; text-align: center;">
+                <h3 style="font-size: clamp(40px, 5vw, 72px); font-weight: 700; color: #FFFFFF; margin-bottom: 20px; letter-spacing: -1px; line-height: 1.1; font-family: 'Inter', sans-serif; text-shadow: 0 4px 20px rgba(0,0,0,0.4);">Subscribe to our Newsletter</h3>
+                <p style="font-size: clamp(18px, 1.8vw, 28px); color: rgba(255,255,255,0.95); line-height: 1.6; max-width: 700px; margin: 0 auto var(--spacer-50) auto; font-family: 'Inter', sans-serif; text-shadow: 0 2px 15px rgba(0,0,0,0.4);">Build wealth with intention. Start by receiving the conversations that truly matter.</p>
+                <div style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto; width: 100%; flex-wrap: wrap; justify-content: center;">
+                    <input type="email" id="inline_newsletter_email" placeholder="Your email address" style="flex: 1; padding: 16px 20px; border-radius: 50px; border: none; font-size: 16px; outline: none; min-width: 250px; color: #1A1A1A;">
+                    <button onclick="submitInlineNewsletter()" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 1.5px; padding: 16px 40px; border-radius: 50px; border: none; font-size: 14px; cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(160,63,163,0.3); font-family: 'Inter Tight', sans-serif; text-transform: uppercase;">SUBSCRIBE</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
     <footer class="site-footer">
         <div class="container">
             <div class="footer-top">
                 <div class="footer-col brand-col">
                     <img src="./public/images/common/logo-color.png?v=1" alt="Castle" class="footer-brand" style="height: 48px; object-fit: contain;">
-                    <p style="margin-bottom: 20px;">Castle Is The OS Of Women's <span style="color: #A03FA3;">Wealth.</span></p>
+                    <p style="margin-bottom: 20px;">Castle es el sistema operativo de la <span style="color: #A03FA3;">riqueza</span> femenina.</p>
                     <div class="social-links">
                         <a href="https://www.instagram.com/buildyourcastle.ai/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
                         <a href="https://www.linkedin.com/company/buildyourcastle/about/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
@@ -705,19 +857,19 @@
                 </div>
                 <div class="footer-col">
                     <h4>Company</h4>
-                    <a href="about.html">We Are Castle</a>
-                    <a href="contact.html">Contact Us</a>
+                    <a href="about.html">About Us</a>
+                    <a href="contact_es.html">Contáctanos</a>
                 </div>
                 <div class="footer-col">
                     <h4>Legal</h4>
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
-                    <a href="#">Cookie Policy</a>
+                    <a href="#">Política de Cookies</a>
                 </div>
             </div>
             
             <div class="footer-disclaimer" style="text-align: center; font-size: 11px; color: #6B7280; margin-bottom: 15px;">
-                All images used on this site were created or enhanced using AI and are intended for illustrative purposes only.
+                Las imágenes utilizadas en este sitio fueron creadas o intervenidas con IA y tienen fines únicamente ilustrativos.
             </div>
             <div class="footer-bottom">
                 &copy; 2026 Castle. All rights reserved.
@@ -849,7 +1001,7 @@
         <div style="background: #FFFFFF; padding: 40px 40px; border-radius: 8px; max-width: 650px; width: 90%; position: relative; max-height: 90vh; overflow-y: auto; text-align: left; box-shadow: 0 40px 100px rgba(0,0,0,0.4);">
             <button onclick="document.getElementById('waitlistModal').style.display='none';" style="position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 30px; cursor: pointer; color: #2A2A2A; line-height: 1; padding: 0;">&times;</button>
             
-            <h2 class="section-heading color-reveal" id="modalTitle" style="margin-top: 10px; margin-bottom: 10px; text-align: center; font-size: clamp(22px, 6vw, 42px); white-space: nowrap;">Welcome to Castle</h2>
+            <h2 class="section-heading color-reveal" id="modalTitle" style="margin-top: 10px; margin-bottom: 10px; text-align: center; font-size: clamp(22px, 6vw, 42px); white-space: nowrap;">Bienvenida a Castle</h2>
             
             
             <form action="https://buildyourcastle.us10.list-manage.com/subscribe/post?u=4766d7bd8debcf610dadddfb6&amp;id=53677e9563" target="_blank" method="POST" id="unifiedForm" class="waitlist-form" onsubmit="prepareUnifiedFormSubmit(event)">
@@ -858,7 +1010,7 @@
                 
                 <!-- Interests Checkboxes -->
                 <div class="form-group" style="margin-bottom: 20px;">
-                    <label style="font-size: 15px; font-weight: 700; color: #1A1A1A; margin-bottom: 15px; display: block;">What would you like to do at Castle? <span style="font-size: 13px; font-weight: 400; color: #4B5563; margin-left: 6px;">(you can select more than one option)</span></label>
+                    <label style="font-size: 15px; font-weight: 700; color: #1A1A1A; margin-bottom: 15px; display: block;">¿Qué te gustaría hacer en Castle? <span style="font-size: 13px; font-weight: 400; color: #4B5563; margin-left: 6px;">(puedes seleccionar más de una opción)</span></label>
                     <style>
                         .interests-grid { display: grid; gap: 12px; grid-template-columns: 1fr; }
                     </style>
@@ -876,20 +1028,20 @@
                         <input type="text" id="fname" name="FNAME" required placeholder="Jane Doe">
                     </div>
                     <div class="form-group">
-                        <label for="email">Email Address *</label>
+                        <label for="email">Correo Electrónico *</label>
                         <input type="email" id="email" name="EMAIL" required placeholder="jane@example.com">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="phone">Phone Number</label>
+                        <label for="phone">Número de Teléfono</label>
                         <input type="tel" id="phone" name="PHONE" placeholder="+1 234 567 8900">
                     </div>
                     <div class="form-group">
-                        <label for="age">Age</label>
+                        <label for="age">Edad</label>
                         <select id="age" name="AGE">
-                            <option value="" disabled selected>Select age range</option>
+                            <option value="" disabled selected>Selecciona rango de edad</option>
                             <option value="18-24">18-24</option>
                             <option value="25-29">25-29</option>
                             <option value="30-34">30-34</option>
@@ -905,9 +1057,9 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="country">Country</label>
+                        <label for="country">País</label>
                         <select id="country" name="COUNTRY">
-                            <option value="" disabled selected>Select your country</option>
+                            <option value="" disabled selected>Selecciona tu país</option>
                             <option value="United States">United States</option>
                             <option value="United Kingdom">United Kingdom</option>
                             <option value="Canada">Canada</option>
@@ -923,36 +1075,36 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="linkedin">LinkedIn URL</label>
+                        <label for="linkedin">URL de LinkedIn</label>
                         <input type="url" id="linkedin" name="LINKEDIN" placeholder="https://linkedin.com/in/janedoe">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="company">Company / Organization</label>
+                        <label for="company">Empresa / Organización</label>
                         <input type="text" id="company" name="COMPANY" placeholder="Acme Corp">
                     </div>
                     <div class="form-group">
-                        <label for="role">Your Role / Title</label>
+                        <label for="role">Tu Rol / Cargo</label>
                         <input type="text" id="role" name="ROLE" placeholder="Founder / CEO">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="instagram">Instagram Handle</label>
+                    <label for="instagram">Usuario de Instagram</label>
                     <input type="text" id="instagram" name="INSTAGRAM" placeholder="@janedoe">
                 </div>
 
                 <div class="checkbox-group" style="margin-top: 15px;">
                     <input type="checkbox" id="consent" name="CONSENT" required checked style="width: 18px; height: 18px; margin: 0; padding: 0; accent-color: #A03FA3;">
-                    <label for="consent" style="margin-left: 0;">I consent to Castle contacting me to share updates about the platform, launch information, and Community events.</label>
+                    <label for="consent" style="margin-left: 0;">Doy mi consentimiento para que Castle me contacte con actualizaciones de la plataforma e invitaciones.</label>
                 </div>
 
                 <!-- Anti-spam Honeypot -->
                 <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_name" tabindex="-1" value=""></div>
 
-                <button type="submit" class="waitlist-submit" style="margin-top: 20px;">Submit</button>
+                <button type="submit" class="waitlist-submit" style="margin-top: 20px;">Enviar</button>
             </form>
         </div>
     </div>

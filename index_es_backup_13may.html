@@ -28,8 +28,9 @@
             background-color: #FFFFFF; /* Ghost White */
             color: #1A1A1A; /* Soft Black */
             overflow-x: hidden;
+            text-wrap: pretty;
         }
-        h1, h2, h3, h4, h5, h6 { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Inter', sans-serif; text-wrap: balance; }
         .accent-text {  font-size: 1.0rem; color: #A03FA3; display: inline-block; }
         /* Header */
         header {
@@ -94,7 +95,7 @@
             min-height: 100vh;
 
             position: relative;  display: flex; align-items: stretch; justify-content: flex-start;
-            background-color: #F8F8FA; overflow: hidden; padding: 0 clamp(30px, 5vw, 100px);
+            background-color: #F8F8FA; overflow: hidden; padding: 0 4vw;
             background-image: url('./public/images/common/hero-silvina.jpg');
             background-size: cover;
             background-position: right center;
@@ -110,15 +111,15 @@
         }
         .hero-container {
             position: relative; z-index: 3; display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
-            width: 100%; max-width: 1500px; margin-left: clamp(52px, 6vw, 96px); padding: 15vh 0 40px 0;
+            width: 100%; max-width: 1400px; margin: 0 auto; padding: 25vh 0 40px 0;
         }
 
         .hero-gradient {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(90deg, rgba(8,8,8,0.95) 0%, rgba(8,8,8,0.7) 40%, rgba(8,8,8,0.2) 65%, rgba(8,8,8,0) 100%); z-index: 2;
+            background: linear-gradient(90deg, rgba(8,8,8,0.75) 0%, rgba(8,8,8,0.5) 35%, rgba(8,8,8,0.15) 60%, rgba(8,8,8,0) 100%); z-index: 2;
         }
         .hero-content {
-            text-align: left; display: flex; flex-direction: column; align-items: flex-start; gap: clamp(24px, 2.5vw, 32px);
+            text-align: left; display: flex; flex-direction: column; align-items: flex-start; gap: clamp(12px, 1.5vw, 16px);
             width: 100%; flex-grow: 1; justify-content: center;
         }
         .hero-eyebrow {
@@ -126,12 +127,12 @@
             letter-spacing: 4px; margin-bottom: -10px;
         }
         .hero-title {
-            font-size: clamp(64px, 10vw, 130px); font-weight: 700; line-height: 0.95; 
+            font-size: clamp(45px, 6.5vw, 130px); font-weight: 700; line-height: 0.95; 
             letter-spacing: -4px; margin-bottom: 0px; color: #FFFFFF; font-family: 'Inter', sans-serif;
         }
         .hero-title .highlight { color: #A03FA3; }
         .hero-description {
-            color: rgba(255,255,255,0.9); font-size: clamp(20px, 2.5vw, 28px); line-height: 1.25;
+            color: rgba(255,255,255,0.9); font-size: clamp(18px, 1.8vw, 28px); line-height: 1.25;
             max-width: 650px; margin: 8px 0 16px 0; font-weight: 400; font-family: 'Inter', sans-serif;
         }
         .hero-cta-group { margin-top: 0px; display: inline-flex; flex-direction: column; align-items: center; }
@@ -155,15 +156,22 @@
             .hero-img { object-position: center top; }
             .hero-title { font-size: clamp(40px, 10vw, 56px); text-align: center; line-height: 1; letter-spacing: -1px; }
             .hero-container { padding: 0 10px 20px 10px; margin-left: 0; justify-content: flex-end; align-items: center; }
-            .hero-content { gap: 20px; text-align: center; align-items: center; justify-content: flex-end; padding-top: 55vh; }
+            .hero-content { gap: 12px; text-align: center; align-items: center; justify-content: flex-end; padding-top: 55vh; }
             .hero-cta-group { width: 100%; display: flex; }
             
-            .hero-gradient { background: linear-gradient(180deg, rgba(8,8,8,0) 0%, rgba(8,8,8,0) 40%, rgba(8,8,8,0.85) 75%, rgba(8,8,8,1) 100%); }
+            .hero-gradient { background: linear-gradient(180deg, rgba(8,8,8,0) 0%, rgba(8,8,8,0.15) 30%, rgba(8,8,8,0.6) 60%, rgba(8,8,8,0.9) 100%); }
             .hero-footer { text-align: center; width: 100%; padding-top: 20px; }
         }
 
+        /* --- LAPTOP 14 INCH OPTIMIZATION (1440px & below) --- */
+        @media (max-width: 1440px) and (min-width: 769px) {
+            .hero-content { max-width: 60% !important; }
+            .container, .hero-container, section.snap-section, .bento-section { padding-left: 6vw !important; padding-right: 6vw !important; }
+            #influence-grid-left { padding: 50px 40px 50px 50px !important; }
+            #influence-grid-right img { right: -10px !important; width: calc(100% + 20px) !important; height: calc(100% + 20px) !important; }
+        }
         
-        :root { --section-pad-y: 80px; --section-pad-large: 100px; --spacer-80: 80px; --spacer-60: 60px; --spacer-50: 50px; --spacer-40: 40px; --spacer-30: 30px; }
+        :root { --section-pad-y: 40px; --section-pad-large: 60px; --spacer-80: 80px; --spacer-60: 60px; --spacer-50: 50px; --spacer-40: 40px; --spacer-30: 30px; }
         @media (max-width: 768px) { :root { --section-pad-y: 30px; --section-pad-large: 30px; --spacer-80: 40px; --spacer-60: 30px; --spacer-50: 25px; --spacer-40: 20px; --spacer-30: 15px; } }
         
         /* Full Site Layout Styles */
@@ -307,9 +315,11 @@
         }
 
         /* Global typography helpers */
-        .section-eyebrow { color: #A03FA3; font-weight: 700; font-size: 14px; letter-spacing: 4px; margin-bottom: 16px; text-align: center; display: block; }
-        .section-title { font-size: clamp(36px, 5vw, 64px); font-weight: 700; letter-spacing: -2px; margin-bottom: 20px; color: #1A1A1A; text-align: center; }
-        .section-subtitle { font-size: clamp(20px, 2.5vw, 32px); font-weight: 400; color: #1A1A1A; max-width:  1400px; margin: 0 auto var(--spacer-60) auto; line-height: 1.6; text-align: center; font-family: 'Inter', sans-serif; }
+        .section-eyebrow { color: #A03FA3; font-weight: 700; font-size: 14px; letter-spacing: 4px; margin-bottom: 16px; text-align: center; display: block; padding: 0 50px; box-sizing: border-box; }
+        .section-title { font-size: clamp(36px, 5vw, 64px); font-weight: 700; letter-spacing: -2px; margin-bottom: 20px; color: #1A1A1A; text-align: center; padding: 0 50px; box-sizing: border-box; line-height: 1; }
+        .section-subtitle { font-size: clamp(18px, 1.8vw, 26px); font-weight: 400; color: #2A2A2A; max-width: 100%; width: 100%; padding: 0 50px; box-sizing: border-box; margin: 0 auto var(--spacer-50) auto; line-height: 1.4; text-align: center; font-family: 'Inter', sans-serif; }
+        .section-subtitle-1 { font-size: clamp(17px, 1.8vw, 26px); font-weight: 500; color: #1A1A1A; margin-bottom: 12px; line-height: 1.4; letter-spacing: -0.02em; }
+        .section-subtitle-2 { font-size: clamp(16px, 1.4vw, 20px); font-weight: 400; color: #2A2A2A; margin-bottom: 0; line-height: 1.45; }
 
         /* 4. Program (Genesis Challenge) */
         .program-section { background-color: #FFFFFF; padding: var(--section-pad-y) 0; border-bottom: 1px solid #F3F4F6; text-align: center; }
@@ -432,7 +442,7 @@
         .horizon-section { background-color: #FFFFFF; padding: var(--section-pad-y) 0; border-bottom: 1px solid #EAE0D5; }
         .horizon-container { max-width: 1100px; margin: 0 auto; text-align: left; }
         .horizon-bold { font-size: clamp(20px, 2.5vw, 32px); font-weight: 700; color: #1A1A1A; margin-bottom: var(--spacer-30); font-family: 'Inter', sans-serif; letter-spacing: 0px;; }
-        .horizon-text { font-size: clamp(20px, 2.5vw, 28px); color: #1A1A1A; line-height: 1.6; margin-bottom: var(--spacer-30); font-family: 'Inter', sans-serif; }
+        .horizon-text { font-size: clamp(18px, 1.8vw, 28px); color: #1A1A1A; line-height: 1.6; margin-bottom: var(--spacer-30); font-family: 'Inter', sans-serif; }
         .horizon-badge { display: inline-block; padding: 8px 24px; border-radius: 5px; border: 1px solid rgba(160,63,163,0.3); color: #A03FA3; font-size: 13px; font-weight: 700; letter-spacing: 1px; font-family: 'Inter', sans-serif; margin-top: 20px; }
 
         /* 11. Blog & Subscribe */
@@ -544,11 +554,11 @@
         .partner-card:hover img { transform: scale(1.05); }
         .partner-card:hover .partner-card-overlay { background: rgba(160,63,163,0.9); }
         .partner-card-content { position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px 24px; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; z-index: 3; }
-        .partner-card-title { font-size: 22px; font-weight: 800; color: #FFFFFF; margin: 0; line-height: 1.2; font-family: 'Inter', sans-serif; transform: translateY(0); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); text-align: center; }
-        .partner-card-text-container { position: absolute; left: 0; width: 100%; padding: 0 24px; bottom: -80px; opacity: 0; visibility: hidden; transition: opacity 0.4s ease, bottom 0.4s cubic-bezier(0.16, 1, 0.3, 1); text-align: center; display: flex; flex-direction: column; gap: 12px; }
-        .partner-card:hover .partner-card-title { transform: translateY(-150px); }
-        .partner-card:hover .partner-card-text-container { opacity: 1; visibility: visible; bottom: 30px; }
-        .partner-card-text { font-size: 14px; color: rgba(255,255,255,0.9); font-weight: 700; line-height: 1.5; margin: 0; text-align: center; }
+        .partner-card-title { font-size: 22px; font-weight: 800; color: #FFFFFF; margin: 0; line-height: 1.2; font-family: 'Inter', sans-serif; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); text-align: center; }
+        .partner-card-text-container { opacity: 0; visibility: hidden; max-height: 0; margin-top: 0; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); text-align: center; display: flex; flex-direction: column; gap: 12px; overflow: hidden; width: 100%; }
+        .partner-card:hover .partner-card-title { transform: translateY(-5px); }
+        .partner-card:hover .partner-card-text-container { opacity: 1; visibility: visible; max-height: 250px; margin-top: 15px; }
+        .partner-card-text { font-size: 16px; color: rgba(255,255,255,0.9); font-weight: 700; line-height: 1.5; margin: 0; text-align: center; }
         .partner-card-cta { font-size: 11px; font-weight: 800; color: #A03FA3; letter-spacing: 1.5px; text-decoration: none; }
 
 
@@ -558,7 +568,7 @@
             font-weight: 700 !important;
             letter-spacing: -2px !important;
             color: #1A1A1A;
-            line-height: 1.1 !important;
+            line-height: 1 !important;
             font-size: clamp(38px, 5vw, 64px) !important;
             margin-bottom: 24px;
         }
@@ -597,9 +607,9 @@
         @media(max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
         .form-group { display: flex; flex-direction: column; }
         .form-group label { font-size: 14px; font-weight: 600; color: #1A1A1A; margin-bottom: 8px; text-align: left !important; margin-left: 0 !important; padding-left: 0 !important; align-self: flex-start; }
-        .form-group input, .form-group select { padding: 14px 16px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 15px; font-family: 'Inter', sans-serif; background: #F9FAFB; transition: border-color 0.2s, box-shadow 0.2s; color:#1A1A1A; }
+        .form-group input, .form-group select, .form-group textarea { padding: 14px 16px; border: 1px solid #D1D5DB; border-radius: 6px; font-size: 15px; font-family: 'Inter', sans-serif; background: #F9FAFB; transition: border-color 0.2s, box-shadow 0.2s; color:#1A1A1A; width: 100%; box-sizing: border-box; }
         .form-group select { appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23111111" viewBox="0 0 16 16"><path d="M4.293 5.293a1 1 0 0 1 1.414 0L8 8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-3 3a1 1 0 0 1-1.414 0l-3-3a1 1 0 0 1 0-1.414z"/></svg>'); background-repeat: no-repeat; background-position: right 16px center; background-size: 16px; padding-right: 40px; }
-        .form-group input:focus, .form-group select:focus { border-color: #A03FA3; box-shadow: 0 0 0 3px rgba(160,63,163,0.1); outline: none; background: #FFFFFF; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #A03FA3; box-shadow: 0 0 0 3px rgba(160,63,163,0.1); outline: none; background: #FFFFFF; }
         .checkbox-group { display: flex; align-items: flex-start; gap: 12px; margin-top: 10px; }
         .checkbox-group input { margin-top: 4px; cursor: pointer; width: 18px; height: 18px; }
         .checkbox-group label { font-size: 13px; font-weight: 400; color: #2A2A2A; line-height: 1.5; text-transform: none; letter-spacing: 0; cursor: pointer; margin-bottom: 0; }
@@ -636,8 +646,7 @@
         }
     </script>
 </head>
-
-    <body>
+<body>
     <header id="main-header">
         <a href="index_es.html" class="header-logo">
             <img src="./public/images/common/logo-color.png?v=2" alt="CASTLE" class="logo-light">
@@ -645,7 +654,7 @@
         </a>
         <nav class="nav-links" id="main-nav">
             <a href="about_es.html" style="text-transform: none;">Somos Castle</a>
-            <a href="masterclass_es.html" style="text-transform: none;">MasterClass Series</a>
+            <a href="masterclass_es.html" style="text-transform: none;">MasterClass</a>
             <a href="partners_es.html" style="text-transform: none;">Partners</a>
             <a href="contact_es.html" style="text-transform: none;">Contáctanos</a>
         </nav>
@@ -655,68 +664,475 @@
         <div class="header-actions">
             <select class="lang-select" onchange="if(this.value) { localStorage.setItem('lang_selected', 'true'); window.location.href=this.value; }">
                 <option value="index.html">ENG</option>
-                <option value="contact_es.html" >ESP</option>
+                <option value="index_es.html" selected>ESP</option>
             </select>
         </div>
     </header>
 
-    <!-- 1. Hero Section -->
-    <style>
-        /* Force white header on this page */
-        #main-header { background: rgba(255, 255, 255, 0.98) !important; backdrop-filter: blur(12px) !important; border-bottom: 1px solid #E5E7EB !important; padding: 16px clamp(30px, 5vw, 100px) !important; }
-        #main-header .logo-light { display: none !important; }
-        #main-header .logo-dark { display: block !important; }
-        #main-header .nav-links a { color: #1A1A1A !important; }
-        #main-header .nav-links a:hover { color: #A03FA3 !important; }
-        #main-header .lang-select { color: #1A1A1A !important; border-color: #E5E7EB !important; background-image: url('data:image/svg+xml;utf8,<svg fill="%231A1A1A" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>') !important; }
-        .mobile-menu-toggle { color: #1A1A1A !important; }
-    </style>
-    <section class="hero snap-section" style="background-color: #E5E7EB; display: flex; align-items: flex-end; padding: 150px 4vw 80px 4vw; min-height: 100vh; position: relative;">
-    <div class="shared-hero-gradient" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 60%; background: linear-gradient(to top, rgba(17,17,17,0.7) 0%, rgba(17,17,17,0) 100%); z-index: 1; pointer-events: none;"></div>
-        <!-- Placeholder Text -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: clamp(30px, 5vw, 60px); font-weight: 800; letter-spacing: 4px; text-transform: uppercase; z-index: 0; font-family: 'Inter', sans-serif; text-align: center;">Image Placeholder</div>
-        <!-- Black Gradient Overlay -->
+    <section class="hero snap-section">
+        <div class="hero-gradient"></div>
         
-        
-        <div class="container" style="max-width: 1000px; margin: 0 auto; display: flex; justify-content: center; align-items: center; position: relative; z-index: 2;">
-            <div style="text-align: center; width: 100%;">
-                <h1 class="hero-title color-reveal" style="color: #FFFFFF; font-size: clamp(50px, 7vw, 90px); letter-spacing: -2px; margin-bottom: 24px; text-shadow: 0 4px 12px rgba(0,0,0,0.5);">Contáctanos</h1>
-                <p class="hero-subtitle color-reveal" style="color: rgba(255,255,255,0.95); font-size: clamp(18px, 2vw, 24px); line-height: 1.5; max-width: 700px; margin: 0 auto;">¿Tienes alguna pregunta, idea para asociarnos o simplemente quieres saludar? Déjanos un mensaje abajo y nuestro equipo te responderá.</p>
-                
+        <div class="hero-container">
+            <div class="hero-content" style="max-width: 900px; width: 100%; padding-top: clamp(20px, 6vh, 80px);">
+                <h1 class="hero-title" style="font-size: clamp(36px, 5.8vw, 91px); line-height: 0.95; letter-spacing: -2px; color: #FFFFFF; text-shadow: 0 4px 15px rgba(0,0,0,0.4); margin-bottom: 0;">Aduéñate de tu <span style="color: #A03FA3;">Dinero.</span><br>Aduéñate de tu <span style="color: #A03FA3;">Futuro.</span></h1>
+                <p style="color: rgba(255,255,255,0.95); font-size: clamp(20px, 2.2vw, 28px); line-height: 1.4; margin-top: 10px; margin-bottom: 0; font-weight: 500; max-width: 800px; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
+                    Castle es un <strong style="font-weight: 700; color: #FFFFFF;">Ecosistema Financiero</strong> con <strong style="font-weight: 700; color: #FFFFFF;">Inteligencia Artificial</strong> destinado a transformar la relación de las <strong style="font-weight: 700; color: #FFFFFF;">Mujeres</strong> con el <strong style="font-weight: 700; color: #FFFFFF;">Dinero</strong> y ayudarlas a construir <strong style="font-weight: 700; color: #FFFFFF;">Riqueza.</strong>
+                </p>
+                <div class="hero-cta-group" style="margin-top: 10px;">
+                    <a href="javascript:void(0);" onclick="openUnifiedModal('waitlist');" class="btn btn-large" style="">ÚNETE</a>
+                </div>
             </div>
         </div>
     </section>
 
-<!-- Contact Form Section (Waitlist Style) -->
     
-    <section class="snap-section" style="background-color: #F8F8FA; padding: var(--section-pad-large) 4vw; display: flex; justify-content: center; align-items: center; min-height: 50vh;">
-        <div class="container" style="max-width: 700px; width: 100%; text-align: center; padding: 40px; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
-            <div style="width: 80px; height: 80px; background-color: #F5E8F6; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px;">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#A03FA3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
+    
+    
+    <!-- Bento Grid Section 2 -->
+    <section class="bento-section" style="padding: var(--section-pad-y) 4vw 0 4vw; background-color: #FFFFFF;">
+        <div class="bento-container color-reveal" style="max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 4px;">
+            <style>
+                @media (min-width: 1024px) {
+                    .bento-container {
+                        grid-template-columns: 1fr 1fr !important;
+                    }
+                }
+            </style>
+            
+            <!-- Left Large Card -->
+            <div style="background-color: #A03FA3; padding: clamp(40px, 6vw, 80px) clamp(30px, 5vw, 60px); color: #FFFFFF; display: flex; flex-direction: column; justify-content: center; min-height: 55vh; border-radius: 5px;">
+                <h2 class="section-heading" style="color: #FFFFFF !important; margin-bottom: 0; font-size: clamp(40px, 5.5vw, 75px); line-height: 1.1; letter-spacing: -2px; font-weight: 500 !important; font-family: 'Inter', sans-serif;">
+                    A las mujeres<br>
+                    se nos enseñó<br>
+                    a <span style="font-family: 'Caveat', cursive; font-size: 1.4em; font-weight: 700; display: inline-block;">Ahorrar,</span><br>
+                    no a construir<br>
+                    <span style="font-family: 'Caveat', cursive; font-size: 1.6em; font-weight: 700; display: inline-block;">Riqueza.</span>
+                </h2>
             </div>
-            <h2 style="font-size: 2rem; font-weight: 800; color: #1A1A1A; margin-bottom: 16px;">¡Mensaje Enviado!</h2>
-            <p style="font-size: 1.1rem; color: #666; margin-bottom: 32px; line-height: 1.6;">
-                Tu aplicación ha sido enviada exitosamente al ecosistema Castle. 
-                <br>Mientras esperas respuesta, te invitamos a ser parte de nuestra comunidad.<br><br>Pronto nos ponemos en contacto contigo.
-            </p>
             
-            
+            <!-- Right Column -->
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+                <!-- Top Right Card -->
+                <div style="position: relative; flex: 1; min-height: 30vh; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; padding: clamp(30px, 4vw, 50px); background: url('./public/images/common/future.png') center/cover no-repeat; background-color: #1A1A1A; overflow: hidden; border-radius: 5px;">
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 60%); z-index: 1; pointer-events: none;"></div>
+                    <div style="position: relative; z-index: 3;">
+                        <div style="font-size: clamp(24px, 2.8vw, 36px); color: #FFFFFF; font-weight: 700; margin-bottom: 2px; font-family: 'Caveat', cursive; display: inline-block;">No se trata de</div>
+                        <div style="font-size: clamp(32px, 3.8vw, 52px); color: #FFFFFF; font-weight: 800; line-height: 1.1; font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 8px;">
+                            Gestionar Dinero <img src="./public/images/common/diamond-dot.png" style="height: 0.5em; vertical-align: baseline; margin-left: 2px;" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- Bottom Right Card -->
+                <div style="position: relative; flex: 1; min-height: 30vh; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; padding: clamp(30px, 4vw, 50px); background: url('./public/images/common/riqueza.jpg') center/cover no-repeat; background-color: #1A1A1A; overflow: hidden; border-radius: 5px;">
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 60%); z-index: 1; pointer-events: none;"></div>
+                    <div style="position: relative; z-index: 3;">
+                        <div style="font-size: clamp(24px, 2.8vw, 36px); color: #FFFFFF; font-weight: 700; margin-bottom: 2px; font-family: 'Caveat', cursive; display: inline-block;">Se trata de ser</div>
+                        <div style="font-size: clamp(32px, 3.8vw, 52px); color: #FFFFFF; font-weight: 800; line-height: 1.1; font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 8px;">
+                            Dueña de tu Futuro <img src="./public/images/common/diamond-dot.png" style="height: 0.5em; vertical-align: baseline; margin-left: 2px;" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <div style="margin-top: 24px;">
-                <a href="index_es.html" style="color: #666; text-decoration: underline; font-weight: 500;">Volver al inicio</a>
+    <!-- #2.5 Ecosystem Stack -->
+    <section class="snap-section" style="position: relative; display: flex; align-items: flex-end; justify-content: center; padding: 0 4vw 50px 4vw; min-height: 100vh; background-image: url('./public/images/common/cambia-todo.jpg'); background-size: cover; background-position: center;  background-repeat: no-repeat; margin-top: var(--spacer-50); overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,0.85) 100%); z-index: 1;"></div>
+        
+        <div style="width: 100%; max-width: 1400px; margin: 0 auto; position: relative; z-index: 2;">
+            <h2 class="section-heading color-reveal" style="color: #FFFFFF !important; margin-bottom: var(--spacer-30); text-align: center; font-size: clamp(70px, 10vw, 150px); line-height: 1.1; letter-spacing: -2px; text-shadow: 0 4px 15px rgba(0,0,0,0.4);">
+                Castle<span style="font-family: 'Caveat', cursive; font-weight: 700; font-size: 1.4em; line-height: 0.8; display: inline-block; color: #A03FA3; margin: 0 15px 0 0;">Cambia</span> eso
+            </h2>
+
+            <div class="color-reveal section-subtitle" style="margin-bottom: 0;">
+                <p class="section-subtitle-1" style="color: #FFFFFF; margin-bottom: 0;">Castle combina neurociencia, inteligencia artificial, inteligencia financiera y comunidad para ayudar a las mujeres a romper creencias limitantes, entender su dinero y construir riqueza con confianza. Más que una plataforma financiera, Castle es un nuevo sistema operativo para mujeres listas para ser dueñas de su futuro.</p>
             </div>
         </div>
     </section>
 
 
+
+    <!-- MasterClass Section -->
+    <section class="snap-section" style="position: relative; display: flex; align-items: flex-end; justify-content: center; padding: 0 4vw 50px 4vw; min-height: 120vh; background-image: url('./public/images/common/bg-masterclass01.png'); background-size: cover; background-position: center top;  background-repeat: no-repeat; margin-top: 0; overflow: hidden;">
+        <!-- Gradient Overlay -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,0.5) 75%, rgba(0,0,0,0.95) 100%); z-index: 1;"></div>
+        
+        <!-- Top Badge -->
+        <div style="position: absolute; top: 50px; left: 0; width: 100%; text-align: center; z-index: 3;">
+            <span style="color: #FFFFFF; font-weight: 800; font-size: clamp(24px, 3.5vw, 42px); letter-spacing: 0.02em; font-family: 'Inter', sans-serif; display: block; line-height: 1.2;">4 MasterClasses en Vivo</span>
+            <span style="color: rgba(255,255,255,0.95); font-size: 18px; font-weight: 500; font-family: 'Inter', sans-serif; letter-spacing: 0px; display: block; margin-top: 4px;">Por aplicación e invitación únicamente. Cupos limitados.</span>
+        </div>
+        
+        <div style="width: 100%; max-width: 1400px; margin: 0 auto; position: relative; z-index: 2; text-align: center; padding-top: 40vh; display: flex; flex-direction: column; align-items: center;">
+
+            <h2 class="section-heading color-reveal" style="font-size: clamp(28px, 4vw, 54px) !important; letter-spacing: -1px !important; line-height: 1.1 !important; margin-bottom: 20px; color: #FFFFFF !important; text-shadow: 0 4px 30px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.6); max-width: 1200px; margin-left: auto; margin-right: auto;">
+                <span style="display: inline-block; font-family: 'Inter', sans-serif; color: #FFFFFF;"><span style="font-family: 'Caveat', cursive; color: #FFFFFF; font-weight: 700; font-size: 1.4em; margin-right: 5px;">Reprograma</span> tu Mente. <span style="font-family: 'Caveat', cursive; color: #FFFFFF; font-weight: 700; font-size: 1.4em; margin-right: 5px;">Reconstruye</span> tu</span><br>
+                <span style="display: inline-block; font-family: 'Inter', sans-serif; color: #FFFFFF;">relación con el Dinero. <span style="font-family: 'Caveat', cursive; color: #FFFFFF; font-weight: 700; font-size: 1.4em; margin-right: 5px;">Rediseña</span> tu Futuro.</span>
+            </h2>
+
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 0;">
+                <div class="color-reveal section-subtitle" style="margin-bottom: 0px; padding: 0 20px;">
+                    <p class="section-subtitle-1" style="color: rgba(255,255,255,0.95); margin-bottom: 5px; max-width: none; margin-left: auto; margin-right: auto; line-height: 1.5; text-shadow: 0 4px 20px rgba(0,0,0,0.8);">
+                        Únete a una experiencia transformadora de 4 MasterClasses en vivo diseñadas para ayudar a mujeres a romper<br class="desktop-only"> límites, desarrollar una mentalidad de riqueza y aprender a construir patrimonio con claridad y confianza.
+                    </p>
+                </div>
+                
+                <div style="margin-top: 15px; display: flex; flex-direction: column; align-items: center; gap: 30px;">
+                    <p style="color: #A03FA3; font-size: 18px; font-weight: 700; text-align: center; line-height: 1.4; margin: 0; letter-spacing: 0.5px; text-shadow: 0 2px 5px rgba(0,0,0,0.8);">Comienza tu Financial Reset. 100% Gratuito.</p>
+                    <a href="javascript:void(0);" onclick="openUnifiedModal('waitlist');" class="btn" style="background-color: #A03FA3; border: none; color: #FFFFFF; font-weight: 800; padding: 18px 45px; border-radius: 50px; display: inline-block; font-size: 16px; text-transform: uppercase;">
+                        Aplica ahora
+                    </a>
+                    <div style="margin-top: 15px; display: flex; flex-direction: row; align-items: center; justify-content: center;">
+                        <a href="https://unicoin.org/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; display: flex; flex-direction: row; align-items: center; gap: 8px; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+                            <span style="color: #FFFFFF; font-size: 15px; font-weight: 500; font-family: 'Inter', sans-serif;">Powered by</span>
+                            <img src="./public/images/common/fundacion-light.png" alt="Unicoin Foundation" style="height: 24px; object-fit: contain;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- #4 What Makes Us Different -->
+    <section style="padding: 50px 4vw 50px 4vw; background-color: #FFFFFF;" class="snap-section">
+        <div class="color-reveal" style="width: 100%; max-width: 1400px; margin: 0 auto; text-align: center;">
+            
+            <h2 class="section-heading color-reveal" style="margin-bottom: var(--spacer-30);">
+                Así es <span style="font-family: 'Caveat', cursive; font-weight: 700; font-size: 1.4em; display: inline-block; color: #A03FA3;">Castle</span>
+            </h2>
+            
+            <div class="color-reveal section-subtitle">
+                <p class="section-subtitle-1">Castle es donde tu relación con el dinero cambia — de verdad.</p>
+                <p class="section-subtitle-2">No es otro curso de finanzas personales. No es otra app que te dice que hagas mejor presupuesto.<br>No es otro lugar donde las finanzas se sienten complicadas, intimidantes o no hechas para ti.</p>
+            </div>
+            
+            <div id="diff-scroll" class="mobile-scroll-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin-bottom: 0;">
+                <!-- Cajita 1 -->
+                <div style="aspect-ratio: 3/4; position: relative; border-radius: 5px; overflow: hidden; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 50%), url('./public/images/common/Different1.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 20px; transition: transform 0.3s;">
+                    <div style="position: relative; z-index: 2; text-align: center;">
+                        <span style="display: block; font-family: 'Caveat', cursive; font-size: clamp(36px, 4vw, 42px); color: #FFFFFF; font-weight: 700; line-height: 1; margin-bottom: 8px;">Reprogramación</span>
+                        <span style="display: block; font-family: 'Inter', sans-serif; font-size: clamp(15px, 1.8vw, 18px); color: #FFFFFF; font-weight: 400; line-height: 1.3;">para romper creencias limitantes</span>
+                    </div>
+                </div>
+                
+                <!-- Cajita 2 -->
+                <div style="aspect-ratio: 3/4; position: relative; border-radius: 5px; overflow: hidden; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 50%), url('./public/images/common/Different2.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 20px; transition: transform 0.3s;">
+                    <div style="position: relative; z-index: 2; text-align: center;">
+                        <span style="display: block; font-family: 'Caveat', cursive; font-size: clamp(36px, 4vw, 42px); color: #FFFFFF; font-weight: 700; line-height: 1; margin-bottom: 8px;">Coaching</span>
+                        <span style="display: block; font-family: 'Inter', sans-serif; font-size: clamp(15px, 1.8vw, 18px); color: #FFFFFF; font-weight: 400; line-height: 1.3;">para acompañar tus decisiones</span>
+                    </div>
+                </div>
+                
+                <!-- Cajita 3 -->
+                <div style="aspect-ratio: 3/4; position: relative; border-radius: 5px; overflow: hidden; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 50%), url('./public/images/common/Different3.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 20px; transition: transform 0.3s;">
+                    <div style="position: relative; z-index: 2; text-align: center;">
+                        <span style="display: block; font-family: 'Caveat', cursive; font-size: clamp(36px, 4vw, 42px); color: #FFFFFF; font-weight: 700; line-height: 1; margin-bottom: 8px;">Herramientas inteligentes</span>
+                        <span style="display: block; font-family: 'Inter', sans-serif; font-size: clamp(15px, 1.8vw, 18px); color: #FFFFFF; font-weight: 400; line-height: 1.3;">para crecer con confianza</span>
+                    </div>
+                </div>
+                
+                <!-- Cajita 4 -->
+                <div style="aspect-ratio: 3/4; position: relative; border-radius: 5px; overflow: hidden; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 50%), url('./public/images/common/Different4.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 20px; transition: transform 0.3s;">
+                    <div style="position: relative; z-index: 2; text-align: center;">
+                        <span style="display: block; font-family: 'Caveat', cursive; font-size: clamp(36px, 4vw, 42px); color: #FFFFFF; font-weight: 700; line-height: 1; margin-bottom: 8px;">Una Comunidad Poderosa</span>
+                        <span style="display: block; font-family: 'Inter', sans-serif; font-size: clamp(15px, 1.8vw, 18px); color: #FFFFFF; font-weight: 400; line-height: 1.3;">de mujeres creciendo juntas</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-scroll-indicators" data-target="diff-scroll"></div>
+        </div>
+    </section>
+
+    <!-- #5 Core Platform Pillars -->
+    <section style="padding: 40px 4vw var(--section-pad-y) 4vw; background-color: #FFFFFF; text-align: center;" class="snap-section">
+        <div style="width: 100%; max-width: 1400px; margin: 0 auto;">
+            <h2 class="color-reveal section-heading" style="margin-bottom: var(--spacer-30); font-size: clamp(36px, 5vw, 60px);">
+                No naciste para ahorrar.<br>Naciste para construir <span style="font-family: 'Caveat', cursive; color: #A03FA3; font-weight: 700; font-size: 1.4em; display: inline-block; margin-top: -10px;">Riqueza.</span>
+            </h2>
+            <div class="color-reveal section-subtitle">
+                <p class="section-subtitle-1">Castle es el sistema diseñado para ayudarte a pensar, decidir e invertir diferente.</p>
+                <p class="section-subtitle-2">No es solo educación financiera. Es una transformación de identidad impulsada por tecnología, comunidad y acción.<br>A través del método Castle, aprendes a construir riqueza con estructura, claridad y visión de largo plazo:</p>
+            </div>
+
+            <div class="color-reveal mobile-scroll-row mobile-text-center" id="pillars-scroll" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; text-align: left;">
+
+                <!-- 01 Cohort Learning -->
+                <div class="pillar-card">
+                    <img src="./public/images/common/step1.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 60%); z-index: 2;"></div>
+                    <div style="position: relative; z-index: 3; height: 220px; display: flex; flex-direction: column; justify-content: flex-start;">
+                        <p style="font-size: 18px; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.7); margin-bottom: 6px; letter-spacing: 0.5px;">01</p>
+                        <h3 style="font-size: 22px; font-weight: 800; color: #FFFFFF; margin-bottom: 12px; line-height: 1.2;">Cohortes que elevan</h3>
+                        <p style="font-size: 17px; color: rgba(255,255,255,0.9); font-weight: 400; line-height: 1.4; margin: 0;">Aprendes junto a mujeres que están creciendo, invirtiendo y pensando en grande.</p>
+                    </div>
+                </div>
+
+                <!-- 02 Account Aggregation -->
+                <div class="pillar-card">
+                    <img src="./public/images/common/step2.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 60%); z-index: 2;"></div>
+                    <div style="position: relative; z-index: 3; height: 220px; display: flex; flex-direction: column; justify-content: flex-start;">
+                        <p style="font-size: 18px; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.7); margin-bottom: 6px; letter-spacing: 0.5px;">02</p>
+                        <h3 style="font-size: 22px; font-weight: 800; color: #FFFFFF; margin-bottom: 12px; line-height: 1.2;">Tu dinero, en un solo lugar</h3>
+                        <p style="font-size: 17px; color: rgba(255,255,255,0.9); font-weight: 400; line-height: 1.4; margin: 0;">Integra tus cuentas y entiende finalmente cómo se mueve tu riqueza.</p>
+                    </div>
+                </div>
+
+                <!-- 03 AI Money & Wealth Coach -->
+                <div class="pillar-card">
+                    <img src="./public/images/common/step3.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 60%); z-index: 2;"></div>
+                    <div style="position: relative; z-index: 3; height: 220px; display: flex; flex-direction: column; justify-content: flex-start;">
+                        <p style="font-size: 18px; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.7); margin-bottom: 6px; letter-spacing: 0.5px;">03</p>
+                        <h3 style="font-size: 22px; font-weight: 800; color: #FFFFFF; margin-bottom: 12px; line-height: 1.2;">AI Coach de dinero y riqueza</h3>
+                        <p style="font-size: 17px; color: rgba(255,255,255,0.9); font-weight: 400; line-height: 1.4; margin: 0;">Un coach inteligente que te guía, desafía y ayuda a tomar mejores decisiones financieras.</p>
+                    </div>
+                </div>
+
+                <!-- 04 Investment Marketplace -->
+                <div class="pillar-card">
+                    <img src="./public/images/common/step4.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 1;">
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 60%); z-index: 2;"></div>
+                    <div style="position: relative; z-index: 3; height: 220px; display: flex; flex-direction: column; justify-content: flex-start;">
+                        <p style="font-size: 18px; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.7); margin-bottom: 6px; letter-spacing: 0.5px;">04</p>
+                        <h3 style="font-size: 22px; font-weight: 800; color: #FFFFFF; margin-bottom: 12px; line-height: 1.2;">Marketplace de inversiones</h3>
+                        <p style="font-size: 17px; color: rgba(255,255,255,0.9); font-weight: 400; line-height: 1.4; margin: 0;">Accede a oportunidades curadas para empezar a construir patrimonio real.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="mobile-scroll-indicators" data-target="pillars-scroll"></div>
+
+            <!-- CTA in Block 5 -->
+            <div style="margin-top: 30px; text-align: center;">
+                <p class="color-reveal" style="font-size: clamp(20px, 2.5vw, 28px); font-weight: 700; color: #2A2A2A; margin-bottom: 30px; line-height: 1.3;">
+                    Porque cuando cambias tu mentalidad, cambias tus decisiones.<br>
+                    Y cuando cambias tus decisiones, cambias tu futuro.
+                </p>
+                <a href="javascript:void(0);" onclick="openUnifiedModal('waitlist');" class="btn" style="background-color: #A03FA3; border: none; color: #FFFFFF; font-weight: 700; padding: 18px 45px; border-radius: 30px;">
+                APLICA
+            </a>
+            </div>
+        </div>
+    </section>
+
+
+<!-- Partners Section -->
+    <section id="partnerships" class="partners-section snap-section" style="background-color: #F9F9F9; padding: 50px 4vw 0 4vw; font-family: 'Inter', sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    
+        <div style="width: 100%; max-width: 1400px; margin: 0 auto; text-align: center; margin-bottom: 30px;">
+            <h2 class="section-heading color-reveal" style="color: #1A1A1A; margin-bottom: 15px;">
+                Convierte tu Pasión e Influencia en Inversión.
+            </h2>
+            <div class="color-reveal section-subtitle" style="margin-bottom: 0;">
+                <p class="section-subtitle-1">Únete al <span style="font-weight: 700; color: #A03FA3;">Movimiento</span> que ayuda a las Mujeres a construir <span style="font-weight: 700; color: #A03FA3;">Riqueza</span> y participar del Futuro que están creando.</p>
+            </div>
+        </div>
+
+    <div id="influence-grid" class="color-reveal" style="max-width: 1400px; width: 100%; margin: 0 auto; display: grid; grid-template-columns: 1fr; border-radius: 5px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.08); background-color: #A03FA3; position: relative;">
+        <style>
+            .inf-img-container {
+                position: relative;
+                min-height: 350px;
+            }
+            .inf-img-container img {
+                position: absolute;
+                top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: right center; z-index: 1;
+            }
+            @media (min-width: 1024px) {
+                #influence-grid {
+                    grid-template-columns: 1fr 1fr !important;
+                    overflow: visible !important;
+                }
+                .inf-img-container {
+                    min-height: auto;
+                }
+                .inf-img-container img {
+                    top: -25px;
+                    height: calc(100% + 25px);
+                    border-radius: 0 5px 5px 0;
+                    object-position: right 20%;
+                }
+
+            }
+        </style>
+        
+        
+        <!-- Left Content -->
+        <div style="padding: 70px clamp(30px, 6vw, 60px); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; text-align: left; position: relative; z-index: 2;">
+            <div style="color: #FFFFFF; line-height: 1.4;">
+                <p class="section-subtitle-1" style="color: rgba(255,255,255,0.9); margin-bottom: 25px; font-weight: 500;">Castle está construyendo un <strong style="font-weight: 800; color: #FFFFFF;">nuevo ecosistema impulsado por Web3</strong>, donde creadoras, líderes, marcas y comunidades pueden <strong style="font-weight: 800; color: #FFFFFF;">convertir en valor</strong> su <strong style="font-weight: 800; color: #FFFFFF;">experiencia, audiencia, alcance, credibilidad y recursos</strong>, a cambio de <strong style="font-weight: 800; color: #FFFFFF;">tokens de Castle</strong> y <strong style="font-weight: 800; color: #FFFFFF;">crecimiento compartido</strong>.</p>
+                <p class="section-subtitle-1" style="color: rgba(255,255,255,0.95); margin-bottom: 0;">
+                    <span style="font-family: 'Caveat', cursive; font-size: clamp(26px, 3.5vw, 40px); font-weight: 600; line-height: 1.2; display: block; margin-bottom: 5px; color: #FFFFFF;">Trae lo que te hace poderosa</span>
+                    &mdash; tu voz, tu red, tu plataforma o tu comunidad &mdash; y crece con nosotros mientras escalamos un movimiento global para mujeres y riqueza.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Right Image -->
+        <div class="inf-img-container">
+
+            <img src="./public/images/common/inf-section.png" alt="Influence">
+        </div>
+    </div>
+
+    <!-- Partners Grid Section Merged -->
+        <div style="width: 100%; max-width: 1400px; margin: 50px auto 0 auto; text-align: center;">
+            <div style="margin-bottom: var(--spacer-40);">
+                <h2 class="section-heading color-reveal" style="margin-bottom: var(--spacer-30);">¿Cómo Puedes ser Parte?</h2>
+                <div class="color-reveal section-subtitle" style="margin-bottom: 0;">
+                    <p class="section-subtitle-1">Con Castle estamos construyendo una nueva economía impulsada por Web3, donde creadoras, líderes, marcas y comunidades pueden co-crear, invertir y crecer juntas a través de un modelo basado en colaboración, ownership y valor a largo plazo.</p>
+                    <p class="section-subtitle-2">Si eres celebridad, influencer, creadora de contenido, marca, organización de mujeres o experta, puedes unirte para transformar la forma en que las mujeres viven la riqueza y ser parte de la revolución de la riqueza femenina.</p>
+                </div>
+            </div>
+            
+            <div class="color-reveal partner-grid mobile-scroll-row mobile-text-center" id="partner-scroll" style="text-align: left;">
+                <!-- Card 1 -->
+                <div class="partner-card">
+                    <img src="./public/images/common/partner1.jpg" alt="Influencers & Celebrities" style="object-position: center 90%;">
+                    <div class="partner-card-overlay"></div>
+                    <div class="partner-card-content">
+                        <h3 class="partner-card-title">Influencers<br>& Celebridades</h3>
+                        <div class="partner-card-text-container" style="flex-grow: 1; display: flex; flex-direction: column;">
+                            <p class="partner-card-text">Usa tu voz y audiencia para inspirar a Mujeres de todo el mundo mientras ganas tokens, participación en los ingresos e impacto en la construcción de un legado.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="partner-card">
+                    <img src="./public/images/common/partner2.jpg" alt="Content Creators" style="object-position: center 5%;">
+                    <div class="partner-card-overlay"></div>
+                    <div class="partner-card-content">
+                        <h3 class="partner-card-title">Creadoras<br>de Contenido</h3>
+                        <div class="partner-card-text-container" style="flex-grow: 1; display: flex; flex-direction: column;">
+                            <p class="partner-card-text">Convierte tus conocimientos en cursos, contenido, masterclasses y experiencias—monetizados mediante tokens y crecimiento compartido.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="partner-card">
+                    <img src="./public/images/common/partner3.jpg" alt="Brands & Companies" style="object-position: 25% center;">
+                    <div class="partner-card-overlay"></div>
+                    <div class="partner-card-content">
+                        <h3 class="partner-card-title">Marcas<br>& Compañías</h3>
+                        <div class="partner-card-text-container" style="flex-grow: 1; display: flex; flex-direction: column;">
+                            <p class="partner-card-text">Aporta alcance, recursos, medios, productos o patrocinios y participa en un ecosistema con un propósito claro e impacto medible.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="partner-card">
+                    <img src="./public/images/common/partner4.jpg" alt="Organizations" style="object-position: center 20%;">
+                    <div class="partner-card-overlay"></div>
+                    <div class="partner-card-content">
+                        <h3 class="partner-card-title">Organizaciones<br>de Mujeres</h3>
+                        <div class="partner-card-text-container" style="flex-grow: 1; display: flex; flex-direction: column;">
+                            <p class="partner-card-text">Activa a tus miembros con herramientas para la creación de Riqueza mientras recibes tokens, incentivos y beneficios para la Comunidad.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="partner-card">
+                    <img src="./public/images/common/leaders.jpg" alt="Experts & Coaches">
+                    <div class="partner-card-overlay"></div>
+                    <div class="partner-card-content">
+                        <h3 class="partner-card-title">Expertas<br>& Coaches</h3>
+                        <div class="partner-card-text-container" style="flex-grow: 1; display: flex; flex-direction: column;">
+                            <p class="partner-card-text">Tokeniza tu experiencia, programas, mentoría y credibilidad como parte de una plataforma global que empodera financieramente a las Mujeres.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-scroll-indicators" data-target="partner-scroll"></div>
+            
+            <div style="margin-top: 30px; text-align: center; margin-bottom: 50px;">
+                <p style="font-size: clamp(24px, 3vw, 36px); font-weight: 700; color: #1A1A1A; letter-spacing: 0px; margin-bottom: 30px;">
+                    Multiplica tu riqueza. Construye tu Castillo.
+                </p>
+                <a href="javascript:void(0);" onclick="openUnifiedModal('partner')" class="btn" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 2px; padding: 22px 50px; border-radius: 50px; font-size: 15px; text-decoration: none; display: inline-block; box-shadow: 0 10px 30px rgba(160, 63, 163, 0.4); transition: transform 0.2s ease;">ÚNETE</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="blog-section snap-section" style="padding-top: 50px; padding-bottom: 50px; border-bottom: none; background-color: #FFFFFF;">
+        <div class="container" style="max-width: 1500px; padding: 0 4vw; text-align: center;">
+            <h2 class="color-reveal section-heading" style="margin-bottom: var(--spacer-30);">Castle en los medios</h2>
+            <div class="color-reveal section-subtitle">
+                <p class="section-subtitle-1" style="font-size: clamp(16px, 1.6vw, 24px); letter-spacing: -0.5px;">Explora los insights, anuncios y perspectivas que están dando forma al futuro de la riqueza femenina.</p>
+                <p class="section-subtitle-2" style="max-width: 900px; margin: 0 auto;">En todo el mundo, la historia de Castle está tomando forma &mdash; redefiniendo la propiedad financiera para las mujeres y construyendo un nuevo modelo de creación de riqueza.</p>
+            </div>
+            
+            <div class="blog-grid mobile-scroll-row" id="blog-scroll">
+                <!-- Post 1 -->
+                <a href="https://unicoin.com/news/build-your-own-castle-silvina-moschini-on-women-and-money" target="_blank" class="blog-card">
+                    <div class="blog-img-wrapper">
+                        <img src="./public/images/common/buildcastle.jpg" class="blog-img" alt="Women Transforming Investment" style="object-position: 80% center;">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-tag">Liderazgo Global</span>
+                        <span class="blog-date">12.04.2026</span>
+                        <h3 class="blog-title">Construye tu Propio Castillo: Silvina Moschini sobre las Mujeres y el Dinero</h3>
+                        <p class="blog-desc">Explora cómo las Mujeres están liderando la creación de Riqueza y remodelando el ecosistema financiero en la región del Golfo.</p>
+                    </div>
+                </a>
+                <!-- Post 2 -->
+                <a href="https://unicoin.com/news/crypto-is-not-the-gap-the-gap-is-education" target="_blank" class="blog-card">
+                    <div class="blog-img-wrapper">
+                        <img src="./public/images/common/blog_cover2.jpg" class="blog-img" alt="Crypto is Not the Gap, the Gap is Education">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-tag">Prensa</span>
+                        <span class="blog-date">05.04.2026</span>
+                        <h3 class="blog-title">Las Criptomonedas No Son la Brecha, la Brecha es la Educación</h3>
+                        <p class="blog-desc">Comprendiendo el panorama cambiante de las criptomonedas y cómo la educación es clave para navegar por el futuro.</p>
+                    </div>
+                </a>
+                <!-- Post 3 -->
+                <a href="https://unicoin.com/news/from-entrepreneurs-to-investors-the-technological-leap-that-is-creating-the-new-female-fortunes-in-latin-america" target="_blank" class="blog-card">
+                    <div class="blog-img-wrapper">
+                        <img src="./public/images/common/blog2.jpg" class="blog-img" alt="De Emprendedoras a Inversoras">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-tag">Innovación</span>
+                        <span class="blog-date">28.03.2026</span>
+                        <h3 class="blog-title">De Emprendedoras a Inversoras</h3>
+                        <p class="blog-desc">Una mirada profunda al salto tecnológico que está creando nuevas fortunas femeninas en América Latina.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="mobile-scroll-indicators" data-target="blog-scroll"></div>
+
+            <!-- Blog CTA moved up & made smaller -->
+            <div style="margin-top: var(--spacer-40); text-align: center;">
+                <a href="https://unicoin.com/news" target="_blank" rel="noopener noreferrer" class="btn btn-outline-purple" style="padding: 18px 45px; letter-spacing: 1.5px; display: inline-block;">VER MÁS</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA / Newsletter -->
+    <section style="position: relative; background-image: url('./public/images/common/cta-final.jpg'); background-size: cover; background-position: center;  background-repeat: no-repeat; padding: var(--section-pad-y) 0; text-align: center; min-height: 100vh; display: flex; align-items: center; justify-content: center; width: 100%;" class="snap-section">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(17,17,17,0.6); z-index: 1;"></div>
+        <div class="container" style="position: relative; z-index: 2; max-width: 1500px; margin: 0 auto; padding: 0 5vw; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div style="max-width: 800px; width: 100%; text-align: center;">
+                <h3 style="font-size: clamp(40px, 5vw, 72px); font-weight: 700; color: #FFFFFF; margin-bottom: 20px; letter-spacing: -1px; line-height: 1.1; font-family: 'Inter', sans-serif; text-shadow: 0 4px 20px rgba(0,0,0,0.4);">Suscríbete a nuestro Newsletter</h3>
+                <p style="font-size: clamp(18px, 1.8vw, 28px); color: rgba(255,255,255,0.95); line-height: 1.6; max-width: 700px; margin: 0 auto var(--spacer-50) auto; font-family: 'Inter', sans-serif; text-shadow: 0 2px 15px rgba(0,0,0,0.4);">Construye riqueza con intención. Empieza recibiendo las conversaciones que sí importan.</p>
+                <div style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto; width: 100%; flex-wrap: wrap; justify-content: center;">
+                    <input type="email" id="inline_newsletter_email" placeholder="Tu correo electrónico" style="flex: 1; padding: 16px 20px; border-radius: 50px; border: none; font-size: 16px; outline: none; min-width: 250px; color: #1A1A1A;">
+                    <button onclick="submitInlineNewsletter()" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 1.5px; padding: 16px 40px; border-radius: 50px; border: none; font-size: 14px; cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(160,63,163,0.3); font-family: 'Inter Tight', sans-serif; text-transform: uppercase;">SUSCRÍBETE</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-top">
                 <div class="footer-col brand-col">
                     <img src="./public/images/common/logo-color.png?v=1" alt="Castle" class="footer-brand" style="height: 48px; object-fit: contain;">
-                    <p style="margin-bottom: 20px;">Castle es el sistema operativo de la <span style="color: #A03FA3;">riqueza</span> femenina.</p>
+                    <p style="margin-bottom: 20px;">Castle es el Sistema Operativo para que las Mujeres Gestionen su <span style="color: #A03FA3;">Riqueza</span>.</p>
                     <div class="social-links">
                         <a href="https://www.instagram.com/buildyourcastle.ai/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
                         <a href="https://www.linkedin.com/company/buildyourcastle/about/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
@@ -726,7 +1142,7 @@
                 </div>
                 <div class="footer-col">
                     <h4>Explorar</h4>
-                    <a href="masterclass_es.html">MasterClass Series</a>
+                    <a href="masterclass_es.html">MasterClass</a>
                     <a href="partners_es.html">Partners</a>
                 </div>
                 <div class="footer-col">
@@ -750,7 +1166,6 @@
             </div>
         </div>
     </footer>
-    
 
     <script>
         window.addEventListener('scroll', () => {
@@ -872,10 +1287,10 @@
 
     <!-- Unified CTA Modal -->
     <div id="waitlistModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 99999; background: rgba(17,17,17,0.85); align-items: center; justify-content: center; backdrop-filter: blur(8px);">
-        <div style="background: #FFFFFF; padding: 40px 40px; border-radius: 8px; max-width: 650px; width: 90%; position: relative; max-height: 90vh; overflow-y: auto; text-align: left; box-shadow: 0 40px 100px rgba(0,0,0,0.4);">
+        <div style="background: #FFFFFF; padding: clamp(30px, 5vw, 40px) clamp(20px, 5vw, 40px); border-radius: 8px; max-width: 750px; width: 95%; position: relative; max-height: 95vh; overflow-y: auto; text-align: left; box-shadow: 0 40px 100px rgba(0,0,0,0.4);">
             <button onclick="document.getElementById('waitlistModal').style.display='none';" style="position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 30px; cursor: pointer; color: #2A2A2A; line-height: 1; padding: 0;">&times;</button>
             
-            <h2 class="section-heading color-reveal" id="modalTitle" style="margin-top: 10px; margin-bottom: 10px; text-align: center; font-size: clamp(22px, 6vw, 42px); white-space: nowrap;">Bienvenida a Castle</h2>
+            <h2 class="section-heading color-reveal" id="modalTitle" style="margin-top: 0; margin-bottom: 15px; text-align: center; font-size: clamp(24px, 7vw, 42px); white-space: normal; line-height: 1.1;">Bienvenida a Castle</h2>
             
             
             <form action="https://buildyourcastle.us10.list-manage.com/subscribe/post?u=4766d7bd8debcf610dadddfb6&amp;id=53677e9563" target="_blank" method="POST" id="unifiedForm" class="waitlist-form" onsubmit="prepareUnifiedFormSubmit(event)">
@@ -884,15 +1299,31 @@
                 
                 <!-- Interests Checkboxes -->
                 <div class="form-group" style="margin-bottom: 20px;">
-                    <label style="font-size: 15px; font-weight: 700; color: #1A1A1A; margin-bottom: 15px; display: block;">¿Qué te gustaría hacer en Castle? <span style="font-size: 13px; font-weight: 400; color: #4B5563; margin-left: 6px;">(puedes seleccionar más de una opción)</span></label>
+                    <label style="font-size: 20px; font-weight: 800; color: #A03FA3; margin-bottom: 12px; display: block; text-align: center;">¿Qué te gustaría hacer en Castle?</label>
                     <style>
-                        .interests-grid { display: grid; gap: 12px; grid-template-columns: 1fr; }
+                        .custom-multiselect { position: relative; width: 100%; margin-bottom: 10px; }
+                        .multiselect-dropdown { width: 100%; padding: 14px 15px; border: 1px solid #D1D5DB; border-radius: 8px; background-color: #FFFFFF; font-size: 15px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: #4B5563; font-weight: 500; font-family: 'Inter', sans-serif; transition: border-color 0.2s; }
+                        .multiselect-dropdown:hover { border-color: #A03FA3; }
+                        .multiselect-options { position: absolute; top: 100%; left: 0; right: 0; background: #FFFFFF; border: 1px solid #D1D5DB; border-radius: 8px; margin-top: 4px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); z-index: 1000; max-height: 250px; overflow-y: auto; display: none; padding: 8px 0; }
+                        .multiselect-options.open { display: block; }
+                        .multiselect-options label { display: flex; align-items: center; gap: 12px; padding: 12px 15px; margin: 0; cursor: pointer; font-weight: 500; font-size: 15px; color: #1A1A1A; transition: background 0.2s; }
+                        .multiselect-options label:hover { background: #F9FAFB; }
+                        .multiselect-options input[type="checkbox"] { width: 18px; height: 18px; accent-color: #A03FA3; margin: 0; cursor: pointer; }
                     </style>
-                    <div class="interests-grid">
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_waitlist" value="Waitlist" style="width:18px; height:18px; margin:0;"> Quiero participar en la MasterClass Series</label>
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_partner" value="Partner" style="width:18px; height:18px; margin:0;"> Quiero colaborar con Castle</label>
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_contact" value="Contact" style="width:18px; height:18px; margin:0;"> Quiero hablar con el equipo</label>
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_newsletter" value="Newsletter" checked style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Quiero recibir novedades</label>
+                    <div class="custom-multiselect" id="ms-container">
+                        <div class="multiselect-dropdown" id="ms-dropdown" onclick="toggleMultiselect(event)">
+                            <span id="ms-placeholder" style="color: #9CA3AF; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding-right: 15px; max-width: 90%;">Seleccionar opciones...</span>
+                            <span id="ms-arrow" style="font-size: 12px; transition: transform 0.3s; color: #9CA3AF;">▼</span>
+                        </div>
+                        <div class="multiselect-options" id="ms-options" onclick="event.stopPropagation();">
+                            <label><input type="checkbox" id="chk_masterclass" value="Masterclass" onchange="updateMsLabel()"> Asistir a la Masterclass</label>
+                            <label><input type="checkbox" id="chk_programs" value="Educacion" onchange="updateMsLabel()"> Participar de los programas de educación</label>
+                            <label><input type="checkbox" id="chk_platform" value="Plataforma" onchange="updateMsLabel()"> Sumarme a la plataforma</label>
+                            <label><input type="checkbox" id="chk_partner" value="Partner" onchange="updateMsLabel()"> Convertirme en partner</label>
+                            <label><input type="checkbox" id="chk_interview" value="Entrevista" onchange="updateMsLabel()"> Entrevistar al equipo</label>
+                            <label><input type="checkbox" id="chk_jointeam" value="Equipo" onchange="updateMsLabel()"> Sumarme al equipo</label>
+                            <label><input type="checkbox" id="chk_other" value="Otro" onchange="updateMsLabel()"> Otro</label>
+                        </div>
                     </div>
                 </div>
 
@@ -910,7 +1341,25 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="phone">Número de Teléfono</label>
-                        <input type="tel" id="phone" name="PHONE" placeholder="+1 234 567 8900">
+                        <div style="display: flex; gap: 10px;">
+                            <select id="phone_code" style="width: 35%; padding: 14px 15px; border: 1px solid #D1D5DB; border-radius: 8px; background-color: #FFFFFF; font-family: 'Inter', sans-serif; font-size: 15px; color: #4B5563;">
+                                <option value="" disabled selected>Cód.</option>
+                                <option value="+54">🇦🇷 +54</option>
+                                <option value="+1">🇺🇸 +1</option>
+                                <option value="+34">🇪🇸 +34</option>
+                                <option value="+51">🇵🇪 +51</option>
+                                <option value="+52">🇲🇽 +52</option>
+                                <option value="+55">🇧🇷 +55</option>
+                                <option value="+56">🇨🇱 +56</option>
+                                <option value="+57">🇨🇴 +57</option>
+                                <option value="+58">🇻🇪 +58</option>
+                                <option value="+591">🇧🇴 +591</option>
+                                <option value="+593">🇪🇨 +593</option>
+                                <option value="+595">🇵🇾 +595</option>
+                                <option value="+598">🇺🇾 +598</option>
+                            </select>
+                            <input type="tel" id="phone" name="PHONE" placeholder="234 567 8900" style="width: 65%;">
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="age">Edad</label>
@@ -966,13 +1415,19 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="instagram">Usuario de Instagram</label>
-                    <input type="text" id="instagram" name="INSTAGRAM" placeholder="@janedoe">
+                    <label for="comentarios">Cuéntanos en más detalle</label>
+                    <textarea id="comentarios" name="COMENTARIOS" rows="3" placeholder="Escribe aquí los detalles sobre qué te gustaría hacer en Castle..." style="resize: vertical;"></textarea>
                 </div>
 
-                <div class="checkbox-group" style="margin-top: 15px;">
-                    <input type="checkbox" id="consent" name="CONSENT" required checked style="width: 18px; height: 18px; margin: 0; padding: 0; accent-color: #A03FA3;">
-                    <label for="consent" style="margin-left: 0;">Doy mi consentimiento para que Castle me contacte con actualizaciones de la plataforma e invitaciones.</label>
+                <div class="checkbox-group" style="margin-top: 25px; display: flex; flex-direction: column; gap: 15px;">
+                    <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; margin: 0;">
+                        <input type="checkbox" id="chk_newsletter" value="Newsletter" style="width: 18px; height: 18px; margin: 0; padding: 0; accent-color: #A03FA3; flex-shrink: 0; margin-top: 2px;">
+                        <span style="font-size: 14px; font-weight: 500; line-height: 1.4; color: #4B5563;">Newsletter</span>
+                    </label>
+                    <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; margin: 0;">
+                        <input type="checkbox" id="consent" name="CONSENT" required style="width: 18px; height: 18px; margin: 0; padding: 0; accent-color: #A03FA3; flex-shrink: 0; margin-top: 2px;">
+                        <span style="font-size: 14px; font-weight: 500; line-height: 1.4; color: #4B5563;">Doy mi consentimiento para que Castle me contacte con actualizaciones de la plataforma e invitaciones.</span>
+                    </label>
                 </div>
 
                 <!-- Anti-spam Honeypot -->
@@ -986,36 +1441,84 @@
 
     <script>
         function openUnifiedModal(sourceType) {
-            // Uncheck all main interests first
-            if(document.getElementById('chk_waitlist')) document.getElementById('chk_waitlist').checked = false;
-            if(document.getElementById('chk_partner')) document.getElementById('chk_partner').checked = false;
-            if(document.getElementById('chk_contact')) document.getElementById('chk_contact').checked = false;
-            
-            // Always keep newsletter checked by default
-            if(document.getElementById('chk_newsletter')) document.getElementById('chk_newsletter').checked = true;
-
-            // Check based on source
-            if (sourceType === 'waitlist') {
-                if(document.getElementById('chk_waitlist')) document.getElementById('chk_waitlist').checked = true;
-            } else if (sourceType === 'partner') {
-                if(document.getElementById('chk_partner')) document.getElementById('chk_partner').checked = true;
-            } else if (sourceType === 'contact') {
-                if(document.getElementById('chk_contact')) document.getElementById('chk_contact').checked = true;
-            } else if (sourceType === 'newsletter') {
-                // If they specifically clicked newsletter, we just ensure it's checked
-                if(document.getElementById('chk_newsletter')) document.getElementById('chk_newsletter').checked = true;
-            }
+            // Uncheck ALL fields whenever opening form naturally
+            const checkboxes = ['chk_masterclass', 'chk_programs', 'chk_platform', 'chk_partner', 'chk_interview', 'chk_jointeam', 'chk_other', 'chk_newsletter', 'consent'];
+            checkboxes.forEach(id => {
+                if(document.getElementById(id)) document.getElementById(id).checked = false;
+            });
 
             // Show modal
             if(document.getElementById('waitlistModal')) document.getElementById('waitlistModal').style.display = 'flex';
+
+            // Sync dropdown label
+            if(typeof updateMsLabel === 'function') updateMsLabel();
+        }
+
+        function toggleMultiselect(e) {
+            e.stopPropagation();
+            const options = document.getElementById('ms-options');
+            const arrow = document.getElementById('ms-arrow');
+            options.classList.toggle('open');
+            if (options.classList.contains('open')) {
+                arrow.style.transform = 'rotate(180deg)';
+                document.getElementById('ms-dropdown').style.borderColor = '#A03FA3';
+            } else {
+                arrow.style.transform = 'rotate(0deg)';
+                document.getElementById('ms-dropdown').style.borderColor = '#D1D5DB';
+            }
+        }
+
+        function updateMsLabel() {
+            const container = document.getElementById('ms-options');
+            if(!container) return;
+            const checkboxes = container.querySelectorAll('input[type="checkbox"]');
+            let selectedValues = [];
+            checkboxes.forEach(cb => { 
+                if(cb.checked) selectedValues.push(cb.value); 
+            });
+            
+            const placeholder = document.getElementById('ms-placeholder');
+            if (selectedValues.length === 0) {
+                placeholder.textContent = 'Seleccionar opciones...';
+                placeholder.style.color = '#9CA3AF';
+            } else {
+                placeholder.textContent = selectedValues.join(', ');
+                placeholder.style.color = '#1A1A1A';
+            }
+        }
+
+        // Close multiselect when clicking outside
+        window.addEventListener('click', function(e) {
+            const options = document.getElementById('ms-options');
+            const dropdown = document.getElementById('ms-dropdown');
+            const arrow = document.getElementById('ms-arrow');
+            if (options && options.classList.contains('open')) {
+                if (!dropdown.contains(e.target) && !options.contains(e.target)) {
+                    options.classList.remove('open');
+                    arrow.style.transform = 'rotate(0deg)';
+                    dropdown.style.borderColor = '#D1D5DB';
+                }
+            }
+        });
+
+        function submitInlineNewsletter() {
+            const inlineEmail = document.getElementById('inline_newsletter_email').value;
+            if (inlineEmail) {
+                const modalEmail = document.getElementById('email');
+                if (modalEmail) modalEmail.value = inlineEmail;
+            }
+            openUnifiedModal('newsletter');
         }
 
         function prepareUnifiedFormSubmit(e) {
             // Intercept submit to populate SOURCE with all checked interests
             let interests = [];
-            if (document.getElementById('chk_waitlist') && document.getElementById('chk_waitlist').checked) interests.push("Waitlist");
+            if (document.getElementById('chk_programs') && document.getElementById('chk_programs').checked) interests.push("Educación");
+            if (document.getElementById('chk_platform') && document.getElementById('chk_platform').checked) interests.push("Plataforma");
             if (document.getElementById('chk_partner') && document.getElementById('chk_partner').checked) interests.push("Partner");
-            if (document.getElementById('chk_contact') && document.getElementById('chk_contact').checked) interests.push("Contact");
+            if (document.getElementById('chk_interview') && document.getElementById('chk_interview').checked) interests.push("Entrevista");
+            if (document.getElementById('chk_jointeam') && document.getElementById('chk_jointeam').checked) interests.push("Equipo");
+            if (document.getElementById('chk_other') && document.getElementById('chk_other').checked) interests.push("Otro");
             if (document.getElementById('chk_newsletter') && document.getElementById('chk_newsletter').checked) interests.push("Newsletter");
             
             if (interests.length === 0) {
@@ -1023,12 +1526,42 @@
             }
 
             if(document.getElementById('unifiedSource')) document.getElementById('unifiedSource').value = interests.join(", ");
+
+            const phoneInput = document.getElementById('phone');
+            const phoneCode = document.getElementById('phone_code');
+            if(phoneInput && phoneCode && phoneCode.value && phoneInput.value) {
+                if(!phoneInput.value.startsWith(phoneCode.value)) {
+                    phoneInput.value = phoneCode.value + ' ' + phoneInput.value;
+                }
+            }
         }
     </script>
     
+    <!-- Cookie Banner -->
+    <style>
+        .cookie-content { flex-direction: column; text-align: center; }
+        @media(min-width: 768px) {
+            .cookie-content { flex-direction: row; text-align: left; }
+        }
+    </style>
+    <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #FFFFFF; border-top: 1px solid #E5E7EB; box-shadow: 0 -4px 20px rgba(0,0,0,0.05); padding: 20px 4vw; z-index: 9999; display: none; font-family: 'Inter', sans-serif; box-sizing: border-box;">
+        <div class="cookie-content" style="max-width: 1400px; width: 100%; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px;">
+            <p style="margin: 0; font-size: 14px; color: #2A2A2A; line-height: 1.5;">
+                Nos gustaría utilizar cookies para entender tu uso de nuestro sitio web. Para saber más sobre las cookies y cómo cambiar tus opciones, por favor consulta nuestra <a href="#" style="color: #A03FA3; font-weight: 600; text-decoration: none;">Política de Cookies</a>.
+            </p>
+            <button onclick="document.getElementById('cookie-banner').style.display='none'; localStorage.setItem('cookies_accepted', 'true');" style="background-color: #1A1A1A; color: #FFFFFF; border: none; padding: 12px 30px; border-radius: 5px; font-weight: 700; font-size: 13px; letter-spacing: 1px; cursor: pointer; text-transform: uppercase; white-space: nowrap; transition: background-color 0.3s;">
+                ACEPTAR
+            </button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (!localStorage.getItem('cookies_accepted')) {
+                document.getElementById('cookie-banner').style.display = 'block';
+            }
+        });
+    </script>
 </body>
 
 
 </html>
-
-    

@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CASTLE &middot; Own Your Wealth. Own Your Future.</title>
+    <title>CASTLE &middot; Sé dueña de tu Dinero. Sé dueña de tu Futuro.</title>
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://natalia-unicoin.github.io/castle/">
-    <meta property="og:title" content="CASTLE &middot; Own Your Wealth. Own Your Future.">
-    <meta property="og:description" content="The AI-powered platform helping Women build Wealth, invest with confidence, and earn rewards for financial progress.">
+    <meta property="og:title" content="CASTLE &middot; Sé dueña de tu Dinero. Sé dueña de tu Futuro.">
+    <meta property="og:description" content="La plataforma impulsada por IA que ayuda a las Mujeres a construir Riqueza, invertir con confianza y ganar recompensas por el progreso financiero.">
     <meta property="og:image" content="https://natalia-unicoin.github.io/castle/public/images/common/hero-bg.png?v=5">
     
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://natalia-unicoin.github.io/castle/">
-    <meta name="twitter:title" content="CASTLE &middot; Own Your Wealth. Own Your Future.">
-    <meta name="twitter:description" content="The AI-powered platform helping Women build Wealth, invest with confidence, and earn rewards for financial progress.">
+    <meta name="twitter:title" content="CASTLE &middot; Sé dueña de tu Dinero. Sé dueña de tu Futuro.">
+    <meta name="twitter:description" content="La plataforma impulsada por IA que ayuda a las Mujeres a construir Riqueza, invertir con confianza y ganar recompensas por el progreso financiero.">
     <meta name="twitter:image" content="https://natalia-unicoin.github.io/castle/public/images/common/hero-bg.png?v=5">
 
     <link rel="icon" href="./public/images/common/favicon.png?v=10" type="image/png">
@@ -99,14 +99,14 @@
             background-image: url('./public/images/common/hero-silvina.jpg');
             background-size: cover;
             background-position: right center;
-            background-attachment: fixed;
+            
             background-repeat: no-repeat;
         }
         @media (max-width: 768px) {
             .hero {
                 background-image: url('./public/images/common/hero-bg-mobile.jpg');
                 background-position: center;
-                background-attachment: scroll;
+                
             }
         }
         .hero-container {
@@ -116,7 +116,7 @@
 
         .hero-gradient {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(90deg, rgba(8,8,8,0.95) 0%, rgba(8,8,8,0.7) 40%, rgba(8,8,8,0.2) 65%, rgba(8,8,8,0) 100%); z-index: 2;
+            background: linear-gradient(90deg, rgba(8,8,8,0.75) 0%, rgba(8,8,8,0.5) 35%, rgba(8,8,8,0.15) 60%, rgba(8,8,8,0) 100%); z-index: 2;
         }
         .hero-content {
             text-align: left; display: flex; flex-direction: column; align-items: flex-start; gap: clamp(12px, 1.5vw, 16px);
@@ -159,10 +159,17 @@
             .hero-content { gap: 12px; text-align: center; align-items: center; justify-content: flex-end; padding-top: 55vh; }
             .hero-cta-group { width: 100%; display: flex; }
             
-            .hero-gradient { background: linear-gradient(180deg, rgba(8,8,8,0) 0%, rgba(8,8,8,0) 40%, rgba(8,8,8,0.85) 75%, rgba(8,8,8,1) 100%); }
+            .hero-gradient { background: linear-gradient(180deg, rgba(8,8,8,0) 0%, rgba(8,8,8,0.15) 30%, rgba(8,8,8,0.6) 60%, rgba(8,8,8,0.9) 100%); }
             .hero-footer { text-align: center; width: 100%; padding-top: 20px; }
         }
 
+        /* --- LAPTOP 14 INCH OPTIMIZATION (1440px & below) --- */
+        @media (max-width: 1440px) and (min-width: 769px) {
+            .hero-content { max-width: 60% !important; }
+            .container, .hero-container, section.snap-section, .bento-section { padding-left: 6vw !important; padding-right: 6vw !important; }
+            #influence-grid-left { padding: 50px 40px 50px 50px !important; }
+            #influence-grid-right img { right: -10px !important; width: calc(100% + 20px) !important; height: calc(100% + 20px) !important; }
+        }
         
         :root { --section-pad-y: 40px; --section-pad-large: 60px; --spacer-80: 80px; --spacer-60: 60px; --spacer-50: 50px; --spacer-40: 40px; --spacer-30: 30px; }
         @media (max-width: 768px) { :root { --section-pad-y: 30px; --section-pad-large: 30px; --spacer-80: 40px; --spacer-60: 30px; --spacer-50: 25px; --spacer-40: 20px; --spacer-30: 15px; } }
@@ -308,10 +315,10 @@
         }
 
         /* Global typography helpers */
-        .section-eyebrow { color: #A03FA3; font-weight: 700; font-size: 14px; letter-spacing: 4px; margin-bottom: 16px; text-align: center; display: block; }
-        .section-title { font-size: clamp(36px, 5vw, 64px); font-weight: 700; letter-spacing: -2px; margin-bottom: 20px; color: #1A1A1A; text-align: center; }
-        .section-subtitle { font-size: clamp(18px, 1.8vw, 26px); font-weight: 400; color: #2A2A2A; max-width: 1200px; width: 100%; margin: 0 auto var(--spacer-50) auto; line-height: 1.4; text-align: center; font-family: 'Inter', sans-serif; }
-        .section-subtitle-1 { font-size: clamp(18px, 1.8vw, 26px); font-weight: 700; color: #1A1A1A; margin-bottom: 12px; line-height: 1.3; }
+        .section-eyebrow { color: #A03FA3; font-weight: 700; font-size: 14px; letter-spacing: 4px; margin-bottom: 16px; text-align: center; display: block; padding: 0 50px; box-sizing: border-box; }
+        .section-title { font-size: clamp(36px, 5vw, 64px); font-weight: 700; letter-spacing: -2px; margin-bottom: 20px; color: #1A1A1A; text-align: center; padding: 0 50px; box-sizing: border-box; line-height: 1; }
+        .section-subtitle { font-size: clamp(18px, 1.8vw, 26px); font-weight: 400; color: #2A2A2A; max-width: 100%; width: 100%; padding: 0 50px; box-sizing: border-box; margin: 0 auto var(--spacer-50) auto; line-height: 1.4; text-align: center; font-family: 'Inter', sans-serif; }
+        .section-subtitle-1 { font-size: clamp(17px, 1.8vw, 26px); font-weight: 500; color: #1A1A1A; margin-bottom: 12px; line-height: 1.4; letter-spacing: -0.02em; }
         .section-subtitle-2 { font-size: clamp(16px, 1.4vw, 20px); font-weight: 400; color: #2A2A2A; margin-bottom: 0; line-height: 1.45; }
 
         /* 4. Program (Genesis Challenge) */
@@ -551,7 +558,7 @@
         .partner-card-text-container { opacity: 0; visibility: hidden; max-height: 0; margin-top: 0; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); text-align: center; display: flex; flex-direction: column; gap: 12px; overflow: hidden; width: 100%; }
         .partner-card:hover .partner-card-title { transform: translateY(-5px); }
         .partner-card:hover .partner-card-text-container { opacity: 1; visibility: visible; max-height: 250px; margin-top: 15px; }
-        .partner-card-text { font-size: 14px; color: rgba(255,255,255,0.9); font-weight: 700; line-height: 1.5; margin: 0; text-align: center; }
+        .partner-card-text { font-size: 16px; color: rgba(255,255,255,0.9); font-weight: 700; line-height: 1.5; margin: 0; text-align: center; }
         .partner-card-cta { font-size: 11px; font-weight: 800; color: #A03FA3; letter-spacing: 1.5px; text-decoration: none; }
 
 
@@ -561,7 +568,7 @@
             font-weight: 700 !important;
             letter-spacing: -2px !important;
             color: #1A1A1A;
-            line-height: 1.1 !important;
+            line-height: 1 !important;
             font-size: clamp(38px, 5vw, 64px) !important;
             margin-bottom: 24px;
         }
@@ -667,9 +674,9 @@
         
         <div class="hero-container">
             <div class="hero-content" style="max-width: 900px; width: 100%; padding-top: clamp(20px, 6vh, 80px);">
-                <h1 class="hero-title" style="font-size: clamp(40px, 6.2vw, 95px); line-height: 0.95; letter-spacing: -2px; color: #FFFFFF; text-shadow: 0 4px 15px rgba(0,0,0,0.4); margin-bottom: 0;">Own Your <span style="color: #A03FA3;">Wealth.</span><br>Own Your <span style="color: #A03FA3;">Future.</span></h1>
-                <p style="color: rgba(255,255,255,0.95); font-size: clamp(16px, 1.8vw, 22px); line-height: 1.5; margin-top: 5px; margin-bottom: 0; font-weight: 500; max-width: 650px; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
-                    Castle is an <strong style="font-weight: 700; color: #FFFFFF;">AI-first</strong>, Web3-powered <strong style="font-weight: 700; color: #FFFFFF;">financial ecosystem</strong> designed to help <strong style="font-weight: 700; color: #FFFFFF;">women</strong> move from <strong style="font-weight: 700; color: #FFFFFF;">saving</strong> to building <strong style="font-weight: 700; color: #FFFFFF;">wealth.</strong>
+                <h1 class="hero-title" style="font-size: clamp(36px, 5.8vw, 91px); line-height: 0.95; letter-spacing: -2px; color: #FFFFFF; text-shadow: 0 4px 15px rgba(0,0,0,0.4); margin-bottom: 0;">Own Your <span style="color: #A03FA3;">Wealth.</span><br>Own Your <span style="color: #A03FA3;">Future.</span></h1>
+                <p style="color: rgba(255,255,255,0.95); font-size: clamp(20px, 2.2vw, 28px); line-height: 1.4; margin-top: 10px; margin-bottom: 0; font-weight: 500; max-width: 800px; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">
+                    Castle is an <strong style="font-weight: 700; color: #FFFFFF;">Artificial Intelligence</strong> <strong style="font-weight: 700; color: #FFFFFF;">Financial Ecosystem</strong> designed to transform <strong style="font-weight: 700; color: #FFFFFF;">women's</strong> relationship with <strong style="font-weight: 700; color: #FFFFFF;">money</strong> and help them build <strong style="font-weight: 700; color: #FFFFFF;">wealth.</strong>
                 </p>
                 <div class="hero-cta-group" style="margin-top: 10px;">
                     <a href="javascript:void(0);" onclick="openUnifiedModal('waitlist');" class="btn btn-large" style="">JOIN</a>
@@ -693,17 +700,20 @@
             </style>
             
             <!-- Left Large Card -->
-            <div style="background-color: #A03FA3; padding: clamp(40px, 6vw, 80px) clamp(30px, 5vw, 60px); color: #FFFFFF; display: flex; flex-direction: column; justify-content: center; min-height: 75vh; border-radius: 5px;">
-                <h2 class="section-heading" style="color: #FFFFFF !important; margin-bottom: 0; font-size: clamp(38px, 6vw, 75px); line-height: 1.1; letter-spacing: -2px; font-weight: 500 !important; font-family: 'Inter', sans-serif;">
-                    Women were<br>taught to save,<br>
-                    <span style="font-weight: 800 !important;">not to build<br>wealth.</span>
+            <div style="background-color: #A03FA3; padding: clamp(40px, 6vw, 80px) clamp(30px, 5vw, 60px); color: #FFFFFF; display: flex; flex-direction: column; justify-content: center; min-height: 55vh; border-radius: 5px;">
+                <h2 class="section-heading" style="color: #FFFFFF !important; margin-bottom: 0; font-size: clamp(40px, 5.5vw, 75px); line-height: 1.1; letter-spacing: -2px; font-weight: 500 !important; font-family: 'Inter', sans-serif;">
+                    Women were<br>
+                    Taught to<br>
+                    <span style="font-family: 'Caveat', cursive; font-size: 1.4em; font-weight: 700; display: inline-block;">Save,</span><br>
+                    not to Build<br>
+                    <span style="font-family: 'Caveat', cursive; font-size: 1.6em; font-weight: 700; display: inline-block;">Wealth.</span>
                 </h2>
             </div>
             
             <!-- Right Column -->
             <div style="display: flex; flex-direction: column; gap: 4px;">
                 <!-- Top Right Card -->
-                <div style="position: relative; flex: 1; min-height: 40vh; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; padding: clamp(30px, 4vw, 50px); background: url('./public/images/common/future.png') center/cover no-repeat; background-color: #1A1A1A; overflow: hidden; border-radius: 5px;">
+                <div style="position: relative; flex: 1; min-height: 30vh; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; padding: clamp(30px, 4vw, 50px); background: url('./public/images/common/future.png') center/cover no-repeat; background-color: #1A1A1A; overflow: hidden; border-radius: 5px;">
                     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 60%); z-index: 1; pointer-events: none;"></div>
                     <div style="position: relative; z-index: 3;">
                         <div style="font-size: clamp(24px, 2.8vw, 36px); color: #FFFFFF; font-weight: 700; margin-bottom: 2px; font-family: 'Caveat', cursive; display: inline-block;">This is not about</div>
@@ -713,10 +723,10 @@
                     </div>
                 </div>
                 <!-- Bottom Right Card -->
-                <div style="position: relative; flex: 1; min-height: 40vh; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; padding: clamp(30px, 4vw, 50px); background: url('./public/images/common/riqueza.jpg') center/cover no-repeat; background-color: #1A1A1A; overflow: hidden; border-radius: 5px;">
+                <div style="position: relative; flex: 1; min-height: 30vh; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; padding: clamp(30px, 4vw, 50px); background: url('./public/images/common/riqueza.jpg') center/cover no-repeat; background-color: #1A1A1A; overflow: hidden; border-radius: 5px;">
                     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 60%); z-index: 1; pointer-events: none;"></div>
                     <div style="position: relative; z-index: 3;">
-                        <div style="font-size: clamp(24px, 2.8vw, 36px); color: #FFFFFF; font-weight: 700; margin-bottom: 2px; font-family: 'Caveat', cursive; display: inline-block;">It's about</div>
+                        <div style="font-size: clamp(24px, 2.8vw, 36px); color: #FFFFFF; font-weight: 700; margin-bottom: 2px; font-family: 'Caveat', cursive; display: inline-block;">This is about</div>
                         <div style="font-size: clamp(32px, 3.8vw, 52px); color: #FFFFFF; font-weight: 800; line-height: 1.1; font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 8px;">
                             Owning your Future <img src="./public/images/common/diamond-dot.png" style="height: 0.5em; vertical-align: baseline; margin-left: 2px;" alt="">
                         </div>
@@ -727,60 +737,65 @@
     </section>
 
     <!-- #2.5 Ecosystem Stack -->
-    <section class="snap-section" style="position: relative; display: flex; align-items: flex-end; justify-content: center; padding: 0 4vw 8vh 4vw; min-height: 100vh; background-image: url('./public/images/common/castle-changes.png'); background-size: cover; background-position: center; background-attachment: scroll; background-repeat: no-repeat; margin-top: var(--spacer-40); overflow: hidden;">
+    <section class="snap-section" style="position: relative; display: flex; align-items: flex-end; justify-content: center; padding: 0 4vw 50px 4vw; min-height: 100vh; background-image: url('./public/images/common/cambia-todo.jpg'); background-size: cover; background-position: center;  background-repeat: no-repeat; margin-top: var(--spacer-50); overflow: hidden;">
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,0.85) 100%); z-index: 1;"></div>
         
         <div style="width: 100%; max-width: 1400px; margin: 0 auto; position: relative; z-index: 2;">
-            <h2 class="section-heading color-reveal" style="color: #FFFFFF !important; margin-bottom: var(--spacer-30); text-align: center; font-size: clamp(70px, 10vw, 150px); line-height: 1.1; letter-spacing: -2px;">
+            <h2 class="section-heading color-reveal" style="color: #FFFFFF !important; margin-bottom: var(--spacer-30); text-align: center; font-size: clamp(70px, 10vw, 150px); line-height: 1.1; letter-spacing: -2px; text-shadow: 0 4px 15px rgba(0,0,0,0.4);">
                 Castle<span style="font-family: 'Caveat', cursive; font-weight: 700; font-size: 1.4em; line-height: 0.8; display: inline-block; color: #A03FA3; margin: 0 15px 0 0;">Changes</span> that
             </h2>
 
-            <div class="color-reveal section-subtitle" style="margin-bottom: 0px; display: flex; flex-direction: column; gap: 8px;">
-                <p class="section-subtitle-1" style="color: #FFFFFF; margin-bottom: 0; font-weight: 500;">Castle combines neuroscience, AI, financial intelligence, and community to help women break limiting beliefs, understand their money, and confidently build wealth.</p>
-                <p class="section-subtitle-1" style="color: #FFFFFF; margin-bottom: 0; font-weight: 500;">More than a financial platform, Castle is a new Operating System for Women ready to Own their Future.</p>
+            <div class="color-reveal section-subtitle" style="margin-bottom: 0;">
+                <p class="section-subtitle-1" style="color: #FFFFFF; margin-bottom: 0;">Castle combines neuroscience, AI, financial intelligence, and community to help women break limiting beliefs, understand their money, and confidently build wealth. More than a financial platform, Castle is a new Operating System for Women ready to Own their Future.</p>
             </div>
         </div>
     </section>
 
 
 
-    <!-- Challenge Teaser (Styled as Masterclass) -->
-    <section class="snap-section" style="position: relative; display: flex; align-items: flex-end; justify-content: center; padding: 0 4vw 8vh 4vw; min-height: 120vh; background-image: url('./public/images/common/masterclass-bg.png'); background-size: cover; background-position: center top; background-attachment: scroll; background-repeat: no-repeat; margin-top: 0; overflow: hidden;">
+    <!-- MasterClass Section -->
+    <section class="snap-section" style="position: relative; display: flex; align-items: flex-end; justify-content: center; padding: 0 4vw 50px 4vw; min-height: 135vh; background-image: url('./public/images/common/bg-masterclass01.png'); background-size: cover; background-position: center top;  background-repeat: no-repeat; margin-top: 0; overflow: hidden;">
         <!-- Gradient Overlay -->
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,0.5) 75%, rgba(0,0,0,0.95) 100%); z-index: 1;"></div>
         
         <!-- Top Badge -->
-        <div style="position: absolute; top: clamp(40px, 6vh, 80px); left: 0; width: 100%; text-align: center; z-index: 3;">
-            <span style="color: #FFFFFF; font-weight: 800; font-size: clamp(24px, 3.5vw, 42px); letter-spacing: 0.02em; font-family: 'Inter', sans-serif;">4 Live MasterClasses</span>
+        <div style="position: absolute; top: 50px; left: 0; width: 100%; text-align: center; z-index: 3;">
+            <span style="color: #FFFFFF; font-weight: 800; font-size: clamp(24px, 3.5vw, 42px); letter-spacing: 0.02em; font-family: 'Inter', sans-serif; display: block; line-height: 1.2;">4 Live MasterClasses</span>
+            <span style="color: rgba(255,255,255,0.95); font-size: 18px; font-weight: 500; font-family: 'Inter', sans-serif; letter-spacing: 0px; display: block; margin-top: 4px;">By application and invitation only. Limited spots.</span>
         </div>
         
-        <div style="width: 100%; max-width: 1400px; margin: 0 auto; position: relative; z-index: 2; text-align: center; padding-top: 40vh; display: flex; flex-direction: column; align-items: center;">
+        <div style="width: 100%; max-width: 1400px; margin: 0 auto; position: relative; z-index: 2; text-align: center; padding-top: 55vh; display: flex; flex-direction: column; align-items: center;">
 
-            <h2 class="section-heading color-reveal" style="font-size: clamp(32px, 5vw, 64px) !important; letter-spacing: -2px !important; line-height: 0.9 !important; margin-bottom: 15px; color: #FFFFFF !important; text-shadow: 0 4px 30px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.6);">
-                <span style="display: inline-block; font-family: 'Inter', sans-serif; color: #FFFFFF;">Your financial future</span><br>
-                <span style="display: inline-block; color: #FFFFFF;"><span style="font-family: 'Caveat', cursive; color: #FFFFFF; font-weight: 700; font-size: 1.4em; display: inline-block; margin-right: 15px; margin-top: -10px;">Begins</span> with a decision.</span>
+            <h2 class="section-heading color-reveal" style="font-size: clamp(28px, 4vw, 54px) !important; letter-spacing: -1px !important; line-height: 1.1 !important; margin-bottom: 20px; color: #FFFFFF !important; text-shadow: 0 4px 30px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.6); max-width: 1200px; margin-left: auto; margin-right: auto;">
+                <span style="display: inline-block; font-family: 'Inter', sans-serif; color: #FFFFFF;"><span style="font-family: 'Caveat', cursive; color: #FFFFFF; font-weight: 700; font-size: 1.4em; margin-right: 5px;">Reprogram</span> your Mind. <span style="font-family: 'Caveat', cursive; color: #FFFFFF; font-weight: 700; font-size: 1.4em; margin-right: 5px;">Rebuild</span> your</span><br>
+                <span style="display: inline-block; font-family: 'Inter', sans-serif; color: #FFFFFF;">Relationship with Money. <span style="font-family: 'Caveat', cursive; color: #FFFFFF; font-weight: 700; font-size: 1.4em; margin-right: 5px;">Redesign</span> your Future.</span>
             </h2>
 
             <div style="display: flex; flex-direction: column; align-items: center; gap: 0;">
-                <div class="color-reveal section-subtitle" style="margin-bottom: 0px; max-width: 1000px; width: 100%;">
-                    <p class="section-subtitle-1" style="color: rgba(255,255,255,0.95); margin-bottom: 5px; max-width: none; margin-left: auto; margin-right: auto; line-height: 1.4; text-shadow: 0 4px 20px rgba(0,0,0,0.8); font-weight: 400; white-space: nowrap;">
-                        Transform your relationship with money and start building real wealth.
+                <div class="color-reveal section-subtitle" style="margin-bottom: 0px; padding: 0 20px;">
+                    <p class="section-subtitle-1" style="color: rgba(255,255,255,0.95); margin-bottom: 5px; max-width: none; margin-left: auto; margin-right: auto; line-height: 1.5; text-shadow: 0 4px 20px rgba(0,0,0,0.8);">
+                        Join a transformative experience of 4 live MasterClasses designed to help women break<br class="desktop-only"> limits, develop a wealth mindset, and learn to build assets with clarity and confidence.
                     </p>
-                    <p style="color: #FFFFFF; margin-top: 10px; font-size: 14px; font-weight: 800; font-family: 'Inter', sans-serif; letter-spacing: 0.5px;">Powered by Unicoin Foundation</p>
                 </div>
                 
-                <div style="margin-top: 25px; display: flex; flex-direction: column; align-items: center; gap: 15px;">
-                    <a href="javascript:void(0);" onclick="openUnifiedModal('waitlist');" class="btn" style="background-color: #A03FA3; border: none; color: #FFFFFF; font-weight: 800; padding: 18px 45px; border-radius: 50px; display: inline-block; text-transform: uppercase;">
-                        LEARN MORE
+                <div style="margin-top: 15px; display: flex; flex-direction: column; align-items: center; gap: 30px;">
+                    <p style="color: #A03FA3; font-size: 18px; font-weight: 700; text-align: center; line-height: 1.4; margin: 0; letter-spacing: 0.5px; text-shadow: 0 2px 5px rgba(0,0,0,0.8);">Begin your Financial Reset. 100% Free.</p>
+                    <a href="masterclass.html" class="btn" style="background-color: #A03FA3; border: none; color: #FFFFFF; font-weight: 800; padding: 18px 45px; border-radius: 50px; display: inline-block; font-size: 16px; text-transform: uppercase;">
+                        APPLY NOW
                     </a>
-                    <p style="color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 400; text-align: center; line-height: 1.4; margin: 0;">Limited spots available. Secure your place before registrations close.</p>
+                    <div style="margin-top: 15px; display: flex; flex-direction: row; align-items: center; justify-content: center;">
+                        <a href="https://unicoin.org/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; display: flex; flex-direction: row; align-items: center; gap: 8px; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+                            <span style="color: #FFFFFF; font-size: 15px; font-weight: 500; font-family: 'Inter', sans-serif;">Powered by</span>
+                            <img src="./public/images/common/fundacion-light.png" alt="Unicoin Foundation" style="height: 24px; object-fit: contain;">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- #4 What Makes Us Different -->
-    <section style="padding: var(--section-pad-y) 4vw 0 4vw; background-color: #FFFFFF;" class="snap-section">
+    <section style="padding: 50px 4vw 50px 4vw; background-color: #FFFFFF;" class="snap-section">
         <div class="color-reveal" style="width: 100%; max-width: 1400px; margin: 0 auto; text-align: center;">
             
             <h2 class="section-heading color-reveal" style="margin-bottom: var(--spacer-30);">
@@ -788,13 +803,13 @@
             </h2>
             
             <div class="color-reveal section-subtitle">
-                <p class="section-subtitle-1">Castle is where your Relationship with Money changes&mdash;for Real.</p>
+                <p class="section-subtitle-1">Castle is where your Relationship with Money changes—for Real.</p>
                 <p class="section-subtitle-2">Not another personal finance course. Not another app telling you to budget better.<br>Not another place where finance feels complicated, intimidating, or not made for you.</p>
             </div>
             
             <div id="diff-scroll" class="mobile-scroll-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin-bottom: 0;">
                 <!-- Cajita 1 -->
-                <div style="aspect-ratio: 3/4; position: relative; border-radius: 5px; overflow: hidden; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%), url('./public/images/common/Different1.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 20px; transition: transform 0.3s;">
+                <div style="aspect-ratio: 3/4; position: relative; border-radius: 5px; overflow: hidden; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 50%), url('./public/images/common/Different1.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 20px; transition: transform 0.3s;">
                     <div style="position: relative; z-index: 2; text-align: center;">
                         <span style="display: block; font-family: 'Caveat', cursive; font-size: clamp(36px, 4vw, 42px); color: #FFFFFF; font-weight: 700; line-height: 1; margin-bottom: 8px;">Rewiring</span>
                         <span style="display: block; font-family: 'Inter', sans-serif; font-size: clamp(15px, 1.8vw, 18px); color: #FFFFFF; font-weight: 400; line-height: 1.3;">to break limiting beliefs</span>
@@ -802,15 +817,15 @@
                 </div>
                 
                 <!-- Cajita 2 -->
-                <div style="aspect-ratio: 3/4; position: relative; border-radius: 5px; overflow: hidden; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%), url('./public/images/common/Different2.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 20px; transition: transform 0.3s;">
+                <div style="aspect-ratio: 3/4; position: relative; border-radius: 5px; overflow: hidden; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 50%), url('./public/images/common/Different2.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 20px; transition: transform 0.3s;">
                     <div style="position: relative; z-index: 2; text-align: center;">
                         <span style="display: block; font-family: 'Caveat', cursive; font-size: clamp(36px, 4vw, 42px); color: #FFFFFF; font-weight: 700; line-height: 1; margin-bottom: 8px;">Coaching</span>
-                        <span style="display: block; font-family: 'Inter', sans-serif; font-size: clamp(15px, 1.8vw, 18px); color: #FFFFFF; font-weight: 400; line-height: 1.3;">to support your decisions</span>
+                        <span style="display: block; font-family: 'Inter', sans-serif; font-size: clamp(15px, 1.8vw, 18px); color: #FFFFFF; font-weight: 400; line-height: 1.3;">with personalized guidance</span>
                     </div>
                 </div>
                 
                 <!-- Cajita 3 -->
-                <div style="aspect-ratio: 3/4; position: relative; border-radius: 5px; overflow: hidden; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%), url('./public/images/common/Different3.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 20px; transition: transform 0.3s;">
+                <div style="aspect-ratio: 3/4; position: relative; border-radius: 5px; overflow: hidden; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 50%), url('./public/images/common/Different3.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 20px; transition: transform 0.3s;">
                     <div style="position: relative; z-index: 2; text-align: center;">
                         <span style="display: block; font-family: 'Caveat', cursive; font-size: clamp(36px, 4vw, 42px); color: #FFFFFF; font-weight: 700; line-height: 1; margin-bottom: 8px;">Smart Tools</span>
                         <span style="display: block; font-family: 'Inter', sans-serif; font-size: clamp(15px, 1.8vw, 18px); color: #FFFFFF; font-weight: 400; line-height: 1.3;">to grow with confidence</span>
@@ -818,7 +833,7 @@
                 </div>
                 
                 <!-- Cajita 4 -->
-                <div style="aspect-ratio: 3/4; position: relative; border-radius: 5px; overflow: hidden; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%), url('./public/images/common/Different4.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 20px; transition: transform 0.3s;">
+                <div style="aspect-ratio: 3/4; position: relative; border-radius: 5px; overflow: hidden; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 50%), url('./public/images/common/Different4.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px 20px; transition: transform 0.3s;">
                     <div style="position: relative; z-index: 2; text-align: center;">
                         <span style="display: block; font-family: 'Caveat', cursive; font-size: clamp(36px, 4vw, 42px); color: #FFFFFF; font-weight: 700; line-height: 1; margin-bottom: 8px;">A Powerful Community</span>
                         <span style="display: block; font-family: 'Inter', sans-serif; font-size: clamp(15px, 1.8vw, 18px); color: #FFFFFF; font-weight: 400; line-height: 1.3;">of women rising together</span>
@@ -840,50 +855,49 @@
                 <p class="section-subtitle-2">It's not just financial education. It's an identity transformation powered by technology, community, and action.<br>Through the Castle Method, you learn to build wealth with structure, clarity, and long-term vision:</p>
             </div>
 
-            <!-- 5 Pillars Grid -->
-            <div class="color-reveal mobile-scroll-row mobile-text-center" id="pillars-scroll" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; text-align: left;">
+            <div class="color-reveal mobile-scroll-row mobile-text-center" id="pillars-scroll" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; text-align: left;">
 
                 <!-- 01 Cohort Learning -->
                 <div class="pillar-card">
                     <img src="./public/images/common/step1.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%); z-index: 2;"></div>
-                    <div style="position: relative; z-index: 3; height: 180px; display: flex; flex-direction: column; justify-content: flex-start;">
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 60%); z-index: 2;"></div>
+                    <div style="position: relative; z-index: 3; height: 220px; display: flex; flex-direction: column; justify-content: flex-start;">
                         <p style="font-size: 18px; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.7); margin-bottom: 6px; letter-spacing: 0.5px;">01</p>
                         <h3 style="font-size: 22px; font-weight: 800; color: #FFFFFF; margin-bottom: 12px; line-height: 1.2;">Cohorts that elevate</h3>
-                        <p style="font-size: 15px; color: rgba(255,255,255,0.9); font-weight: 400; line-height: 1.4; margin: 0;">You learn alongside women who are growing, investing, and thinking big.</p>
+                        <p style="font-size: 17px; color: rgba(255,255,255,0.9); font-weight: 400; line-height: 1.4; margin: 0;">You learn alongside women who are growing, investing, and thinking big.</p>
                     </div>
                 </div>
 
                 <!-- 02 Account Aggregation -->
                 <div class="pillar-card">
                     <img src="./public/images/common/step2.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%); z-index: 2;"></div>
-                    <div style="position: relative; z-index: 3; height: 180px; display: flex; flex-direction: column; justify-content: flex-start;">
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 60%); z-index: 2;"></div>
+                    <div style="position: relative; z-index: 3; height: 220px; display: flex; flex-direction: column; justify-content: flex-start;">
                         <p style="font-size: 18px; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.7); margin-bottom: 6px; letter-spacing: 0.5px;">02</p>
                         <h3 style="font-size: 22px; font-weight: 800; color: #FFFFFF; margin-bottom: 12px; line-height: 1.2;">Your money, in one place</h3>
-                        <p style="font-size: 15px; color: rgba(255,255,255,0.9); font-weight: 400; line-height: 1.4; margin: 0;">Integrate your accounts and finally understand how your wealth moves.</p>
+                        <p style="font-size: 17px; color: rgba(255,255,255,0.9); font-weight: 400; line-height: 1.4; margin: 0;">Integrate your accounts and finally understand how your wealth moves.</p>
                     </div>
                 </div>
 
                 <!-- 03 AI Money & Wealth Coach -->
                 <div class="pillar-card">
                     <img src="./public/images/common/step3.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%); z-index: 2;"></div>
-                    <div style="position: relative; z-index: 3; height: 180px; display: flex; flex-direction: column; justify-content: flex-start;">
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 60%); z-index: 2;"></div>
+                    <div style="position: relative; z-index: 3; height: 220px; display: flex; flex-direction: column; justify-content: flex-start;">
                         <p style="font-size: 18px; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.7); margin-bottom: 6px; letter-spacing: 0.5px;">03</p>
                         <h3 style="font-size: 22px; font-weight: 800; color: #FFFFFF; margin-bottom: 12px; line-height: 1.2;">AI Money & Wealth Coach</h3>
-                        <p style="font-size: 15px; color: rgba(255,255,255,0.9); font-weight: 400; line-height: 1.4; margin: 0;">An intelligent coach that guides you, challenges you, and helps you make better financial decisions.</p>
+                        <p style="font-size: 17px; color: rgba(255,255,255,0.9); font-weight: 400; line-height: 1.4; margin: 0;">An intelligent coach that guides you, challenges you, and helps you make better financial decisions.</p>
                     </div>
                 </div>
 
                 <!-- 04 Investment Marketplace -->
                 <div class="pillar-card">
                     <img src="./public/images/common/step4.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 1;">
-                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0) 100%); z-index: 2;"></div>
-                    <div style="position: relative; z-index: 3; height: 180px; display: flex; flex-direction: column; justify-content: flex-start;">
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 60%); z-index: 2;"></div>
+                    <div style="position: relative; z-index: 3; height: 220px; display: flex; flex-direction: column; justify-content: flex-start;">
                         <p style="font-size: 18px; font-style: italic; font-weight: 400; color: rgba(255,255,255,0.7); margin-bottom: 6px; letter-spacing: 0.5px;">04</p>
                         <h3 style="font-size: 22px; font-weight: 800; color: #FFFFFF; margin-bottom: 12px; line-height: 1.2;">Investment Marketplace</h3>
-                        <p style="font-size: 15px; color: rgba(255,255,255,0.9); font-weight: 400; line-height: 1.4; margin: 0;">Access curated opportunities to start building real wealth.</p>
+                        <p style="font-size: 17px; color: rgba(255,255,255,0.9); font-weight: 400; line-height: 1.4; margin: 0;">Access curated opportunities to start building real wealth.</p>
                     </div>
                 </div>
 
@@ -891,12 +905,12 @@
             <div class="mobile-scroll-indicators" data-target="pillars-scroll"></div>
 
             <!-- CTA in Block 5 -->
-            <div style="margin-top: var(--spacer-60); text-align: center;">
+            <div style="margin-top: 30px; text-align: center;">
                 <p class="color-reveal" style="font-size: clamp(20px, 2.5vw, 28px); font-weight: 700; color: #2A2A2A; margin-bottom: 30px; line-height: 1.3;">
                     Because when you change your mindset, you change your decisions.<br>
                     And when you change your decisions, you change your future.
                 </p>
-                <a href="javascript:void(0);" onclick="openUnifiedModal('waitlist');" class="btn" style="background-color: #A03FA3; border: none; color: #FFFFFF; font-weight: 700; padding: 18px 45px; border-radius: 30px;">
+                <a href="masterclass.html" class="btn" style="background-color: #A03FA3; border: none; color: #FFFFFF; font-weight: 700; padding: 18px 45px; border-radius: 30px;">
                 APPLY NOW
             </a>
             </div>
@@ -905,14 +919,14 @@
 
 
 <!-- Partners Section -->
-    <section id="partnerships" class="partners-section snap-section" style="background-color: #FFFFFF; padding: var(--section-pad-y) 4vw; border-top: 1px solid #E5E7EB; font-family: 'Inter', sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <section id="partnerships" class="partners-section snap-section" style="background-color: #F9F9F9; padding: 50px 4vw 0 4vw; font-family: 'Inter', sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
     
-        <div style="width: 100%; max-width: 1400px; margin: 0 auto; text-align: center; margin-bottom: var(--spacer-30);">
+        <div style="width: 100%; max-width: 1400px; margin: 0 auto; text-align: center; margin-bottom: 30px;">
             <h2 class="section-heading color-reveal" style="color: #1A1A1A; margin-bottom: 15px;">
                 Turn your passion and influence into investment.
             </h2>
-            <div class="color-reveal section-subtitle">
-                <p class="section-subtitle-1">Join the <span style="font-family: 'Caveat', cursive; font-weight: 700; font-size: 1.6em; color: #A03FA3; margin-right: 6px;">Movement</span> helping Women build <span style="font-family: 'Caveat', cursive; font-weight: 700; font-size: 1.6em; color: #A03FA3; margin-right: 6px;">Wealth</span> &mdash; and own a piece of the future you help create.</p>
+            <div class="color-reveal section-subtitle" style="margin-bottom: 0;">
+                <p class="section-subtitle-1">Join the <span style="font-weight: 700; color: #A03FA3;">movement</span> helping Women build <span style="font-weight: 700; color: #A03FA3;">Wealth</span> &mdash; and own a piece of the future you help create.</p>
             </div>
         </div>
 
@@ -929,36 +943,47 @@
             @media (min-width: 1024px) {
                 #influence-grid {
                     grid-template-columns: 1fr 1fr !important;
+                    overflow: visible !important;
                 }
                 .inf-img-container {
                     min-height: auto;
                 }
+                .inf-img-container img {
+                    top: -25px;
+                    height: calc(100% + 25px);
+                    border-radius: 0 5px 5px 0;
+                    object-position: right 20%;
+                }
+
             }
         </style>
         
         
         <!-- Left Content -->
-        <div style="padding: 60px clamp(30px, 6vw, 60px); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; text-align: left; position: relative; z-index: 2;">
+        <div style="padding: 70px clamp(30px, 6vw, 60px); display: flex; flex-direction: column; justify-content: center; align-items: flex-start; text-align: left; position: relative; z-index: 2;">
             <div style="color: #FFFFFF; line-height: 1.4;">
-                <p class="section-subtitle-1" style="color: #FFFFFF; margin-bottom: 20px;">Castle is building a new Web3-powered ecosystem where creators, leaders, brands, and Communities can tokenize their expertise, audience, reach, credibility, and resources in exchange for Castle tokens and shared upside.</p>
-                <p class="section-subtitle-2" style="color: rgba(255,255,255,0.9); margin-bottom: 0;">Bring what makes you powerful&mdash;your voice, network, platform, or Community&mdash;and grow with us as we scale a global movement for Women and Wealth.</p>
+                <p class="section-subtitle-1" style="color: rgba(255,255,255,0.9); margin-bottom: 25px; font-weight: 500;">Castle is building a <strong style="font-weight: 800; color: #FFFFFF;">new Web3-powered ecosystem</strong> where creators, leaders, brands, and Communities can <strong style="font-weight: 800; color: #FFFFFF;">tokenize</strong> their <strong style="font-weight: 800; color: #FFFFFF;">expertise, audience, reach, credibility, and resources</strong> in exchange for <strong style="font-weight: 800; color: #FFFFFF;">Castle tokens</strong> and <strong style="font-weight: 800; color: #FFFFFF;">shared upside</strong>.</p>
+                <p class="section-subtitle-1" style="color: rgba(255,255,255,0.95); margin-bottom: 0;">
+                    <span style="font-family: 'Caveat', cursive; font-size: clamp(26px, 3.5vw, 40px); font-weight: 600; line-height: 1.2; display: block; margin-bottom: 5px; color: #FFFFFF;">Bring what makes you powerful</span>
+                    &mdash; your voice, network, platform, or Community &mdash; and grow with us as we scale a global movement for Women and Wealth.
+                </p>
             </div>
         </div>
         
         <!-- Right Image -->
         <div class="inf-img-container">
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, #A03FA3 0%, rgba(160,63,163,0) 25%); z-index: 2;"></div>
+
             <img src="./public/images/common/inf-section.png" alt="Influence">
         </div>
     </div>
 
     <!-- Partners Grid Section Merged -->
-        <div style="width: 100%; max-width: 1400px; margin: 40px auto 0 auto; text-align: center;">
+        <div style="width: 100%; max-width: 1400px; margin: 50px auto 0 auto; text-align: center;">
             <div style="margin-bottom: var(--spacer-40);">
                 <h2 class="section-heading color-reveal" style="margin-bottom: var(--spacer-30);">How You Can Partner?</h2>
                 <div class="color-reveal section-subtitle" style="margin-bottom: 0;">
                     <p class="section-subtitle-1">With Castle we are building a new economy powered by Web3, where creators, leaders, brands, and communities can co-create, invest, and grow together through a model built on collaboration, ownership, and long-term value.</p>
-                    <p class="section-subtitle-2">Whether you are a Celebrity, Influencer, Content Creator, Brand, Women&rsquo;s Organization, or Expert &mdash; you can join us to transform how Women experience Wealth and be part of the Women&rsquo;s Wealth Revolution.</p>
+                    <p class="section-subtitle-2">Whether you are a Celebrity, Influencer, Content Creator, Brand, Women’s Organization, or Expert &mdash;you can join us to transform how Women experience Wealth and be part of the Women’s Wealth Revolution.</p>
                 </div>
             </div>
             
@@ -1021,22 +1046,23 @@
             </div>
             <div class="mobile-scroll-indicators" data-target="partner-scroll"></div>
             
-            <div style="margin-top: var(--spacer-80); text-align: center;">
-                <p style="font-size: clamp(24px, 3vw, 36px); font-weight: 700; color: #1A1A1A; letter-spacing: 0px;; margin-bottom: var(--spacer-40);">
-                    Build Impact. Earn Ownership. Grow With Castle.
+            <div style="margin-top: 30px; text-align: center; margin-bottom: 50px;">
+                <p style="font-size: clamp(24px, 3vw, 36px); font-weight: 700; color: #1A1A1A; letter-spacing: 0px; margin-bottom: 30px;">
+                    Multiply your wealth. Build your Castle.<br>
+                    <span style="display: block; margin-top: 10px; font-size: 0.8em;">Build Impact. Earn Ownership. Grow With Castle.</span>
                 </p>
                 <a href="javascript:void(0);" onclick="openUnifiedModal('partner')" class="btn" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 2px; padding: 22px 50px; border-radius: 50px; font-size: 15px; text-decoration: none; display: inline-block; box-shadow: 0 10px 30px rgba(160, 63, 163, 0.4); transition: transform 0.2s ease;">JOIN THE MOVEMENT</a>
             </div>
         </div>
     </section>
 
-    <section id="blog" class="blog-section snap-section" style="padding-bottom: 80px; border-bottom: none;">
+    <section id="blog" class="blog-section snap-section" style="padding-top: 50px; padding-bottom: 50px; border-bottom: none; background-color: #FFFFFF;">
         <div class="container" style="max-width: 1500px; padding: 0 4vw; text-align: center;">
-            <h2 class="color-reveal section-heading" style="margin-bottom: 20px;">Castle in the Media</h2>
-            <p class="color-reveal section-subtitle" style="font-size: clamp(18px, 1.8vw, 28px); color: #2A2A2A; font-weight: 400; width: 100%; max-width: none; margin: 0 auto var(--spacer-60) auto; line-height: 1.25; ">
-                Explore the insights, announcements, and perspectives shaping the Future of Women's Wealth.
-                <br>Across the world, the story of Castle is unfolding &mdash; redefining Financial Ownership for Women and building a new model for Wealth Creation.
-            </p>
+            <h2 class="color-reveal section-heading" style="margin-bottom: var(--spacer-30);">Castle in the Media</h2>
+            <div class="color-reveal section-subtitle">
+                <p class="section-subtitle-1" style="font-size: clamp(16px, 1.6vw, 24px); letter-spacing: -0.5px;">Explore the insights, announcements, and perspectives shaping the Future of Women's Wealth.</p>
+                <p class="section-subtitle-2" style="max-width: 900px; margin: 0 auto;">Across the world, the story of Castle is unfolding &mdash; redefining Financial Ownership for Women and building a new model for Wealth Creation.</p>
+            </div>
             
             <div class="blog-grid mobile-scroll-row" id="blog-scroll">
                 <!-- Post 1 -->
@@ -1066,7 +1092,7 @@
                 <!-- Post 3 -->
                 <a href="https://unicoin.com/news/from-entrepreneurs-to-investors-the-technological-leap-that-is-creating-the-new-female-fortunes-in-latin-america" target="_blank" class="blog-card">
                     <div class="blog-img-wrapper">
-                        <img src="./public/images/common/blog2.jpg" class="blog-img" alt="From Entrepreneurs to Investors">
+                        <img src="./public/images/common/blog2.jpg" class="blog-img" alt="De Emprendedoras a Inversoras">
                     </div>
                     <div class="blog-content">
                         <span class="blog-tag">Innovation</span>
@@ -1080,21 +1106,21 @@
 
             <!-- Blog CTA moved up & made smaller -->
             <div style="margin-top: var(--spacer-40); text-align: center;">
-                <a href="/blog" class="btn btn-outline-purple" style="padding: 18px 45px; letter-spacing: 1.5px; display: inline-block;">VIEW ALL MEDIA</a>
+                <a href="https://unicoin.com/news" target="_blank" rel="noopener noreferrer" class="btn btn-outline-purple" style="padding: 18px 45px; letter-spacing: 1.5px; display: inline-block;">VIEW ALL MEDIA</a>
             </div>
         </div>
     </section>
 
     <!-- Final CTA / Newsletter -->
-    <section style="position: relative; background-image: url('./public/images/common/cta-final.jpg'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat; padding: var(--section-pad-y) 0; text-align: center; min-height: 100vh; display: flex; align-items: center; justify-content: center; width: 100%;" class="snap-section">
+    <section style="position: relative; background-image: url('./public/images/common/cta-final.jpg'); background-size: cover; background-position: center;  background-repeat: no-repeat; padding: var(--section-pad-y) 0; text-align: center; min-height: 100vh; display: flex; align-items: center; justify-content: center; width: 100%;" class="snap-section">
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(17,17,17,0.6); z-index: 1;"></div>
         <div class="container" style="position: relative; z-index: 2; max-width: 1500px; margin: 0 auto; padding: 0 5vw; display: flex; flex-direction: column; align-items: center; justify-content: center;">
             <div style="max-width: 800px; width: 100%; text-align: center;">
-                <h3 style="font-size: clamp(40px, 5vw, 72px); font-weight: 700; color: #FFFFFF; margin-bottom: 20px; letter-spacing: -1px; line-height: 1.1; font-family: 'Inter', sans-serif; text-shadow: 0 4px 20px rgba(0,0,0,0.4);">Multiply your wealth. Build your Castle.</h3>
+                <h3 style="font-size: clamp(40px, 5vw, 72px); font-weight: 700; color: #FFFFFF; margin-bottom: 20px; letter-spacing: -1px; line-height: 1.1; font-family: 'Inter', sans-serif; text-shadow: 0 4px 20px rgba(0,0,0,0.4);">Subscribe to our Newsletter</h3>
                 <p style="font-size: clamp(18px, 1.8vw, 28px); color: rgba(255,255,255,0.95); line-height: 1.6; max-width: 700px; margin: 0 auto var(--spacer-50) auto; font-family: 'Inter', sans-serif; text-shadow: 0 2px 15px rgba(0,0,0,0.4);">Build wealth with intention. Start by receiving the conversations that actually matter.</p>
                 <div style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto; width: 100%; flex-wrap: wrap; justify-content: center;">
                     <input type="email" id="inline_newsletter_email" placeholder="Your email address" style="flex: 1; padding: 16px 20px; border-radius: 50px; border: none; font-size: 16px; outline: none; min-width: 250px; color: #1A1A1A;">
-                    <button onclick="submitInlineNewsletter()" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 1.5px; padding: 16px 40px; border-radius: 50px; border: none; font-size: 14px; cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(160,63,163,0.3); font-family: 'Inter Tight', sans-serif; text-transform: uppercase;">JOIN</button>
+                    <button onclick="submitInlineNewsletter()" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 1.5px; padding: 16px 40px; border-radius: 50px; border: none; font-size: 14px; cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(160,63,163,0.3); font-family: 'Inter Tight', sans-serif; text-transform: uppercase;">SUBSCRIBE</button>
                 </div>
             </div>
         </div>
@@ -1107,7 +1133,7 @@
             <div class="footer-top">
                 <div class="footer-col brand-col">
                     <img src="./public/images/common/logo-color.png?v=1" alt="Castle" class="footer-brand" style="height: 48px; object-fit: contain;">
-                    <p style="margin-bottom: 20px;">Castle Is The OS Of Women's <span style="color: #A03FA3;">Wealth.</span></p>
+                    <p style="margin-bottom: 20px;">Castle Is The OS Of Women's Wealth.</p>
                     <div class="social-links">
                         <a href="https://www.instagram.com/buildyourcastle.ai/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
                         <a href="https://www.linkedin.com/company/buildyourcastle/about/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
@@ -1134,7 +1160,7 @@
             </div>
             
             <div class="footer-disclaimer" style="text-align: center; font-size: 11px; color: #6B7280; margin-bottom: 15px;">
-                All images used on this site were created or enhanced using AI and are intended for illustrative purposes only.
+                The images used on this site were created or modified with AI and are for illustrative purposes only.
             </div>
             <div class="footer-bottom">
                 &copy; 2026 Castle. All rights reserved.
@@ -1262,10 +1288,10 @@
 
     <!-- Unified CTA Modal -->
     <div id="waitlistModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 99999; background: rgba(17,17,17,0.85); align-items: center; justify-content: center; backdrop-filter: blur(8px);">
-        <div style="background: #FFFFFF; padding: 40px 40px; border-radius: 8px; max-width: 650px; width: 90%; position: relative; max-height: 90vh; overflow-y: auto; text-align: left; box-shadow: 0 40px 100px rgba(0,0,0,0.4);">
+        <div style="background: #FFFFFF; padding: clamp(30px, 5vw, 40px) clamp(20px, 5vw, 40px); border-radius: 8px; max-width: 750px; width: 95%; position: relative; max-height: 95vh; overflow-y: auto; text-align: left; box-shadow: 0 40px 100px rgba(0,0,0,0.4);">
             <button onclick="document.getElementById('waitlistModal').style.display='none';" style="position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 30px; cursor: pointer; color: #2A2A2A; line-height: 1; padding: 0;">&times;</button>
             
-            <h2 class="section-heading color-reveal" id="modalTitle" style="margin-top: 10px; margin-bottom: 10px; text-align: center; font-size: clamp(22px, 6vw, 42px); white-space: nowrap;">Welcome to Castle</h2>
+            <h2 class="section-heading color-reveal" id="modalTitle" style="margin-top: 0; margin-bottom: 15px; text-align: center; font-size: clamp(24px, 7vw, 42px); white-space: normal; line-height: 1.1;">Bienvenida a Castle</h2>
             
             
             <form action="https://buildyourcastle.us10.list-manage.com/subscribe/post?u=4766d7bd8debcf610dadddfb6&amp;id=53677e9563" target="_blank" method="POST" id="unifiedForm" class="waitlist-form" onsubmit="prepareUnifiedFormSubmit(event)">
@@ -1274,9 +1300,16 @@
                 
                 <!-- Interests Checkboxes -->
                 <div class="form-group" style="margin-bottom: 20px;">
-                    <label style="font-size: 15px; font-weight: 700; color: #1A1A1A; margin-bottom: 15px; display: block;">What would you like to do at Castle? <span style="font-size: 13px; font-weight: 400; color: #4B5563; margin-left: 6px;">(you can select more than one option)</span></label>
+                    <label style="font-size: 20px; font-weight: 800; color: #A03FA3; margin-bottom: 12px; display: block; text-align: center;">¿Qué te gustaría hacer en Castle?</label>
                     <style>
-                        .interests-grid { display: grid; gap: 12px; grid-template-columns: 1fr; }
+                        .custom-multiselect { position: relative; width: 100%; margin-bottom: 10px; }
+                        .multiselect-dropdown { width: 100%; padding: 14px 15px; border: 1px solid #D1D5DB; border-radius: 8px; background-color: #FFFFFF; font-size: 15px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: #4B5563; font-weight: 500; font-family: 'Inter', sans-serif; transition: border-color 0.2s; }
+                        .multiselect-dropdown:hover { border-color: #A03FA3; }
+                        .multiselect-options { position: absolute; top: 100%; left: 0; right: 0; background: #FFFFFF; border: 1px solid #D1D5DB; border-radius: 8px; margin-top: 4px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); z-index: 1000; max-height: 250px; overflow-y: auto; display: none; padding: 8px 0; }
+                        .multiselect-options.open { display: block; }
+                        .multiselect-options label { display: flex; align-items: center; gap: 12px; padding: 12px 15px; margin: 0; cursor: pointer; font-weight: 500; font-size: 15px; color: #1A1A1A; transition: background 0.2s; }
+                        .multiselect-options label:hover { background: #F9FAFB; }
+                        .multiselect-options input[type="checkbox"] { width: 18px; height: 18px; accent-color: #A03FA3; margin: 0; cursor: pointer; }
                     </style>
                     <div class="interests-grid">
                         <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_waitlist" value="Waitlist" style="width:18px; height:18px; margin:0;"> I want to join the MasterClass Series</label>
@@ -1288,21 +1321,21 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="fname">Full Name *</label>
+                        <label for="fname">Nombre Completo *</label>
                         <input type="text" id="fname" name="FNAME" required placeholder="Jane Doe">
                     </div>
                     <div class="form-group">
-                        <label for="email">Email Address *</label>
+                        <label for="email">Correo Electrónico *</label>
                         <input type="email" id="email" name="EMAIL" required placeholder="jane@example.com">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="phone">Phone Number</label>
+                        <label for="phone">Número de Teléfono</label>
                         <div style="display: flex; gap: 10px;">
                             <select id="phone_code" style="width: 35%; padding: 14px 15px; border: 1px solid #D1D5DB; border-radius: 8px; background-color: #FFFFFF; font-family: 'Inter', sans-serif; font-size: 15px; color: #4B5563;">
-                                <option value="" disabled selected>Code</option>
+                                <option value="" disabled selected>Cód.</option>
                                 <option value="+54">🇦🇷 +54</option>
                                 <option value="+1">🇺🇸 +1</option>
                                 <option value="+34">🇪🇸 +34</option>
@@ -1321,9 +1354,9 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="age">Age</label>
+                        <label for="age">Edad</label>
                         <select id="age" name="AGE">
-                            <option value="" disabled selected>Select age range</option>
+                            <option value="" disabled selected>Selecciona rango de edad</option>
                             <option value="18-24">18-24</option>
                             <option value="25-29">25-29</option>
                             <option value="30-34">30-34</option>
@@ -1339,9 +1372,9 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="country">Country</label>
+                        <label for="country">País</label>
                         <select id="country" name="COUNTRY">
-                            <option value="" disabled selected>Select your country</option>
+                            <option value="" disabled selected>Selecciona tu país</option>
                             <option value="United States">United States</option>
                             <option value="United Kingdom">United Kingdom</option>
                             <option value="Canada">Canada</option>
@@ -1357,36 +1390,42 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="linkedin">LinkedIn URL</label>
+                        <label for="linkedin">URL de LinkedIn</label>
                         <input type="url" id="linkedin" name="LINKEDIN" placeholder="https://linkedin.com/in/janedoe">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="company">Company / Organization</label>
+                        <label for="company">Empresa / Organización</label>
                         <input type="text" id="company" name="COMPANY" placeholder="Acme Corp">
                     </div>
                     <div class="form-group">
-                        <label for="role">Your Role / Title</label>
+                        <label for="role">Tu Rol / Cargo</label>
                         <input type="text" id="role" name="ROLE" placeholder="Founder / CEO">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="instagram">Instagram Handle</label>
-                    <input type="text" id="instagram" name="INSTAGRAM" placeholder="@janedoe">
+                    <label for="comentarios">Cuéntanos en más detalle</label>
+                    <textarea id="comentarios" name="COMENTARIOS" rows="3" placeholder="Escribe aquí los detalles sobre qué te gustaría hacer en Castle..." style="resize: vertical;"></textarea>
                 </div>
 
-                <div class="checkbox-group" style="margin-top: 15px;">
-                    <input type="checkbox" id="consent" name="CONSENT" required style="width: 18px; height: 18px; margin: 0; padding: 0; accent-color: #A03FA3;">
-                    <label for="consent" style="margin-left: 0;">I consent to Castle contacting me to share updates about the platform, launch information, and Community events.</label>
+                <div class="checkbox-group" style="margin-top: 25px; display: flex; flex-direction: column; gap: 15px;">
+                    <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; margin: 0;">
+                        <input type="checkbox" id="chk_newsletter" value="Newsletter" style="width: 18px; height: 18px; margin: 0; padding: 0; accent-color: #A03FA3; flex-shrink: 0; margin-top: 2px;">
+                        <span style="font-size: 14px; font-weight: 500; line-height: 1.4; color: #4B5563;">Newsletter</span>
+                    </label>
+                    <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; margin: 0;">
+                        <input type="checkbox" id="consent" name="CONSENT" required style="width: 18px; height: 18px; margin: 0; padding: 0; accent-color: #A03FA3; flex-shrink: 0; margin-top: 2px;">
+                        <span style="font-size: 14px; font-weight: 500; line-height: 1.4; color: #4B5563;">Doy mi consentimiento para que Castle me contacte con actualizaciones de la plataforma e invitaciones.</span>
+                    </label>
                 </div>
 
                 <!-- Anti-spam Honeypot -->
                 <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_name" tabindex="-1" value=""></div>
 
-                <button type="submit" class="waitlist-submit" style="margin-top: 20px;">Submit</button>
+                <button type="submit" class="waitlist-submit" style="margin-top: 20px;">Enviar</button>
             </form>
         </div>
     </div>
@@ -1395,21 +1434,83 @@
     <script>
         function openUnifiedModal(sourceType) {
             // Uncheck ALL fields whenever opening form naturally
-            const checkboxes = ['chk_waitlist', 'chk_partner', 'chk_contact', 'chk_newsletter', 'consent'];
+            const checkboxes = ['chk_masterclass', 'chk_programs', 'chk_platform', 'chk_partner', 'chk_interview', 'chk_jointeam', 'chk_other', 'chk_newsletter', 'consent'];
             checkboxes.forEach(id => {
                 if(document.getElementById(id)) document.getElementById(id).checked = false;
             });
 
             // Show modal
             if(document.getElementById('waitlistModal')) document.getElementById('waitlistModal').style.display = 'flex';
+
+            // Sync dropdown label
+            if(typeof updateMsLabel === 'function') updateMsLabel();
+        }
+
+        function toggleMultiselect(e) {
+            e.stopPropagation();
+            const options = document.getElementById('ms-options');
+            const arrow = document.getElementById('ms-arrow');
+            options.classList.toggle('open');
+            if (options.classList.contains('open')) {
+                arrow.style.transform = 'rotate(180deg)';
+                document.getElementById('ms-dropdown').style.borderColor = '#A03FA3';
+            } else {
+                arrow.style.transform = 'rotate(0deg)';
+                document.getElementById('ms-dropdown').style.borderColor = '#D1D5DB';
+            }
+        }
+
+        function updateMsLabel() {
+            const container = document.getElementById('ms-options');
+            if(!container) return;
+            const checkboxes = container.querySelectorAll('input[type="checkbox"]');
+            let selectedValues = [];
+            checkboxes.forEach(cb => { 
+                if(cb.checked) selectedValues.push(cb.value); 
+            });
+            
+            const placeholder = document.getElementById('ms-placeholder');
+            if (selectedValues.length === 0) {
+                placeholder.textContent = 'Seleccionar opciones...';
+                placeholder.style.color = '#9CA3AF';
+            } else {
+                placeholder.textContent = selectedValues.join(', ');
+                placeholder.style.color = '#1A1A1A';
+            }
+        }
+
+        // Close multiselect when clicking outside
+        window.addEventListener('click', function(e) {
+            const options = document.getElementById('ms-options');
+            const dropdown = document.getElementById('ms-dropdown');
+            const arrow = document.getElementById('ms-arrow');
+            if (options && options.classList.contains('open')) {
+                if (!dropdown.contains(e.target) && !options.contains(e.target)) {
+                    options.classList.remove('open');
+                    arrow.style.transform = 'rotate(0deg)';
+                    dropdown.style.borderColor = '#D1D5DB';
+                }
+            }
+        });
+
+        function submitInlineNewsletter() {
+            const inlineEmail = document.getElementById('inline_newsletter_email').value;
+            if (inlineEmail) {
+                const modalEmail = document.getElementById('email');
+                if (modalEmail) modalEmail.value = inlineEmail;
+            }
+            openUnifiedModal('newsletter');
         }
 
         function prepareUnifiedFormSubmit(e) {
             // Intercept submit to populate SOURCE with all checked interests
             let interests = [];
-            if (document.getElementById('chk_waitlist') && document.getElementById('chk_waitlist').checked) interests.push("Waitlist");
+            if (document.getElementById('chk_programs') && document.getElementById('chk_programs').checked) interests.push("Educación");
+            if (document.getElementById('chk_platform') && document.getElementById('chk_platform').checked) interests.push("Plataforma");
             if (document.getElementById('chk_partner') && document.getElementById('chk_partner').checked) interests.push("Partner");
-            if (document.getElementById('chk_contact') && document.getElementById('chk_contact').checked) interests.push("Contact");
+            if (document.getElementById('chk_interview') && document.getElementById('chk_interview').checked) interests.push("Entrevista");
+            if (document.getElementById('chk_jointeam') && document.getElementById('chk_jointeam').checked) interests.push("Equipo");
+            if (document.getElementById('chk_other') && document.getElementById('chk_other').checked) interests.push("Otro");
             if (document.getElementById('chk_newsletter') && document.getElementById('chk_newsletter').checked) interests.push("Newsletter");
             
             if (interests.length === 0) {
@@ -1428,6 +1529,30 @@
         }
     </script>
     
+    <!-- Cookie Banner -->
+    <style>
+        .cookie-content { flex-direction: column; text-align: center; }
+        @media(min-width: 768px) {
+            .cookie-content { flex-direction: row; text-align: left; }
+        }
+    </style>
+    <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #FFFFFF; border-top: 1px solid #E5E7EB; box-shadow: 0 -4px 20px rgba(0,0,0,0.05); padding: 20px 4vw; z-index: 9999; display: none; font-family: 'Inter', sans-serif; box-sizing: border-box;">
+        <div class="cookie-content" style="max-width: 1400px; width: 100%; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px;">
+            <p style="margin: 0; font-size: 14px; color: #2A2A2A; line-height: 1.5;">
+                Nos gustaría utilizar cookies para entender tu uso de nuestro sitio web. Para saber más sobre las cookies y cómo cambiar tus opciones, por favor consulta nuestra <a href="#" style="color: #A03FA3; font-weight: 600; text-decoration: none;">Política de Cookies</a>.
+            </p>
+            <button onclick="document.getElementById('cookie-banner').style.display='none'; localStorage.setItem('cookies_accepted', 'true');" style="background-color: #1A1A1A; color: #FFFFFF; border: none; padding: 12px 30px; border-radius: 5px; font-weight: 700; font-size: 13px; letter-spacing: 1px; cursor: pointer; text-transform: uppercase; white-space: nowrap; transition: background-color 0.3s;">
+                ACEPTAR
+            </button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (!localStorage.getItem('cookies_accepted')) {
+                document.getElementById('cookie-banner').style.display = 'block';
+            }
+        });
+    </script>
 </body>
 
 

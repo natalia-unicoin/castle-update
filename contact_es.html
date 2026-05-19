@@ -95,17 +95,17 @@
 
             position: relative;  display: flex; align-items: stretch; justify-content: flex-start;
             background-color: #F8F8FA; overflow: hidden; padding: 0 clamp(30px, 5vw, 100px);
-            background-image: url('./public/images/common/hero-silvina.jpg');
+            background-image: url('./public/images/common/hero-contact-new.jpg');
             background-size: cover;
             background-position: right center;
-            background-attachment: fixed;
+            
             background-repeat: no-repeat;
         }
         @media (max-width: 768px) {
             .hero {
                 background-image: url('./public/images/common/hero-bg-mobile.jpg');
                 background-position: center;
-                background-attachment: scroll;
+                
             }
         }
         .hero-container {
@@ -309,6 +309,8 @@
         /* Global typography helpers */
         .section-eyebrow { color: #A03FA3; font-weight: 700; font-size: 14px; letter-spacing: 4px; margin-bottom: 16px; text-align: center; display: block; }
         .section-title { font-size: clamp(36px, 5vw, 64px); font-weight: 700; letter-spacing: -2px; margin-bottom: 20px; color: #1A1A1A; text-align: center; }
+        .section-subtitle { font-size: clamp(18px, 1.8vw, 26px); font-weight: 400; color: #2A2A2A; max-width: 100%; width: 100%; padding: 0 50px; box-sizing: border-box; margin: 0 auto var(--spacer-50) auto; line-height: 1.4; text-align: center; font-family: 'Inter', sans-serif; }
+        .section-subtitle-1 { font-size: clamp(17px, 1.8vw, 26px); font-weight: 500; color: #1A1A1A; margin-bottom: 12px; line-height: 1.4; letter-spacing: -0.02em; }
         .section-subtitle { font-size: clamp(20px, 2.5vw, 32px); font-weight: 400; color: #1A1A1A; max-width:  1400px; margin: 0 auto var(--spacer-60) auto; line-height: 1.6; text-align: center; font-family: 'Inter', sans-serif; }
 
         /* 4. Program (Genesis Challenge) */
@@ -640,8 +642,8 @@
     <body>
     <header id="main-header">
         <a href="index_es.html" class="header-logo">
-            <img src="./public/images/common/logo-color.png?v=2" alt="CASTLE" class="logo-light">
-            <img src="./public/images/common/logo-color.png?v=2" alt="CASTLE" class="logo-dark">
+            <img src="./public/images/common/logo-color.png?v=3" alt="CASTLE" class="logo-light">
+            <img src="./public/images/common/logo-color.png?v=3" alt="CASTLE" class="logo-dark">
         </a>
         <nav class="nav-links" id="main-nav">
             <a href="about_es.html" style="text-transform: none;">Somos Castle</a>
@@ -671,31 +673,144 @@
         #main-header .lang-select { color: #1A1A1A !important; border-color: #E5E7EB !important; background-image: url('data:image/svg+xml;utf8,<svg fill="%231A1A1A" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>') !important; }
         .mobile-menu-toggle { color: #1A1A1A !important; }
     </style>
-    <section class="hero snap-section" style="background-color: #E5E7EB; display: flex; align-items: flex-end; padding: 150px 4vw 80px 4vw; min-height: 100vh; position: relative;">
-        <!-- Placeholder Text -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #9CA3AF; font-size: clamp(30px, 5vw, 60px); font-weight: 800; letter-spacing: 4px; text-transform: uppercase; z-index: 0; font-family: 'Inter', sans-serif; text-align: center;">Image Placeholder</div>
+    <!-- 1. Hero Section -->
+    <section class="hero snap-section" style="background-image: url('./public/images/common/hero-contact-new.jpg'); background-size: cover; background-position: center;  background-repeat: no-repeat; display: flex; align-items: flex-end; padding: 150px 4vw 80px 4vw; min-height: 100vh; position: relative;">
+    <div class="shared-hero-gradient" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 60%; background: linear-gradient(to top, rgba(17,17,17,0.7) 0%, rgba(17,17,17,0) 100%); z-index: 1; pointer-events: none;"></div>
         <!-- Black Gradient Overlay -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%); z-index: 1;"></div>
+        
         
         <div class="container" style="max-width: 1000px; margin: 0 auto; display: flex; justify-content: center; align-items: center; position: relative; z-index: 2;">
             <div style="text-align: center; width: 100%;">
-                <h1 class="hero-title color-reveal" style="color: #FFFFFF; font-size: clamp(50px, 7vw, 90px); letter-spacing: -2px; margin-bottom: 24px; text-shadow: 0 4px 12px rgba(0,0,0,0.5);">Contáctanos</h1>
-                <p class="hero-subtitle color-reveal" style="color: rgba(255,255,255,0.95); font-size: clamp(18px, 2vw, 24px); line-height: 1.5; max-width: 700px; margin: 0 auto;">¿Tienes alguna pregunta, idea para asociarnos o simplemente quieres saludar? Déjanos un mensaje abajo y nuestro equipo te responderá.</p>
+                <h1 class="hero-title color-reveal" style="color: #FFFFFF; font-size: clamp(50px, 7vw, 90px); letter-spacing: -2px; margin-bottom: 24px; text-shadow: 0 4px 12px rgba(0,0,0,0.5); font-family: 'Inter', sans-serif; font-weight: 700;">Contáctanos</h1>
+                <p class="hero-subtitle color-reveal" style="color: rgba(255,255,255,0.95); font-size: clamp(18px, 2vw, 24px); line-height: 1.5; max-width: 700px; margin: 0 auto; font-family: 'Inter', sans-serif;">¿Tienes alguna pregunta, idea para asociarnos o simplemente quieres saludar? Estamos aquí para escucharte.</p>
                 
             </div>
         </div>
     </section>
 
-<!-- Contact Form Section (Waitlist Style) -->
-    <section class="snap-section" style="background-color: #F8F8FA; padding: var(--section-pad-large) 4vw; display: flex; justify-content: center; align-items: center;">
+    <!-- 2. Form Section -->
+    <section id="contact-form-section" class="snap-section" style="background-color: #F8F8FA; padding: var(--section-pad-large) 4vw; display: flex; justify-content: center; align-items: center;">
         <div class="container" style="max-width: 700px; width: 100%; text-align: left; padding: 0;">
-            
-            <div style="text-align: center; margin-top: 40px; margin-bottom: 40px;">
-            <p style="font-size: 18px; margin-bottom: 20px; color: #4B5563; font-family: 'Inter', sans-serif;">Haz clic abajo para abrir nuestro formulario de contacto.</p>
-            <button onclick="openUnifiedModal('contact')" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 2px; padding: 18px 45px; border-radius: 50px; border: none; font-size: 15px; cursor: pointer; transition: transform 0.2s; box-shadow: 0 10px 20px rgba(160, 63, 163, 0.3); text-transform: uppercase; display: inline-block;">CONTACTAR AHORA</button>
-        </div>
+            <div style="width: 100%;">
+                <form action="https://buildyourcastle.us10.list-manage.com/subscribe/post?u=4766d7bd8debcf610dadddfb6&amp;id=53677e9563" method="POST" target="_blank" class="contact-page-form" style="display: flex; flex-direction: column; gap: 20px;">
+                    <input type="hidden" name="SOURCE" value="ContactPage">
+                    
+                    <div class="form-row" style="display: grid; grid-template-columns: 1fr; gap: 20px;">
+                        <style>@media (min-width: 600px) { .contact-page-form .form-row { grid-template-columns: 1fr 1fr !important; } }</style>
+                        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                            <label style="font-size: 14px; font-weight: 600; color: #1A1A1A; font-family: 'Inter', sans-serif;">Nombre Completo *</label>
+                            <input type="text" name="FNAME" required placeholder="Tu nombre" style="padding: 14px 16px; border: 1px solid #D1D5DB; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 15px; outline: none; color: #1A1A1A;">
+                        </div>
+                        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                            <label style="font-size: 14px; font-weight: 600; color: #1A1A1A; font-family: 'Inter', sans-serif;">Correo Electrónico *</label>
+                            <input type="email" name="EMAIL" required placeholder="tu@email.com" style="padding: 14px 16px; border: 1px solid #D1D5DB; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 15px; outline: none; color: #1A1A1A;">
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                        <label style="font-size: 14px; font-weight: 600; color: #1A1A1A; font-family: 'Inter', sans-serif;">Tema de Interés *</label>
+                        <select name="TOPIC" required style="padding: 14px 16px; border: 1px solid #D1D5DB; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 15px; outline: none; appearance: none; color: #1A1A1A; background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"%23111111\" viewBox=\"0 0 16 16\"><path d=\"M4.293 5.293a1 1 0 0 1 1.414 0L8 8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-3 3a1 1 0 0 1-1.414 0l-3-3a1 1 0 0 1 0-1.414z\"/></svg>') no-repeat right 16px center; background-color: #F9FAFB;">
+                            <option value="" disabled selected>Selecciona un tema</option>
+                            <option value="Soporte General">Soporte General</option>
+                            <option value="Prensa y Medios">Prensa y Medios</option>
+                            <option value="Inversores">Inversores</option>
+                            <option value="Partnerships">Partnerships</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                        <label style="font-size: 14px; font-weight: 600; color: #1A1A1A; font-family: 'Inter', sans-serif;">Mensaje *</label>
+                        <textarea name="MESSAGE" rows="5" required placeholder="¿En qué podemos ayudarte?" style="padding: 14px 16px; border: 1px solid #D1D5DB; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 15px; outline: none; resize: vertical; color: #1A1A1A;"></textarea>
+                    </div>
+
+                    <div style="display: flex; align-items: flex-start; gap: 12px; margin-top: 10px;">
+                        <input type="checkbox" id="privacy" required style="margin-top: 4px; width: 18px; height: 18px; accent-color: #A03FA3;">
+                        <label for="privacy" style="font-size: 13px; color: #4B5563; line-height: 1.5; cursor: pointer; font-family: 'Inter', sans-serif;">Acepto la <a href="#" style="color: #A03FA3;">Política de Privacidad</a> y consiento el procesamiento de mis datos.</label>
+                    </div>
+
+                    <button type="submit" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 2px; padding: 18px 40px; border-radius: 50px; font-size: 15px; border: none; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; margin-top: 15px; width: 100%; box-shadow: 0 10px 20px rgba(160, 63, 163, 0.3); text-transform: uppercase;">ENVIAR MENSAJE</button>
+                </form>
+            </div>
         </div>
     </section>
+
+<!-- Social Proof / Ecosystem -->
+<section style="background-image: url('./public/images/common/ecosystem-bg.jpg?v=1'); background-size: cover; background-position: center;  min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 15vh; overflow: hidden; text-align: center; position: relative;">
+    <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 80%; background: linear-gradient(to top, rgba(17,17,17,0.9) 0%, rgba(17,17,17,0) 100%); z-index: 1;"></div>
+    <div style="position: relative; z-index: 2;">
+    <h2 class="section-title" style="color: #FFFFFF; padding: 0 20px; margin-bottom: 40px; line-height: 1.1;">Únete al Ecosistema<br>que está transformando<br><span style="font-family: 'Caveat', cursive; font-size: 1.6em; color: #A03FA3; font-weight: 700; display: inline-block; margin-top: -10px;">la Riqueza Femenina</span></h2>
+    
+    <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; padding: 0 4vw;">
+        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 16px 32px; border-radius: 50px; color: #FFFFFF; font-weight: 600; font-size: 16px;">Influencers</div>
+        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 16px 32px; border-radius: 50px; color: #FFFFFF; font-weight: 600; font-size: 16px;">Creadoras</div>
+        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 16px 32px; border-radius: 50px; color: #FFFFFF; font-weight: 600; font-size: 16px;">Marcas</div>
+        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 16px 32px; border-radius: 50px; color: #FFFFFF; font-weight: 600; font-size: 16px;">Expertas</div>
+    </div>
+</section>
+
+</div>
+</section>
+
+<!-- Quick Resources -->
+<section style="background-color: #F8F8FA; padding-top: 50px; padding-bottom: 80px; padding-left: 4vw; padding-right: 4vw;">
+    <div class="container" style="max-width: 1400px; margin: 0 auto;">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <h2 class="section-title" style="margin-bottom: 16px; padding: 0; color: #1A1A1A;">Explora Castle</h2>
+            <p class="section-subtitle-1" style="max-width: 800px; width: 100%; margin: 0 auto; text-align: center;">Descubre todo lo que nuestro ecosistema tiene para ofrecerte.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+            <!-- Card 1 -->
+            <a href="masterclass_es.html" style="aspect-ratio: 3/4; border-radius: 5px; overflow: hidden; position: relative; display: block; text-decoration: none;">
+                <img src="./public/images/common/card-masterclass.jpg?v=6" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: 20% center; z-index: 1;">
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 60%); z-index: 2;"></div>
+                <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px 20px 60px 20px; z-index: 3; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <span style="display: block; font-family: 'Caveat', cursive; font-size: clamp(32px, 4vw, 42px); color: #FFFFFF; font-weight: 700; line-height: 1; margin-bottom: 8px;">MasterClass</span>
+                    <span style="display: block; font-family: 'Inter', sans-serif; font-size: 16px; color: #FFFFFF; font-weight: 500; margin-bottom: 24px;">Aprende los fundamentos para tomar<br>control de tu riqueza.</span>
+                    <span style="font-size: 14px; font-weight: 700; color: #FFFFFF; text-transform: uppercase; letter-spacing: 1px;">ÚNETE</span>
+                </div>
+            </a>
+
+            <!-- Card 2 -->
+            <a href="partners_es.html" style="aspect-ratio: 3/4; border-radius: 5px; overflow: hidden; position: relative; display: block; text-decoration: none;">
+                <img src="./public/images/common/card-partners.jpg?v=6" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 1;">
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 60%); z-index: 2;"></div>
+                <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px 20px 60px 20px; z-index: 3; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <span style="display: block; font-family: 'Caveat', cursive; font-size: clamp(32px, 4vw, 42px); color: #FFFFFF; font-weight: 700; line-height: 1; margin-bottom: 8px;">Partnerships</span>
+                    <span style="display: block; font-family: 'Inter', sans-serif; font-size: 16px; color: #FFFFFF; font-weight: 500; margin-bottom: 24px;">Únete como creadora,<br>influencer o marca.</span>
+                    <span style="font-size: 14px; font-weight: 700; color: #FFFFFF; text-transform: uppercase; letter-spacing: 1px;">SER PARTNER</span>
+                </div>
+            </a>
+
+            <!-- Card 3 -->
+            <a href="about_es.html" style="aspect-ratio: 3/4; border-radius: 5px; overflow: hidden; position: relative; display: block; text-decoration: none; background-color: #111;">
+                <img src="./public/images/common/card-about.jpg?v=6" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 1;">
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 60%); z-index: 2;"></div>
+                <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px 20px 60px 20px; z-index: 3; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <span style="display: block; font-family: 'Caveat', cursive; font-size: clamp(32px, 4vw, 42px); color: #FFFFFF; font-weight: 700; line-height: 1; margin-bottom: 8px;">Somos Castle</span>
+                    <span style="display: block; font-family: 'Inter', sans-serif; font-size: 16px; color: #FFFFFF; font-weight: 500; margin-bottom: 24px;">Conoce la visión de Castle<br>y nuestro futuro.</span>
+                    <span style="font-size: 14px; font-weight: 700; color: #FFFFFF; text-transform: uppercase; letter-spacing: 1px;">LEER MÁS</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+    <!-- Final CTA / Newsletter -->
+    <section style="position: relative; background-image: url('./public/images/common/cta-final.jpg'); background-size: cover; background-position: center;  background-repeat: no-repeat; padding: var(--section-pad-y) 0; text-align: center; min-height: 100vh; display: flex; align-items: center; justify-content: center; width: 100%;" class="snap-section">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(17,17,17,0.6); z-index: 1;"></div>
+        <div class="container" style="position: relative; z-index: 2; max-width: 1500px; margin: 0 auto; padding: 0 5vw; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div style="max-width: 800px; width: 100%; text-align: center;">
+                <h3 style="font-size: clamp(40px, 5vw, 72px); font-weight: 700; color: #FFFFFF; margin-bottom: 20px; letter-spacing: -1px; line-height: 1.1; font-family: 'Inter', sans-serif; text-shadow: 0 4px 20px rgba(0,0,0,0.4);">Suscríbete a nuestro Newsletter</h3>
+                <p style="font-size: clamp(18px, 1.8vw, 28px); color: rgba(255,255,255,0.95); line-height: 1.6; max-width: 700px; margin: 0 auto var(--spacer-50) auto; font-family: 'Inter', sans-serif; text-shadow: 0 2px 15px rgba(0,0,0,0.4);">Construye riqueza con intención. Empieza recibiendo las conversaciones que sí importan.</p>
+                <div style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto; width: 100%; flex-wrap: wrap; justify-content: center;">
+                    <input type="email" id="inline_newsletter_email_contact" placeholder="Tu correo electrónico" style="flex: 1; padding: 16px 20px; border-radius: 50px; border: none; font-size: 16px; outline: none; min-width: 250px; color: #1A1A1A;">
+                    <button onclick="submitInlineNewsletter()" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 1.5px; padding: 16px 40px; border-radius: 50px; border: none; font-size: 14px; cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(160,63,163,0.3); font-family: 'Inter Tight', sans-serif; text-transform: uppercase;">SUSCRÍBETE</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <footer class="site-footer">
         <div class="container">
