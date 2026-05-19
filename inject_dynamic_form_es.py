@@ -39,7 +39,7 @@ def process_file(filename):
                             <input type="checkbox" id="chk_waitlist" value="Waitlist" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Unirme a la waitlist
                         </label>
                         <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 15px; color: #374151;">
-                            <input type="checkbox" id="chk_partner" value="Partner" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Colaborar con Castle
+                            <input type="checkbox" id="chk_partner" value="Partner" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Ser Partner
                         </label>
                         <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 15px; color: #374151;">
                             <input type="checkbox" id="chk_contact" value="Contact" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Hablar con el equipo
