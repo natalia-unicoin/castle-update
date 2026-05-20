@@ -35,9 +35,9 @@ def process_file(filename):
                 <input type="hidden" name="SOURCE" id="unifiedSource" value="">
                 
                 <!-- Interests Checkboxes -->
-                <div class="form-group" style="margin-bottom: 15px; background: #F9FAFB; padding: 20px; border-radius: 8px; border: 1px solid #E5E7EB;">
+                <div class="form-group" style="margin-bottom: 10px; background: #F9FAFB; padding: 15px; border-radius: 8px; border: 1px solid #E5E7EB;">
                     <label style="font-size: 14px; font-weight: 700; color: #111827; margin-bottom: 12px; display: block; text-transform: uppercase; letter-spacing: 0.5px;">Quiero (selecciona todas las que apliquen):</label>
-                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
                         <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 15px; color: #374151;">
                             <input type="checkbox" id="chk_waitlist" value="Waitlist" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Unirme a la waitlist
                         </label>
@@ -66,7 +66,7 @@ def process_file(filename):
                         <input type="email" id="email" name="EMAIL" required placeholder="tu@email.com" style="border-radius: 6px; border: 1px solid #D1D5DB; padding: 12px; width: 100%; font-size: 15px;">
                     </div>
                 </div>
-                <div class="form-row" style="margin-top: 12px;">
+                <div class="form-row" style="margin-top: 10px;">
                     <div class="form-group">
                         <label for="age" style="font-weight: 600; font-size: 13px; color: #4B5563;">Edad *</label>
                         <select id="age" name="AGE" required style="border-radius: 6px; border: 1px solid #D1D5DB; padding: 12px; width: 100%; font-size: 15px; background: #fff;">
@@ -107,21 +107,15 @@ def process_file(filename):
                         </select>
                     </div>
                 </div>
-                <div class="form-group" style="margin-top: 12px;">
+                <div class="form-group" style="margin-top: 10px;">
                     <label for="phone_intl" style="font-weight: 600; font-size: 13px; color: #4B5563; display:block;">Teléfono *</label>
                     <input type="tel" id="phone_intl" required style="border-radius: 6px; border: 1px solid #D1D5DB; padding: 12px 12px 12px 50px; font-size: 15px; width: 100%; outline: none; box-sizing: border-box;">
                 </div>
 
                 <!-- DYNAMIC FIELDS -->
-                
-                <!-- Contact Message -->
-                <div class="form-group" id="dyn_contact" style="display: none; margin-top: 12px;">
-                    <label for="message" style="font-weight: 600; font-size: 13px; color: #4B5563;">Mensaje</label>
-                    <textarea id="message" name="MESSAGE" rows="3" placeholder="¿En qué te podemos ayudar?" style="border-radius: 6px; border: 1px solid #D1D5DB; padding: 12px; width: 100%; font-size: 15px; font-family: inherit; resize: vertical;"></textarea>
-                </div>
 
                 <!-- B2B Fields -->
-                <div class="form-row" id="dyn_b2b" style="display: none; margin-top: 12px;">
+                <div class="form-row" id="dyn_b2b" style="display: none; margin-top: 10px;">
                     <div class="form-group">
                         <label for="company" style="font-weight: 600; font-size: 13px; color: #4B5563;">Empresa</label>
                         <input type="text" id="company" name="COMPANY" placeholder="Ej. Acme Corp" style="border-radius: 6px; border: 1px solid #D1D5DB; padding: 12px; width: 100%; font-size: 15px;">
@@ -132,8 +126,18 @@ def process_file(filename):
                     </div>
                 </div>
 
+                <!-- Contact Message -->
+                <div class="form-group" id="dyn_contact" style="display: none; margin-top: 10px;">
+                    <label for="message" style="font-weight: 600; font-size: 13px; color: #4B5563;">Mensaje</label>
+                    <textarea id="message" name="MESSAGE" rows="3" placeholder="¿En qué te podemos ayudar?" style="border-radius: 6px; border: 1px solid #D1D5DB; padding: 12px; width: 100%; font-size: 15px; font-family: inherit; resize: vertical;"></textarea>
+                </div>
+                
+
+
+
+
                 <!-- Partner Type -->
-                <div id="dyn_partner" style="display: none; margin-top: 12px;">
+                <div id="dyn_partner" style="display: none; margin-top: 10px;">
                     <div class="form-group">
                         <label for="partnertype" style="font-weight: 600; font-size: 13px; color: #4B5563;">Tipo de Colaboración</label>
                         <select id="partnertype" name="PARTNERT" style="border-radius: 6px; border: 1px solid #D1D5DB; padding: 12px; width: 100%; font-size: 15px; background: #fff;">
@@ -144,14 +148,14 @@ def process_file(filename):
                             <option value="expert">Expert</option>
                         </select>
                     </div>
-                    <div class="form-group" style="margin-top: 12px;">
+                    <div class="form-group" style="margin-top: 10px;">
                         <label for="partnermsg" style="font-weight: 600; font-size: 13px; color: #4B5563;">Comentarios adicionales (Opcional)</label>
                         <textarea id="partnermsg" name="PARTNERMSG" rows="3" placeholder="Cuéntanos más sobre cómo te gustaría colaborar..." style="border-radius: 6px; border: 1px solid #D1D5DB; padding: 12px; width: 100%; font-size: 15px; font-family: inherit; resize: vertical;"></textarea>
                     </div>
                 </div>
 
                 <!-- Invested / Interest -->
-                <div id="dyn_invest" style="display: none; margin-top: 12px;">
+                <div id="dyn_invest" style="display: none; margin-top: 10px;">
                     <div class="form-row">
                         <div class="form-group">
                             <label style="font-weight: 600; font-size: 13px; color: #4B5563;">¿Has invertido antes?</label>
@@ -161,7 +165,7 @@ def process_file(filename):
                             </div>
                         </div>
                     </div>
-                    <div class="form-group" style="margin-top: 12px;">
+                    <div class="form-group" style="margin-top: 10px;">
                         <label for="investlevel" style="font-weight: 600; font-size: 13px; color: #4B5563;">Nivel de interés en inversión</label>
                         <select id="investlevel" name="INVESTLVL" style="border-radius: 6px; border: 1px solid #D1D5DB; padding: 12px; width: 100%; font-size: 15px; background: #fff;">
                             <option value="" disabled selected>Selecciona tu nivel</option>
@@ -173,7 +177,7 @@ def process_file(filename):
                 </div>
 
                 <!-- Subscription Checkbox -->
-                <div class="checkbox-group" style="margin-top: 15px; background: #F3F4F6; padding: 15px; border-radius: 6px;">
+                <div class="checkbox-group" style="margin-top: 10px; background: #F3F4F6; padding: 12px; border-radius: 6px;">
                     <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; font-size: 13px; font-weight: 500; color: #4B5563; line-height: 1.4;">
                         <input type="checkbox" id="chk_subscription" name="NEWSLETTER" value="Yes" checked style="margin-top: 2px; width: 18px; height: 18px; accent-color: #A03FA3; flex-shrink: 0;">
                         <span>Quiero recibir novedades, contenido y oportunidades de Castle</span>
@@ -181,11 +185,11 @@ def process_file(filename):
                 </div>
 
                 <!-- Form message container -->
-                <div id="form_message" style="display: none; margin-top: 12px; padding: 15px; border-radius: 6px; font-weight: 500; text-align: center; font-size: 14px;"></div>
+                <div id="form_message" style="display: none; margin-top: 10px; padding: 15px; border-radius: 6px; font-weight: 500; text-align: center; font-size: 14px;"></div>
 
                 <p style="font-size: 11px; color: #6B7280; text-align: center; margin-top: 18px; margin-bottom: 0; line-height: 1.4;">Al hacer clic en "Aplicar Ahora", confirmas que has leído y aceptas nuestra <a href="terminos-es.html" style="color: #A03FA3; text-decoration: underline;">Política de Privacidad</a>.</p>
 
-                <button type="submit" id="submit_btn" style="width: 100%; background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 1.5px; padding: 16px; border-radius: 50px; border: none; font-size: 15px; cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 10px 20px rgba(160,63,163,0.3); font-family: 'Inter Tight', sans-serif; text-transform: uppercase; margin-top: 12px;">APLICAR AHORA</button>
+                <button type="submit" id="submit_btn" style="width: 100%; background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 1.5px; padding: 14px; border-radius: 50px; border: none; font-size: 15px; cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 10px 20px rgba(160,63,163,0.3); font-family: 'Inter Tight', sans-serif; text-transform: uppercase; margin-top: 10px;">APLICAR AHORA</button>
             </form>
         </div>
     </div>"""
