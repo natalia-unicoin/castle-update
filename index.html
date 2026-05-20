@@ -1323,15 +1323,25 @@
             <form id="unifiedForm" class="waitlist-form" onsubmit="event.preventDefault(); submitMailchimpJSONP(this);" style="display: flex; flex-direction: column; gap: 16px;">
                 <input type="hidden" name="SOURCE" id="unifiedSource" value="Unified Form">
                 
-                <!-- INTERESTS SELECTION -->
-                <div class="form-group" style="margin-bottom: 10px;">
-                    <label style="font-size: 15px; font-weight: 700; color: #1A1A1A; margin-bottom: 12px; display: block;">What would you like to do at Castle? <span style="font-size: 13px; font-weight: 400; color: #4B5563; margin-left: 6px;">(you can select more than one)</span></label>
-                    <div style="display: grid; gap: 10px; grid-template-columns: 1fr;">
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500; color: #2A2A2A;"><input type="checkbox" id="chk_masterclass" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> I want to join the MasterClass Series</label>
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500; color: #2A2A2A;"><input type="checkbox" id="chk_partner" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> I want to collaborate as a Partner</label>
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500; color: #2A2A2A;"><input type="checkbox" id="chk_contact" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> I want to connect with the team</label>
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500; color: #2A2A2A;"><input type="checkbox" id="chk_waitlist" style="width:18px; height:18px; margin:0; accent-color: #A03FA3; display:none;"><span style="display:none;">Waitlist</span></label>
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500; color: #2A2A2A;"><input type="checkbox" id="chk_newsletter" style="width:18px; height:18px; margin:0; accent-color: #A03FA3; display:none;"><span style="display:none;">Newsletter</span></label>
+                                <!-- Interests Checkboxes -->
+                <div class="form-group" style="margin-bottom: 10px; background: #F9FAFB; padding: 15px; border-radius: 8px; border: 1px solid #E5E7EB;">
+                    <label style="font-size: 14px; font-weight: 700; color: #111827; margin-bottom: 12px; display: block; text-transform: uppercase; letter-spacing: 0.5px;">I want to (select all that apply):</label>
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 15px; color: #374151;">
+                            <input type="checkbox" id="chk_waitlist" value="Waitlist" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Join the waitlist
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 15px; color: #374151;">
+                            <input type="checkbox" id="chk_masterclass" value="Masterclass" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Participate in the Masterclass
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 15px; color: #374151;">
+                            <input type="checkbox" id="chk_partner" value="Partner" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Become a Partner
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 15px; color: #374151;">
+                            <input type="checkbox" id="chk_contact" value="Contact" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Talk with the team
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 15px; color: #374151;">
+                            <input type="checkbox" id="chk_newsletter" value="Newsletter" checked style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Receive updates
+                        </label>
                     </div>
                 </div>
 
