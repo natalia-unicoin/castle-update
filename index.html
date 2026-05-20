@@ -1118,10 +1118,7 @@
             <div style="max-width: 800px; width: 100%; text-align: center;">
                 <h3 style="font-size: clamp(40px, 5vw, 72px); font-weight: 700; color: #FFFFFF; margin-bottom: 20px; letter-spacing: -1px; line-height: 1.1; font-family: 'Inter', sans-serif; text-shadow: 0 4px 20px rgba(0,0,0,0.4);">Subscribe to our Newsletter</h3>
                 <p style="font-size: clamp(18px, 1.8vw, 28px); color: rgba(255,255,255,0.95); line-height: 1.6; max-width: 700px; margin: 0 auto var(--spacer-50) auto; font-family: 'Inter', sans-serif; text-shadow: 0 2px 15px rgba(0,0,0,0.4);">Build wealth with intention. Start by receiving the conversations that actually matter.</p>
-                <div style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto; width: 100%; flex-wrap: wrap; justify-content: center;">
-                    <input type="email" id="inline_newsletter_email" placeholder="Your email address" style="flex: 1; padding: 16px 20px; border-radius: 50px; border: none; font-size: 16px; outline: none; min-width: 250px; color: #1A1A1A;">
-                    <button onclick="submitInlineNewsletter()" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 1.5px; padding: 16px 40px; border-radius: 50px; border: none; font-size: 14px; cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(160,63,163,0.3); font-family: 'Inter Tight', sans-serif; text-transform: uppercase;">SUBSCRIBE</button>
-                </div>
+                <button onclick="openUnifiedModal(\'newsletter\')" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 1.5px; padding: 16px 40px; border-radius: 50px; border: none; font-size: 14px; cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(160,63,163,0.3); font-family: \'Inter Tight\', sans-serif; text-transform: uppercase;">SUBSCRIBE</button>
             </div>
         </div>
     </section>
@@ -1286,249 +1283,6 @@
         }
     </script>
 
-    <!-- Unified CTA Modal -->
-    <div id="waitlistModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 99999; background: rgba(17,17,17,0.85); align-items: center; justify-content: center; backdrop-filter: blur(8px);">
-        <div style="background: #FFFFFF; padding: clamp(30px, 5vw, 40px) clamp(20px, 5vw, 40px); border-radius: 8px; max-width: 750px; width: 95%; position: relative; max-height: 95vh; overflow-y: auto; text-align: left; box-shadow: 0 40px 100px rgba(0,0,0,0.4);">
-            <button onclick="document.getElementById('waitlistModal').style.display='none';" style="position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 30px; cursor: pointer; color: #2A2A2A; line-height: 1; padding: 0;">&times;</button>
-            
-            <h2 class="section-heading color-reveal" id="modalTitle" style="margin-top: 0; margin-bottom: 15px; text-align: center; font-size: clamp(24px, 7vw, 42px); white-space: normal; line-height: 1.1;">Bienvenida a Castle</h2>
-            
-            
-            <form action="https://buildyourcastle.us10.list-manage.com/subscribe/post?u=4766d7bd8debcf610dadddfb6&amp;id=53677e9563" target="_blank" method="POST" id="unifiedForm" class="waitlist-form" onsubmit="prepareUnifiedFormSubmit(event)">
-                <input type="hidden" name="SOURCE" id="unifiedSource" value="Waitlist">
-                <div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_4766d7bd8debcf610dadddfb6_53677e9563" tabindex="-1" value=""></div>
-                
-                <!-- Interests Checkboxes -->
-                <div class="form-group" style="margin-bottom: 20px;">
-                    <label style="font-size: 20px; font-weight: 800; color: #A03FA3; margin-bottom: 12px; display: block; text-align: center;">¿Qué te gustaría hacer en Castle?</label>
-                    <style>
-                        .custom-multiselect { position: relative; width: 100%; margin-bottom: 10px; }
-                        .multiselect-dropdown { width: 100%; padding: 14px 15px; border: 1px solid #D1D5DB; border-radius: 8px; background-color: #FFFFFF; font-size: 15px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: #4B5563; font-weight: 500; font-family: 'Inter', sans-serif; transition: border-color 0.2s; }
-                        .multiselect-dropdown:hover { border-color: #A03FA3; }
-                        .multiselect-options { position: absolute; top: 100%; left: 0; right: 0; background: #FFFFFF; border: 1px solid #D1D5DB; border-radius: 8px; margin-top: 4px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); z-index: 1000; max-height: 250px; overflow-y: auto; display: none; padding: 8px 0; }
-                        .multiselect-options.open { display: block; }
-                        .multiselect-options label { display: flex; align-items: center; gap: 12px; padding: 12px 15px; margin: 0; cursor: pointer; font-weight: 500; font-size: 15px; color: #1A1A1A; transition: background 0.2s; }
-                        .multiselect-options label:hover { background: #F9FAFB; }
-                        .multiselect-options input[type="checkbox"] { width: 18px; height: 18px; accent-color: #A03FA3; margin: 0; cursor: pointer; }
-                    </style>
-                    <div class="interests-grid">
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_waitlist" value="Waitlist" style="width:18px; height:18px; margin:0;"> I want to join the MasterClass Series</label>
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_partner" value="Partner" style="width:18px; height:18px; margin:0;"> I want to collaborate with Castle</label>
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_contact" value="Contact" style="width:18px; height:18px; margin:0;"> I want to connect with the team</label>
-                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500;"><input type="checkbox" id="chk_newsletter" value="Newsletter" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> I want to receive updates</label>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="fname">Nombre Completo *</label>
-                        <input type="text" id="fname" name="FNAME" required placeholder="Jane Doe">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Correo Electrónico *</label>
-                        <input type="email" id="email" name="EMAIL" required placeholder="jane@example.com">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="phone">Número de Teléfono</label>
-                        <div style="display: flex; gap: 10px;">
-                            <select id="phone_code" style="width: 35%; padding: 14px 15px; border: 1px solid #D1D5DB; border-radius: 8px; background-color: #FFFFFF; font-family: 'Inter', sans-serif; font-size: 15px; color: #4B5563;">
-                                <option value="" disabled selected>Cód.</option>
-                                <option value="+54">🇦🇷 +54</option>
-                                <option value="+1">🇺🇸 +1</option>
-                                <option value="+34">🇪🇸 +34</option>
-                                <option value="+51">🇵🇪 +51</option>
-                                <option value="+52">🇲🇽 +52</option>
-                                <option value="+55">🇧🇷 +55</option>
-                                <option value="+56">🇨🇱 +56</option>
-                                <option value="+57">🇨🇴 +57</option>
-                                <option value="+58">🇻🇪 +58</option>
-                                <option value="+591">🇧🇴 +591</option>
-                                <option value="+593">🇪🇨 +593</option>
-                                <option value="+595">🇵🇾 +595</option>
-                                <option value="+598">🇺🇾 +598</option>
-                            </select>
-                            <input type="tel" id="phone" name="PHONE" placeholder="234 567 8900" style="width: 65%;">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="age">Edad</label>
-                        <select id="age" name="AGE">
-                            <option value="" disabled selected>Selecciona rango de edad</option>
-                            <option value="18-24">18-24</option>
-                            <option value="25-29">25-29</option>
-                            <option value="30-34">30-34</option>
-                            <option value="35-39">35-39</option>
-                            <option value="40-44">40-44</option>
-                            <option value="45-49">45-49</option>
-                            <option value="50-54">50-54</option>
-                            <option value="55-59">55-59</option>
-                            <option value="60+">60+</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="country">País</label>
-                        <select id="country" name="COUNTRY">
-                            <option value="" disabled selected>Selecciona tu país</option>
-                            <option value="United States">United States</option>
-                            <option value="United Kingdom">United Kingdom</option>
-                            <option value="Canada">Canada</option>
-                            <option value="Australia">Australia</option>
-                            <option value="Argentina">Argentina</option>
-                            <option value="Brazil">Brazil</option>
-                            <option value="Chile">Chile</option>
-                            <option value="Colombia">Colombia</option>
-                            <option value="Mexico">Mexico</option>
-                            <option value="Peru">Peru</option>
-                            <option value="Spain">Spain</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="linkedin">URL de LinkedIn</label>
-                        <input type="url" id="linkedin" name="LINKEDIN" placeholder="https://linkedin.com/in/janedoe">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="company">Empresa / Organización</label>
-                        <input type="text" id="company" name="COMPANY" placeholder="Acme Corp">
-                    </div>
-                    <div class="form-group">
-                        <label for="role">Tu Rol / Cargo</label>
-                        <input type="text" id="role" name="ROLE" placeholder="Founder / CEO">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="comentarios">Cuéntanos en más detalle</label>
-                    <textarea id="comentarios" name="COMENTARIOS" rows="3" placeholder="Escribe aquí los detalles sobre qué te gustaría hacer en Castle..." style="resize: vertical;"></textarea>
-                </div>
-
-                <div class="checkbox-group" style="margin-top: 25px; display: flex; flex-direction: column; gap: 15px;">
-                    <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; margin: 0;">
-                        <input type="checkbox" id="chk_newsletter" value="Newsletter" style="width: 18px; height: 18px; margin: 0; padding: 0; accent-color: #A03FA3; flex-shrink: 0; margin-top: 2px;">
-                        <span style="font-size: 14px; font-weight: 500; line-height: 1.4; color: #4B5563;">Newsletter</span>
-                    </label>
-                    <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; margin: 0;">
-                        <input type="checkbox" id="consent" name="CONSENT" required style="width: 18px; height: 18px; margin: 0; padding: 0; accent-color: #A03FA3; flex-shrink: 0; margin-top: 2px;">
-                        <span style="font-size: 14px; font-weight: 500; line-height: 1.4; color: #4B5563;">Doy mi consentimiento para que Castle me contacte con actualizaciones de la plataforma e invitaciones.</span>
-                    </label>
-                </div>
-
-                <!-- Anti-spam Honeypot -->
-                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_name" tabindex="-1" value=""></div>
-
-                <button type="submit" class="waitlist-submit" style="margin-top: 20px;">Enviar</button>
-            </form>
-        </div>
-    </div>
-    <script src="./js/mailchimp.js"></script>
-
-    <script>
-        function openUnifiedModal(sourceType) {
-            // Uncheck ALL fields whenever opening form naturally
-            const checkboxes = ['chk_masterclass', 'chk_programs', 'chk_platform', 'chk_partner', 'chk_interview', 'chk_jointeam', 'chk_other', 'chk_newsletter', 'consent'];
-            checkboxes.forEach(id => {
-                if(document.getElementById(id)) document.getElementById(id).checked = false;
-            });
-
-            // Show modal
-            if(document.getElementById('waitlistModal')) document.getElementById('waitlistModal').style.display = 'flex';
-
-            // Sync dropdown label
-            if(typeof updateMsLabel === 'function') updateMsLabel();
-        }
-
-        function toggleMultiselect(e) {
-            e.stopPropagation();
-            const options = document.getElementById('ms-options');
-            const arrow = document.getElementById('ms-arrow');
-            options.classList.toggle('open');
-            if (options.classList.contains('open')) {
-                arrow.style.transform = 'rotate(180deg)';
-                document.getElementById('ms-dropdown').style.borderColor = '#A03FA3';
-            } else {
-                arrow.style.transform = 'rotate(0deg)';
-                document.getElementById('ms-dropdown').style.borderColor = '#D1D5DB';
-            }
-        }
-
-        function updateMsLabel() {
-            const container = document.getElementById('ms-options');
-            if(!container) return;
-            const checkboxes = container.querySelectorAll('input[type="checkbox"]');
-            let selectedValues = [];
-            checkboxes.forEach(cb => { 
-                if(cb.checked) selectedValues.push(cb.value); 
-            });
-            
-            const placeholder = document.getElementById('ms-placeholder');
-            if (selectedValues.length === 0) {
-                placeholder.textContent = 'Seleccionar opciones...';
-                placeholder.style.color = '#9CA3AF';
-            } else {
-                placeholder.textContent = selectedValues.join(', ');
-                placeholder.style.color = '#1A1A1A';
-            }
-        }
-
-        // Close multiselect when clicking outside
-        window.addEventListener('click', function(e) {
-            const options = document.getElementById('ms-options');
-            const dropdown = document.getElementById('ms-dropdown');
-            const arrow = document.getElementById('ms-arrow');
-            if (options && options.classList.contains('open')) {
-                if (!dropdown.contains(e.target) && !options.contains(e.target)) {
-                    options.classList.remove('open');
-                    arrow.style.transform = 'rotate(0deg)';
-                    dropdown.style.borderColor = '#D1D5DB';
-                }
-            }
-        });
-
-        function submitInlineNewsletter() {
-            const inlineEmail = document.getElementById('inline_newsletter_email').value;
-            if (inlineEmail) {
-                const modalEmail = document.getElementById('email');
-                if (modalEmail) modalEmail.value = inlineEmail;
-            }
-            openUnifiedModal('newsletter');
-        }
-
-        function prepareUnifiedFormSubmit(e) {
-            // Intercept submit to populate SOURCE with all checked interests
-            let interests = [];
-            if (document.getElementById('chk_programs') && document.getElementById('chk_programs').checked) interests.push("Educación");
-            if (document.getElementById('chk_platform') && document.getElementById('chk_platform').checked) interests.push("Plataforma");
-            if (document.getElementById('chk_partner') && document.getElementById('chk_partner').checked) interests.push("Partner");
-            if (document.getElementById('chk_interview') && document.getElementById('chk_interview').checked) interests.push("Entrevista");
-            if (document.getElementById('chk_jointeam') && document.getElementById('chk_jointeam').checked) interests.push("Equipo");
-            if (document.getElementById('chk_other') && document.getElementById('chk_other').checked) interests.push("Otro");
-            if (document.getElementById('chk_newsletter') && document.getElementById('chk_newsletter').checked) interests.push("Newsletter");
-            
-            if (interests.length === 0) {
-                interests.push("No specific interest");
-            }
-
-            if(document.getElementById('unifiedSource')) document.getElementById('unifiedSource').value = interests.join(", ");
-
-            const phoneInput = document.getElementById('phone');
-            const phoneCode = document.getElementById('phone_code');
-            if(phoneInput && phoneCode && phoneCode.value && phoneInput.value) {
-                if(!phoneInput.value.startsWith(phoneCode.value)) {
-                    phoneInput.value = phoneCode.value + ' ' + phoneInput.value;
-                }
-            }
-        }
-    </script>
-    
     <!-- Cookie Banner -->
     <style>
         .cookie-content { flex-direction: column; text-align: center; }
@@ -1553,6 +1307,291 @@
             }
         });
     </script>
+
+    <!-- INJECTED UNIFIED MODAL START -->
+    <!-- Intl-tel-input CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+    
+    <div id="waitlistModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 99999; background: rgba(17,17,17,0.85); align-items: center; justify-content: center; backdrop-filter: blur(8px); font-family: 'Inter', sans-serif;">
+        <div style="background: #FFFFFF; padding: 40px; border-radius: 8px; max-width: 600px; width: 90%; position: relative; max-height: 90vh; overflow-y: auto; text-align: left; box-shadow: 0 40px 100px rgba(0,0,0,0.4);">
+            <button type="button" onclick="document.getElementById('waitlistModal').style.display='none';" style="position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 30px; cursor: pointer; color: #2A2A2A; line-height: 1; padding: 0;">&times;</button>
+            
+            <h2 class="section-heading color-reveal" style="margin-top: 10px; margin-bottom: 20px; text-align: center; font-size: clamp(22px, 5vw, 36px); letter-spacing: -1px; color: #1A1A1A;">Discover more about Castle</h2>
+            
+            <div id="form_message" style="display:none; padding: 15px; margin-bottom: 20px; border-radius: 6px; font-weight: 600; text-align: center; font-size: 14px;"></div>
+
+            <form id="unifiedForm" class="waitlist-form" onsubmit="event.preventDefault(); submitMailchimpJSONP(this);" style="display: flex; flex-direction: column; gap: 16px;">
+                <input type="hidden" name="SOURCE" id="unifiedSource" value="Unified Form">
+                
+                <!-- INTERESTS SELECTION -->
+                <div class="form-group" style="margin-bottom: 10px;">
+                    <label style="font-size: 15px; font-weight: 700; color: #1A1A1A; margin-bottom: 12px; display: block;">What would you like to do at Castle? <span style="font-size: 13px; font-weight: 400; color: #4B5563; margin-left: 6px;">(you can select more than one)</span></label>
+                    <div style="display: grid; gap: 10px; grid-template-columns: 1fr;">
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500; color: #2A2A2A;"><input type="checkbox" id="chk_masterclass" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> I want to join the MasterClass Series</label>
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500; color: #2A2A2A;"><input type="checkbox" id="chk_partner" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> I want to collaborate as a Partner</label>
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500; color: #2A2A2A;"><input type="checkbox" id="chk_contact" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> I want to connect with the team</label>
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500; color: #2A2A2A;"><input type="checkbox" id="chk_waitlist" style="width:18px; height:18px; margin:0; accent-color: #A03FA3; display:none;"><span style="display:none;">Waitlist</span></label>
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 14px; font-weight: 500; color: #2A2A2A;"><input type="checkbox" id="chk_newsletter" style="width:18px; height:18px; margin:0; accent-color: #A03FA3; display:none;"><span style="display:none;">Newsletter</span></label>
+                    </div>
+                </div>
+
+                <!-- 1. PERSONAL BASIC INFO -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <div class="form-group" style="display: flex; flex-direction: column; gap: 6px;">
+                        <label style="font-size: 13px; font-weight: 600; color: #1A1A1A;">Full Name *</label>
+                        <input type="text" name="FNAME" required placeholder="e.g. Jane Doe" style="padding: 12px 14px; border: 1px solid #D1D5DB; border-radius: 5px; font-family: 'Inter', sans-serif; font-size: 14px; background: #F9FAFB;">
+                    </div>
+                    <div class="form-group" style="display: flex; flex-direction: column; gap: 6px;">
+                        <label style="font-size: 13px; font-weight: 600; color: #1A1A1A;">Email Address *</label>
+                        <input type="email" name="EMAIL" required placeholder="jane@example.com" style="padding: 12px 14px; border: 1px solid #D1D5DB; border-radius: 5px; font-family: 'Inter', sans-serif; font-size: 14px; background: #F9FAFB;">
+                    </div>
+                </div>
+
+                <!-- 2. GEO & PHONE -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <div class="form-group" style="display: flex; flex-direction: column; gap: 6px;">
+                        <label style="font-size: 13px; font-weight: 600; color: #1A1A1A;">Country of residence</label>
+                        <select name="COUNTRY" style="padding: 12px 14px; border: 1px solid #D1D5DB; border-radius: 5px; font-family: 'Inter', sans-serif; font-size: 14px; background: #F9FAFB; appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,<svg width="12" height="12" viewBox="0 0 16 16" fill="%23111"><path d="M4.293 5.293a1 1 0 0 1 1.414 0L8 8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-3 3a1 1 0 0 1-1.414 0l-3-3a1 1 0 0 1 0-1.414z"/></svg>'); background-repeat: no-repeat; background-position: right 14px center;">
+                            <option value="" disabled selected>Select your country</option>
+                            <option value="United States">United States</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Argentina">Argentina</option>
+                            <option value="Mexico">Mexico</option>
+                            <option value="Colombia">Colombia</option>
+                            <option value="Chile">Chile</option>
+                            <option value="Peru">Peru</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="display: flex; flex-direction: column; gap: 6px;">
+                        <label style="font-size: 13px; font-weight: 600; color: #1A1A1A;">Phone Number</label>
+                        <input type="tel" id="phone_intl" placeholder="" style="padding: 12px 14px; border: 1px solid #D1D5DB; border-radius: 5px; font-family: 'Inter', sans-serif; font-size: 14px; background: #F9FAFB; width: 100%;">
+                    </div>
+                </div>
+
+                <!-- 3. DYNAMIC: B2B FIELDS (Partner / Contact) -->
+                <div id="dyn_b2b" style="display: none; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <div class="form-group" style="display: flex; flex-direction: column; gap: 6px;">
+                        <label style="font-size: 13px; font-weight: 600; color: #1A1A1A;">Company / Organization</label>
+                        <input type="text" name="COMPANY" placeholder="e.g. Castle Inc." style="padding: 12px 14px; border: 1px solid #D1D5DB; border-radius: 5px; font-family: 'Inter', sans-serif; font-size: 14px; background: #F9FAFB;">
+                    </div>
+                    <div class="form-group" style="display: flex; flex-direction: column; gap: 6px;">
+                        <label style="font-size: 13px; font-weight: 600; color: #1A1A1A;">Your Role / Title</label>
+                        <input type="text" name="ROLE" placeholder="e.g. Founder / CEO" style="padding: 12px 14px; border: 1px solid #D1D5DB; border-radius: 5px; font-family: 'Inter', sans-serif; font-size: 14px; background: #F9FAFB;">
+                    </div>
+                </div>
+
+                <!-- DYNAMIC: PARTNER ONLY -->
+                <div id="dyn_partner" style="display: none;">
+                    <div class="form-group" style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+                        <label style="font-size: 13px; font-weight: 600; color: #1A1A1A;">Type of Partnership *</label>
+                        <select id="partnertype" name="PARTNERTYP" style="padding: 12px 14px; border: 1px solid #D1D5DB; border-radius: 5px; font-family: 'Inter', sans-serif; font-size: 14px; background: #F9FAFB; appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,<svg width="12" height="12" viewBox="0 0 16 16" fill="%23111"><path d="M4.293 5.293a1 1 0 0 1 1.414 0L8 8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-3 3a1 1 0 0 1-1.414 0l-3-3a1 1 0 0 1 0-1.414z"/></svg>'); background-repeat: no-repeat; background-position: right 14px center;">
+                            <option value="" disabled selected>Select a type</option>
+                            <option value="Content Creator / Influencer">Content Creator / Influencer</option>
+                            <option value="Expert (finance, legal, wellness, etc.)">Expert (finance, legal, wellness, etc.)</option>
+                            <option value="Brand / Company Representative">Brand / Company Representative</option>
+                            <option value="Women's Community Representative">Women's Community Representative</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                        <div class="form-group" style="display: flex; flex-direction: column; gap: 6px;">
+                            <label style="font-size: 13px; font-weight: 600; color: #1A1A1A;">LinkedIn Profile</label>
+                            <input type="url" name="LINKEDIN" placeholder="https://linkedin.com/in/janedoe" style="padding: 12px 14px; border: 1px solid #D1D5DB; border-radius: 5px; font-family: 'Inter', sans-serif; font-size: 14px; background: #F9FAFB;">
+                        </div>
+                        <div class="form-group" style="display: flex; flex-direction: column; gap: 6px;">
+                            <label style="font-size: 13px; font-weight: 600; color: #1A1A1A;">Instagram Profile</label>
+                            <input type="text" name="INSTAGRAM" placeholder="@janedoe" style="padding: 12px 14px; border: 1px solid #D1D5DB; border-radius: 5px; font-family: 'Inter', sans-serif; font-size: 14px; background: #F9FAFB;">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DYNAMIC: CONTACT/MESSAGE -->
+                <div id="dyn_contact" style="display: none;">
+                    <div class="form-group" style="display: flex; flex-direction: column; gap: 6px;">
+                        <label style="font-size: 13px; font-weight: 600; color: #1A1A1A;">Message or inquiry *</label>
+                        <textarea id="message" name="MESSAGE" rows="3" placeholder="How can we help you?" style="padding: 12px 14px; border: 1px solid #D1D5DB; border-radius: 5px; font-family: 'Inter', sans-serif; font-size: 14px; background: #F9FAFB; resize: vertical;"></textarea>
+                    </div>
+                </div>
+                
+                <!-- DYNAMIC: MASTERCLASS/WAITLIST -->
+                <div id="dyn_invest" style="display: none; grid-template-columns: 1fr; gap: 16px;">
+                    <div class="form-group" style="display: flex; flex-direction: column; gap: 6px;">
+                        <label style="font-size: 13px; font-weight: 600; color: #1A1A1A;">Age Range</label>
+                        <select name="AGE" style="padding: 12px 14px; border: 1px solid #D1D5DB; border-radius: 5px; font-family: 'Inter', sans-serif; font-size: 14px; background: #F9FAFB; appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,<svg width="12" height="12" viewBox="0 0 16 16" fill="%23111"><path d="M4.293 5.293a1 1 0 0 1 1.414 0L8 8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-3 3a1 1 0 0 1-1.414 0l-3-3a1 1 0 0 1 0-1.414z"/></svg>'); background-repeat: no-repeat; background-position: right 14px center;">
+                            <option value="" disabled selected>Select age range</option>
+                            <option value="18-24">18-24</option>
+                            <option value="25-29">25-29</option>
+                            <option value="30-34">30-34</option>
+                            <option value="35-39">35-39</option>
+                            <option value="40-44">40-44</option>
+                            <option value="45-49">45-49</option>
+                            <option value="50-54">50-54</option>
+                            <option value="55-59">55-59</option>
+                            <option value="60+">60+</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: flex-start; gap: 10px; margin-top: 10px;">
+                    <input type="checkbox" id="chk_subscription" name="CONSENT" required style="margin-top: 4px; width: 16px; height: 16px; accent-color: #A03FA3;">
+                    <label for="chk_subscription" style="font-size: 12px; color: #4B5563; line-height: 1.4; font-weight: 400; margin:0;">I consent to receive communications from Castle about the platform, MasterClasses, and updates.</label>
+                </div>
+
+                <button type="submit" id="submit_btn" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 2px; padding: 16px 40px; border-radius: 50px; font-size: 14px; border: none; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; margin-top: 10px; width: 100%; box-shadow: 0 10px 20px rgba(160, 63, 163, 0.3); text-transform: uppercase;">SUBMIT</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+    <script>
+        let iti;
+
+        function updateDynamicFields() {
+            const isContact = document.getElementById('chk_contact').checked;
+            const isPartner = document.getElementById('chk_partner').checked;
+            const isMasterclass = document.getElementById('chk_masterclass').checked;
+            const isWaitlist = document.getElementById('chk_waitlist').checked;
+            
+            document.getElementById('dyn_contact').style.display = isContact ? 'block' : 'none';
+            document.getElementById('dyn_partner').style.display = isPartner ? 'block' : 'none';
+            document.getElementById('dyn_b2b').style.display = (isPartner || isContact || isMasterclass) ? 'flex' : 'none';
+            document.getElementById('dyn_invest').style.display = (isMasterclass || isWaitlist) ? 'block' : 'none';
+            
+            // Toggle required attributes
+            document.getElementById('message').required = isContact;
+            document.getElementById('partnertype').required = isPartner;
+        }
+
+        // Setup listeners
+        document.addEventListener("DOMContentLoaded", function() {
+            if(document.getElementById('chk_contact')) document.getElementById('chk_contact').addEventListener('change', updateDynamicFields);
+            if(document.getElementById('chk_partner')) document.getElementById('chk_partner').addEventListener('change', updateDynamicFields);
+            if(document.getElementById('chk_masterclass')) document.getElementById('chk_masterclass').addEventListener('change', updateDynamicFields);
+            if(document.getElementById('chk_waitlist')) document.getElementById('chk_waitlist').addEventListener('change', updateDynamicFields);
+            
+            const phoneInput = document.querySelector("#phone_intl");
+            if (phoneInput) {
+                iti = window.intlTelInput(phoneInput, {
+                    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js",
+                    preferredCountries: ['us', 'gb', 'ca', 'au', 'es'],
+                    separateDialCode: true
+                });
+            }
+        });
+        
+        let isOpening = false;
+        function openUnifiedModal(sourceType) {
+            if(isOpening) return;
+            isOpening = true;
+            
+            if(document.getElementById('waitlistModal')) {
+                document.getElementById('waitlistModal').style.display = 'flex';
+                document.getElementById('form_message').style.display = 'none';
+            }
+            
+            // Uncheck all main interests first
+            if(document.getElementById('chk_waitlist')) document.getElementById('chk_waitlist').checked = false;
+            if(document.getElementById('chk_masterclass')) document.getElementById('chk_masterclass').checked = false;
+            if(document.getElementById('chk_partner')) document.getElementById('chk_partner').checked = false;
+            if(document.getElementById('chk_contact')) document.getElementById('chk_contact').checked = false;
+            if(document.getElementById('chk_newsletter')) document.getElementById('chk_newsletter').checked = false;
+            
+            // Always keep newsletter subscription checked by default
+            if(document.getElementById('chk_subscription')) document.getElementById('chk_subscription').checked = true;
+
+            // Check based on source
+            if (sourceType === 'waitlist') {
+                if(document.getElementById('chk_waitlist')) document.getElementById('chk_waitlist').checked = true;
+            } else if (sourceType === 'masterclass') {
+                if(document.getElementById('chk_masterclass')) document.getElementById('chk_masterclass').checked = true;
+            } else if (sourceType === 'partner') {
+                if(document.getElementById('chk_partner')) document.getElementById('chk_partner').checked = true;
+            } else if (sourceType === 'contact') {
+                if(document.getElementById('chk_contact')) document.getElementById('chk_contact').checked = true;
+            } else if (sourceType === 'newsletter') {
+                if(document.getElementById('chk_newsletter')) document.getElementById('chk_newsletter').checked = true;
+            }
+
+            updateDynamicFields();
+            isOpening = false;
+        }
+
+        function submitMailchimpJSONP(form) {
+            const btn = document.getElementById('submit_btn');
+            btn.innerText = 'SENDING...';
+            btn.disabled = true;
+            
+            // Collect interests
+            let interests = [];
+            if (document.getElementById('chk_masterclass') && document.getElementById('chk_masterclass').checked) interests.push("Masterclass");
+            if (document.getElementById('chk_waitlist') && document.getElementById('chk_waitlist').checked) interests.push("Waitlist");
+            if (document.getElementById('chk_partner') && document.getElementById('chk_partner').checked) interests.push("Partner");
+            if (document.getElementById('chk_contact') && document.getElementById('chk_contact').checked) interests.push("Contact");
+            if (document.getElementById('chk_newsletter') && document.getElementById('chk_newsletter').checked) interests.push("Newsletter");
+            
+            if (interests.length === 0) {
+                interests.push("No specific interest");
+            }
+
+            document.getElementById('unifiedSource').value = interests.join(", ");
+
+            const params = new URLSearchParams();
+            const formData = new FormData(form);
+            for (const [key, value] of formData.entries()) {
+                params.append(key, value);
+            }
+            
+            // Append formatted phone using intl-tel-input
+            if(iti && iti.isValidNumber()) {
+                params.append('PHONE', iti.getNumber());
+            } else if (iti) {
+                params.append('PHONE', document.getElementById('phone_intl').value);
+            }
+            
+            // Add honeypot
+            params.append('b_4766d7bd8debcf610dadddfb6_53677e9563', '');
+            
+            // JSONP callback
+            const callbackName = 'mcCallback' + Math.round(100000 * Math.random());
+            params.append('c', callbackName);
+            
+            const url = "https://buildyourcastle.us10.list-manage.com/subscribe/post-json?u=4766d7bd8debcf610dadddfb6&id=53677e9563&" + params.toString();
+            
+            window[callbackName] = function(data) {
+                btn.innerText = 'SUBMIT';
+                btn.disabled = false;
+                const msgDiv = document.getElementById('form_message');
+                msgDiv.style.display = 'block';
+                if (data.result === 'success') {
+                    msgDiv.style.backgroundColor = '#D1FAE5';
+                    msgDiv.style.color = '#065F46';
+                    msgDiv.innerHTML = 'Thank you! We have successfully received your information.';
+                    form.reset();
+                    updateDynamicFields();
+                    setTimeout(() => { 
+                        if(document.getElementById('waitlistModal')) document.getElementById('waitlistModal').style.display='none'; 
+                        msgDiv.style.display='none'; 
+                    }, 4000);
+                } else {
+                    msgDiv.style.backgroundColor = '#FEE2E2';
+                    msgDiv.style.color = '#991B1B';
+                    msgDiv.innerHTML = 'There was an error: ' + data.msg;
+                }
+                delete window[callbackName];
+                document.body.removeChild(script);
+            };
+            
+            const script = document.createElement('script');
+            script.src = url;
+            document.body.appendChild(script);
+        }
+    </script>
+    <!-- INJECTED UNIFIED MODAL END -->
+    
 </body>
 
 
