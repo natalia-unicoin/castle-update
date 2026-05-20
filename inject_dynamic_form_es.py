@@ -68,9 +68,21 @@ def process_file(filename):
                 </div>
                 <div class="form-row" style="margin-top: 15px;">
                     <div class="form-group">
+                        <label for="age" style="font-weight: 600; font-size: 13px; color: #4B5563;">Edad *</label>
+                        <select id="age" name="AGE" required style="border-radius: 6px; border: 1px solid #D1D5DB; padding: 12px; width: 100%; font-size: 15px; background: #fff;">
+                            <option value="" disabled selected>Tu edad</option>
+                            <option value="18-24">18-24</option>
+                            <option value="25-34">25-34</option>
+                            <option value="35-44">35-44</option>
+                            <option value="45-54">45-54</option>
+                            <option value="55-64">55-64</option>
+                            <option value="65+">65+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="country" style="font-weight: 600; font-size: 13px; color: #4B5563;">País de Residencia *</label>
                         <select id="country" name="COUNTRY" required style="border-radius: 6px; border: 1px solid #D1D5DB; padding: 12px; width: 100%; font-size: 15px; background: #fff;">
-                            <option value="" disabled selected>Selecciona tu país</option>
+                            <option value="" disabled selected>Tu país</option>
                             <option value="Estados Unidos">Estados Unidos</option>
                             <option value="España">España</option>
                             <option value="México">México</option>
@@ -94,10 +106,10 @@ def process_file(filename):
                             <option value="Otro">Otro</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="phone_intl" style="font-weight: 600; font-size: 13px; color: #4B5563; display:block;">Teléfono *</label>
-                        <input type="tel" id="phone_intl" required style="border-radius: 6px; border: 1px solid #D1D5DB; padding: 12px 12px 12px 50px; font-size: 15px; width: 100%; outline: none; box-sizing: border-box;">
-                    </div>
+                </div>
+                <div class="form-group" style="margin-top: 15px;">
+                    <label for="phone_intl" style="font-weight: 600; font-size: 13px; color: #4B5563; display:block;">Teléfono *</label>
+                    <input type="tel" id="phone_intl" required style="border-radius: 6px; border: 1px solid #D1D5DB; padding: 12px 12px 12px 50px; font-size: 15px; width: 100%; outline: none; box-sizing: border-box;">
                 </div>
 
                 <!-- DYNAMIC FIELDS -->
@@ -115,8 +127,8 @@ def process_file(filename):
                         <input type="text" id="company" name="COMPANY" placeholder="Ej. Acme Corp" style="border-radius: 6px; border: 1px solid #D1D5DB; padding: 12px; width: 100%; font-size: 15px;">
                     </div>
                     <div class="form-group">
-                        <label for="role" style="font-weight: 600; font-size: 13px; color: #4B5563;">Cargo</label>
-                        <input type="text" id="role" name="ROLE" placeholder="Ej. Founder / CEO" style="border-radius: 6px; border: 1px solid #D1D5DB; padding: 12px; width: 100%; font-size: 15px;">
+                        <label for="role" style="font-weight: 600; font-size: 13px; color: #4B5563;">Profesión / Cargo</label>
+                        <input type="text" id="role" name="ROLE" placeholder="Ej. Médico / CEO" style="border-radius: 6px; border: 1px solid #D1D5DB; padding: 12px; width: 100%; font-size: 15px;">
                     </div>
                 </div>
 
@@ -202,7 +214,7 @@ def process_file(filename):
             
             document.getElementById('dyn_contact').style.display = isContact ? 'block' : 'none';
             document.getElementById('dyn_partner').style.display = isPartner ? 'block' : 'none';
-            document.getElementById('dyn_b2b').style.display = (isPartner || isContact) ? 'flex' : 'none';
+            document.getElementById('dyn_b2b').style.display = (isPartner || isContact || isMasterclass) ? 'flex' : 'none';
             document.getElementById('dyn_invest').style.display = (isMasterclass || isWaitlist) ? 'block' : 'none';
             
             // Toggle required attributes
