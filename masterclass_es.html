@@ -1061,6 +1061,18 @@
                     <textarea id="message" name="MESSAGE" rows="3" placeholder="¿En qué te podemos ayudar?" style="border-radius: 6px; border: 1px solid #D1D5DB; padding: 12px; width: 100%; font-size: 15px; font-family: inherit; resize: vertical;"></textarea>
                 </div>
 
+                <!-- B2B Fields -->
+                <div class="form-row" id="dyn_b2b" style="display: none; margin-top: 15px;">
+                    <div class="form-group">
+                        <label for="company" style="font-weight: 600; font-size: 13px; color: #4B5563;">Empresa</label>
+                        <input type="text" id="company" name="COMPANY" placeholder="Ej. Acme Corp" style="border-radius: 6px; border: 1px solid #D1D5DB; padding: 12px; width: 100%; font-size: 15px;">
+                    </div>
+                    <div class="form-group">
+                        <label for="role" style="font-weight: 600; font-size: 13px; color: #4B5563;">Cargo</label>
+                        <input type="text" id="role" name="ROLE" placeholder="Ej. Founder / CEO" style="border-radius: 6px; border: 1px solid #D1D5DB; padding: 12px; width: 100%; font-size: 15px;">
+                    </div>
+                </div>
+
                 <!-- Partner Type -->
                 <div id="dyn_partner" style="display: none; margin-top: 15px;">
                     <div class="form-group">
@@ -1072,16 +1084,6 @@
                             <option value="organization">Organization</option>
                             <option value="expert">Expert</option>
                         </select>
-                    </div>
-                    <div class="form-row" style="margin-top: 15px;">
-                        <div class="form-group">
-                            <label for="company" style="font-weight: 600; font-size: 13px; color: #4B5563;">Empresa</label>
-                            <input type="text" id="company" name="COMPANY" placeholder="Ej. Acme Corp" style="border-radius: 6px; border: 1px solid #D1D5DB; padding: 12px; width: 100%; font-size: 15px;">
-                        </div>
-                        <div class="form-group">
-                            <label for="role" style="font-weight: 600; font-size: 13px; color: #4B5563;">Cargo</label>
-                            <input type="text" id="role" name="ROLE" placeholder="Ej. Founder / CEO" style="border-radius: 6px; border: 1px solid #D1D5DB; padding: 12px; width: 100%; font-size: 15px;">
-                        </div>
                     </div>
                     <div class="form-group" style="margin-top: 15px;">
                         <label for="partnermsg" style="font-weight: 600; font-size: 13px; color: #4B5563;">Comentarios adicionales (Opcional)</label>
@@ -1122,7 +1124,9 @@
                 <!-- Form message container -->
                 <div id="form_message" style="display: none; margin-top: 15px; padding: 15px; border-radius: 6px; font-weight: 500; text-align: center; font-size: 14px;"></div>
 
-                <button type="submit" id="submit_btn" style="width: 100%; background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 1.5px; padding: 16px; border-radius: 50px; border: none; font-size: 15px; cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 10px 20px rgba(160,63,163,0.3); font-family: 'Inter Tight', sans-serif; text-transform: uppercase; margin-top: 25px;">APLICAR AHORA</button>
+                <p style="font-size: 11px; color: #6B7280; text-align: center; margin-top: 18px; margin-bottom: 0; line-height: 1.4;">Al hacer clic en "Aplicar Ahora", confirmas que has leído y aceptas nuestra <a href="terminos-es.html" style="color: #A03FA3; text-decoration: underline;">Política de Privacidad</a>.</p>
+
+                <button type="submit" id="submit_btn" style="width: 100%; background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 1.5px; padding: 16px; border-radius: 50px; border: none; font-size: 15px; cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 10px 20px rgba(160,63,163,0.3); font-family: 'Inter Tight', sans-serif; text-transform: uppercase; margin-top: 15px;">APLICAR AHORA</button>
             </form>
         </div>
     </div>
@@ -1303,6 +1307,152 @@
             
             document.getElementById('dyn_contact').style.display = isContact ? 'block' : 'none';
             document.getElementById('dyn_partner').style.display = isPartner ? 'block' : 'none';
+            document.getElementById('dyn_invest').style.display = (isMasterclass || isWaitlist) ? 'block' : 'none';
+            
+            // Toggle required attributes
+            document.getElementById('message').required = isContact;
+            document.getElementById('partnertype').required = isPartner;
+        }
+
+        // Setup listeners
+        document.addEventListener("DOMContentLoaded", function() {
+            if(document.getElementById('chk_contact')) document.getElementById('chk_contact').addEventListener('change', updateDynamicFields);
+            if(document.getElementById('chk_partner')) document.getElementById('chk_partner').addEventListener('change', updateDynamicFields);
+            if(document.getElementById('chk_masterclass')) document.getElementById('chk_masterclass').addEventListener('change', updateDynamicFields);
+            if(document.getElementById('chk_waitlist')) document.getElementById('chk_waitlist').addEventListener('change', updateDynamicFields);
+            
+            const phoneInput = document.querySelector("#phone_intl");
+            if (phoneInput) {
+                iti = window.intlTelInput(phoneInput, {
+                    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js",
+                    preferredCountries: ['es', 'us', 'mx', 'ar', 'co'],
+                    separateDialCode: true
+                });
+            }
+        });
+        
+        let isOpening = false;
+        function openUnifiedModal(sourceType) {
+            if(isOpening) return;
+            isOpening = true;
+            
+            if(document.getElementById('waitlistModal')) {
+                document.getElementById('waitlistModal').style.display = 'flex';
+                document.getElementById('form_message').style.display = 'none';
+            }
+            
+            // Uncheck all main interests first
+            if(document.getElementById('chk_waitlist')) document.getElementById('chk_waitlist').checked = false;
+            if(document.getElementById('chk_masterclass')) document.getElementById('chk_masterclass').checked = false;
+            if(document.getElementById('chk_partner')) document.getElementById('chk_partner').checked = false;
+            if(document.getElementById('chk_contact')) document.getElementById('chk_contact').checked = false;
+            if(document.getElementById('chk_newsletter')) document.getElementById('chk_newsletter').checked = false;
+            
+            // Always keep newsletter subscription checked by default
+            if(document.getElementById('chk_subscription')) document.getElementById('chk_subscription').checked = true;
+
+            // Check based on source
+            if (sourceType === 'waitlist') {
+                if(document.getElementById('chk_waitlist')) document.getElementById('chk_waitlist').checked = true;
+            } else if (sourceType === 'masterclass') {
+                if(document.getElementById('chk_masterclass')) document.getElementById('chk_masterclass').checked = true;
+            } else if (sourceType === 'partner') {
+                if(document.getElementById('chk_partner')) document.getElementById('chk_partner').checked = true;
+            } else if (sourceType === 'contact') {
+                if(document.getElementById('chk_contact')) document.getElementById('chk_contact').checked = true;
+            } else if (sourceType === 'newsletter') {
+                if(document.getElementById('chk_newsletter')) document.getElementById('chk_newsletter').checked = true;
+            }
+
+            updateDynamicFields();
+            isOpening = false;
+        }
+
+        function submitMailchimpJSONP(form) {
+            const btn = document.getElementById('submit_btn');
+            btn.innerText = 'ENVIANDO...';
+            btn.disabled = true;
+            
+            // Collect interests
+            let interests = [];
+            if (document.getElementById('chk_masterclass') && document.getElementById('chk_masterclass').checked) interests.push("Masterclass");
+            if (document.getElementById('chk_waitlist') && document.getElementById('chk_waitlist').checked) interests.push("Waitlist");
+            if (document.getElementById('chk_partner') && document.getElementById('chk_partner').checked) interests.push("Partner");
+            if (document.getElementById('chk_contact') && document.getElementById('chk_contact').checked) interests.push("Contact");
+            if (document.getElementById('chk_newsletter') && document.getElementById('chk_newsletter').checked) interests.push("Newsletter");
+            
+            if (interests.length === 0) {
+                interests.push("No specific interest");
+            }
+
+            document.getElementById('unifiedSource').value = interests.join(", ");
+
+            const params = new URLSearchParams();
+            const formData = new FormData(form);
+            for (const [key, value] of formData.entries()) {
+                params.append(key, value);
+            }
+            
+            // Append formatted phone using intl-tel-input
+            if(iti && iti.isValidNumber()) {
+                params.append('PHONE', iti.getNumber());
+            } else if (iti) {
+                params.append('PHONE', document.getElementById('phone_intl').value);
+            }
+            
+            // Add honeypot
+            params.append('b_4766d7bd8debcf610dadddfb6_53677e9563', '');
+            
+            // JSONP callback
+            const callbackName = 'mcCallback' + Math.round(100000 * Math.random());
+            params.append('c', callbackName);
+            
+            const url = "https://buildyourcastle.us10.list-manage.com/subscribe/post-json?u=4766d7bd8debcf610dadddfb6&id=53677e9563&" + params.toString();
+            
+            window[callbackName] = function(data) {
+                btn.innerText = 'APLICAR AHORA';
+                btn.disabled = false;
+                const msgDiv = document.getElementById('form_message');
+                msgDiv.style.display = 'block';
+                if (data.result === 'success') {
+                    msgDiv.style.backgroundColor = '#D1FAE5';
+                    msgDiv.style.color = '#065F46';
+                    msgDiv.innerHTML = '¡Gracias! Hemos recibido tus datos correctamente.';
+                    form.reset();
+                    updateDynamicFields();
+                    setTimeout(() => { 
+                        if(document.getElementById('waitlistModal')) document.getElementById('waitlistModal').style.display='none'; 
+                        msgDiv.style.display='none'; 
+                    }, 4000);
+                } else {
+                    msgDiv.style.backgroundColor = '#FEE2E2';
+                    msgDiv.style.color = '#991B1B';
+                    msgDiv.innerHTML = 'Hubo un error: ' + data.msg;
+                }
+                delete window[callbackName];
+                document.body.removeChild(script);
+            };
+            
+            const script = document.createElement('script');
+            script.src = url;
+            document.body.appendChild(script);
+        }
+    </script>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+    <script>
+        let iti;
+        
+        function updateDynamicFields() {
+            const isContact = document.getElementById('chk_contact').checked;
+            const isPartner = document.getElementById('chk_partner').checked;
+            const isMasterclass = document.getElementById('chk_masterclass').checked;
+            const isWaitlist = document.getElementById('chk_waitlist').checked;
+            
+            document.getElementById('dyn_contact').style.display = isContact ? 'block' : 'none';
+            document.getElementById('dyn_partner').style.display = isPartner ? 'block' : 'none';
+            document.getElementById('dyn_b2b').style.display = (isPartner || isContact) ? 'flex' : 'none';
             document.getElementById('dyn_invest').style.display = (isMasterclass || isWaitlist) ? 'block' : 'none';
             
             // Toggle required attributes

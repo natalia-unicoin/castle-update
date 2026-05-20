@@ -108,6 +108,18 @@ def process_file(filename):
                     <textarea id="message" name="MESSAGE" rows="3" placeholder="¿En qué te podemos ayudar?" style="border-radius: 6px; border: 1px solid #D1D5DB; padding: 12px; width: 100%; font-size: 15px; font-family: inherit; resize: vertical;"></textarea>
                 </div>
 
+                <!-- B2B Fields -->
+                <div class="form-row" id="dyn_b2b" style="display: none; margin-top: 15px;">
+                    <div class="form-group">
+                        <label for="company" style="font-weight: 600; font-size: 13px; color: #4B5563;">Empresa</label>
+                        <input type="text" id="company" name="COMPANY" placeholder="Ej. Acme Corp" style="border-radius: 6px; border: 1px solid #D1D5DB; padding: 12px; width: 100%; font-size: 15px;">
+                    </div>
+                    <div class="form-group">
+                        <label for="role" style="font-weight: 600; font-size: 13px; color: #4B5563;">Cargo</label>
+                        <input type="text" id="role" name="ROLE" placeholder="Ej. Founder / CEO" style="border-radius: 6px; border: 1px solid #D1D5DB; padding: 12px; width: 100%; font-size: 15px;">
+                    </div>
+                </div>
+
                 <!-- Partner Type -->
                 <div id="dyn_partner" style="display: none; margin-top: 15px;">
                     <div class="form-group">
@@ -119,16 +131,6 @@ def process_file(filename):
                             <option value="organization">Organization</option>
                             <option value="expert">Expert</option>
                         </select>
-                    </div>
-                    <div class="form-row" style="margin-top: 15px;">
-                        <div class="form-group">
-                            <label for="company" style="font-weight: 600; font-size: 13px; color: #4B5563;">Empresa</label>
-                            <input type="text" id="company" name="COMPANY" placeholder="Ej. Acme Corp" style="border-radius: 6px; border: 1px solid #D1D5DB; padding: 12px; width: 100%; font-size: 15px;">
-                        </div>
-                        <div class="form-group">
-                            <label for="role" style="font-weight: 600; font-size: 13px; color: #4B5563;">Cargo</label>
-                            <input type="text" id="role" name="ROLE" placeholder="Ej. Founder / CEO" style="border-radius: 6px; border: 1px solid #D1D5DB; padding: 12px; width: 100%; font-size: 15px;">
-                        </div>
                     </div>
                     <div class="form-group" style="margin-top: 15px;">
                         <label for="partnermsg" style="font-weight: 600; font-size: 13px; color: #4B5563;">Comentarios adicionales (Opcional)</label>
@@ -169,7 +171,9 @@ def process_file(filename):
                 <!-- Form message container -->
                 <div id="form_message" style="display: none; margin-top: 15px; padding: 15px; border-radius: 6px; font-weight: 500; text-align: center; font-size: 14px;"></div>
 
-                <button type="submit" id="submit_btn" style="width: 100%; background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 1.5px; padding: 16px; border-radius: 50px; border: none; font-size: 15px; cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 10px 20px rgba(160,63,163,0.3); font-family: 'Inter Tight', sans-serif; text-transform: uppercase; margin-top: 25px;">APLICAR AHORA</button>
+                <p style="font-size: 11px; color: #6B7280; text-align: center; margin-top: 18px; margin-bottom: 0; line-height: 1.4;">Al hacer clic en "Aplicar Ahora", confirmas que has leído y aceptas nuestra <a href="terminos-es.html" style="color: #A03FA3; text-decoration: underline;">Política de Privacidad</a>.</p>
+
+                <button type="submit" id="submit_btn" style="width: 100%; background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 1.5px; padding: 16px; border-radius: 50px; border: none; font-size: 15px; cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 10px 20px rgba(160,63,163,0.3); font-family: 'Inter Tight', sans-serif; text-transform: uppercase; margin-top: 15px;">APLICAR AHORA</button>
             </form>
         </div>
     </div>"""
@@ -198,6 +202,7 @@ def process_file(filename):
             
             document.getElementById('dyn_contact').style.display = isContact ? 'block' : 'none';
             document.getElementById('dyn_partner').style.display = isPartner ? 'block' : 'none';
+            document.getElementById('dyn_b2b').style.display = (isPartner || isContact) ? 'flex' : 'none';
             document.getElementById('dyn_invest').style.display = (isMasterclass || isWaitlist) ? 'block' : 'none';
             
             // Toggle required attributes
