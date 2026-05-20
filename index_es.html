@@ -1306,10 +1306,10 @@
                     <label style="font-size: 14px; font-weight: 700; color: #111827; margin-bottom: 12px; display: block; text-transform: uppercase; letter-spacing: 0.5px;">Quiero (selecciona todas las que apliquen):</label>
                     <div style="display: flex; flex-direction: column; gap: 10px;">
                         <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 15px; color: #374151;">
-                            <input type="checkbox" id="chk_masterclass" value="Masterclass" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Participar en la Masterclass
+                            <input type="checkbox" id="chk_waitlist" value="Waitlist" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Unirme a la waitlist
                         </label>
                         <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 15px; color: #374151;">
-                            <input type="checkbox" id="chk_waitlist" value="Waitlist" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Unirme a la waitlist
+                            <input type="checkbox" id="chk_masterclass" value="Masterclass" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Participar en la Masterclass
                         </label>
                         <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 15px; color: #374151;">
                             <input type="checkbox" id="chk_partner" value="Partner" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Ser Partner
@@ -1482,6 +1482,151 @@
     
 
     
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+    <script>
+        let iti;
+        
+        function updateDynamicFields() {
+            const isContact = document.getElementById('chk_contact').checked;
+            const isPartner = document.getElementById('chk_partner').checked;
+            const isMasterclass = document.getElementById('chk_masterclass').checked;
+            const isWaitlist = document.getElementById('chk_waitlist').checked;
+            
+            document.getElementById('dyn_contact').style.display = isContact ? 'block' : 'none';
+            document.getElementById('dyn_partner').style.display = isPartner ? 'block' : 'none';
+            document.getElementById('dyn_invest').style.display = (isMasterclass || isWaitlist) ? 'block' : 'none';
+            
+            // Toggle required attributes
+            document.getElementById('message').required = isContact;
+            document.getElementById('partnertype').required = isPartner;
+        }
+
+        // Setup listeners
+        document.addEventListener("DOMContentLoaded", function() {
+            if(document.getElementById('chk_contact')) document.getElementById('chk_contact').addEventListener('change', updateDynamicFields);
+            if(document.getElementById('chk_partner')) document.getElementById('chk_partner').addEventListener('change', updateDynamicFields);
+            if(document.getElementById('chk_masterclass')) document.getElementById('chk_masterclass').addEventListener('change', updateDynamicFields);
+            if(document.getElementById('chk_waitlist')) document.getElementById('chk_waitlist').addEventListener('change', updateDynamicFields);
+            
+            const phoneInput = document.querySelector("#phone_intl");
+            if (phoneInput) {
+                iti = window.intlTelInput(phoneInput, {
+                    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js",
+                    preferredCountries: ['es', 'us', 'mx', 'ar', 'co'],
+                    separateDialCode: true
+                });
+            }
+        });
+        
+        let isOpening = false;
+        function openUnifiedModal(sourceType) {
+            if(isOpening) return;
+            isOpening = true;
+            
+            if(document.getElementById('waitlistModal')) {
+                document.getElementById('waitlistModal').style.display = 'flex';
+                document.getElementById('form_message').style.display = 'none';
+            }
+            
+            // Uncheck all main interests first
+            if(document.getElementById('chk_waitlist')) document.getElementById('chk_waitlist').checked = false;
+            if(document.getElementById('chk_masterclass')) document.getElementById('chk_masterclass').checked = false;
+            if(document.getElementById('chk_partner')) document.getElementById('chk_partner').checked = false;
+            if(document.getElementById('chk_contact')) document.getElementById('chk_contact').checked = false;
+            if(document.getElementById('chk_newsletter')) document.getElementById('chk_newsletter').checked = false;
+            
+            // Always keep newsletter subscription checked by default
+            if(document.getElementById('chk_subscription')) document.getElementById('chk_subscription').checked = true;
+
+            // Check based on source
+            if (sourceType === 'waitlist') {
+                if(document.getElementById('chk_waitlist')) document.getElementById('chk_waitlist').checked = true;
+            } else if (sourceType === 'masterclass') {
+                if(document.getElementById('chk_masterclass')) document.getElementById('chk_masterclass').checked = true;
+            } else if (sourceType === 'partner') {
+                if(document.getElementById('chk_partner')) document.getElementById('chk_partner').checked = true;
+            } else if (sourceType === 'contact') {
+                if(document.getElementById('chk_contact')) document.getElementById('chk_contact').checked = true;
+            } else if (sourceType === 'newsletter') {
+                if(document.getElementById('chk_newsletter')) document.getElementById('chk_newsletter').checked = true;
+            }
+
+            updateDynamicFields();
+            isOpening = false;
+        }
+
+        function submitMailchimpJSONP(form) {
+            const btn = document.getElementById('submit_btn');
+            btn.innerText = 'ENVIANDO...';
+            btn.disabled = true;
+            
+            // Collect interests
+            let interests = [];
+            if (document.getElementById('chk_masterclass') && document.getElementById('chk_masterclass').checked) interests.push("Masterclass");
+            if (document.getElementById('chk_waitlist') && document.getElementById('chk_waitlist').checked) interests.push("Waitlist");
+            if (document.getElementById('chk_partner') && document.getElementById('chk_partner').checked) interests.push("Partner");
+            if (document.getElementById('chk_contact') && document.getElementById('chk_contact').checked) interests.push("Contact");
+            if (document.getElementById('chk_newsletter') && document.getElementById('chk_newsletter').checked) interests.push("Newsletter");
+            
+            if (interests.length === 0) {
+                interests.push("No specific interest");
+            }
+
+            document.getElementById('unifiedSource').value = interests.join(", ");
+
+            const params = new URLSearchParams();
+            const formData = new FormData(form);
+            for (const [key, value] of formData.entries()) {
+                params.append(key, value);
+            }
+            
+            // Append formatted phone using intl-tel-input
+            if(iti && iti.isValidNumber()) {
+                params.append('PHONE', iti.getNumber());
+            } else if (iti) {
+                params.append('PHONE', document.getElementById('phone_intl').value);
+            }
+            
+            // Add honeypot
+            params.append('b_4766d7bd8debcf610dadddfb6_53677e9563', '');
+            
+            // JSONP callback
+            const callbackName = 'mcCallback' + Math.round(100000 * Math.random());
+            params.append('c', callbackName);
+            
+            const url = "https://buildyourcastle.us10.list-manage.com/subscribe/post-json?u=4766d7bd8debcf610dadddfb6&id=53677e9563&" + params.toString();
+            
+            window[callbackName] = function(data) {
+                btn.innerText = 'APLICAR AHORA';
+                btn.disabled = false;
+                const msgDiv = document.getElementById('form_message');
+                msgDiv.style.display = 'block';
+                if (data.result === 'success') {
+                    msgDiv.style.backgroundColor = '#D1FAE5';
+                    msgDiv.style.color = '#065F46';
+                    msgDiv.innerHTML = '¡Gracias! Hemos recibido tus datos correctamente.';
+                    form.reset();
+                    updateDynamicFields();
+                    setTimeout(() => { 
+                        if(document.getElementById('waitlistModal')) document.getElementById('waitlistModal').style.display='none'; 
+                        msgDiv.style.display='none'; 
+                    }, 4000);
+                } else {
+                    msgDiv.style.backgroundColor = '#FEE2E2';
+                    msgDiv.style.color = '#991B1B';
+                    msgDiv.innerHTML = 'Hubo un error: ' + data.msg;
+                }
+                delete window[callbackName];
+                document.body.removeChild(script);
+            };
+            
+            const script = document.createElement('script');
+            script.src = url;
+            document.body.appendChild(script);
+        }
+    </script>
     
 
     <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>

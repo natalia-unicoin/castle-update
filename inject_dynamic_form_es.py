@@ -39,10 +39,10 @@ def process_file(filename):
                     <label style="font-size: 14px; font-weight: 700; color: #111827; margin-bottom: 12px; display: block; text-transform: uppercase; letter-spacing: 0.5px;">Quiero (selecciona todas las que apliquen):</label>
                     <div style="display: flex; flex-direction: column; gap: 10px;">
                         <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 15px; color: #374151;">
-                            <input type="checkbox" id="chk_masterclass" value="Masterclass" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Participar en la Masterclass
+                            <input type="checkbox" id="chk_waitlist" value="Waitlist" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Unirme a la waitlist
                         </label>
                         <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 15px; color: #374151;">
-                            <input type="checkbox" id="chk_waitlist" value="Waitlist" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Unirme a la waitlist
+                            <input type="checkbox" id="chk_masterclass" value="Masterclass" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Participar en la Masterclass
                         </label>
                         <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 15px; color: #374151;">
                             <input type="checkbox" id="chk_partner" value="Partner" style="width:18px; height:18px; margin:0; accent-color: #A03FA3;"> Ser Partner
