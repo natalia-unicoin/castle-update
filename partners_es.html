@@ -126,10 +126,20 @@
             letter-spacing: 4px; margin-bottom: -10px;
         }
         .hero-title {
-            font-size: clamp(64px, 10vw, 130px); font-weight: 700; line-height: 0.95; 
-            letter-spacing: -4px; margin-bottom: 0px; color: #FFFFFF; font-family: 'Inter', sans-serif;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: clamp(45px, 6.5vw, 80px);
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 30px;
+            color: #FFFFFF;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            text-align: center;
         }
-        .hero-title .highlight { color: #A03FA3; }
+        .hero-line {
+            display: block;
+            white-space: nowrap;
+        }
         .hero-description {
             color: rgba(255,255,255,0.9); font-size: clamp(20px, 2.5vw, 28px); line-height: 1.25;
             max-width: 650px; margin: 8px 0 16px 0; font-weight: 400; font-family: 'Inter', sans-serif;
@@ -153,7 +163,8 @@
             .logo img { height: 24px; }
             .hero { padding: 0; }
             .hero-img { object-position: center top; }
-            .hero-title { font-size: clamp(40px, 10vw, 56px); text-align: center; line-height: 1; letter-spacing: -1px; }
+            .hero-title { font-size: clamp(30px, 7vw, 48px) !important; text-align: center; line-height: 1.1; letter-spacing: -1px; }
+            .hero-line { white-space: normal; }
             .hero-container { padding: 0 10px 20px 10px; margin-left: 0; justify-content: flex-end; align-items: center; }
             .hero-content { gap: 20px; text-align: center; align-items: center; justify-content: flex-end; padding-top: 55vh; }
             .hero-cta-group { width: 100%; display: flex; }
@@ -682,7 +693,7 @@
         
         <div class="container" style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: center; position: relative; z-index: 2;">
             <div style="text-align: center; width: 100%;">
-                <h1 class="hero-title color-reveal" style="color: #FFFFFF; font-size: clamp(50px, 7vw, 90px); letter-spacing: -2px; margin-bottom: 30px; text-shadow: 0 4px 12px rgba(0,0,0,0.5); font-family: 'Inter', sans-serif; font-weight: 700; line-height: 1.1;"><span style="display: block;">Convierte tu Pasión e Influencia</span><span style="display: block;">en Inversión.</span></h1>
+                <h1 class="hero-title color-reveal"><span class="hero-line">Convierte tu Pasión e Influencia</span><span class="hero-line">en Inversión.</span></h1>
                 <p style="color: rgba(255,255,255,0.95); font-size: clamp(18px, 2vw, 24px); line-height: 1.5; max-width: 700px; margin: 0 auto; font-family: 'Inter', sans-serif;">Únete al <strong style="color: #FFFFFF; font-weight: 700;">Movimiento</strong> que ayuda a las Mujeres a construir <strong style="color: #FFFFFF; font-weight: 700;">Riqueza</strong> y participar del Futuro que están creando.</p>
             </div>
         </div>
