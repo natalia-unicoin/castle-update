@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Castle | Own Your Wealth. Own Your Future.</title>
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://natalia-unicoin.github.io/castle/">
+    <meta property="og:title" content="Castle | Own Your Wealth. Own Your Future.">
+    <meta property="og:description" content="The AI-powered platform helping Women build Wealth, invest with confidence, and earn rewards for financial progress.">
+    <meta property="og:image" content="https://natalia-unicoin.github.io/castle/public/images/common/hero-bg.png?v=5">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://natalia-unicoin.github.io/castle/">
+    <meta name="twitter:title" content="Castle | Own Your Wealth. Own Your Future.">
+    <meta name="twitter:description" content="The AI-powered platform helping Women build Wealth, invest with confidence, and earn rewards for financial progress.">
+    <meta name="twitter:image" content="https://natalia-unicoin.github.io/castle/public/images/common/hero-bg.png?v=5">
+
+    <link rel="icon" href="./public/images/common/favicon.png?v=10" type="image/png">
+    <link rel="shortcut icon" href="./public/images/common/favicon.png?v=10">
+    <link rel="apple-touch-icon" href="./public/images/common/favicon.png?v=10">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800;900&display=swap');
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Inter', system-ui, sans-serif; 
+            background-color: #FFFFFF;
+            color: #1A1A1A;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        header {
+            position: fixed; top: 0; left: 0; width: 100%; padding: 16px clamp(30px, 5vw, 100px);
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            z-index: 100; border-bottom: 1px solid #E5E7EB; box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .header-logo img { height: 32px; width: auto; object-fit: contain; transition: transform 0.3s; }
+        .header-logo:hover img { transform: scale(1.05); }
+        
+        .nav-links { display: flex; align-items: center; gap: 40px; }
+        .nav-links a { color: #1A1A1A; text-decoration: none; font-size: 15px; font-weight: 600; font-family: 'Inter', sans-serif; transition: color 0.2s;  letter-spacing: 1px; }
+        .nav-links a:hover { color: #A03FA3; }
+        
+        .header-actions { display: flex; align-items: center; gap: 24px; }
+        .lang-select { 
+            background-color: transparent; border: 1px solid #E5E7EB; font-family: 'Inter', sans-serif;
+            background-repeat: no-repeat; background-position: right 4px center; background-size: 16px;
+            -webkit-appearance: none; appearance: none;
+            font-weight: 700; font-size: 14px; color: #1A1A1A !important; cursor: pointer; outline: none; padding: 4px 24px 4px 8px; border-radius: 4px;
+        }
+        .lang-select option { color: #1A1A1A; }
+        .btn-nav {
+            background: rgba(17,17,17,0.05); color: #1A1A1A; border: 1px solid rgba(17,17,17,0.1);
+            padding: 10px 24px; border-radius: 5px; font-size: 12px; font-weight: 600; 
+            text-decoration: none; transition: all 0.3s; font-family: 'Inter', sans-serif;
+            letter-spacing: 1px; white-space: nowrap; 
+        }
+        .btn-nav:hover { background: #1A1A1A; color: #FFFFFF; border-color: #1A1A1A; }
+
+        @media(max-width: 768px){
+            .desktop-only { display: none !important; }
+        }
+
+        /* Legal Content */
+        .legal-container {
+            max-width: 900px;
+            margin: 120px auto 80px auto;
+            padding: 0 24px;
+        }
+        .legal-container h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 800;
+            color: #1A1A1A;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+        .legal-container h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #A03FA3;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #F3F4F6;
+            padding-bottom: 8px;
+        }
+        .legal-container h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1A1A1A;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+        .legal-container p {
+            font-size: 16px;
+            color: #374151;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        .legal-container ul {
+            margin-left: 24px;
+            margin-bottom: 20px;
+            color: #374151;
+        }
+        .legal-container li {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        .legal-container a {
+            color: #A03FA3;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .legal-container a:hover {
+            text-decoration: underline;
+        }
+        .last-updated {
+            font-size: 14px;
+            color: #6B7280 !important;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+        .contact-details {
+            background: #F9FAFB;
+            border-left: 4px solid #A03FA3;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            font-size: 15px;
+            color: #4B5563;
+        }
+
+        /* Table Styling */
+        .legal-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 15px;
+            text-align: left;
+        }
+        .legal-table th, .legal-table td {
+            padding: 14px 16px;
+            border: 1px solid #E5E7EB;
+        }
+        .legal-table th {
+            background-color: #F9FAFB;
+            font-weight: 700;
+            color: #1A1A1A;
+        }
+        .legal-table td code {
+            background-color: #F3F4F6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        @media(max-width: 600px){
+            .legal-table, .legal-table tbody, .legal-table tr, .legal-table td, .legal-table th {
+                display: block;
+                width: 100%;
+            }
+            .legal-table tr {
+                margin-bottom: 15px;
+                border: 1px solid #E5E7EB;
+            }
+            .legal-table td, .legal-table th {
+                border: none;
+                border-bottom: 1px solid #F3F4F6;
+            }
+            .legal-table th {
+                display: none;
+            }
+            .legal-table td::before {
+                content: attr(data-label);
+                font-weight: 700;
+                display: block;
+                margin-bottom: 4px;
+            }
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: #111111;
+            color: #FFFFFF;
+            padding: 80px 4vw 40px 4vw;
+            font-family: 'Inter', sans-serif;
+        }
+        .site-footer .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        .footer-logo {
+            height: 32px;
+            margin-bottom: 20px;
+        }
+        .footer-brand p {
+            color: #9CA3AF;
+            font-size: 15px;
+            max-width: 250px;
+            line-height: 1.5;
+        }
+        .footer-col h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #FFFFFF;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .footer-col a {
+            display: block;
+            color: #9CA3AF;
+            text-decoration: none;
+            margin-bottom: 12px;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+        .footer-col a:hover {
+            color: #FFFFFF;
+        }
+        .footer-bottom {
+            border-top: 1px solid #1F2937;
+            padding-top: 30px;
+            text-align: center;
+            font-size: 13px;
+            color: #9CA3AF;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="header-logo">
+            <img src="./public/images/common/logo-dark.png" alt="Castle Logo">
+        </a>
+        <nav class="nav-links desktop-only">
+            
+            <a href="about.html">ABOUT</a>
+            <a href="partners.html">PARTNERS</a>
+            <a href="masterclass.html">MASTERCLASS</a>
+            <a href="contact.html">CONTACT</a>
+        
+        </nav>
+        <div class="header-actions">
+            <select class="lang-select" onchange="location = this.value;" style="color: #1A1A1A !important; border-color: #E5E7EB; background-image: url('data:image/svg+xml;utf8,<svg fill='#1A1A1A' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>');"><option value="terms-of-service.html" selected>EN</option><option value="terms-of-service_es.html">ES</option></select>
+            <a href="index.html" class="btn-nav">ENTER APP</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="legal-container">
+        
+<h1>Terms of Use</h1>
+<p class="last-updated">Effective Date: May 25, 2026 | Last Updated: May 25, 2026</p>
+
+<h2>1. Acceptance of These Terms</h2>
+<p>These Terms of Use ("Terms") constitute a legally binding agreement between you and Build Your Castle, Inc., a Delaware corporation doing business as "Castle" ("Castle," "we," "us," or "our"), governing your access to and use of our website at <a href="https://buildyourcastle.ai">buildyourcastle.ai</a>, our platform, mobile applications, AI-powered tools, educational content, and all related services (collectively, the "Services").</p>
+<p><strong>BY ACCESSING OR USING THE SERVICES, YOU CONFIRM THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THESE TERMS AND OUR PRIVACY POLICY AND COOKIE POLICY, WHICH ARE INCORPORATED HEREIN BY REFERENCE. IF YOU DO NOT AGREE TO THESE TERMS, YOU MUST NOT USE THE SERVICES.</strong></p>
+<p>If you are accessing or using the Services on behalf of a company, organization, or other legal entity, you represent that you have the authority to bind that entity to these Terms, in which case "you" refers to that entity.</p>
+
+<h2>2. Changes to These Terms</h2>
+<p>We reserve the right to modify these Terms at any time. When we make material changes, we will update the "Last Updated" date at the top of these Terms and, where appropriate, notify you by email or by posting a notice on our Site. Your continued use of the Services after any changes become effective constitutes your acceptance of the revised Terms.</p>
+<p>We encourage you to review these Terms periodically. If you do not agree to the modified Terms, you must stop using the Services.</p>
+
+<h2>3. Eligibility</h2>
+<p>To use the Services, you must:</p>
+<ul>
+    <li>Be at least 18 years of age (or the age of majority in your jurisdiction, whichever is older);</li>
+    <li>Have the legal capacity to enter into binding contracts under the laws of your jurisdiction;</li>
+    <li>Not be prohibited from using the Services under applicable law; and</li>
+    <li>Agree to and comply with these Terms.</li>
+</ul>
+<p>Castle's Services are designed for adult women who wish to build financial literacy and wealth. However, the Services are available to all adults who meet the eligibility requirements above. By using the Services, you represent and warrant that you meet all of the above requirements. If you do not meet these requirements, you must not access or use the Services.</p>
+
+<h2>4. Description of Services</h2>
+<p>Castle provides an Artificial Intelligence Financial Ecosystem designed to help women transform their relationship with money and build wealth. The Services currently include, and may in the future expand to include, the following:</p>
+
+<h3>4.1 Waitlist and Community</h3>
+<p>Castle operates a waitlist for prospective users who wish to be among the first to access the platform. By joining the waitlist, you provide us with contact information and agree to receive updates and announcements about the Castle platform.</p>
+
+<h3>4.2 MasterClass Series</h3>
+<p>Castle offers a live MasterClass Series focused on financial education, wealth mindset, and investment strategies. MasterClass participation is by application only, subject to availability, and subject to separate program terms communicated to accepted applicants. The MasterClass Series is currently offered free of charge, though this may change in the future. Castle reserves the right to modify, suspend, or discontinue any MasterClass program at any time.</p>
+
+<h3>4.3 AI Money & Wealth Coach</h3>
+<p>Castle's platform incorporates an AI-powered Money & Wealth Coach that provides personalized financial guidance, educational content, and goal-tracking tools. By interacting with the AI Coach, you acknowledge that the AI Coach provides information for educational and informational purposes only; AI-generated content does not constitute financial, investment, legal, tax, or professional advice; you should not rely solely on AI-generated content when making financial decisions; and AI outputs may not be accurate, complete, or appropriate for your specific circumstances.</p>
+
+<h3>4.4 Account Integration (Future Feature)</h3>
+<p>Castle plans to offer account integration features that allow you to connect external financial accounts (such as bank accounts, brokerage accounts, or other financial platforms) to view and analyze your financial picture in one place. When this feature becomes available, additional terms and disclosures will apply.</p>
+
+<h3>4.5 Investment Marketplace (Future Feature)</h3>
+<p>Castle plans to offer an Investment Marketplace where curated investment opportunities may be presented to eligible users. When and if the Investment Marketplace is made available, it will be subject to separate terms, conditions, and regulatory disclosures. Participation in the Investment Marketplace will require your acknowledgment of specific risk disclosures and applicable eligibility requirements.</p>
+
+<h3>4.6 Partner Program</h3>
+<p>Castle offers a Partner Program for influencers, content creators, brands, women's organizations, and experts who wish to collaborate with Castle. Participation in the Partner Program is subject to a separate Partner Agreement and related terms communicated during the application and onboarding process.</p>
+
+<h3>4.7 Newsletter and Communications</h3>
+<p>With your consent, Castle sends newsletters, platform updates, event notifications, and other communications. You may unsubscribe from marketing communications at any time by clicking the 'unsubscribe' link in any email or by contacting us at <a href="mailto:legal@buildyourcastle.ai">legal@buildyourcastle.ai</a>.</p>
+
+<h2>5. User Registration and Accounts</h2>
+<p>To access certain features of the Services, you may be required to create an account or submit registration information through our forms. When you register or submit information, you agree to: provide accurate, current, and complete information; maintain and promptly update your information; maintain the security and confidentiality of any account credentials; notify us immediately of any unauthorized use of your account at <a href="mailto:legal@buildyourcastle.ai">legal@buildyourcastle.ai</a>; and accept responsibility for all activities that occur under your account.</p>
+<p>Castle reserves the right to suspend or terminate your account if any information provided is found to be inaccurate, false, outdated, or incomplete, or if you violate these Terms.</p>
+
+<h2>6. User Conduct</h2>
+<p>By using the Services, you agree not to: use the Services for any unlawful purpose; impersonate any person or entity; upload or transmit defamatory, obscene, offensive, threatening, or harassing content; engage in conduct that restricts or inhibits anyone's use of the Services; use automated means to access the Services; attempt to gain unauthorized access to our systems; transmit viruses or malicious code; interfere with the performance of the Services; send spam; violate intellectual property rights; or engage in market manipulation or fraudulent financial activity.</p>
+
+<h2>7. No Financial Advice — Important Disclaimer</h2>
+<p><strong>IMPORTANT: CASTLE IS NOT A REGISTERED INVESTMENT ADVISER, BROKER-DEALER, FINANCIAL PLANNER, FINANCIAL ANALYST, OR FIDUCIARY. NOTHING ON THE CASTLE PLATFORM — INCLUDING THE AI WEALTH COACH, EDUCATIONAL CONTENT, MASTERCLASS SERIES, NEWSLETTERS, PARTNER COMMUNICATIONS, OR ANY OTHER SERVICE — CONSTITUTES FINANCIAL, INVESTMENT, TAX, LEGAL, OR PROFESSIONAL ADVICE OF ANY KIND.</strong></p>
+<p>All content, tools, educational materials, and AI-generated outputs provided through the Services are for general informational and educational purposes only. They do not constitute and should not be relied upon as a substitute for professional financial, investment, tax, legal, or other advice tailored to your individual circumstances.</p>
+<p>Before making any financial or investment decision, you should consult a qualified financial adviser, investment adviser, tax professional, attorney, or other licensed professional who can evaluate your specific situation, risk tolerance, and objectives.</p>
+<p>Castle makes no representation or warranty about the suitability of any investment opportunity, financial strategy, or course of action for any particular user. Past performance of any investment discussed or referenced on the platform is not indicative of future results. All investments involve risk, including the possible loss of principal.</p>
+
+<h2>8. Intellectual Property</h2>
+<h3>8.1 Castle's Intellectual Property</h3>
+<p>All content, materials, features, and functionality on the Services — including text, graphics, logos, icons, images, audio/video clips, the Castle name and brand, and overall look and feel — are owned by Build Your Castle, Inc. or its licensors and are protected by United States and international copyright, trademark, patent, trade secret, and other intellectual property laws.</p>
+<p>You may not copy, reproduce, distribute, modify, create derivative works of, or transmit any content from the Services without our express prior written consent, except for personal, non-commercial transitory viewing or personal non-commercial use.</p>
+
+<h3>8.2 User-Generated Content</h3>
+<p>If you submit, post, or transmit any content through the Services, you grant Castle a non-exclusive, worldwide, royalty-free, perpetual, irrevocable license to use, reproduce, modify, adapt, publish, translate, and display such content in connection with operating and improving the Services, subject to our Privacy Policy.</p>
+
+<h3>8.3 Feedback</h3>
+<p>If you provide Castle with any feedback, suggestions, or ideas regarding the Services, you grant Castle an unrestricted, royalty-free, perpetual license to use and incorporate such Feedback without any obligation to you.</p>
+
+<h2>9. Artificial Intelligence Features and Content</h2>
+<p>Castle's Services incorporate artificial intelligence technologies. You acknowledge and agree that AI-generated outputs are produced algorithmically and may not always be accurate or current; Castle does not guarantee the accuracy of AI content; you assume sole responsibility for decisions made based on AI outputs; Castle may use interactions to improve performance subject to our Privacy Policy; and AI features may be modified or discontinued at any time.</p>
+
+<h2>10. Web3, Blockchain, and Castle Token Features</h2>
+<p>Castle is developing a Web3-powered ecosystem that includes blockchain-based tokens ("Castle Tokens"). By participating, you acknowledge and agree that:</p>
+<p><strong>CASTLE TOKENS ARE NOT SECURITIES, INVESTMENT PRODUCTS, OR FINANCIAL INSTRUMENTS. THEY ARE NOT OFFERED OR SOLD AS INVESTMENTS AND CONFER NO OWNERSHIP INTEREST, DIVIDEND RIGHTS, VOTING RIGHTS, OR OTHER FINANCIAL ENTITLEMENTS IN BUILD YOUR CASTLE, INC. OR ANY AFFILIATED ENTITY.</strong></p>
+<p>Blockchain transactions are irreversible and immutable. The value of digital tokens may decline to zero. You are responsible for compliance with the laws of your jurisdiction. Castle reserves the right to modify or discontinue token features, and smart contracts are provided 'as is.'</p>
+
+<h2>11. Third-Party Links, Content, and Services</h2>
+<p>The Services may contain links to, or integrate with, third-party websites or services (e.g., social media, Unicoin Foundation, investment platforms). We do not endorse or control third-party content or services, and shall not be responsible or liable for any damage or loss caused in connection with them.</p>
+
+<h2>12. Disclaimer of Warranties</h2>
+<p><strong>THE SERVICES ARE PROVIDED ON AN 'AS IS' AND 'AS AVAILABLE' BASIS, WITHOUT ANY WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, CASTLE EXPRESSLY DISCLAIMS ALL WARRANTIES, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</strong></p>
+
+<h2>13. Limitation of Liability</h2>
+<p><strong>TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT WILL CASTLE, ITS AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, PUNITIVE, OR EXEMPLARY DAMAGES, INCLUDING LOSS OF PROFITS, REVENUE, DATA, OR USE.</strong></p>
+<p><strong>CASTLE'S TOTAL CUMULATIVE LIABILITY TO YOU FOR ALL CLAIMS WILL NOT EXCEED THE GREATER OF THE AMOUNT YOU PAID TO CASTLE IN THE PRECEDING TWELVE MONTHS OR ONE HUNDRED U.S. DOLLARS (USD $100).</strong></p>
+
+<h2>14. Indemnification</h2>
+<p>You agree to defend, indemnify, and hold harmless Build Your Castle, Inc., its affiliates, officers, directors, and employees from and against any claims, liabilities, damages, losses, and expenses (including attorney's fees) arising out of or in connection with your use of the Services, your violation of these Terms, or your violation of any rights of another party.</p>
+
+<h2>15. Governing Law and Dispute Resolution</h2>
+<h3>15.1 Governing Law</h3>
+<p>These Terms are governed by and construed in accordance with the laws of the State of Delaware, United States of America, without regard to conflict of law principles.</p>
+
+<h3>15.2 Informal Resolution</h3>
+<p>Before initiating formal legal action, you agree to first contact Castle at <a href="mailto:legal@buildyourcastle.ai">legal@buildyourcastle.ai</a> to attempt informal dispute resolution for a period of 30 days.</p>
+
+<h3>15.3 Arbitration</h3>
+<p>Any unresolved dispute shall be settled by binding arbitration administered by the American Arbitration Association (AAA) under its Consumer Arbitration Rules. The arbitration will be conducted in English.</p>
+
+<h3>15.4 Class Action Waiver</h3>
+<p><strong>YOU AND CASTLE AGREE THAT EACH PARTY MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE ACTION.</strong></p>
+
+<h2>16. Term and Termination</h2>
+<p>These Terms remain in effect until terminated. Castle may terminate or suspend your access to the Services at any time, with or without cause or notice. Upon termination, your right to use the Services ceases immediately.</p>
+
+<h2>17. Modifications to the Services</h2>
+<p>Castle reserves the right to modify, suspend, or discontinue any aspect of the Services at any time without notice or liability.</p>
+
+<h2>18. General Provisions</h2>
+<p>These Terms, together with our Privacy Policy and Cookie Policy, constitute the entire agreement between you and Castle. If any provision is found to be invalid, the remaining provisions continue in effect. You may not assign these Terms, but Castle may do so freely. These Terms are written in English, and any translation is for convenience only.</p>
+
+<h2>19. Contact Us</h2>
+<p>If you have any questions, concerns, or feedback about these Terms, please contact us:</p>
+<p class="contact-details">
+    <strong>Build Your Castle, Inc.</strong><br>
+    Attn: Legal Team<br>
+    Email: <a href="mailto:legal@buildyourcastle.ai">legal@buildyourcastle.ai</a><br>
+    Website: <a href="https://buildyourcastle.ai">buildyourcastle.ai</a>
+</p>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <img src="./public/images/common/logo-light.png" alt="Castle Logo" class="footer-logo">
+                    <p>Own Your Wealth. Own Your Future.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="partners.html">Partners</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="masterclass.html">Masterclass</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="cookie-policy.html">Cookie Policy</a>
+                </div>
+            </div>
+            
+            <div style="text-align: center; font-size: 11px; color: #6B7280; margin-bottom: 15px;">
+                The images used on this site were created or modified with AI and are for illustrative purposes only.
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Castle. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

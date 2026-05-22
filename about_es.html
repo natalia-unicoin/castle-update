@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CASTLE &middot; Sé dueña de tu Dinero. Sé dueña de tu Futuro.</title>
+    <title>Castle | Sé dueña de tu Dinero. Sé dueña de tu Futuro.</title>
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://natalia-unicoin.github.io/castle/">
-    <meta property="og:title" content="CASTLE &middot; Sé dueña de tu Dinero. Sé dueña de tu Futuro.">
+    <meta property="og:title" content="Castle | Sé dueña de tu Dinero. Sé dueña de tu Futuro.">
     <meta property="og:description" content="La plataforma impulsada por IA que ayuda a las Mujeres a construir Riqueza, invertir con confianza y ganar recompensas por el progreso financiero.">
     <meta property="og:image" content="https://natalia-unicoin.github.io/castle/public/images/common/hero-bg.png?v=5">
     
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://natalia-unicoin.github.io/castle/">
-    <meta name="twitter:title" content="CASTLE &middot; Sé dueña de tu Dinero. Sé dueña de tu Futuro.">
+    <meta name="twitter:title" content="Castle | Sé dueña de tu Dinero. Sé dueña de tu Futuro.">
     <meta name="twitter:description" content="La plataforma impulsada por IA que ayuda a las Mujeres a construir Riqueza, invertir con confianza y ganar recompensas por el progreso financiero.">
     <meta name="twitter:image" content="https://natalia-unicoin.github.io/castle/public/images/common/hero-bg.png?v=5">
 
@@ -229,8 +229,12 @@
 
             /* Standardized lateral padding for mobile */
             .container, section > div { 
-                padding-left: 10px !important; 
-                padding-right: 10px !important; 
+                padding-left: 20px !important; 
+                padding-right: 20px !important; 
+            }
+            .section-title, .section-subtitle, .section-eyebrow {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
             }
             
             /* Full-width standardized CTA buttons for mobile */
@@ -497,9 +501,9 @@
         .footer-bottom { text-align: center; font-size: 12px; color: #6B7280; }
     
         /* UNIFIED CTA SYSTEM (Do not edit individually) */
-        .btn, .btn-large, .final-btn, .subscribe-btn { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s; background-color: #A03FA3 !important; color: #FFFFFF !important; font-weight: 800; text-transform: uppercase !important; letter-spacing: 2px; padding: 22px 60px; border-radius: 50px; font-size: 14px; box-shadow: 0 20px 40px -10px rgba(160,63,163,0.6); border: none; cursor: pointer; text-align: center; }
-        .btn:hover, .btn-large:hover, .final-btn:hover, .subscribe-btn:hover { background-color: #B85AB8 !important; transform: translateY(-3px); box-shadow: 0 25px 50px -10px rgba(184,90,184,0.8); }
-        @media (max-width: 768px) { .btn, .btn-large, .final-btn, .subscribe-btn { width: 100%; padding: 20px 20px; box-sizing: border-box; } }
+        .btn, .btn-large, .final-btn, .subscribe-btn { display: inline-flex !important; align-items: center !important; justify-content: center !important; text-decoration: none !important; transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s !important; background-color: #A03FA3 !important; color: #FFFFFF !important; font-weight: 800 !important; text-transform: uppercase !important; letter-spacing: 2px !important; padding: 22px 60px !important; border-radius: 50px !important; font-size: 14px !important; box-shadow: 0 20px 40px -10px rgba(160,63,163,0.6) !important; border: none !important; cursor: pointer !important; text-align: center !important; box-sizing: border-box !important; }
+        .btn:hover, .btn-large:hover, .final-btn:hover, .subscribe-btn:hover { background-color: #B85AB8 !important; transform: translateY(-3px) !important; box-shadow: 0 25px 50px -10px rgba(184,90,184,0.8) !important; }
+        @media (max-width: 768px) { .btn, .btn-large, .final-btn, .subscribe-btn { width: 100% !important; padding: 20px 20px !important; box-sizing: border-box !important; } }
 
 
         /* Bento Layout Section 2 */
@@ -562,6 +566,28 @@
             font-size: clamp(38px, 5vw, 64px) !important;
             margin-bottom: 24px;
         }
+
+        /* 13. Team Section */
+        .team-section { background-color: #FFFFFF; padding: var(--section-pad-y) 0; border-bottom: 1px solid #F3F4F6; }
+        .team-grid { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; margin-top: var(--spacer-60); }
+        .team-member { display: flex; flex-direction: column; align-items: center; text-align: center; width: 100%; flex: 0 0 100%; }
+        @media(min-width: 768px){ .team-member { width: calc(50% - 12px); flex: 0 0 calc(50% - 12px); } }
+        @media(min-width: 1024px){ .team-member { width: calc(25% - 18px); flex: 0 0 calc(25% - 18px); } }
+        
+        /* Silvina as Team Principal style */
+        .team-member.principal { width: 100% !important; flex: 0 0 100% !important; margin-bottom: 40px; }
+        .team-member.principal .team-img-wrapper { max-width: 380px; margin-left: auto; margin-right: auto; }
+        
+        .team-img-wrapper { position: relative; width: 100%; aspect-ratio: 4/5; border-radius: 5px; overflow: hidden; background-color: #F8F8FA; margin-bottom: 24px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .team-img-wrapper:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .team-img-wrapper img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+        .team-img-wrapper:hover img { transform: scale(1.05); }
+        .team-info { display: flex; flex-direction: column; align-items: center; width: 100%; }
+        .team-name { color: #1A1A1A; font-size: 24px; font-weight: 700; margin: 0 0 6px 0; font-family: 'Inter', sans-serif; line-height: 1.2; letter-spacing: -0.5px; }
+        .team-role { color: #4B5563; font-size: 16px; font-weight: 500; font-family: 'Inter', sans-serif; line-height: 1.4; margin: 0; letter-spacing: 0px; }
+        .team-social { margin-top: 16px; display: flex; gap: 16px; justify-content: center; }
+        .team-social a { color: #1A1A1A; transition: opacity 0.2s, transform 0.2s, color 0.2s; display: flex; align-items: center; justify-content: center; }
+        .team-social a:hover { opacity: 0.6; transform: translateY(-2px); color: #A03FA3; }
 
     
         @media (max-width: 900px) {
@@ -684,6 +710,102 @@
         </div>
     </section>
 
+    <!-- Team Section -->
+    <section class="team-section snap-section">
+        <div class="container">
+            <h2 class="section-heading color-reveal" style="text-align: center;">Conoce al Equipo</h2>
+            
+            <div class="team-grid mobile-scroll-row" id="team-scroll">
+                
+                <!-- Silvina -->
+                <div class="team-member principal color-reveal">
+                    <div class="team-img-wrapper">
+                        <img src="./public/images/about/silvina.jpg" alt="Silvina Moschini">
+                    </div>
+                    <div class="team-info">
+                        <p class="team-name">Silvina Moschini</p>
+                        <p class="team-role">Fundadora y CEO</p>
+                        <div class="team-social">
+                            <a href="https://www.linkedin.com/in/smoschini/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                            <a href="mailto:sm@buildyourcastle.ai" title="Email"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gisela -->
+                <div class="team-member color-reveal">
+                    <div class="team-img-wrapper">
+                        <img src="./public/images/about/gisela.jpg" alt="Gisela Morelli">
+                    </div>
+                    <div class="team-info">
+                        <p class="team-name">Gisela Morelli</p>
+                        <p class="team-role">Directora Sénior de Operaciones</p>
+                        <div class="team-social">
+                            <a href="mailto:g.morelli@buildyourcastle.ai" title="Email"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Maricruz -->
+                <div class="team-member color-reveal">
+                    <div class="team-img-wrapper">
+                        <img src="./public/images/about/maricruz.jpg" alt="Maricruz Tabbia">
+                    </div>
+                    <div class="team-info">
+                        <p class="team-name">Maricruz Tabbia</p>
+                        <p class="team-role">SVP, Crecimiento y Experiencia de Relaciones con Inversores</p>
+                        <div class="team-social">
+                            <a href="mailto:m.tabbia@buildyourcastle.ai" title="Email"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cynthia -->
+                <div class="team-member color-reveal">
+                    <div class="team-img-wrapper">
+                        <img src="./public/images/about/cynthia.jpg" alt="Cynthia Acosta">
+                    </div>
+                    <div class="team-info">
+                        <p class="team-name">Cynthia Acosta</p>
+                        <p class="team-role">Directora Sénior de Ingresos</p>
+                        <div class="team-social">
+                            <a href="mailto:c.acosta@buildyourcastle.ai" title="Email"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Natalia -->
+                <div class="team-member color-reveal">
+                    <div class="team-img-wrapper">
+                        <img src="./public/images/about/natalia.jpg" alt="Natalia Duarte">
+                    </div>
+                    <div class="team-info">
+                        <p class="team-name">Natalia Duarte</p>
+                        <p class="team-role">Directora de Arte</p>
+                        <div class="team-social">
+                            <a href="mailto:n.duarte@buildyourcastle.ai" title="Email"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mobile-scroll-indicators" data-target="team-scroll"></div>
+        </div>
+    </section>
+
+    <!-- Final CTA / Newsletter -->
+    <section style="position: relative; background-image: url('./public/images/common/cta-final.jpg'); background-size: cover; background-position: center;  background-repeat: no-repeat; padding: var(--section-pad-y) 0; text-align: center; min-height: 100vh; display: flex; align-items: center; justify-content: center; width: 100%;" class="snap-section">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(17,17,17,0.6); z-index: 1;"></div>
+        <div class="container" style="position: relative; z-index: 2; max-width: 1500px; margin: 0 auto; padding: 0 5vw; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div style="max-width: 800px; width: 100%; text-align: center;">
+                <h3 style="font-size: clamp(40px, 5vw, 72px); font-weight: 700; color: #FFFFFF; margin-bottom: 20px; letter-spacing: -1px; line-height: 1.1; font-family: 'Inter', sans-serif; text-shadow: 0 4px 20px rgba(0,0,0,0.4);">Suscríbete a nuestro Newsletter</h3>
+                <p style="font-size: clamp(20px, 2.5vw, 28px); color: rgba(255,255,255,0.95); line-height: 1.6; max-width: 700px; margin: 0 auto var(--spacer-50) auto; font-family: 'Inter', sans-serif; text-shadow: 0 2px 15px rgba(0,0,0,0.4);">Únete al movimiento. Recibe en tu correo las últimas reflexiones sobre creación de riqueza e inversión.</p>
+                <button onclick="openUnifiedModal('newsletter')" class="btn" style="background-color: #A03FA3; color: #FFFFFF; font-weight: 800; letter-spacing: 1.5px; padding: 16px 40px; border-radius: 50px; border: none; font-size: 14px; cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(160,63,163,0.3); font-family: 'Inter Tight', sans-serif; text-transform: uppercase;">SUSCRÍBETE</button>
+            </div>
+        </div>
+    </section>
+
     <footer class="site-footer">
         <div class="container">
             <div class="footer-top">
@@ -709,9 +831,9 @@
                 </div>
                 <div class="footer-col">
                     <h4>Legal</h4>
-                    <a href="#">Política de Privacidad</a>
-                    <a href="#">Términos de Servicio</a>
-                    <a href="#">Política de Cookies</a>
+                    <a href="privacy-policy_es.html">Política de Privacidad</a>
+                    <a href="terms-of-service_es.html">Términos de Servicio</a>
+                    <a href="cookie-policy_es.html">Política de Cookies</a>
                 </div>
             </div>
             

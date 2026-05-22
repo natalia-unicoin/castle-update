@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Castle | Sé dueña de tu Dinero. Sé dueña de tu Futuro.</title>
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://natalia-unicoin.github.io/castle/">
+    <meta property="og:title" content="Castle | Sé dueña de tu Dinero. Sé dueña de tu Futuro.">
+    <meta property="og:description" content="The AI-powered platform helping Women build Wealth, invest with confidence, and earn rewards for financial progress.">
+    <meta property="og:image" content="https://natalia-unicoin.github.io/castle/public/images/common/hero-bg.png?v=5">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://natalia-unicoin.github.io/castle/">
+    <meta name="twitter:title" content="Castle | Sé dueña de tu Dinero. Sé dueña de tu Futuro.">
+    <meta name="twitter:description" content="The AI-powered platform helping Women build Wealth, invest with confidence, and earn rewards for financial progress.">
+    <meta name="twitter:image" content="https://natalia-unicoin.github.io/castle/public/images/common/hero-bg.png?v=5">
+
+    <link rel="icon" href="./public/images/common/favicon.png?v=10" type="image/png">
+    <link rel="shortcut icon" href="./public/images/common/favicon.png?v=10">
+    <link rel="apple-touch-icon" href="./public/images/common/favicon.png?v=10">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800;900&display=swap');
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Inter', system-ui, sans-serif; 
+            background-color: #FFFFFF;
+            color: #1A1A1A;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        header {
+            position: fixed; top: 0; left: 0; width: 100%; padding: 16px clamp(30px, 5vw, 100px);
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            z-index: 100; border-bottom: 1px solid #E5E7EB; box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .header-logo img { height: 32px; width: auto; object-fit: contain; transition: transform 0.3s; }
+        .header-logo:hover img { transform: scale(1.05); }
+        
+        .nav-links { display: flex; align-items: center; gap: 40px; }
+        .nav-links a { color: #1A1A1A; text-decoration: none; font-size: 15px; font-weight: 600; font-family: 'Inter', sans-serif; transition: color 0.2s;  letter-spacing: 1px; }
+        .nav-links a:hover { color: #A03FA3; }
+        
+        .header-actions { display: flex; align-items: center; gap: 24px; }
+        .lang-select { 
+            background-color: transparent; border: 1px solid #E5E7EB; font-family: 'Inter', sans-serif;
+            background-repeat: no-repeat; background-position: right 4px center; background-size: 16px;
+            -webkit-appearance: none; appearance: none;
+            font-weight: 700; font-size: 14px; color: #1A1A1A !important; cursor: pointer; outline: none; padding: 4px 24px 4px 8px; border-radius: 4px;
+        }
+        .lang-select option { color: #1A1A1A; }
+        .btn-nav {
+            background: rgba(17,17,17,0.05); color: #1A1A1A; border: 1px solid rgba(17,17,17,0.1);
+            padding: 10px 24px; border-radius: 5px; font-size: 12px; font-weight: 600; 
+            text-decoration: none; transition: all 0.3s; font-family: 'Inter', sans-serif;
+            letter-spacing: 1px; white-space: nowrap; 
+        }
+        .btn-nav:hover { background: #1A1A1A; color: #FFFFFF; border-color: #1A1A1A; }
+
+        @media(max-width: 768px){
+            .desktop-only { display: none !important; }
+        }
+
+        /* Legal Content */
+        .legal-container {
+            max-width: 900px;
+            margin: 120px auto 80px auto;
+            padding: 0 24px;
+        }
+        .legal-container h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 800;
+            color: #1A1A1A;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+        .legal-container h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #A03FA3;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #F3F4F6;
+            padding-bottom: 8px;
+        }
+        .legal-container h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1A1A1A;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+        .legal-container p {
+            font-size: 16px;
+            color: #374151;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        .legal-container ul {
+            margin-left: 24px;
+            margin-bottom: 20px;
+            color: #374151;
+        }
+        .legal-container li {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        .legal-container a {
+            color: #A03FA3;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .legal-container a:hover {
+            text-decoration: underline;
+        }
+        .last-updated {
+            font-size: 14px;
+            color: #6B7280 !important;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+        .contact-details {
+            background: #F9FAFB;
+            border-left: 4px solid #A03FA3;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            font-size: 15px;
+            color: #4B5563;
+        }
+
+        /* Table Styling */
+        .legal-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 15px;
+            text-align: left;
+        }
+        .legal-table th, .legal-table td {
+            padding: 14px 16px;
+            border: 1px solid #E5E7EB;
+        }
+        .legal-table th {
+            background-color: #F9FAFB;
+            font-weight: 700;
+            color: #1A1A1A;
+        }
+        .legal-table td code {
+            background-color: #F3F4F6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        @media(max-width: 600px){
+            .legal-table, .legal-table tbody, .legal-table tr, .legal-table td, .legal-table th {
+                display: block;
+                width: 100%;
+            }
+            .legal-table tr {
+                margin-bottom: 15px;
+                border: 1px solid #E5E7EB;
+            }
+            .legal-table td, .legal-table th {
+                border: none;
+                border-bottom: 1px solid #F3F4F6;
+            }
+            .legal-table th {
+                display: none;
+            }
+            .legal-table td::before {
+                content: attr(data-label);
+                font-weight: 700;
+                display: block;
+                margin-bottom: 4px;
+            }
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: #111111;
+            color: #FFFFFF;
+            padding: 80px 4vw 40px 4vw;
+            font-family: 'Inter', sans-serif;
+        }
+        .site-footer .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        .footer-logo {
+            height: 32px;
+            margin-bottom: 20px;
+        }
+        .footer-brand p {
+            color: #9CA3AF;
+            font-size: 15px;
+            max-width: 250px;
+            line-height: 1.5;
+        }
+        .footer-col h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #FFFFFF;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .footer-col a {
+            display: block;
+            color: #9CA3AF;
+            text-decoration: none;
+            margin-bottom: 12px;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+        .footer-col a:hover {
+            color: #FFFFFF;
+        }
+        .footer-bottom {
+            border-top: 1px solid #1F2937;
+            padding-top: 30px;
+            text-align: center;
+            font-size: 13px;
+            color: #9CA3AF;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="index_es.html" class="header-logo">
+            <img src="./public/images/common/logo-dark.png" alt="Castle Logo">
+        </a>
+        <nav class="nav-links desktop-only">
+            
+            <a href="about_es.html">SOBRE NOSOTROS</a>
+            <a href="partners_es.html">SOCIOS</a>
+            <a href="masterclass_es.html">MASTERCLASS</a>
+            <a href="contact_es.html">CONTACTO</a>
+        
+        </nav>
+        <div class="header-actions">
+            <select class="lang-select" onchange="location = this.value;" style="color: #1A1A1A !important; border-color: #E5E7EB; background-image: url('data:image/svg+xml;utf8,<svg fill=\"%231A1A1A\" height=\"24\" viewBox=\"0 0 24 24\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M7 10l5 5 5-5z\"/><path d=\"M0 0h24v24H0z\" fill=\"none\"/></svg>');"><option value="cookie-policy.html">EN</option><option value="cookie-policy_es.html" selected>ES</option></select>
+            <a href="index.html" class="btn-nav">ENTRAR A LA APP</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="legal-container">
+        
+<h1>Política de Cookies</h1>
+<p class="last-updated">Fecha de vigencia: 25 de mayo de 2026 | Última actualización: 25 de mayo de 2026</p>
+
+<h2>1. Introducción</h2>
+<p>Esta Política de Cookies explica cómo Build Your Castle, Inc., que opera bajo el nombre comercial de "Castle" ("Castle", "nosotros", "nos" o "nuestro"), utiliza cookies y tecnologías de seguimiento similares en nuestro sitio web en <a href="https://buildyourcastle.ai">buildyourcastle.ai</a> y nuestros servicios digitales asociados (colectivamente, el "Sitio").</p>
+<p>Al continuar utilizando nuestro Sitio, aceptas nuestro uso de cookies de acuerdo con esta Política de Cookies, a menos que hayas ajustado la configuración de tu navegador para rechazar cookies. Puedes gestionar tus preferencias de cookies en cualquier momento como se describe en la Sección 6 a continuación.</p>
+<p>Esta Política de Cookies debe leerse junto con nuestra Política de Privacidad, que proporciona información adicional sobre nuestras prácticas de datos.</p>
+
+<h2>2. ¿Qué son las Cookies?</h2>
+<p>Las cookies son pequeños archivos de texto que se colocan en tu dispositivo (computadora, tableta o teléfono inteligente) cuando visitas un sitio web. Se utilizan ampliamente para hacer que los sitios web funcionen de manera más eficiente, recordar tus preferencias y proporcionar información a los propietarios de los sitios sobre cómo se están utilizando.</p>
+<p>Las cookies pueden ser:</p>
+<ul>
+    <li><strong>Cookies de sesión:</strong> Cookies temporales que se eliminan al cerrar el navegador. Ayudan al funcionamiento del sitio durante tu visita.</li>
+    <li><strong>Cookies de sesión:</strong> Cookies temporales que se eliminan al cerrar el navegador. Ayudan al funcionamiento del sitio durante tu visita.</li>
+    <li><strong>Cookies persistentes:</strong> Cookies que permanecen en tu dispositivo durante un período de tiempo establecido o hasta que las eliminas. Se utilizan para recordarte a ti y tus preferencias en visitas posteriores.</li>
+    <li><strong>Cookies de origen:</strong> Cookies establecidas directamente por Castle cuando visitas nuestro Sitio.</li>
+    <li><strong>Cookies de terceros:</strong> Cookies establecidas por partes externas (como proveedores de análisis o publicidad) cuando visitas nuestro Sitio.</li>
+</ul>
+<p>También utilizamos tecnologías similares como etiquetas de píxel, balizas web y objetos de almacenamiento local. Esta Política de Cookies se refiere a todas estas tecnologías colectivamente como 'cookies'.</p>
+
+<h2>3. Por qué utilizamos Cookies</h2>
+<p>Utilizamos cookies para:</p>
+<ul>
+    <li>Hacer que nuestro Sitio funcione correctamente y de forma segura;</li>
+    <li>Recordar tu preferencia de idioma (inglés o español);</li>
+    <li>Recordar tus elecciones de consentimiento de cookies;</li>
+    <li>Entender cómo los visitantes usan nuestro Sitio y qué páginas son más populares;</li>
+    <li>Medir la efectividad de nuestras comunicaciones y campañas de marketing;</li>
+    <li>Personalizar tu experiencia y mostrarte contenido relevante para tus intereses;</li>
+    <li>Prevenir el fraude y mejorar la seguridad; y</li>
+    <li>Mejorar nuestros Servicios a lo largo del tiempo basándonos en datos de uso.</li>
+</ul>
+
+<h2>4. Tipos de Cookies que utilizamos</h2>
+<p>Organizamos nuestras cookies en cuatro categorías:</p>
+
+<h3>4.1 Cookies Estrictamente Necesarias</h3>
+<p>Estas cookies son esenciales para que el Sitio funcione y no se pueden desactivar en nuestros sistemas. Se configuran en respuesta a acciones realizadas por ti, como configurar tus preferencias de cookies, completar formularios o iniciar sesión. Sin estas cookies, nuestro Sitio no puede funcionar correctamente.</p>
+
+<table class="legal-table">
+    <thead>
+        <tr>
+            <th>Nombre de la Cookie / Tipo</th>
+            <th>Propósito</th>
+            <th>Duración</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>castle_cookie_consent</code></td>
+            <td>Almacena tus preferencias de consentimiento de cookies para que no te lo volvamos a preguntar en cada visita.</td>
+            <td>12 meses</td>
+        </tr>
+        <tr>
+            <td><code>castle_lang</code></td>
+            <td>Recuerda tu idioma seleccionado (inglés o español).</td>
+            <td>12 meses</td>
+        </tr>
+        <tr>
+            <td><code>castle_session</code></td>
+            <td>Mantiene tu sesión mientras navegas por el Sitio.</td>
+            <td>Sesión</td>
+        </tr>
+        <tr>
+            <td><code>CSRF token</code></td>
+            <td>Previene ataques de falsificación de solicitudes en sitios cruzados en los envíos de formularios.</td>
+            <td>Sesión</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>4.2 Cookies Funcionales</h3>
+<p>Estas cookies permiten una funcionalidad y personalización mejoradas. Pueden ser establecidas por nosotros o por proveedores terceros cuyos servicios utilizamos. Si desactivas estas cookies, es posible que algunas o todas estas funciones no funcionen correctamente.</p>
+
+<table class="legal-table">
+    <thead>
+        <tr>
+            <th>Nombre de la Cookie / Tipo</th>
+            <th>Propósito</th>
+            <th>Duración</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>castle_pref</code></td>
+            <td>Recuerda tu progreso en el formulario y tus preferencias (por ejemplo, selecciones de interés en el formulario de socios).</td>
+            <td>30 días</td>
+        </tr>
+        <tr>
+            <td><code>castle_waitlist_ref</code></td>
+            <td>Realiza el seguimiento de la fuente de referencia para los registros de la lista de espera para atribuir a los nuevos usuarios correctamente.</td>
+            <td>30 días</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>4.3 Cookies de Rendimiento y Análisis</h3>
+<p>Estas cookies nos permiten contar las visitas y las fuentes de tráfico para poder medir y mejorar el rendimiento de nuestro Sitio. Nos ayudan a saber qué páginas son las más y menos populares y ver cómo se mueven los visitantes por el Sitio. Toda la información que recopilan estas cookies se agrega y, por lo tanto, es anónima.</p>
+
+<table class="legal-table">
+    <thead>
+        <tr>
+            <th>Nombre de la Cookie / Tipo</th>
+            <th>Propósito</th>
+            <th>Duración</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>_ga</code>, <code>_ga_[ID]</code></td>
+            <td>Google Analytics: distingue a los usuarios y realiza el seguimiento de las visitas a las páginas, la duración de la sesión y las fuentes de tráfico.</td>
+            <td>2 años / 1 año</td>
+        </tr>
+        <tr>
+            <td><code>_gid</code></td>
+            <td>Google Analytics: distingue a los usuarios de forma diaria.</td>
+            <td>24 horas</td>
+        </tr>
+        <tr>
+            <td><code>_gat</code></td>
+            <td>Google Analytics: limita el porcentaje de solicitudes.</td>
+            <td>1 minuto</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Google Analytics es proporcionado por Google LLC. Google procesa los datos de análisis en nuestro nombre y puede transferir datos a los Estados Unidos. Para obtener más información, consulta la Política de privacidad de Google en <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a>. Puedes optar por no participar en Google Analytics visitando <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">tools.google.com/dlpage/gaoptout</a>.</p>
+
+<h3>4.4 Cookies de Marketing y Segmentación</h3>
+<p>Nuestros socios publicitarios pueden establecer estas cookies a través de nuestro Sitio. Estas empresas pueden utilizarlas para crear un perfil de tus intereses y mostrarte anuncios relevantes en otros sitios. No almacenan información personal directamente, sino que se basan en la identificación única de tu navegador y dispositivo de Internet. Si desactivas estas cookies, experimentarás una publicidad menos segmentada.</p>
+
+<table class="legal-table">
+    <thead>
+        <tr>
+            <th>Nombre de la Cookie / Tipo</th>
+            <th>Propósito</th>
+            <th>Duración</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><code>Meta Pixel (_fbp)</code></td>
+            <td>Píxel de Meta (Facebook/Instagram): realiza el seguimiento de las conversiones, el rendimiento de los anuncios y crea audiencias para marketing.</td>
+            <td>3 meses</td>
+        </tr>
+        <tr>
+            <td><code>LinkedIn Insight Tag</code></td>
+            <td>Análisis de LinkedIn y seguimiento de conversiones para campañas de marketing.</td>
+            <td>6 meses / 30 días</td>
+        </tr>
+        <tr>
+            <td><code>_gcl_au</code></td>
+            <td>Cookie de seguimiento de conversiones de Google Ads.</td>
+            <td>3 meses</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><em>Nota: Solo utilizaremos cookies de marketing con tu consentimiento previo, según lo requiera la legislación aplicable (por ejemplo, la Directiva de privacidad electrónica de la UE y el RGPD).</em></p>
+
+<h2>5. Cookies y Servicios de Terceros</h2>
+<p>Ciertos servicios de terceros integrados en nuestro Sitio pueden colocar sus propias cookies en tu dispositivo. Estos incluyen:</p>
+<ul>
+    <li><strong>Botones y elementos integrados de redes sociales:</strong> Los botones para compartir en redes sociales o el contenido integrado de Instagram, LinkedIn, YouTube y X (Twitter) pueden configurar cookies al interactuar con esas funciones. Estas cookies están sujetas a las políticas de privacidad de las respectivas plataformas.</li>
+    <li><strong>Proveedor de boletines:</strong> Nuestro proveedor de servicios de boletines por correo electrónico puede utilizar cookies o píxeles de seguimiento en los correos electrónicos del boletín para medir las tasas de apertura y de clics.</li>
+    <li><strong>Formularios integrados:</strong> Las herramientas de formularios o encuestas de terceros integradas en nuestro Sitio pueden configurar cookies funcionales para mantener el estado del formulario.</li>
+</ul>
+<p>Nosotros no controlamos estas cookies de terceros. Consulta la política de privacidad y de cookies del tercero correspondiente para obtener más información.</p>
+
+<h2>6. Cómo gestionar tus Preferencias de Cookies</h2>
+<p>Tienes varias opciones para gestionar las cookies:</p>
+
+<h3>6.1 Banner de Consentimiento de Cookies</h3>
+<p>Cuando visites nuestro Sitio por primera vez, se te presentará un banner de consentimiento de cookies que te permitirá aceptar o personalizar tus preferencias de cookies. Puedes cambiar tus preferencias en cualquier momento haciendo clic en el enlace de configuración de cookies en el pie de página de nuestro Sitio.</p>
+
+<h3>6.2 Configuración del Navegador</h3>
+<p>La mayoría de los navegadores web te permiten controlar las cookies a través de su configuración. Normalmente puedes:</p>
+<ul>
+    <li>Ver qué cookies están almacenadas en tu dispositivo y eliminarlas individualmente o en bloque;</li>
+    <li>Bloquear las cookies de terceros;</li>
+    <li>Bloquear todas las cookies de sitios específicos; y</li>
+    <li>Bloquear la configuración de todas las cookies.</li>
+</ul>
+<p>Ten en cuenta que restringir las cookies puede afectar la funcionalidad de nuestro Sitio. Para obtener más información sobre cómo gestionar las cookies en tu navegador, visita:</p>
+<ul>
+    <li>Google Chrome: <a href="https://support.google.com/chrome/answer/95647" target="_blank">support.google.com/chrome/answer/95647</a></li>
+    <li>Mozilla Firefox: <a href="https://support.mozilla.org/es-ES/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias" target="_blank">support.mozilla.org/es-ES/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias</a></li>
+    <li>Apple Safari: <a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank">support.apple.com/es-es/guide/safari/sfri11471/mac</a></li>
+    <li>Microsoft Edge: <a href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-y-administrar-cookies" target="_blank">support.microsoft.com/es-es/microsoft-edge/eliminar-y-administrar-cookies</a></li>
+</ul>
+
+<h3>6.3 Herramientas de exclusión voluntaria</h3>
+<p>También puedes optar por no recibir ciertas cookies de terceros utilizando las siguientes herramientas:</p>
+<ul>
+    <li>Google Analytics: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">tools.google.com/dlpage/gaoptout</a> (complemento del navegador)</li>
+    <li>Anuncios de Meta/Facebook: <a href="https://www.facebook.com/settings?tab=ads" target="_blank">www.facebook.com/settings?tab=ads</a></li>
+    <li>Anuncios de LinkedIn: <a href="https://www.linkedin.com/psettings/guest-controls" target="_blank">www.linkedin.com/psettings/guest-controls</a></li>
+    <li>Iniciativa de Publicidad en Red: <a href="https://optout.networkadvertising.org" target="_blank">optout.networkadvertising.org</a></li>
+    <li>Alianza de Publicidad Digital: <a href="https://optout.aboutads.info" target="_blank">optout.aboutads.info</a></li>
+</ul>
+<p>Ten en cuenta que optar por no recibir publicidad segmentada no significa que dejarás de ver anuncios; significa que los anuncios que veas estarán menos adaptados a tus intereses.</p>
+
+<h3>6.4 No Rastrear</h3>
+<p>Algunos navegadores include una función de "No rastrear" (DNT) que indica a los sitios web que no deseas que se realice un seguimiento de tu navegación. Nuestro Sitio no responde actualmente a las señales DNT porque no existe un estándar industrial para el cumplimiento de DNT. Actualizaremos esta práctica si se establece un estándar.</p>
+
+<h2>7. Actualizaciones de esta Política de Cookies</h2>
+<p>Es posible que actualicemos esta Política de Cookies de vez en cuando para reflejar cambios en las cookies que utilizamos o por razones operativas, legales o reglamentarias. Te notificaremos cualquier cambio sustancial actualizando la fecha de "Última actualización" en la parte superior de esta política y, cuando sea apropiado, mostrando un aviso en nuestro Sitio.</p>
+<p>Te recomendamos que revises esta Política de Cookies periódicamente para mantenerte informado sobre nuestro uso de las cookies.</p>
+
+<h2>8. Contacto</h2>
+<p>Si tienes alguna pregunta sobre nuestro uso de las cookies o esta Política de Cookies, ponte en contacto con nosotros:</p>
+<p class="contact-details">
+    <strong>Build Your Castle, Inc.</strong><br>
+    A/A: Equipo Legal y de Privacidad<br>
+    Correo electrónico: <a href="mailto:legal@buildyourcastle.ai">legal@buildyourcastle.ai</a><br>
+    Sitio web: <a href="https://buildyourcastle.ai">buildyourcastle.ai</a>
+</p>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <img src="./public/images/common/logo-light.png" alt="Castle Logo" class="footer-logo">
+                    <p>Sé dueña de tu Dinero. Sé dueña de tu Futuro.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Compañía</h4>
+                    <a href="about_es.html">Sobre Nosotros</a>
+                    <a href="partners_es.html">Socios</a>
+                    <a href="contact_es.html">Contacto</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Recursos</h4>
+                    <a href="masterclass_es.html">Masterclass</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="privacy-policy_es.html">Política de Privacidad</a>
+                    <a href="terms-of-service_es.html">Términos de Servicio</a>
+                    <a href="cookie-policy_es.html">Política de Cookies</a>
+                </div>
+            </div>
+            
+            <div style="text-align: center; font-size: 11px; color: #6B7280; margin-bottom: 15px;">
+                Las imágenes utilizadas en este sitio fueron creadas o modificadas con IA y son solo para fines ilustrativos.
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Castle. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

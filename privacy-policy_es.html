@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Castle | Sé dueña de tu Dinero. Sé dueña de tu Futuro.</title>
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://natalia-unicoin.github.io/castle/">
+    <meta property="og:title" content="Castle | Sé dueña de tu Dinero. Sé dueña de tu Futuro.">
+    <meta property="og:description" content="The AI-powered platform helping Women build Wealth, invest with confidence, and earn rewards for financial progress.">
+    <meta property="og:image" content="https://natalia-unicoin.github.io/castle/public/images/common/hero-bg.png?v=5">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://natalia-unicoin.github.io/castle/">
+    <meta name="twitter:title" content="Castle | Sé dueña de tu Dinero. Sé dueña de tu Futuro.">
+    <meta name="twitter:description" content="The AI-powered platform helping Women build Wealth, invest with confidence, and earn rewards for financial progress.">
+    <meta name="twitter:image" content="https://natalia-unicoin.github.io/castle/public/images/common/hero-bg.png?v=5">
+
+    <link rel="icon" href="./public/images/common/favicon.png?v=10" type="image/png">
+    <link rel="shortcut icon" href="./public/images/common/favicon.png?v=10">
+    <link rel="apple-touch-icon" href="./public/images/common/favicon.png?v=10">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Inter:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800;900&display=swap');
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Inter', system-ui, sans-serif; 
+            background-color: #FFFFFF;
+            color: #1A1A1A;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        header {
+            position: fixed; top: 0; left: 0; width: 100%; padding: 16px clamp(30px, 5vw, 100px);
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            z-index: 100; border-bottom: 1px solid #E5E7EB; box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .header-logo img { height: 32px; width: auto; object-fit: contain; transition: transform 0.3s; }
+        .header-logo:hover img { transform: scale(1.05); }
+        
+        .nav-links { display: flex; align-items: center; gap: 40px; }
+        .nav-links a { color: #1A1A1A; text-decoration: none; font-size: 15px; font-weight: 600; font-family: 'Inter', sans-serif; transition: color 0.2s;  letter-spacing: 1px; }
+        .nav-links a:hover { color: #A03FA3; }
+        
+        .header-actions { display: flex; align-items: center; gap: 24px; }
+        .lang-select { 
+            background-color: transparent; border: 1px solid #E5E7EB; font-family: 'Inter', sans-serif;
+            background-repeat: no-repeat; background-position: right 4px center; background-size: 16px;
+            -webkit-appearance: none; appearance: none;
+            font-weight: 700; font-size: 14px; color: #1A1A1A !important; cursor: pointer; outline: none; padding: 4px 24px 4px 8px; border-radius: 4px;
+        }
+        .lang-select option { color: #1A1A1A; }
+        .btn-nav {
+            background: rgba(17,17,17,0.05); color: #1A1A1A; border: 1px solid rgba(17,17,17,0.1);
+            padding: 10px 24px; border-radius: 5px; font-size: 12px; font-weight: 600; 
+            text-decoration: none; transition: all 0.3s; font-family: 'Inter', sans-serif;
+            letter-spacing: 1px; white-space: nowrap; 
+        }
+        .btn-nav:hover { background: #1A1A1A; color: #FFFFFF; border-color: #1A1A1A; }
+
+        @media(max-width: 768px){
+            .desktop-only { display: none !important; }
+        }
+
+        /* Legal Content */
+        .legal-container {
+            max-width: 900px;
+            margin: 120px auto 80px auto;
+            padding: 0 24px;
+        }
+        .legal-container h1 {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 800;
+            color: #1A1A1A;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+        .legal-container h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #A03FA3;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #F3F4F6;
+            padding-bottom: 8px;
+        }
+        .legal-container h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1A1A1A;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+        .legal-container p {
+            font-size: 16px;
+            color: #374151;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        .legal-container ul {
+            margin-left: 24px;
+            margin-bottom: 20px;
+            color: #374151;
+        }
+        .legal-container li {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        .legal-container a {
+            color: #A03FA3;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .legal-container a:hover {
+            text-decoration: underline;
+        }
+        .last-updated {
+            font-size: 14px;
+            color: #6B7280 !important;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+        .contact-details {
+            background: #F9FAFB;
+            border-left: 4px solid #A03FA3;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            font-size: 15px;
+            color: #4B5563;
+        }
+
+        /* Table Styling */
+        .legal-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 15px;
+            text-align: left;
+        }
+        .legal-table th, .legal-table td {
+            padding: 14px 16px;
+            border: 1px solid #E5E7EB;
+        }
+        .legal-table th {
+            background-color: #F9FAFB;
+            font-weight: 700;
+            color: #1A1A1A;
+        }
+        .legal-table td code {
+            background-color: #F3F4F6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        @media(max-width: 600px){
+            .legal-table, .legal-table tbody, .legal-table tr, .legal-table td, .legal-table th {
+                display: block;
+                width: 100%;
+            }
+            .legal-table tr {
+                margin-bottom: 15px;
+                border: 1px solid #E5E7EB;
+            }
+            .legal-table td, .legal-table th {
+                border: none;
+                border-bottom: 1px solid #F3F4F6;
+            }
+            .legal-table th {
+                display: none;
+            }
+            .legal-table td::before {
+                content: attr(data-label);
+                font-weight: 700;
+                display: block;
+                margin-bottom: 4px;
+            }
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: #111111;
+            color: #FFFFFF;
+            padding: 80px 4vw 40px 4vw;
+            font-family: 'Inter', sans-serif;
+        }
+        .site-footer .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        .footer-logo {
+            height: 32px;
+            margin-bottom: 20px;
+        }
+        .footer-brand p {
+            color: #9CA3AF;
+            font-size: 15px;
+            max-width: 250px;
+            line-height: 1.5;
+        }
+        .footer-col h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #FFFFFF;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .footer-col a {
+            display: block;
+            color: #9CA3AF;
+            text-decoration: none;
+            margin-bottom: 12px;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+        .footer-col a:hover {
+            color: #FFFFFF;
+        }
+        .footer-bottom {
+            border-top: 1px solid #1F2937;
+            padding-top: 30px;
+            text-align: center;
+            font-size: 13px;
+            color: #9CA3AF;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="index_es.html" class="header-logo">
+            <img src="./public/images/common/logo-dark.png" alt="Castle Logo">
+        </a>
+        <nav class="nav-links desktop-only">
+            
+            <a href="about_es.html">SOBRE NOSOTROS</a>
+            <a href="partners_es.html">SOCIOS</a>
+            <a href="masterclass_es.html">MASTERCLASS</a>
+            <a href="contact_es.html">CONTACTO</a>
+        
+        </nav>
+        <div class="header-actions">
+            <select class="lang-select" onchange="location = this.value;" style="color: #1A1A1A !important; border-color: #E5E7EB; background-image: url('data:image/svg+xml;utf8,<svg fill=\"%231A1A1A\" height=\"24\" viewBox=\"0 0 24 24\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M7 10l5 5 5-5z\"/><path d=\"M0 0h24v24H0z\" fill=\"none\"/></svg>');"><option value="privacy-policy.html">EN</option><option value="privacy-policy_es.html" selected>ES</option></select>
+            <a href="index.html" class="btn-nav">ENTRAR A LA APP</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="legal-container">
+        
+<h1>Política de Privacidad</h1>
+<p class="last-updated">Fecha de vigencia: 25 de mayo de 2026 | Última actualización: 25 de mayo de 2026</p>
+
+<h2>1. Introducción</h2>
+<p>Build Your Castle, Inc., que opera bajo el nombre comercial de "Castle" ("Castle", "nosotros", "nos" o "nuestro"), se compromete a proteger tu privacidad. Esta Política de Privacidad explica cómo recopilamos, utilizamos, divulgamos y protegemos tu información personal cuando visitas nuestro sitio web en <a href="https://buildyourcastle.ai">buildyourcastle.ai</a> (el "Sitio"), utilizas nuestra plataforma, aplicaciones y servicios (colectivamente, los "Servicios"), o interactúas con nosotros de cualquier otra manera.</p>
+<p>Lee esta Política de Privacidad detenidamente. Al acceder o utilizar nuestros Servicios, reconoces que has leído, entendido y aceptas las prácticas descritas en esta Política de Privacidad. Si no estás de acuerdo con esta Política de Privacidad, no utilices nuestros Servicios.</p>
+<p>Esta Política de Privacidad se incorpora y forma parte de nuestros Términos de Uso. Los términos en mayúscula utilizados pero no definidos aquí tienen el significado que se les otorga en nuestros Términos de Uso.</p>
+
+<h2>2. Quiénes Somos</h2>
+<p>Castle es un Ecosistema Financiero de Inteligencia Artificial diseñado para ayudar a las mujeres a construir riqueza, invertir con confianza y transformar su relación con el dinero. Nuestra plataforma ofrece contenido educativo (incluyendo la serie de MasterClasses en vivo), un Coach de Dinero y Riqueza impulsado por IA, cohortes comunitarias, un Marketplace de Inversiones curado, un Programa de Socios y servicios relacionados. Castle es operado por:</p>
+<p class="contact-details">
+    <strong>Build Your Castle, Inc.</strong><br>
+    Una corporación constituida bajo las leyes del Estado de Delaware, Estados Unidos de América<br>
+    Consultas de Privacidad: <a href="mailto:legal@buildyourcastle.ai">legal@buildyourcastle.ai</a>
+</p>
+
+<h2>3. Información que recopilamos</h2>
+<p>Recopilamos información sobre ti de varias maneras, como se describe a continuación.</p>
+
+<h3>3.1 Información que proporcionas directamente</h3>
+<p>Cuando interactúas con nuestros Servicios, como unirte a nuestra lista de espera, solicitar una MasterClass, registrarte como Socio, contactarnos o suscribirte a nuestro boletín, puedes proporcionarnos las siguientes categorías de información personal:</p>
+<ul>
+    <li><strong>Información de identidad y contacto:</strong> Nombre completo, dirección de correo electrónico, número de teléfono.</li>
+    <li><strong>Información demográfica:</strong> Rango de edad, país de residencia.</li>
+    <li><strong>Información profesional:</strong> Nombre de la empresa u organización, título del puesto o función.</li>
+    <li><strong>Perfiles de redes sociales:</strong> URL del perfil de LinkedIn, usuario de Instagram o enlace al perfil.</li>
+    <li><strong>Comunicaciones:</strong> Mensajes, consultas y otros contenidos que envíes a través de nuestros formularios o directamente a nosotros.</li>
+    <li><strong>Preferencias y consentimientos:</strong> Tus preferencias de comunicación y los consentimientos que proporcionas al enviar formularios (por ejemplo, consentimiento para recibir actualizaciones, boletines o notificaciones de eventos).</li>
+    <li><strong>Información de cuenta financiera (característica futura):</strong> Cuando elijas integrar cuentas financieras externas con la plataforma Castle, podemos recopilar datos financieros, identificadores de cuenta, saldos e historial de transacciones según lo permita la ley aplicable y tu proveedor de cuenta.</li>
+</ul>
+
+<h3>3.2 Información recopilada automáticamente</h3>
+<p>Cuando visitas o utilizas nuestros Servicios, nosotros y nuestros proveedores de servicios externos recopilamos automáticamente cierta información técnica y de uso, incluyendo:</p>
+<ul>
+    <li><strong>Información técnica y del dispositivo:</strong> Dirección IP, tipo y versión del navegador, sistema operativo, identificadores del dispositivo y modelo de hardware.</li>
+    <li><strong>Datos de uso:</strong> Páginas visitadas, enlaces en los que se hizo clic, tiempo dedicado a las páginas, URL de referencia, términos de búsqueda utilizados para encontrar nuestro Sitio y otros datos de interacción.</li>
+    <li><strong>Datos de ubicación:</strong> Ubicación geográfica general inferida de tu dirección IP (a nivel de país o región).</li>
+    <li><strong>Cookies y tecnologías de seguimiento:</strong> Información recopilada a través de cookies, etiquetas de píxel, balizas web y tecnologías similares. Consulta nuestra Política de Cookies para obtener información detallada.</li>
+</ul>
+
+<h3>3.3 Información de terceros</h3>
+<p>Podemos recibir información sobre ti de terceros, incluyendo:</p>
+<ul>
+    <li>Plataformas de redes sociales (por ejemplo, LinkedIn, Instagram, YouTube, X/Twitter), si interactúas con nuestras cuentas de redes sociales o proporcionas tus usuarios de redes sociales.</li>
+    <li>Organizaciones asociadas, patrocinadores o co-promotores que comparten información sobre posibles participantes de la plataforma de acuerdo con sus propias políticas de privacidad.</li>
+    <li>Proveedores de análisis que suministran información agregada o desidentificada sobre los patrones de uso.</li>
+    <li>La Fundación Unicoin y entidades afiliadas que apoyan la plataforma Castle, en la medida permitida por la ley aplicable y sus respectivas políticas de privacidad.</li>
+</ul>
+
+<h2>4. Cómo utilizamos tu información</h2>
+<p>Utilizamos la información personal que recopilamos para los siguientes propósitos:</p>
+<ul>
+    <li><strong>Proporcionar y mejorar nuestros Servicios:</strong> Para operar la plataforma Castle, procesar solicitudes, entregar el contenido de la MasterClass, conectar socios, enviar boletines y cumplir con tus solicitudes.</li>
+    <li><strong>Comunicaciones:</strong> Para enviarte actualizaciones sobre Castle, el lanzamiento de la plataforma, sesiones de MasterClass, eventos comunitarios y noticias relevantes sobre la riqueza de las mujeres, pero solo cuando hayas dado tu consentimiento o cuando tengamos un interés legítimo para hacerlo.</li>
+    <li><strong>Personalización:</strong> Para adaptar el contenido, las recomendaciones y la experiencia del Coach de Riqueza de IA a tu perfil, preferencias y objetivos financieros.</li>
+    <li><strong>Análisis e investigación:</strong> Para entender cómo los usuarios interactúan con nuestros Servicios, identificar tendencias, medir la efectividad de nuestras comunicaciones y mejorar nuestra plataforma.</li>
+    <li><strong>Marketing:</strong> Para enviar información promocional sobre los productos, características, eventos y ofertas de socios de Castle, sujeto a tus preferencias de consentimiento y derechos de exclusión aplicables.</li>
+    <li><strong>Seguridad y prevención del fraude:</strong> Para detectar, investigar y prevenir transacciones fraudulentas, abusos y otras actividades no autorizadas o perjudiciales.</li>
+    <li><strong>Cumplimiento legal:</strong> Para cumplir con las leyes, regulaciones y procesos legales aplicables, incluyendo responder a solicitudes legítimas de las autoridades públicas.</li>
+    <li><strong>Características de Tokens y Web3:</strong> Para gestionar tu participación en el ecosistema de tokens de Castle, incluyendo el seguimiento de las asignaciones de tokens, acuerdos de asociación y transacciones relacionadas.</li>
+    <li><strong>Operaciones comerciales:</strong> Para llevar a cabo operaciones comerciales internas, incluyendo auditorías, informes financieros y gobierno corporativo.</li>
+</ul>
+
+<h2>5. Base legal para el procesamiento (RGPD)</h2>
+<p>Si te encuentras en el Espacio Económico Europeo (EEE), el Reino Unido u otra jurisdicción con leyes de protección de datos similares, procesamos tus datos personales sobre las siguientes bases legales:</p>
+<ul>
+    <li><strong>Consentimiento (Artículo 6(1)(a) RGPD):</strong> Cuando nos has dado tu consentimiento explícito, por ejemplo, para enviarte comunicaciones de marketing, boletines o para utilizar cookies no esenciales.</li>
+    <li><strong>Ejecución de un contrato (Artículo 6(1)(b) RGPD):</strong> Cuando el procesamiento es necesario para cumplir con un contrato contigo o para tomar medidas a petición tuya antes de celebrar un contrato (por ejemplo, procesar tu solicitud de lista de espera o registro de MasterClass).</li>
+    <li><strong>Intereses legítimos (Artículo 6(1)(f) RGPD):</strong> Cuando el procesamiento es necesario para nuestros intereses legítimos o los de un tercero, siempre que dichos intereses no queden anulados por tus derechos e intereses. Esto incluye la seguridad de la plataforma, la prevención del fraude, el análisis, la mejora de nuestros servicios y fines administrativos internos.</li>
+    <li><strong>Obligación legal (Artículo 6(1)(c) RGPD):</strong> Cuando el procesamiento es necesario para el cumplimiento de una obligación legal a la que estamos sujetos.</li>
+</ul>
+<p>Puedes retirar tu consentimiento en cualquier momento cuando el procesamiento se base en el consentimiento, sin que ello afecte a la licitud del procesamiento realizado antes de la retirada. Para retirar tu consentimiento, ponte en contacto con nosotros en <a href="mailto:legal@buildyourcastle.ai">legal@buildyourcastle.ai</a>.</p>
+
+<h2>6. Cómo compartimos tu información</h2>
+<p>No vendemos tu información personal. Podemos compartir tu información en las siguientes circunstancias:</p>
+<ul>
+    <li><strong>Proveedores de servicios:</strong> Compartimos información con proveedores externos de confianza que realizan servicios en nuestro nombre, incluyendo envío de correos electrónicos, análisis, alojamiento, soporte al cliente y procesamiento de pagos. Estos proveedores están obligados contractualmente a proteger tu información y a utilizarla únicamente para los fines para los que fue divulgada.</li>
+    <li><strong>Entidades afiliadas:</strong> Podemos compartir información con la Fundación Unicoin y otras filiales corporativas, en la medida necesaria para operar y mejorar la plataforma Castle, y sujeto a los acuerdos de protección de datos adecuados.</li>
+    <li><strong>Participantes del programa de socios:</strong> Si solicitas convertirte en Socio de Castle (por ejemplo, como influencer, marca o experto), los aspectos relevantes de tu perfil pueden compartirse con nuestro equipo de asociaciones para fines de evaluación e incorporación.</li>
+    <li><strong>Transferencias comerciales:</strong> Si Castle participa en una fusión, adquisición, reestructuración, venta de activos u otra transacción corporativa, tu información puede ser transferida como parte de esa transacción, sujeto al compromiso del adquirente de respetar esta Política de Privacidad o de notificarte cualquier cambio sustancial.</li>
+    <li><strong>Requisitos legales:</strong> Podemos divulgar tu información si la ley, una orden judicial o una autoridad gubernamental así lo requieren, o si creemos de buena fe que dicha divulgación es necesaria para proteger nuestros derechos, los derechos de otros o para prevenir el fraude o daños.</li>
+    <li><strong>Con tu consentimiento:</strong> Podemos compartir tu información para otros fines con tu consentimiento explícito.</li>
+</ul>
+
+<h2>7. Transferencias internacionales de datos</h2>
+<p>Castle opera desde los Estados Unidos y atiende a usuarios de todo el mundo, incluidos los del Espacio Económico Europeo, el Reino Unido, América Latina y otras regiones. Cuando transferimos datos personales del EEE o del Reino Unido a países que no se reconoce que proporcionen un nivel adecuado de protección (incluidos los Estados Unidos), implementamos las salvaguardas adecuadas, como las Cláusulas Contractuales Tipo aprobadas por la Comisión Europea o la Oficina del Comisionado de Información del Reino Unido (ICO).</p>
+<p>Al utilizar nuestros Servicios, reconoces que tu información personal puede ser transferida y procesada en los Estados Unidos o en otros países donde las leyes de privacidad pueden diferir de las de tu país de residencia.</p>
+
+<h2>8. Retención de datos</h2>
+<p>Retenemos la información personal durante el tiempo que sea necesario para cumplir con los fines para los que fue recopilada, incluso para cumplir con los requisitos legales, contables o de presentación de informes, y para resolver disputas y hacer cumplir nuestros acuerdos.</p>
+<p>Cuando tu información ya no sea necesaria, la eliminaremos de forma segura o la anonimizaremos. Si la eliminación no es posible de inmediato (por ejemplo, porque la información se encuentra en archivos de copia de seguridad), la aislaremos de cualquier procesamiento posterior hasta que sea posible su eliminación.</p>
+
+<h2>9. Tus derechos de privacidad</h2>
+<p>Dependiendo de tu ubicación, puedes tener los siguientes derechos con respecto a tu información personal:</p>
+
+<h3>9.1 Derechos bajo el RGPD (Usuarios del EEE y del Reino Unido)</h3>
+<p>Si te encuentras en el EEE o en el Reino Unido, tienes los siguientes derechos bajo el RGPD o el RGPD del Reino Unido: Derecho de acceso, Derecho de rectificación, Derecho de supresión ("Derecho al olvido"), Derecho a la limitación del procesamiento, Derecho a la portabilidad de los datos, Derecho de oposición, Derecho a retirar el consentimiento, y el Derecho a presentar una reclamación ante tu autoridad nacional de protección de datos (por ejemplo, la AEPD española o la ICO del Reino Unido).</p>
+
+<h3>9.2 Derechos bajo la CCPA/CPRA (Residentes de California)</h3>
+<p>Si eres residente de California, la Ley de Privacidad del Consumidor de California (CCPA), en su versión modificada por la Ley de Derechos de Privacidad de California (CPRA), te otorga los siguientes derechos: Derecho a saber, Derecho a eliminar, Derecho a corregir, Derecho a excluirte de la venta o el intercambio, Derecho a limitar el uso de información personal confidencial, y el Derecho a la no discriminación.</p>
+
+<h3>9.3 Ejercicio de tus derechos</h3>
+<p>Para ejercer cualquiera de los derechos descritos en esta Sección, ponte en contacto con nosotros por correo electrónico en <a href="mailto:legal@buildyourcastle.ai">legal@buildyourcastle.ai</a>. Es posible que te solicitemos que verifiques tu identidad antes de procesar tu solicitud. Responderemos dentro de los plazos exigidos por la ley aplicable.</p>
+
+<h2>10. Cookies y tecnologías de seguimiento</h2>
+<p>Utilizamos cookies y tecnologías de seguimiento similares para mejorar tu experiencia en nuestros Servicios. Para obtener información detallada sobre los tipos de cookies que utilizamos, sus fines y cómo gestionar tus preferencias de cookies, consulta nuestra Política de Cookies disponible en <a href="cookie-policy_es.html">buildyourcastle.ai/cookie-policy</a>.</p>
+
+<h2>11. Privacidad de los niños</h2>
+<p>Los Servicios de Castle están destinados a adultos mayores de 18 años. No recopilamos a sabiendas información personal de personas menores de 18 años. Si eres menor de 18 años, no utilices nuestros Servicios ni nos envíes información personal. Si nos percatamos de que hemos recopilado inadvertidamente información personal de un menor de 18 años, tomaremos medidas para eliminar esa información lo antes posible.</p>
+
+<h2>12. Funciones de Inteligencia Artificial</h2>
+<p>La plataforma de Castle incorpora tecnologías de inteligencia artificial, incluido un Coach de Dinero y Riqueza impulsado por IA. Cuando interactúas con funciones impulsadas por IA, procesamos la información que proporcionas (como preguntas, objetivos y respuestas) para generar orientación y recomendaciones personalizadas.</p>
+<p>Debes tener en cuenta que:</p>
+<ul>
+    <li>Las respuestas generadas por IA son solo para fines informativos y educativos y no constituyen asesoramiento financiero, de inversión, legal o profesional.</li>
+    <li>Los resultados de la IA pueden no ser siempre precisos, completos o adecuados para tus circunstancias específicas.</li>
+    <li>Tus interacciones con las funciones de IA pueden ser revisadas por nuestro equipo para mejorar el rendimiento y la seguridad del modelo, sujeto a las obligaciones de confidencialidad aplicables.</li>
+</ul>
+<p>Castle no es un asesor de inversiones registrado, un agente de bolsa o un planificador financiero. Nada en las funciones de IA ni en ningún otro lugar de la plataforma debe interpretarse como asesoramiento financiero o de inversión personalizado.</p>
+
+<h2>13. Datos relacionados con Web3 y Tokens</h2>
+<p>Castle está desarrollando un ecosistema impulsado por Web3 que incluye tokens de Castle y características de tokenización para socios y miembros de la comunidad. En relación con estas características, podemos recopilar direcciones de billeteras digitales, información de asignación de tokens, datos de interacción de contratos inteligentes e información de verificación de identidad (KYC/AML) requerida por la ley.</p>
+<p>Las transacciones en blockchain son inherentemente públicas e inmutables. La información registrada en una blockchain pública puede no ser borrable o modificable. Los tokens de Castle no son valores ni productos de inversión. La participación en el ecosistema de tokens implica riesgos; revisa todas las divulgaciones aplicables antes de participar.</p>
+
+<h2>14. Enlaces y servicios de terceros</h2>
+<p>Nuestros Servicios pueden contener enlaces a sitios web de terceros, plataformas de redes sociales y servicios de socios, incluidos LinkedIn, Instagram, YouTube, X (Twitter), el sitio web de la Fundación Unicoin y medios de comunicación. Esta Política de Privacidad no se aplica a esos servicios de terceros. No somos responsables del contenido, las prácticas de privacidad o el manejo de datos de sitios web o servicios de terceros.</p>
+
+<h2>15. Seguridad</h2>
+<p>Implementamos medidas de seguridad administrativas, técnicas y físicas comercialmente razonables para proteger tu información personal contra el acceso, la divulgación, la alteración o la destrucción no autorizados. Sin embargo, ningún método de transmisión a través de Internet o método de almacenamiento electrónico es completamente seguro, y no podemos garantizar su seguridad absoluta.</p>
+
+<h2>16. Cambios en esta Política de Privacidad</h2>
+<p>Pueden actualizar esta Política de Privacidad de vez en cuando para reflejar cambios en nuestras prácticas, tecnología, requisitos legales o por otras razones operativas. Cuando realicemos cambios significativos, actualizaremos la fecha de "Última actualización" en la parte superior de esta política y, cuando sea apropiado, te lo notificaremos por correo electrónico o mediante un aviso destacado en nuestro Sitio. Tu uso continuado de nuestros Servicios después de cualquier actualización constituye tu aceptación de la Política de Privacidad revisada.</p>
+
+<h2>17. Representante en el EEE/Reino Unido y Autoridad de Control</h2>
+<p>Si te encuentras en el EEE o en el Reino Unido y tienes inquietudes sobre nuestras prácticas de procesamiento de datos que no hayamos podido resolver a tu satisfacción, tienes derecho a presentar una reclamación ante la autoridad de control de protección de datos correspondiente en tu país (por ejemplo, la AEPD española o la ICO del Reino Unido).</p>
+
+<h2>18. Contacto</h2>
+<p>Si tienes alguna pregunta, inquietud o solicitud con respecto a esta Política de Privacidad o a nuestras prácticas de privacidad, ponte en contacto con nosotros en:</p>
+<p class="contact-details">
+    <strong>Build Your Castle, Inc.</strong><br>
+    A/A: Equipo Legal y de Privacidad<br>
+    Correo electrónico: <a href="mailto:legal@buildyourcastle.ai">legal@buildyourcastle.ai</a><br>
+    Sitio web: <a href="https://buildyourcastle.ai">buildyourcastle.ai</a>
+</p>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <img src="./public/images/common/logo-light.png" alt="Castle Logo" class="footer-logo">
+                    <p>Sé dueña de tu Dinero. Sé dueña de tu Futuro.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Compañía</h4>
+                    <a href="about_es.html">Sobre Nosotros</a>
+                    <a href="partners_es.html">Socios</a>
+                    <a href="contact_es.html">Contacto</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Recursos</h4>
+                    <a href="masterclass_es.html">Masterclass</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="privacy-policy_es.html">Política de Privacidad</a>
+                    <a href="terms-of-service_es.html">Términos de Servicio</a>
+                    <a href="cookie-policy_es.html">Política de Cookies</a>
+                </div>
+            </div>
+            
+            <div style="text-align: center; font-size: 11px; color: #6B7280; margin-bottom: 15px;">
+                Las imágenes utilizadas en este sitio fueron creadas o modificadas con IA y son solo para fines ilustrativos.
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Castle. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
