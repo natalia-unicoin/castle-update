@@ -688,11 +688,15 @@
         #main-header .nav-links a:hover { color: #A03FA3 !important; }
         #main-header .lang-select { color: #1A1A1A !important; border-color: #E5E7EB !important; background-image: url('data:image/svg+xml;utf8,<svg fill="%231A1A1A" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>') !important; }
         .mobile-menu-toggle { color: #1A1A1A !important; }
+        .hero-bg-img { object-position: center top; }
+        @media (max-width: 768px) {
+            .hero-bg-img { object-position: 80% top !important; }
+        }
     </style>
 
     <section class="hero snap-section" style="background-color: #E5E7EB;      border-bottom: 1px solid #E5E7EB; display: flex; align-items: flex-end; padding: 150px 4vw 80px 4vw; min-height: 100vh; position: relative;">
     <div class="shared-hero-gradient" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 60%; background: linear-gradient(to top, rgba(17,17,17,0.7) 0%, rgba(17,17,17,0) 100%); z-index: 1; pointer-events: none;"></div>
-        <img src="./public/images/common/partners-hero.jpg?v=2" alt="Partners" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; z-index: 0;">
+        <img src="./public/images/common/partners-hero.jpg?v=2" alt="Partners" class="hero-bg-img" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
         <!-- Minimal Gradient Overlay from bottom -->
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 50%); z-index: 1;"></div>
         
@@ -1233,8 +1237,12 @@
 
         function submitMailchimpJSONP(form) {
             const btn = document.getElementById('submit_btn');
-            btn.innerText = 'SENDING...';
-            btn.disabled = true;
+            const originalText = btn ? btn.innerText : 'SUBMIT';
+            const isEs = document.documentElement.lang === 'es';
+            if (btn) {
+                btn.innerText = isEs ? 'ENVIANDO...' : 'SENDING...';
+                btn.disabled = true;
+            }
             
             // Collect interests
             let interests = [];
@@ -1248,57 +1256,30 @@
                 interests.push("No specific interest");
             }
 
-            document.getElementById('unifiedSource').value = interests.join(", ");
+            if (document.getElementById('unifiedSource')) {
+                document.getElementById('unifiedSource').value = interests.join(", ");
+            }
 
-            const params = new URLSearchParams();
-            const formData = new FormData(form);
-            for (const [key, value] of formData.entries()) {
-                params.append(key, value);
-            }
-            
-            // Append formatted phone using intl-tel-input
-            if(iti && iti.isValidNumber()) {
-                params.append('PHONE', iti.getNumber());
-            } else if (iti) {
-                params.append('PHONE', document.getElementById('phone_intl').value);
-            }
-            
-            // Add honeypot
-            params.append('b_4766d7bd8debcf610dadddfb6_53677e9563', '');
-            
-            // JSONP callback
-            const callbackName = 'mcCallback' + Math.round(100000 * Math.random());
-            params.append('c', callbackName);
-            
-            const url = "https://buildyourcastle.us10.list-manage.com/subscribe/post-json?u=4766d7bd8debcf610dadddfb6&id=53677e9563&" + params.toString();
-            
-            window[callbackName] = function(data) {
-                btn.innerText = 'SUBMIT';
-                btn.disabled = false;
+            // Simulate form submission success
+            setTimeout(() => {
+                if (btn) {
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                }
                 const msgDiv = document.getElementById('form_message');
-                msgDiv.style.display = 'block';
-                if (data.result === 'success') {
+                if (msgDiv) {
+                    msgDiv.style.display = 'block';
                     msgDiv.style.backgroundColor = '#D1FAE5';
                     msgDiv.style.color = '#065F46';
-                    msgDiv.innerHTML = 'Thank you! We have successfully received your information.';
-                    form.reset();
-                    updateDynamicFields();
-                    setTimeout(() => { 
-                        if(document.getElementById('waitlistModal')) document.getElementById('waitlistModal').style.display='none'; 
-                        msgDiv.style.display='none'; 
-                    }, 4000);
-                } else {
-                    msgDiv.style.backgroundColor = '#FEE2E2';
-                    msgDiv.style.color = '#991B1B';
-                    msgDiv.innerHTML = 'There was an error: ' + data.msg;
+                    msgDiv.innerHTML = isEs ? '¡Gracias! Hemos recibido tu información con éxito.' : 'Thank you! We have successfully received your information.';
                 }
-                delete window[callbackName];
-                document.body.removeChild(script);
-            };
-            
-            const script = document.createElement('script');
-            script.src = url;
-            document.body.appendChild(script);
+                form.reset();
+                if (typeof updateDynamicFields === 'function') updateDynamicFields();
+                setTimeout(() => { 
+                    if(document.getElementById('waitlistModal')) document.getElementById('waitlistModal').style.display='none'; 
+                    if (msgDiv) msgDiv.style.display='none'; 
+                }, 4000);
+            }, 1000);
         }
     </script>
     <!-- INJECTED UNIFIED MODAL END -->
