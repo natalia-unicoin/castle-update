@@ -576,13 +576,7 @@
         .team-grid { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; margin-top: var(--spacer-60); }
         .team-member { display: flex; flex-direction: column; align-items: center; text-align: center; width: 100%; flex: 0 0 100%; }
         @media(min-width: 768px){ .team-member { width: calc(50% - 12px); flex: 0 0 calc(50% - 12px); } }
-        @media(min-width: 1024px){ .team-member { width: calc(25% - 18px); flex: 0 0 calc(25% - 18px); } }
-        
-        /* Silvina as Team Principal style */
-        @media(min-width: 1024px) {
-            .team-member.principal { width: 100% !important; flex: 0 0 100% !important; margin-bottom: 40px; }
-            .team-member.principal .team-img-wrapper { max-width: 380px; margin-left: auto; margin-right: auto; }
-        }
+        @media(min-width: 1024px){ .team-member { width: calc(33.333% - 16px); flex: 0 0 calc(33.333% - 16px); } }
         .team-img-wrapper { position: relative; width: 100%; aspect-ratio: 4/5; border-radius: 5px; overflow: hidden; background-color: #F8F8FA; margin-bottom: 24px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .team-img-wrapper:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
         .team-img-wrapper img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
